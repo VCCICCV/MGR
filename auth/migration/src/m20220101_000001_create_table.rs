@@ -20,7 +20,7 @@ impl MigrationTrait for Migration {
                     .col(ColumnDef::new(User::Username).string().not_null())
                     .col(ColumnDef::new(User::Email).string().not_null().unique_key())
                     .col(ColumnDef::new(User::Password).string().not_null())
-                    .col(ColumnDef::new(User::Role).integer())
+                    .col(ColumnDef::new(User::Role).integer().not_null())
                     .col(ColumnDef::new(User::Salt).string().not_null())
                     .col(ColumnDef::new(User::Avatar).string())
                     .col(ColumnDef::new(User::IsDeleted).boolean().not_null())

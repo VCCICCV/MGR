@@ -51,22 +51,25 @@
 //     }
 // }
 
+use anyhow::Ok;
 use common::error::AppError;
-use domain::model::dto::user_dto::RegisterUserDTO;
+use domain::{model::dto::user_dto::RegisterUserDTO, repositories::{auth_repository::AuthRepository, user_repository::UserRepository}};
 
-pub struct RegisterUserUseCase<U> {
+pub struct RegisterUserUseCase<A, U> {
+    auth_repository: A,
     user_repository: U,
 }
-impl RegisterUserUseCase<U> {
-    pub fn new(user_repository: U) -> Self {
-        RegisterUserUseCase { user_repository }
+impl<A: AuthRepository, U: UserRepository> RegisterUserUseCase<A, U> {
+    pub fn new(auth_repository: A, user_repository: U) -> Self {
+        RegisterUserUseCase { auth_repository, user_repository }
     }
     pub async fn execute(&self, register_user_dto: &RegisterUserDTO) -> Result<String, AppError> {
         // 先查找用户是否存在
         match self.user_repository.find_by_email(register_user_dto.email.as_str()).await? {
             Ok(_) => {
                 self.user_repository.save(register_user_dto).await;
-                token = self.auth_repository.generate_jwt(register_user_dto).await;
+                let token = self.auth_repository.generate_jwt(register_user_dto).await;
+                Ok(token)
             }
             Err(e) => Err(AppError::RegisterError(e.to_string())),
         }

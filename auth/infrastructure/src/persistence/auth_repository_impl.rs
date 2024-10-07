@@ -1,30 +1,25 @@
 use common::error::InfraError;
-use domain::{model::dto::user_dto::LoginUserDTO, repositories::auth_repository::AuthRepository};
+use domain::{ model::dto::user_dto::LoginUserDTO, repositories::auth_repository::AuthRepository };
 
-// use argon2::{ Argon2, PasswordHash, PasswordVerifier };
-// use chrono::Utc;
-// use common::error::InfraError;
-// use domain::{
-//     model::{ dto::user_dto::LoginUserSchema, user::User },
-//     repositories::user_repository::UserRepository,
-//     service::auth_service::AuthService,
-// };
-// use crate::middleware::{ self, jwt::encode_jwt };
-// use super::user_repository_impl::UserRepositoryImpl;
+use crate::utils::jwt_util::encode_jwt;
 pub struct AuthServiceImpl {}
 impl AuthRepository for AuthServiceImpl {
-    async fn generate_jwt(&self, user_dto: LoginUserDTO) -> Result<String, InfraError> {
-        todo!()
+    async fn generate_jwt(&self, login_user_dto: LoginUserDTO) -> Result<String, InfraError> {
+        Ok(encode_jwt(login_user_dto).await)
     }
 
     async fn generate_password(&self, password: &str) -> Result<String, InfraError> {
         todo!()
     }
-    
-    async fn verify_password(&self, password: &str, hashed_password: &str) -> Result<bool, InfraError> {
+
+    async fn verify_password(
+        &self,
+        password: &str,
+        hashed_password: &str
+    ) -> Result<bool, InfraError> {
         todo!()
     }
-    
+
     async fn verify_token(&self, token: &str) -> Result<bool, InfraError> {
         todo!()
     }

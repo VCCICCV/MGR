@@ -1,22 +1,30 @@
 use chrono::Utc;
 use common::error::InfraError;
-use domain::{model::dto::user_dto::RegisterUserDTO, repositories::user_repository::UserRepository};
-use sea_orm::{ActiveValue::NotSet, DatabaseConnection, EntityTrait, Set};
+use domain::{
+    model::{dto::user_dto::RegisterUserDTO, user::User},
+    repositories::user_repository::UserRepository,
+};
+use sea_orm::{ ActiveValue::NotSet, DatabaseConnection, EntityTrait, QueryFilter, Set };
 use tokio::task;
+use tracing::info;
 
-use crate::{database::db_connection::establish_db_connection, entities::user::{ActiveModel, Entity as UserEntity}, utils::redis_util::RedisUtil};
+use crate::{
+    database::db_connection::establish_db_connection,
+    entities::{self, user::{ ActiveModel, Entity as UserEntity }},
+    utils::redis_util::RedisUtil,
+};
 pub struct UserRepositoryImpl {
     pool: DatabaseConnection,
 }
 
 impl UserRepositoryImpl {
-    pub async fn new() -> Result<Self, InfraError>{
+    pub async fn new() -> Result<Self, InfraError> {
         let db_pool = establish_db_connection().await?;
-        Ok(UserRepositoryImpl { pool:db_pool })
+        Ok(UserRepositoryImpl { pool: db_pool })
     }
 }
 impl UserRepository for UserRepositoryImpl {
-    async fn save(&self, user: &RegisterUserDTO) -> Result<(), InfraError> {
+    async fn save(&self, user: &RegisterUserDTO) -> Result<bool, InfraError> {
         let active_model = ActiveModel {
             username: Set(user.clone().username),
             email: Set(user.clone().email),
@@ -25,11 +33,11 @@ impl UserRepository for UserRepositoryImpl {
             update_time: NotSet,
             ..Default::default()
         };
-
+        // 执行插入操作
         let insert_result = UserEntity::insert(active_model)
             .exec(&self.pool).await
             .map_err(|e| InfraError::InsertError(format!("fail: {}", e)));
-
+        // 处理插入结果
         match insert_result {
             Ok(_) => {
                 // 新用户创建成功后，将用户信息存储到Redis缓存
@@ -45,10 +53,52 @@ impl UserRepository for UserRepositoryImpl {
                         .set_expire(&redis_key, &serialized, 60).await
                         .expect("InfraError::RedisError");
                 });
-                Ok(())
+                Ok(true)
             }
-            Err(e) => Err(InfraError::InsertError(format!("fail: {}", e))),
+            Err(e) => Err(InfraError::UserError(e.to_string())),
         }
+    }
+
+    async fn find_by_email(&self, email: &str) -> Result<Option<User>, InfraError> {
+        info!("find_by_email: {}", email);
+        let redis_key = format!("user_{}", email);
+        let redis_util = RedisUtil::new().await.expect("InfraError::RedisError");
+        // 先查询redis
+        if let Ok(Some(cached)) = redis_util.get(&redis_key).await {
+            let user: User = serde_json
+                ::from_str(&cached)
+                .map_err(|e| {
+                    InfraError::RedisError(format!("Redis deserialization error: {}", e))
+                })?;
+            return Ok(Some(user));
+        }
+        let db = establish_db_connection().await?;
+        let model = UserEntity::find()
+            .filter(<entities::user::Entity as EntityTrait>::Column::Email.eq(email))
+            .one(&db).await?;
+        let user = model.map(|model| User {
+            user_id: Some(model.user_id),
+            username: model.username,
+            email: model.email,
+            password: model.password,
+            role: model.role,
+            create_time: model.create_time,
+            update_time: model.update_time,
+            salt: model.salt,
+            is_deleted: todo!(),
+    
+        });
+        // 将查询结果存储到Redis缓存中
+        let serialized = serde_json
+            ::to_string(&user)
+            .map_err(|e| InfraError::RedisError(format!("Redis serialization error: {}", e)))?;
+        // 在后台异步存储到Redis缓存中，过期时间为60秒
+        task::spawn(async move {
+            redis_util
+                .set_expire(&redis_key, &serialized, 60).await
+                .expect("InfraError::RedisError");
+        });
+        Ok(user)
     }
     // async fn find_by_username(&self, username: &str) -> Result<Option<User>, InfraError> {
     //     todo!()

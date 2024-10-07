@@ -1,11 +1,11 @@
 use chrono::{ Duration, Utc };
-use domain::model::{ dto::user_dto::TokenClaims, user::User };
+use application::request::dto::user_dto::{LoginUserDTO, TokenClaims};
 use jsonwebtoken::{ decode, encode, DecodingKey, EncodingKey, Header, Validation };
 use uuid::Uuid;
 // 生成jwt
 pub async fn encode_jwt(user: User) -> String {
     let claims = TokenClaims {
-        sub: user.email,
+        sub: login_user_dto.email,
         iat: Utc::now().timestamp() as usize,
         exp: (Utc::now() + Duration::minutes(1)).timestamp() as usize,
         jti: Uuid::new_v4().to_string(),

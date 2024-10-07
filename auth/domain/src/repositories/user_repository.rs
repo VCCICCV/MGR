@@ -1,6 +1,6 @@
 use common::error::InfraError;
 
-use crate::model::dto::user_dto::RegisterUserDTO;
+use crate::model::user::User;
 
 // use crate::model::{ dto::user_dto::RegisterUserDTO, user::User };
 // use common::error::InfraError;
@@ -16,8 +16,8 @@ use crate::model::dto::user_dto::RegisterUserDTO;
 //     async fn generate_refresh_jwt(&self, user: User) -> Result<String, InfraError>;
 // }
 pub trait UserRepository {
-    async fn save(&self, user: &RegisterUserDTO) -> Result<(), InfraError>;
+    async fn save(&self, user: User) -> Result<bool, InfraError>;
     // async fn find_by_username(&self, username: &str) -> Result<Option<User>, InfraError>;
-    // async fn find_by_email(&self, email: &str) -> Result<Option<User>, InfraError>;
+    async fn find_by_email(&self, email: &str) -> Result<Option<User>, InfraError>;
     // async fn update_user(&self, user: &User, new_password: &str) -> Result<(), InfraError>;
 }

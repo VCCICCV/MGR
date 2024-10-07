@@ -1,9 +1,6 @@
 //! 领域层
 pub mod model {
     pub mod user;
-    pub mod dto {
-        pub mod user_dto;
-    }
 }
 /// 高层Domain不应该依赖于低层Infrastructure，而是应该依赖于抽象trait
 pub mod repositories {

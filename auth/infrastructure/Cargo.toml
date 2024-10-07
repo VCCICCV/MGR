@@ -7,6 +7,7 @@ edition = "2021"
 # 不应该直接依赖于 domain（领域层）和 application（应用层），但可以通过抽象接口与它们交互，比如repository
 # 这样可以避免直接依赖于具体的实现，从而提高代码的可维护性和可测试性。
 domain={workspace=true}
+application={workspace=true}
 
 axum={workspace=true}
 tokio={workspace=true}

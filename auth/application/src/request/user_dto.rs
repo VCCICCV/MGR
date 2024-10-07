@@ -9,7 +9,6 @@ pub struct UserDTO {
 
 #[derive(Default,Debug, Clone,Serialize, Deserialize)]
 pub struct LoginInfoDTO {
-    pub username: String,
     pub jwt: String,
 }
 
