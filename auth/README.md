@@ -58,12 +58,12 @@ httpc-test = "0.1.1"
 ## Axum DDD开发（整洁架构）
 
 * `domain`：领域层，包含您的所有实体、值对象和业务逻辑，相关且应一起改变的实体应分组为一个聚合，实体可以利用领域事件将变化传达给系统的其他部分，实体可以定义可用于查询它们的接口（interface，叫约定更合适）,对于可变访问，应该通过 Repository 接口访问实体
+  * dp(Domain Primitive)：封装与实体无关的无状态计算逻辑
   * interface：定义接口
-  * **services**：领域服务，实现接口（洋葱架构中叫Domain Model，Domain Services），当业务逻辑不能自然地归属于某个实体时，可以创建领域服务
+  * **services**：领域服务，实现接口（洋葱架构中叫Domain Model，Domain Services），当业务逻辑不能自然地归属于某个实体时，可以创建领域服务。两个domain交互时通过领域服务实现
   * **model**：领域实体，代表业务领域核心概念的实体类，封装整个系统的关键业务逻辑（能被其他部分复用的实体及业务逻辑），既可以是带有方法的对象，也可以是主句结构和函数集合
   * value object：不可变的值对象，如地址，值对象可以增强代码的可读性和可维护性，避免在多个地方重复相同的逻辑
   * event：领域事件，如`OrderPlaced`（订单已下单）、`ProductUpdated`（商品已更新）
-  * eceptions：错误
   * repository：只定义数据库操作接口，用于数据访问抽象
 * `application`：应用层，该层控制整个应用程序流程，逻辑必须在此层范围内定义，这一层的变化既不影响业务实体，也不受数据库和框架的影响
   * **use_case/service**：定义编排业务流程，组合实体的功能，用例通常按照 CQRS 分组为命令和查询（洋葱架构中叫Application Services）

@@ -14,3 +14,8 @@ thiserror = { workspace = true }
 common = {workspace = true}
 tokio = {workspace = true}
 chrono ={workspace = true}
+jsonwebtoken ={workspace = true}
+uuid = {workspace = true}
+password-hash = {workspace = true}
+argon2 ={ workspace = true }
+serde_json={workspace = true}

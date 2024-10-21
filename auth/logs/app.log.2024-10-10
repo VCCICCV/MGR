@@ -1,0 +1,123 @@
+[2m2024-10-10T13:54:58.7202161Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T13:54:58.7249479Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:01:24.5276695Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:01:24.528076Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:01:24.528414Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:08:29.9308542Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:08:29.9376627Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:09:33.5252382Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:09:33.5254885Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:09:33.5257641Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:09:35.1197789Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:09:35.1241692Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:09:55.591811Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:09:55.5920065Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:09:55.5922303Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:10:13.652211Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:10:13.6595615Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:10:46.3857478Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:10:46.3860287Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:10:46.386299Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:10:47.6664342Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:10:47.6734234Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:11:43.6392615Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:11:43.6394612Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:11:43.6397569Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:11:51.596446Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:11:51.6037182Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:12:31.9248172Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:12:31.9250535Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:12:31.925261Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:12:33.2586897Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:12:33.2652492Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:13:47.5818865Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:13:47.5821367Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:13:47.5824254Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:14:00.7778531Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:14:00.7867772Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:14:09.6125465Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:14:09.6128173Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:14:09.6131469Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:14:29.7009051Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:14:29.7081113Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:19:16.3193322Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:19:16.3197099Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:19:16.320061Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:19:25.1299226Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:19:25.1395987Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:20:13.620865Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:20:13.6210417Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:20:13.6212835Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:20:25.1649567Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:20:25.1727426Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:23:27.667779Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:23:27.6680605Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:23:27.6686232Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:23:36.7631155Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:23:36.7705916Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:23:44.1382684Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:23:44.138489Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:23:44.1387107Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:31:05.1378572Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:31:05.14519Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:31:13.1278121Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:31:13.1280657Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:31:13.1284714Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:32:53.8722072Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:32:53.8793101Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:32:57.5164499Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:32:57.5166982Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:32:57.5169466Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:35:14.794246Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:36:43.465271Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:36:43.4743485Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:47:33.9146322Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:47:33.9149149Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:47:33.9152061Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:48:16.3449214Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:48:16.3533977Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:48:48.8884153Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:48:48.8889382Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:48:48.8895559Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:49:24.521489Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:49:24.5285312Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:53:37.7594927Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:53:37.7596835Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:53:37.7599861Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:55:19.2824375Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:55:19.2891688Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:56:44.759602Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:56:44.7598587Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:56:44.760332Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T14:58:48.0614928Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T14:58:48.0695167Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T14:58:58.1980697Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T14:58:58.1982997Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T14:58:58.1986056Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T15:01:25.7919231Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T15:01:25.7997606Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T15:08:52.1909895Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T15:08:52.1912557Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T15:08:52.1914996Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T15:09:00.8957277Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T15:09:00.9040539Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T15:09:41.6799541Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T15:09:41.6801935Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T15:09:41.6804695Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T15:15:05.2535841Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T15:15:05.2608695Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T15:15:07.6746689Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T15:15:07.6748819Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T15:15:07.6751221Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T15:15:22.9202396Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T15:15:22.9267938Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T15:16:11.8632578Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T15:16:11.8635533Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T15:16:11.8638577Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T15:16:20.6352845Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T15:16:20.642138Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-10T15:16:24.3995984Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-10T15:16:24.3999913Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-10T15:16:24.4002999Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-10T15:17:43.0284947Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-10T15:17:43.0372017Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080

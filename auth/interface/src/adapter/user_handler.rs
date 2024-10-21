@@ -1,9 +1,28 @@
-// use crate::common::response::Res;
-// use application::use_case::user_use_case::UserUseCase;
-// use axum::response::IntoResponse;
-// use domain::model::dto::user_dto::RegisterUserDTO;
-// pub use domain::model::user::User;
-// /// DI：我们把查询用户的trait和命令用户的trait注入到handler中
+use application::{
+    dto::{ request_command::UserRegisterCommand, response_dto::Res },
+    use_case::user_use_case,
+};
+use axum::{ extract::{Path, State}, response::IntoResponse };
+use infrastructure::{ state::AppState, utils::password_util };
+
+// DI：我们把查询用户的trait和命令用户的trait注入到handler中
+
+pub async fn register_handler(
+    State(state): State<AppState>,
+    user_name: Path<String>,
+    password: Path<String>
+) -> impl IntoResponse {
+    // let user_command = UserRegisterCommand::new(user_name, password);
+    // // 创建用例实例
+    // let user_use_case = user_use_case::UserUseCase::new(state.user_repository);
+
+    // let result = UserUseCase.execute(user_command).await;
+    // match result {
+    //     Ok(user) => Res::with_data(user),
+    //     Err(err) => Res::with_err(&err.to_string()),
+    // }
+}
+// Res::with_data("register".to_string())
 // pub async fn list_users() -> impl IntoResponse {
 //     let use_case = UserUseCase::new();
 //     let users = use_case.list_users().await;

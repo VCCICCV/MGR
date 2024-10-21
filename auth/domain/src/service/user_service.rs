@@ -1,6 +1,60 @@
+// use common::error::InfraError;
+
+// use crate::{model::aggregate::user::User, repositories::user_repository::UserRepository};
+
+// pub struct UserService
+// where 
+// U:UserRepository,
+// {
+// user_repository: U,
+// }
+// impl<U> UserService<U>
+// where
+// U:UserRepository,
+// {
+//     pub fn new(user_repository: U) -> Self {
+//         Self { user_repository }
+//     }
+//     pub async fn register(&self, user: User) -> Result<(), InfraError> {
+//         self.user_repository.save(user).await
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 // use crate::{model::{dto::user_dto::RegisterUserDTO, user::User}, repositories::user_repository::UserRepository};
 // use common::error::InfraError;
 
+// use common::error::InfraError;
+
+// use crate::{ aggregate::user::User, repositories::user_repository::UserRepository };
+
+// pub struct UserService<R> where R: UserRepository {
+//     user_repository: R,
+// }
+
+// impl<R> UserService<R> where R: UserRepository {
+//     pub fn new(user_repository: R) -> Self {
+//         UserService {
+//             user_repository,
+//         }
+//     }
+// }
+// impl<R> UserService<R> where R: UserRepository {
+//     pub async fn create_user(&self, user: User) -> Result<(), InfraError> {
+//         self.user_repository.save(user).await
+//     }
+// }
 // pub struct UserService<R>
 // where
 //     R: UserRepository,

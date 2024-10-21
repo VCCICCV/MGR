@@ -1,0 +1,11 @@
+[2m2024-10-13T08:53:09.1215181Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-13T08:54:04.8389989Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-13T08:55:34.9200643Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-13T08:55:48.9977619Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-13T08:56:09.0430998Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-13T08:57:15.4266935Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-13T09:02:15.9443516Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-13T09:02:16.1648323Z[0m [32m INFO[0m [2minfrastructure::database::db_connection[0m[2m:[0m Database connected
+[2m2024-10-13T09:02:16.1660338Z[0m [32m INFO[0m [2minfrastructure::database::redis_connection[0m[2m:[0m Redis connected
+[2m2024-10-13T09:02:16.1667368Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-13T09:02:16.1679107Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080

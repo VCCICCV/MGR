@@ -1,29 +1,29 @@
-use common::error::InfraError;
-use domain::{ model::dto::user_dto::LoginUserDTO, repositories::auth_repository::AuthRepository };
+// use common::error::InfraError;
+// use domain::{ model::dto::user_dto::LoginUserDTO, repositories::auth_repository::AuthRepository };
 
-use crate::utils::jwt_util::encode_jwt;
-pub struct AuthServiceImpl {}
-impl AuthRepository for AuthServiceImpl {
-    async fn generate_jwt(&self, login_user_dto: LoginUserDTO) -> Result<String, InfraError> {
-        Ok(encode_jwt(login_user_dto).await)
-    }
+// use crate::utils::jwt_util::encode_jwt;
+// pub struct AuthServiceImpl {}
+// impl AuthRepository for AuthServiceImpl {
+//     async fn generate_jwt(&self, login_user_dto: LoginUserDTO) -> Result<String, InfraError> {
+//         Ok(encode_jwt(login_user_dto).await)
+//     }
 
-    async fn generate_password(&self, password: &str) -> Result<String, InfraError> {
-        todo!()
-    }
+//     async fn generate_password(&self, password: &str) -> Result<String, InfraError> {
+//         todo!()
+//     }
 
-    async fn verify_password(
-        &self,
-        password: &str,
-        hashed_password: &str
-    ) -> Result<bool, InfraError> {
-        todo!()
-    }
+//     async fn verify_password(
+//         &self,
+//         password: &str,
+//         hashed_password: &str
+//     ) -> Result<bool, InfraError> {
+//         todo!()
+//     }
 
-    async fn verify_token(&self, token: &str) -> Result<bool, InfraError> {
-        todo!()
-    }
-}
+//     async fn verify_token(&self, token: &str) -> Result<bool, InfraError> {
+//         todo!()
+//     }
+// }
 // use super::user_repository_impl::UserRepositoryImpl;
 // pub struct AuthServiceImpl {
 //     user_repository: UserRepositoryImpl,

@@ -1,0 +1,145 @@
+[2m2024-10-11T04:22:50.0775363Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T05:37:26.9137546Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T05:37:26.91632Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T05:37:27.1196451Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T05:37:45.5471889Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T05:37:45.550643Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T05:37:45.7210921Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T05:38:37.5844337Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T05:38:37.5872146Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T05:38:37.587356Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: 127.0.0.1:8080
+[2m2024-10-11T05:38:37.755381Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T05:54:35.2670412Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T05:54:35.2705492Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T05:54:35.2707212Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: 127.0.0.1:8080
+[2m2024-10-11T05:54:35.4443156Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T06:08:00.5825639Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T06:08:00.5856582Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T06:08:00.5858057Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: "127.0.0.1:8080"
+[2m2024-10-11T06:08:00.7568406Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T06:16:58.2348931Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T06:16:58.2380164Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T06:16:58.238175Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: "127.0.0.1:8080"
+[2m2024-10-11T06:16:58.4180276Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T06:29:52.1416836Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T06:29:52.1445456Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T06:29:52.1446881Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: "127.0.0.1:8080"
+[2m2024-10-11T06:29:52.3117827Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T06:45:21.6742221Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T06:45:21.6769619Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T06:45:21.6771016Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: "127.0.0.1:8080"
+[2m2024-10-11T06:45:21.8504185Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T06:46:11.1160225Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T06:46:11.1190553Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T06:46:11.1192123Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: "127.0.0.1:8080"
+[2m2024-10-11T06:47:34.0722959Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T06:47:34.0750925Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T06:47:34.0752622Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: "127.0.0.1:8080"
+[2m2024-10-11T06:49:26.2964412Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T06:49:26.2991464Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T06:49:26.2992935Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: 127.0.0.1:8080
+[2m2024-10-11T06:51:34.2056592Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T06:51:34.2081308Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T06:51:34.2083303Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: 127.0.0.1:8080
+[2m2024-10-11T06:52:04.6637745Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T06:52:04.6666628Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T06:52:04.6668602Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: 127.0.0.1:8080
+[2m2024-10-11T06:53:56.8697434Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T06:53:56.8717118Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T06:53:56.8718528Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: 127.0.0.1:8080
+[2m2024-10-11T07:01:03.1018842Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T07:01:03.1046482Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T07:01:03.1048536Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: 127.0.0.1:8081
+[2m2024-10-11T07:08:37.2533894Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T07:08:37.2557632Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T07:08:37.2559347Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: 127.0.0.1:8081
+[2m2024-10-11T07:13:27.7620692Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T07:13:27.7648057Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T07:13:27.7649835Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 Server URL: 127.0.0.1:8080
+[2m2024-10-11T07:13:27.7688485Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T07:13:59.6505202Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-11T07:13:59.6518169Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-11T07:13:59.6530255Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-11T07:14:20.6082163Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T07:14:20.6111001Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T07:14:20.8181051Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T07:14:20.8190881Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T07:14:25.182791Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-11T07:14:25.1830159Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-11T07:14:25.1833278Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-11T07:24:28.329269Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T07:24:28.3324008Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T07:24:28.4950152Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T07:24:28.4951892Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-11T07:24:28.4959012Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T07:25:27.5909221Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-11T07:25:27.5911688Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-11T07:25:27.5913795Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-11T07:25:37.0325245Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T07:25:37.0357272Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T07:25:37.2268197Z[0m [32m INFO[0m [2minterface::client::database[0m[2m:[0m Database connected
+[2m2024-10-11T07:25:37.2270286Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-11T07:25:37.2298993Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T07:33:01.9096035Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-11T07:33:01.909945Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-11T07:33:01.9104131Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-11T07:58:34.2188176Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T07:58:34.2215068Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T07:58:34.3804538Z[0m [32m INFO[0m [2minfrastructure::database::db_connection[0m[2m:[0m Database connected
+[2m2024-10-11T07:58:34.3809133Z[0m [32m INFO[0m [2minfrastructure::database::redis_connection[0m[2m:[0m Redis connected
+[2m2024-10-11T07:58:34.381066Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-11T07:58:34.38423Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T07:58:37.1187846Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-11T07:58:37.1189803Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-11T07:58:37.1192474Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-11T08:00:20.1091865Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T08:00:20.1128099Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T08:00:20.2966927Z[0m [32m INFO[0m [2minfrastructure::database::db_connection[0m[2m:[0m Database connected
+[2m2024-10-11T08:00:20.2970556Z[0m [32m INFO[0m [2minfrastructure::database::redis_connection[0m[2m:[0m Redis connected
+[2m2024-10-11T08:00:20.2972179Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-11T08:00:20.3002048Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T08:00:41.4669144Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-11T08:00:41.4672584Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-11T08:00:41.467621Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-11T08:00:58.9143168Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T08:00:58.9174333Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T08:00:59.0854305Z[0m [32m INFO[0m [2minfrastructure::database::db_connection[0m[2m:[0m Database connected
+[2m2024-10-11T08:00:59.0858466Z[0m [32m INFO[0m [2minfrastructure::database::redis_connection[0m[2m:[0m Redis connected
+[2m2024-10-11T08:00:59.0859781Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-11T08:00:59.0883537Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T08:01:14.942889Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-11T08:01:14.9434107Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-11T08:01:14.9436818Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-11T08:02:47.0458561Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T08:02:47.0489638Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T08:02:47.2147016Z[0m [32m INFO[0m [2minfrastructure::database::db_connection[0m[2m:[0m Database connected
+[2m2024-10-11T08:02:47.2150765Z[0m [32m INFO[0m [2minfrastructure::database::redis_connection[0m[2m:[0m Redis connected
+[2m2024-10-11T08:02:47.2152176Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-11T08:02:47.2178441Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T08:03:13.9218659Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-11T08:03:13.9221275Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-11T08:03:13.9224203Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-11T08:03:34.3487871Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T08:03:34.35252Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Settings was successful
+[2m2024-10-11T08:03:34.5481886Z[0m [32m INFO[0m [2minfrastructure::database::db_connection[0m[2m:[0m Database connected
+[2m2024-10-11T08:03:34.5485643Z[0m [32m INFO[0m [2minfrastructure::database::redis_connection[0m[2m:[0m Redis connected
+[2m2024-10-11T08:03:34.5487035Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-11T08:03:34.5503927Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T08:05:12.9480905Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m received graceful shutdown signal. Telling tasks to shutdown
+[2m2024-10-11T08:05:12.9484353Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m signal received, not accepting new connections
+[2m2024-10-11T08:05:12.9487044Z[0m [35mTRACE[0m [2maxum::serve[0m[2m:[0m waiting for 0 task(s) to finish
+[2m2024-10-11T08:05:22.8008859Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T08:05:22.9649861Z[0m [32m INFO[0m [2minfrastructure::database::db_connection[0m[2m:[0m Database connected
+[2m2024-10-11T08:05:22.9654966Z[0m [32m INFO[0m [2minfrastructure::database::redis_connection[0m[2m:[0m Redis connected
+[2m2024-10-11T08:05:22.9657213Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-11T08:05:22.968941Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T08:08:46.694015Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T08:08:46.8633896Z[0m [32m INFO[0m [2minfrastructure::database::db_connection[0m[2m:[0m Database connected
+[2m2024-10-11T08:08:46.8637788Z[0m [32m INFO[0m [2minfrastructure::database::redis_connection[0m[2m:[0m Redis connected
+[2m2024-10-11T08:08:46.8639334Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-11T08:08:46.8676942Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-10-11T08:11:52.8115847Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-11T08:11:53.012116Z[0m [32m INFO[0m [2minfrastructure::database::db_connection[0m[2m:[0m Database connected
+[2m2024-10-11T08:11:53.0126315Z[0m [32m INFO[0m [2minfrastructure::database::redis_connection[0m[2m:[0m Redis connected
+[2m2024-10-11T08:11:53.0128417Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-11T08:11:53.0161629Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080

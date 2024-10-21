@@ -1,0 +1,12 @@
+[2m2024-10-17T03:20:55.7105869Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-17T03:20:55.7108338Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-17T03:21:00.3228609Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-17T03:21:00.3231419Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-17T03:21:10.5305708Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-17T03:21:10.5307816Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-17T03:22:29.4598868Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-17T03:22:29.4604101Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Database was successful
+[2m2024-10-17T03:24:14.3709612Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-17T03:25:00.8946183Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-17T03:31:25.6469861Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-10-17T03:31:25.6478664Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:9090

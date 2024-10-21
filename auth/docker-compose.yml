@@ -36,6 +36,75 @@ services:
     command: redis-server /etc/redis/redis.conf
     networks:
       - pub-network
+  nacos:
+    image: qingpan/rnacos:stable
+    container_name: nacos
+    restart: always
+    ports:
+      - 8848:8848
+      - 9848:9448
+      - 10848:10848
+    volumes:
+      - /opt/nacos/data:/io:rw
+    environment:
+      - RNACOS_INIT_ADMIN_USERNAME=admin
+      - RNACOS_INIT_ADMIN_PASSWORD=admin123456
+      - RNACOS_HTTP_PORT=8848
+
+  minio:
+    image: minio/minio
+    container_name: minio
+    restart: always
+    environment:
+      MINIO_ACCESS_KEY: admin
+      MINIO_SECRET_KEY: admin123456
+    ports:
+      - 9000:9000
+      - 9090:9090
+    volumes:
+      - /opt/minio/config:/root/.minio
+      - /opt/minio/data:/data
+    command: server /data --console-address ":9090"
+  es:
+    image: elasticsearch:8.15.2
+    container_name: es
+    network_mode: pub-network
+    restart: always
+    ports:
+      # 9200：对外暴露的端口
+      - 9200:9200
+      # 9300：节点间通信端口
+      - 9300:9300
+    environment:
+      # 禁用密码登录
+      xpack.security.enabled: 'false'
+      # 单节点运行
+      discovery.type: single-node
+      # 允许跨域
+      http.cors.enabled: 'true'
+      # 允许所有访问
+      http.cors.allow-origin: '*'
+      # 堆内存大小
+      ES_JAVA_OPTS: '-Xms512m -Xmx512m'
+    volumes:
+      # 数据挂载
+      - /opt/es/data:/usr/share/elasticsearch/data
+      # 插件挂载
+      - /opt/es/plugins:/usr/share/elasticsearch/plugins
+      # 日志挂载
+      - /opt/es/logs:/usr/share/elasticsearch/logs
+    # 允许root用户运行
+    privileged: true
+  kibana:
+    image: kibana:8.15.2
+    container_name: kibana
+    network_mode: pub-network
+    restart: always
+    ports:
+      - 5601:5601
+    environment:
+      CSP_STRICT: 'false'
+      I18N_LOCALE: zh-CN
 networks:
   pub-network:
     name: pub-network

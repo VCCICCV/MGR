@@ -1,18 +1,19 @@
 //! 基础设施层
 //! 底层具体技术实现
-// po
-mod entities;
-
-/// 数据库连接
-pub mod database{
-    pub mod db_connection;
-    pub mod redis_connection;
+// po持久化对象，有的的地方叫do，在rust中do是保留关键字，本质上是对数据表的映射
+pub mod po{
+    // pub mod prelude;
+    pub mod user;
 }
+
 /// 工具类
 pub mod utils{
+    pub mod random;
     pub mod redis_util;
-    pub mod jwt_util;
+    // pub mod jwt_util;
     pub mod password_util;
+    pub mod task;
+    pub mod dir;
 }
 /// 与表的映射实体
 // pub mod entities{
@@ -26,3 +27,29 @@ pub mod persistence{
 }
 // RPC调用
 pub mod remote{}
+// 日志
+pub mod logger{
+    pub mod log;
+}
+// 聚合转DO，这里DO就是entity下与数据表对应的结构体
+pub mod converter{
+    pub mod user_converter;
+}
+
+// 客户端
+pub mod client{
+    pub mod builder;
+    pub mod database;
+    pub mod redis;
+    pub mod kafka;
+    pub mod es;
+}
+// 全局配置
+pub mod config;
+pub mod constant;
+pub mod mq{
+    pub mod consumer;
+    pub mod producer;
+}
+// state
+pub mod state;
