@@ -2,15 +2,13 @@
 
 ## MGR（motor getting rusty，锈化动力）
 
+关于配置请查看`auth`模块
+
 ## 项目简介
 
-`MGR`是一个基于DDD整洁架构设计的web3D购车商城，采用Java17、Spring Cloud 2023 & Alibaba、Spring Boot 3.2.7、Mybatis、OAuth2、Elasticsearch、Containerd、Kubernetes等技术
+`MGR`是一个基于DDD整洁架构设计的web3D购车商城，采用Docker、Elasticsearch、Kubernetes等技术
 
-## tgm-front
-
-过滤生产日期
-
-## 后台管理
+## 后台管理（TODO）
 
 * 首页
   * 订单数
@@ -47,9 +45,3 @@
   * 电车是一个SPU
   * 油车是一个SPU
   * 机油是一个SPU
-1. 商品
-    编号，名称，描述，型号，分类，售价，库存，状态
-2. 
-3. 订单
-4. 营销
-5. 权限
