@@ -22,20 +22,24 @@ pub mod model{
         pub mod user_name;
         pub mod user_password;
     }
-    // 领域实体，有的项目叫BO业务对象
-    pub mod entity{
-        pub mod user;
-        pub mod permission;
-        pub mod role_permission;
-        pub mod role;
+    pub mod aggregate{
+        pub mod customer;
     }
+    // 领域实体，有的项目叫BO业务对象
+    // pub mod entity{
+    //     pub mod user;
+    //     pub mod permission;
+    //     pub mod role_permission;
+    //     pub mod role;
+    // }
     // pub mod value_object;
 }
 
 
 /// 高层Domain不应该依赖于低层Infrastructure，而是应该依赖于抽象trait
 pub mod repositories {
-    pub mod user_repository;
+    // 用户接口，抽象trait，在基础设施层中实现
+    pub mod customer_repository;
     // redis的接口，抽象trait，在基础设施层中实现，基础设施需要用redis的地方通过redis_util调用
     pub mod cache_repository;
 }
@@ -62,11 +66,11 @@ pub mod service {
 /// * 进程内事件总线（领域事件总线）：发布者与订阅者在同一个进程中，订阅者是出错会引起当前请求出错
 pub mod event {
     // 定义事件处理的trait，用于处理特定类型的事件
-    pub mod user_event;
+    // pub mod user_event;
     // 事件总线侧重于业务领域事件的传播和处理
-    pub mod event_bus {
-        pub mod user_event_bus;
-    }
+    // pub mod event_bus {
+    //     pub mod user_event_bus;
+    // }
 }
 pub mod utils{
     pub mod jwt_util;

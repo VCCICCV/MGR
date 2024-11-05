@@ -2,26 +2,34 @@ use application::{
     dto::{ request_command::UserRegisterCommand, response_dto::Res },
     use_case::user_use_case,
 };
-use axum::{ extract::{Path, State}, response::IntoResponse };
+use axum::{ extract::{ Path, State }, response::IntoResponse };
+use application::use_case::user_use_case::UserUseCase;
 use infrastructure::{ state::AppState, utils::password_util };
-
+pub async fn get_all_customer(State(app_state): State<AppState>) -> impl IntoResponse {
+    let use_case = UserUseCase::new();
+    let customers = use_case.get_all_customer().await;
+    match customers {
+        Ok(customers) => Res::with_data(customers),
+        Err(err) => Res::with_err(&err.to_string()),
+    }
+}
 // DI：我们把查询用户的trait和命令用户的trait注入到handler中
 
-pub async fn register_handler(
-    State(state): State<AppState>,
-    user_name: Path<String>,
-    password: Path<String>
-) -> impl IntoResponse {
-    // let user_command = UserRegisterCommand::new(user_name, password);
-    // // 创建用例实例
-    // let user_use_case = user_use_case::UserUseCase::new(state.user_repository);
+// pub async fn register_handler(
+//     State(state): State<AppState>,
+//     user_name: Path<String>,
+//     password: Path<String>
+// ) -> impl IntoResponse {
+//     let user_command = UserRegisterCommand::new(user_name, password);
+//     // 创建用例实例
+//     let user_use_case = user_use_case::UserUseCase::new(state.user_repository);
 
-    // let result = UserUseCase.execute(user_command).await;
-    // match result {
-    //     Ok(user) => Res::with_data(user),
-    //     Err(err) => Res::with_err(&err.to_string()),
-    // }
-}
+//     let result = UserUseCase.execute(user_command).await;
+//     match result {
+//         Ok(user) => Res::with_data(user),
+//         Err(err) => Res::with_err(&err.to_string()),
+//     }
+// }
 // Res::with_data("register".to_string())
 // pub async fn list_users() -> impl IntoResponse {
 //     let use_case = UserUseCase::new();
@@ -31,15 +39,6 @@ pub async fn register_handler(
 //         Err(err) => {
 //             return Res::with_err(&err.to_string());
 //         }
-//     }
-// }
-
-// pub async fn get_user(id: axum::extract::Path<i32>) -> impl IntoResponse {
-//     let use_case = UserUseCase::new();
-//     let user = use_case.get_user_by_id(*id).await;
-//     match user {
-//         Ok(user) => Res::with_data(user),
-//         Err(err) => Res::with_err(&err.to_string()),
 //     }
 // }
 

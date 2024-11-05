@@ -394,8 +394,31 @@
 //             .count(&db).await?;
 //         Ok(count > 0)
 //     }
-
 //     async fn generate_refresh_jwt(&self, _user: User) -> Result<String, InfraError> {
 //         todo!()
 //     }
 // }
+use std::sync::Arc;
+use domain::model::aggregate::customer::Customer;
+use domain::repositories::customer_repository::CustomerRepository;
+use sea_orm::EntityTrait;
+use crate::client::database::DatabaseClient;
+use crate::po::prelude::User as UserEntity;
+pub struct CustomerRepositoryImpl {
+    db: Arc<DatabaseClient>,
+}
+// 注入数据库连接
+impl CustomerRepositoryImpl {
+    pub fn new(db: Arc<DatabaseClient>) -> Self {
+        CustomerRepositoryImpl {
+            db,
+        }
+    }
+}
+impl CustomerRepository for CustomerRepositoryImpl {
+    async fn find_all(&self) -> Result<Vec<Customer>, common::error::InfraError> {
+        let models = UserEntity::find().all(&*self.db).await?;
+        let customers: Vec<Customer> = models.into_iter().map(Customer::from).collect();
+        Ok(customers)
+    }
+}

@@ -2,7 +2,7 @@
 //! 底层具体技术实现
 // po持久化对象，有的的地方叫do，在rust中do是保留关键字，本质上是对数据表的映射
 pub mod po{
-    // pub mod prelude;
+    pub mod prelude;
     pub mod user;
 }
 
@@ -22,7 +22,7 @@ pub mod utils{
 // }
 /// 持久层具体实现
 pub mod persistence{
-    pub mod user_repository_impl;
+    pub mod customer_repository_impl;
     pub mod auth_repository_impl;
 }
 // RPC调用

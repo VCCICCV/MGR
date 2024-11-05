@@ -49,7 +49,6 @@ pub async fn setup_routes() -> Router<AppState> {
                 .allow_origin("http://localhost:3000".parse::<HeaderValue>().unwrap())
                 .allow_methods([Method::GET, Method::POST, Method::PUT, Method::DELETE])
         )
-       
 }
 /// 404处理
 async fn handler_404() -> impl IntoResponse {

@@ -1,0 +1,15 @@
+{
+	"name": "db-source-connector",
+	"config": {
+		"connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+		"plugin.name": "pgoutput",
+		"database.hostname": "postgres",
+		"database.port": "5432",
+		"database.user": "postgres",
+		"database.password": "root123456",
+		"database.dbname": "postgres",
+		"database.server.name": "postgres",
+		"table.include.list": "public.*",
+		"table.exclude.list": "public.seaql_migrations"
+	}
+}

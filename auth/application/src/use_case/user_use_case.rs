@@ -24,11 +24,10 @@
 //     pub async fn execute(&self, user_register_command: UserRegisterCommand) -> Result<(), InfraError> {
 //         // Ok()
 //         // 转换BO
-//         let user:User = 
+//         let user:User =
 //         unimplemented!("UserUseCase::execute")
 //     }
 // }
-
 
 // use common::error::AppError;
 // use domain::{
@@ -69,8 +68,40 @@
 //     // pub async fn update_user(&self, user: User) -> Result<bool, InfraError> {
 //     //     self.user_service.update_user(user).await
 //     // }
-
 //     // pub async fn delete_user(&self, id: i32) -> Result<bool, InfraError> {
 //     //     self.user_service.delete_user(id).await
 //     // }
 // }
+
+use common::error::{AppError, InfraError};
+use domain::{
+    model::aggregate::customer::Customer,
+    repositories::customer_repository::CustomerRepository,
+};
+
+use crate::dto::response_dto::ListData;
+pub struct UserUseCase<U> where U: CustomerRepository {
+    user_repository: U,
+}
+impl<U> UserUseCase<U> where U: CustomerRepository {
+    pub async fn get_all(&self) -> Result<ListData<Customer>, AppError> {
+        match self.user_repository.find_all().await {
+            Ok(customers) => {
+                // 转换为DTO
+                let list_data = ListData { list: customers };
+                Ok(list_data)
+            }
+            Err(err) => {
+                // 根据不同的 InfraError 类型转换为 AppError
+                match err {
+                    InfraError::DatabaseError(_) =>
+                        Err(AppError::OtherError("Database error".to_string())),
+                    InfraError::RedisError(_) =>
+                        Err(AppError::OtherError("Redis error".to_string())),
+                    // 其他错误类型的转换
+                    _ => Err(AppError::OtherError("Unknown error".to_string())),
+                }
+            }
+        }
+    }
+}

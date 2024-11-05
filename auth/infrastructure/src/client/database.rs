@@ -28,10 +28,6 @@ impl DatabaseClientExt for DatabaseClient {
     }
 }
 
-
-
-
-
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -35,10 +35,18 @@ pub struct AuthenticationResponse {
 /// 查 数据返回
 pub struct ListData<T> {
     pub list: Vec<T>,
-    pub total: u64,
-    pub total_pages: u64,
-    pub page_num: u64,
 }
+impl<T> From<Vec<T>> for ListData<T> {
+    fn from(items:Vec<T>)->Self{
+        Self{
+            list:items
+        }
+    }
+}
+
+// pub total: u64,
+// pub total_pages: u64,
+// pub page_num: u64,
 /// 分页参数
 #[derive(Deserialize, Clone, Debug, Serialize, Default)]
 pub struct PageParams {

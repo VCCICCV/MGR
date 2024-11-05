@@ -65,10 +65,11 @@ services:
       - /opt/minio/config:/root/.minio
       - /opt/minio/data:/data
     command: server /data --console-address ":9090"
+    networks:
+      - pub-network
   es:
     image: elasticsearch:8.15.2
     container_name: es
-    network_mode: pub-network
     restart: always
     ports:
       # 9200：对外暴露的端口
@@ -95,16 +96,82 @@ services:
       - /opt/es/logs:/usr/share/elasticsearch/logs
     # 允许root用户运行
     privileged: true
+    networks:
+      - pub-network
   kibana:
     image: kibana:8.15.2
     container_name: kibana
-    network_mode: pub-network
     restart: always
     ports:
       - 5601:5601
     environment:
       CSP_STRICT: 'false'
       I18N_LOCALE: zh-CN
+    networks:
+      - pub-network
+
+  broker:
+    image: apache/kafka:latest
+    container_name: broker
+    ports:
+      - "9092:9092"
+    networks:
+      - pub-network
+    restart: always
+    environment:
+      # 设置 Kafka 节点的 ID 为 1。在 Kafka 集群中，每个节点都有一个唯一的 ID
+      KAFKA_NODE_ID: 1
+      # 指定这个 Kafka 节点的角色为 broker（消息代理）和 controller（控制器）。Controller 负责管理集群中的分区分配等任务
+      KAFKA_PROCESS_ROLES: broker,controller
+      # 设置 Kafka 的监听器。这里配置了两种监听器，一种是普通的 PLAINTEXT 监听器在 9092 端口，用于接收客户端的连接；另一种是 CONTROLLER 监听器在 9093 端口，用于控制器的通信
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      # 设置对外公布的监听器地址，这里表示客户端可以通过 “[localhost:9092](https://localhost:9092/)” 连接到这个 Kafka 节点，如果不配置外部无法连接到Kafka
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://:9092
+      # 指定控制器使用的监听器名称为 “CONTROLLER”
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      # 定义监听器的安全协议映射。这里表示 CONTROLLER 监听器使用 PLAINTEXT 协议，普通的 PLAINTEXT 监听器也使用 PLAINTEXT 协议
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      # 设置控制器的法定人数投票者，这里表示只有一个节点（ID 为 1）在 “[broker:9093](https://broker:9093/)” 作为投票者，通过容器名解析ip
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@broker:9093
+      # 设置 Kafka 的Topic偏移量（用于记录消费者的消费位置）的复制因子为 1，即只有一个副本，最小1，最大不能超过节点数
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      # 设置 Kafka 的事务状态日志的复制因子为 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      # 设置事务状态日志的最小同步副本数为 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      # 设置消费者组的初始重新平衡延迟为 0 毫秒
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      # 设置默认的主题分区数量为 3
+      KAFKA_NUM_PARTITIONS: 3
+  debezium:
+    image: debezium/connect:latest
+    container_name:  debezium
+    restart: always
+    volumes:
+      - /opt/debezium/kafak/connect:/kafka/connect
+    environment:
+      # 指定 Kafka 连接器的配置
+      BOOTSTRAP_SERVERS: broker:9092
+      # 指定消费者组id
+      GROUP_ID: 1
+      # 存储Debezium的配置信息到Kafka的Topic名，用于重启时加载配置
+      CONFIG_STORAGE_TOPIC: connect_configs
+      # 存储消费者偏移量信息到Kafka的Topic名，用于记录消费者进度
+      OFFSET_STORAGE_TOPIC: connect_offsets
+      STATUS_STORAGE_TOPIC: connect_statuses
+      # 指定键值转换器，使用`Avro`来格式化、序列化键值数据
+      # KEY_CONVERTER: io.confluent.connect.avro.AvroConverter
+      # VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
+      # 指定`Avro`键值转换器的模式注册表地址，用于存储和管理`Avro`模式
+      # CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+      # CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+    depends_on:
+      - broker
+      - postgres
+    ports:
+      - 8083:8083
+    networks:
+      - pub-network 
 networks:
   pub-network:
     name: pub-network
