@@ -1,4 +1,0 @@
-com\tgm\marketing\infrastructure\persistent\dao\IStrategyDao.class
-com\tgm\marketing\infrastructure\persistent\redis\RedissonService.class
-com\tgm\marketing\infrastructure\persistent\redis\IRedisService.class
-com\tgm\marketing\infrastructure\persistent\po\Strategy.class

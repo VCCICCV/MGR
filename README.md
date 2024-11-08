@@ -2,7 +2,7 @@
 
 ## MGR（motor getting rusty，锈化动力）
 
-关于配置请查看`auth`模块
+关于配置请查看`customer`模块
 
 ## 项目简介
 

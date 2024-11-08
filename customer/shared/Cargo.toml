@@ -1,0 +1,13 @@
+[package]
+name = "shared"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+sea-orm = { workspace = true }
+serde = { workspace = true }
+bb8-redis = { workspace = true }
+elasticsearch = {workspace = true}

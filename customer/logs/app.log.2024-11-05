@@ -1,0 +1,6 @@
+[2m2024-11-05T13:27:43.4088169Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-05T13:27:43.4093643Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:9090
+[2m2024-11-05T13:30:42.6081164Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-05T13:30:42.609013Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-05T13:32:07.0333117Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-05T13:32:07.0342635Z[0m [32m INFO[0m [2minterface::api::api[0m[2m:[0m 🚀 listening on 127.0.0.1:8080

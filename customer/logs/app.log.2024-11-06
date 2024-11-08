@@ -1,0 +1,35 @@
+[2m2024-11-06T07:33:06.8184853Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T07:33:06.8194361Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T10:27:29.4661154Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T10:27:29.4669113Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T10:35:25.6043617Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T10:35:25.6052145Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T11:01:38.7702641Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T11:01:38.7712519Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T11:04:39.9512058Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T11:04:39.9521843Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T11:07:23.1994035Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T11:07:23.2004247Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T11:13:00.7884605Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T11:13:00.7893851Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T11:14:09.0363093Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T11:14:09.0372209Z[0m [32m INFO[0m [2minterface::bin::bin[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T11:39:01.0665453Z[0m [32m INFO[0m [2minterface::bin[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T11:39:01.0674674Z[0m [32m INFO[0m [2minterface::bin[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T11:49:50.5532469Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T11:49:50.5541632Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T11:51:32.2767693Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T11:51:32.2777116Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T11:51:32.2900083Z[0m [32m INFO[0m [2mapplication::use_case::customer_use_case[0m[2m:[0m Customer { user_id: -7462822498054630711, username: "寿", email: "jlfg.ip87@qq.com", password: "deserunt et tempor", avatar: Some("qwehuiwehfuasdbf"), is_deleted: 0, create_time: 2024-11-06T11:51:32.289545300, update_time: None }
+[2m2024-11-06T11:53:34.9349564Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T11:53:34.9369862Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T11:53:35.4275635Z[0m [32m INFO[0m [2mapplication::use_case::customer_use_case[0m[2m:[0m Customer { user_id: -8567803042504155990, username: "寿", email: "jlfg.ip87@qq.com", password: "deserunt et tempor", avatar: Some("qwehuiwehfuasdbf"), is_deleted: 0, create_time: 2024-11-06T11:53:35.426813800, update_time: None }
+[2m2024-11-06T13:14:42.8407312Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T13:14:42.8415992Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T13:14:47.1173894Z[0m [32m INFO[0m [2mapplication::use_case::customer_use_case[0m[2m:[0m Customer { user_id: -7218398249933469492, username: "寿", email: "jlfg.ip87@qq.com", password: "deserunt et tempor", avatar: Some("qwehuiwehfuasdbf"), is_deleted: 0, create_time: 2024-11-06T13:14:47.116909200, update_time: None }
+[2m2024-11-06T13:22:27.8358792Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T13:22:27.8372506Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T13:22:30.3031341Z[0m [32m INFO[0m [2mapplication::use_case::customer_use_case[0m[2m:[0m Customer { user_id: -9122913303250901897, username: "寿", email: "jlfg.ip87@qq.com", password: "deserunt et tempor", avatar: Some("qwehuiwehfuasdbf"), is_deleted: 0, create_time: 2024-11-06T13:22:30.302617300, update_time: None }
+[2m2024-11-06T13:28:52.6985175Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-06T13:28:52.6994156Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-06T13:28:54.6705867Z[0m [32m INFO[0m [2mapplication::use_case::customer_use_case[0m[2m:[0m Customer { user_id: -5128470409673486213, username: "寿", email: "jlfg.ip87@qq.com", password: "deserunt et tempor", avatar: Some("qwehuiwehfuasdbf"), is_deleted: 0, create_time: 2024-11-06T13:28:54.670015, update_time: None }

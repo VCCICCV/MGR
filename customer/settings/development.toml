@@ -1,0 +1,27 @@
+debug = true
+# 指定开发环境配置
+profile = "development"
+[tracing]
+log_level = "debug"
+[server]
+host = "127.0.0.1"
+port = 8_080
+[db]
+username = "postgres"
+password = "root123456"
+host = "36.138.97.124"
+port = 5_432
+database_name = "postgres"
+
+[redis]
+host = "36.138.97.12"
+port = 6_379
+[es]
+host = "36.138.97.124"
+port = 9_200
+[kafka]
+brokers = "36.138.97:9092"
+# 生产者配置
+producer = "test"
+# 消费者配置
+consumer = "test"

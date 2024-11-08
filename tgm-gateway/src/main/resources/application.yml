@@ -1,5 +1,0 @@
-spring:
-    application:
-        name: tgm-gateway
-server:
-    port: 8003
