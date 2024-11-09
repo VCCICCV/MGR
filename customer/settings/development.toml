@@ -6,6 +6,14 @@ log_level = "debug"
 [server]
 host = "127.0.0.1"
 port = 8_080
+[email]
+host = "smtp.qq.com"
+port = 587
+username = "3108799306@qq.com"
+password = "fqaoyqnaxjtsdcjb"
+from = "3108799306@qq.com"
+reply_to = "3108799306@qq.com"
+subject = "锈化动力商城验证码"
 [db]
 username = "postgres"
 password = "root123456"

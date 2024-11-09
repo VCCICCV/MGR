@@ -7,8 +7,10 @@ pub mod profile;
 pub mod tracing;
 pub mod kafka;
 pub mod es;
+pub mod email;
 use std::str::FromStr;
 use database::DatabaseConfig;
+use email::EmailConfig;
 use es::EsConfig;
 use profile::Profile;
 use redis::RedisConfig;
@@ -28,6 +30,7 @@ pub struct AppConfig {
     pub db: DatabaseConfig,
     pub redis: RedisConfig,
     pub es:EsConfig,
+    pub email:EmailConfig,
 }
 
 impl AppConfig {

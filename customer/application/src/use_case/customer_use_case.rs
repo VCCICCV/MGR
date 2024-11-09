@@ -73,68 +73,68 @@
 //     // }
 // }
 
-use shared::error::{ AppError, InfraError };
-use domain::{
-    model::aggregate::customer::Customer,
-    repositories::customer_repository::CustomerRepository,
-};
-use tracing::info;
-
-use crate::dto::{request_command::CustomerCommand, response_dto::ListData};
-pub struct CustomerUseCase<U> where U: CustomerRepository {
-    customer_repository: U,
-}
-impl<U> CustomerUseCase<U> where U: CustomerRepository {
-    pub fn new(customer_repository: U) -> Self {
-        Self {
-            customer_repository,
-        }
-    }
-}
-impl<U> CustomerUseCase<U> where U: CustomerRepository {
-    pub async fn get_all(&self) -> Result<ListData<Customer>, AppError> {
-        match self.customer_repository.find_all().await {
-            Ok(customers) => {
-                // 转换为DTO
-                let list_data = ListData { list: customers };
-                Ok(list_data)
-            }
-            Err(err) => {
-                // 根据不同的 InfraError 类型转换为 AppError
-                match err {
-                    InfraError::DatabaseError(_) =>
-                        Err(AppError::OtherError("Database error".to_string())),
-                    InfraError::RedisError(_) =>
-                        Err(AppError::OtherError("Redis error".to_string())),
-                    // 其他错误类型的转换
-                    _ => Err(AppError::OtherError("Unknown error".to_string())),
-                }
-            }
-        }
-    }
-    pub async fn create(&self, customer: CustomerCommand) -> Result<String, AppError> {
-        // 转换BO
-        let customer: Customer = customer.into();
-        info!("{}", &format!("{:?}", customer));
-        match self.customer_repository.save(customer.clone()).await {
-            Ok(()) => {
-                Ok("Created successfully".to_string())
-            }
-            Err(err) => {
-                // 根据不同的 InfraError 类型转换为 AppError
-                match err {
-                    InfraError::DatabaseError(_) =>
-                        Err(AppError::OtherError(format!("用户: {} 已存在", customer.email))),
-                    InfraError::RedisError(_) =>
-                        Err(AppError::OtherError("Redis error".to_string())),
-                    // 其他错误类型的转换
-                    _ => Err(AppError::OtherError("Unknown error".to_string())),
-                }
-            }
-        }
-    }
-    // pub async fn send_mail(&self, customer: Customer) -> Result<(), AppError> {
-        
-    // }
-    // pub async fn update_address(&self, customer: Customer) -> Result<(), AppError> {}
-}
+// use shared::error::{ AppError, InfraError };
+// use domain::{
+//     model::aggregate::customer::Customer,
+//     repositories::customer_repository::CustomerRepository,
+// };
+// use tracing::info;
+//
+// use crate::dto::{request_command::CustomerCommand, response_dto::ListData};
+// pub struct CustomerUseCase<U> where U: CustomerRepository {
+//     customer_repository: U,
+// }
+// impl<U> CustomerUseCase<U> where U: CustomerRepository {
+//     pub fn new(customer_repository: U) -> Self {
+//         Self {
+//             customer_repository,
+//         }
+//     }
+// }
+// impl<U> CustomerUseCase<U> where U: CustomerRepository {
+//     pub async fn get_all(&self) -> Result<ListData<Customer>, AppError> {
+//         match self.customer_repository.find_all().await {
+//             Ok(customers) => {
+//                 // 转换为DTO
+//                 let list_data = ListData { list: customers };
+//                 Ok(list_data)
+//             }
+//             Err(err) => {
+//                 // 根据不同的 InfraError 类型转换为 AppError
+//                 match err {
+//                     InfraError::DatabaseError(_) =>
+//                         Err(AppError::OtherError("Database error".to_string())),
+//                     InfraError::RedisError(_) =>
+//                         Err(AppError::OtherError("Redis error".to_string())),
+//                     // 其他错误类型的转换
+//                     _ => Err(AppError::OtherError("Unknown error".to_string())),
+//                 }
+//             }
+//         }
+//     }
+//     pub async fn create(&self, customer: CustomerCommand) -> Result<String, AppError> {
+//         // 转换BO
+//         let customer: Customer = customer.into();
+//         info!("{}", &format!("{:?}", customer));
+//         match self.customer_repository.save(customer.clone()).await {
+//             Ok(()) => {
+//                 Ok("Created successfully".to_string())
+//             }
+//             Err(err) => {
+//                 // 根据不同的 InfraError 类型转换为 AppError
+//                 match err {
+//                     InfraError::DatabaseError(_) =>
+//                         Err(AppError::OtherError(format!("用户: {} 已存在", customer.email))),
+//                     InfraError::RedisError(_) =>
+//                         Err(AppError::OtherError("Redis error".to_string())),
+//                     // 其他错误类型的转换
+//                     _ => Err(AppError::OtherError("Unknown error".to_string())),
+//                 }
+//             }
+//         }
+//     }
+//     // pub async fn send_mail(&self, customer: Customer) -> Result<(), AppError> {
+//
+//     // }
+//     // pub async fn update_address(&self, customer: Customer) -> Result<(), AppError> {}
+// }

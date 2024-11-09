@@ -15,351 +15,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55b33ceb-5155-48f0-b04c-1052e81b9612" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/cart/domain/src/model/aggregate/cart.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cart/domain/src/repositories/cart_repository.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customer/domain/src/model/entity/receive_address.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/customer/domain/src/model/vo/customer_id.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/domain/src/model/vo/order_status.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/domain/src/model/vo/total_amount.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/domain/src/repositories/order_repository.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/domain/src/model/aggregate/product.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/GrepConsole.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa3e2f56-1e9b-48ee-bd9f-7ad6f2ae2352.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa3e2f56-1e9b-48ee-bd9f-7ad6f2ae2352/storage_v2/_src_/schema/big_market.W3TEgA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_8_1_4_34_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_8_1_4_34_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行合并之前于_2024_8_1_上午4_34_取消提交了更改/TgmGatewayApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行合并之前于_2024_8_1_上午4_34_取消提交了更改/TgmGatewayApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行合并之前于_2024_8_1_上午4_34_取消提交了更改/TgmPayInterfacesApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行合并之前于_2024_8_1_上午4_34_取消提交了更改/TgmPayInterfacesApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行合并之前于_2024_8_1_上午4_34_取消提交了更改/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行合并之前于_2024_8_1_上午4_34_取消提交了更改1/TgmGatewayApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行合并之前于_2024_8_1_上午4_34_取消提交了更改1/TgmGatewayApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行合并之前于_2024_8_1_上午4_34_取消提交了更改1/TgmPayInterfacesApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行合并之前于_2024_8_1_上午4_34_取消提交了更改1/TgmPayInterfacesApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行合并之前于_2024_8_1_上午4_34_取消提交了更改1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tgm.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer/infrastructure/src/client/email.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/Cargo.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/LICENSE-MIT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/README.assets/EventBus-Publish-Subscribe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/README.assets/请求流程.drawio.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/application/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/application/src/assembler/user_assembler.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/application/src/dto/request_command.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/application/src/dto/response_dto.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/application/src/lib.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/application/src/use_case/user_use_case.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/common/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/common/src/error.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/common/src/lib.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/db-connector.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/config/app-configmap.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/config/postgres-configmao.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/config/redis-configmap.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/deploy/app-deploy.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/deploy/postgres-deploy.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/deploy/redis-deploy.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/pod/app-pod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/pod/nginx-pod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/pod/postgres-pod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/pod/redis-pod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/pod/test.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/pod/worker-app-pod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/service/app-service.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/service/postgres-service.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/devops/service/redis-service.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/lib.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/model/aggregate/customer.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/model/dp/user_email.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/model/dp/user_name.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/model/dp/user_password.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/model/entity/permission.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/model/entity/role.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/model/entity/role_permission.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/model/entity/user.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/model/value_object/order_status.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/model/value_object/receive_address.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/repositories/cache_repository.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/repositories/customer_repository.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/service/user_service.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/domain/src/utils/jwt_util.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/elasticsearch-connector.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/client/builder.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/client/database.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/client/es.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/client/kafka.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/client/redis.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/config/database.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/config/env.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/config/es.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/config/kafka.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/config/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/config/profile.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/config/redis.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/config/server.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/config/tracing.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/constant/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/converter/user_converter.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/lib.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/logger/log.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/mq/consumer.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/mq/producer.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/persistence/auth_repository_impl.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/persistence/customer_repository_impl.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/cart_item.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/order.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/order_item.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/permission.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/prelude.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/product_attribute.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/product_attribute_category.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/product_attribute_value.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/product_brand.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/product_category.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/product_comment.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/product_sku.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/product_spu.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/receive_address.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/role.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/role_permission.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/user.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/po/user_role.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/state/mod.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/utils/dir.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/utils/password_util.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/utils/random.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/utils/redis_util.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/src/utils/task.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/tests/customer_repository_test.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/tests/db_test.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/tests/jwt_util_test.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/tests/mq_test.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/tests/password_util_test.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/infrastructure/tests/redis_test.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/interface/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/interface/src/adapter/user_handler.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/interface/src/api/api.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/interface/src/lib.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/interface/src/routers/user_routes.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-09-24" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-09-25" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-09-26" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-09-27" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-09-28" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-09-29" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-01" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-02" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-04" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-05" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-06" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-09" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-18" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/logs/app.log.2024-10-20" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/migration/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/migration/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/migration/src/lib.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/migration/src/m20220101_000001_create_table.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/migration/src/m20220101_000002_create_table.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/migration/src/m20220101_000003_create_table.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/migration/src/m20220101_000004_create_table.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/migration/src/main.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/settings/default.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/settings/development.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/settings/production.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/settings/test.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/main.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/static/key/private_access_rsa_key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/static/key/private_refresh_rsa_key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/static/key/public_access_rsa_key.pem" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/static/key/public_refresh_rsa_key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/domain/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/cart/domain/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/cart/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/customer/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/application/src/assembler/customer_assembler.rs" beforeDir="false" afterPath="$PROJECT_DIR$/customer/application/src/assembler/customer_assembler.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/application/src/use_case/customer_use_case.rs" beforeDir="false" afterPath="$PROJECT_DIR$/customer/application/src/use_case/customer_use_case.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/domain/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/customer/domain/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/domain/src/model/vo/customer_id.rs" beforeDir="false" afterPath="$PROJECT_DIR$/customer/domain/src/model/vo/customer_id.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/domain/src/repositories/customer_repository.rs" beforeDir="false" afterPath="$PROJECT_DIR$/customer/domain/src/repositories/customer_repository.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/domain/src/service/customer_service.rs" beforeDir="false" afterPath="$PROJECT_DIR$/customer/domain/src/service/customer_service.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/link-gateway/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/link-gateway/target/.rustc_info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/src/main/java/com/tgm/gateway/TgmGatewayApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/src/test/java/com/tgm/gateway/TgmGatewayApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/target/classes/com/tgm/gateway/TgmGatewayApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/target/test-classes/com/tgm/gateway/TgmGatewayApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-gateway/target/tgm-gateway-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/data/log/log-error-2024-08-02.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/data/log/log-error-2024-08-03.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/data/log/log-info-2024-08-02.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/data/log/log-info-2024-08-03.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/data/log/log-info-2024-08-04.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/data/log/log-info-2024-08-05.0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/data/log/log_error.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/data/log/log_info.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/java/com/tgm/marketing/TgmMarketingAppApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/java/com/tgm/marketing/config/RedisClientConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/java/com/tgm/marketing/config/RedisClientConfigProperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/java/com/tgm/marketing/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/java/com/tgm/marketing/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/resources/logback-spring.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/resources/mybatis/config/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/resources/mybatis/mapper/award_mapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/resources/mybatis/mapper/strategy_award_mapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/resources/mybatis/mapper/strategy_mapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/main/resources/mybatis/mapper/strategy_rule_mapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/test/java/com/tgm/marketing/test/ApiTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/test/java/com/tgm/marketing/test/domain/RaffleStrategyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/test/java/com/tgm/marketing/test/domain/StrategyArmoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/src/test/java/com/tgm/marketing/test/infrastructure/AwardDaoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/com/tgm/marketing/TgmMarketingAppApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/com/tgm/marketing/config/RedisClientConfig$RedisCodec.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/com/tgm/marketing/config/RedisClientConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/com/tgm/marketing/config/RedisClientConfigProperties.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/com/tgm/marketing/config/SwaggerConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/com/tgm/marketing/package-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/logback-spring.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/mybatis/config/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/mybatis/mapper/award_mapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/mybatis/mapper/strategy_award_mapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/mybatis/mapper/strategy_mapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/classes/mybatis/mapper/strategy_rule_mapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/test-classes/com/tgm/marketing/test/ApiTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/test-classes/com/tgm/marketing/test/domain/RaffleStrategyTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/test-classes/com/tgm/marketing/test/domain/StrategyArmoryTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-app/target/test-classes/com/tgm/marketing/test/infrastructure/AwardDaoTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/model/entity/RaffleAwardEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/model/entity/RaffleFactorEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/model/entity/RuleActionEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/model/entity/RuleMatterEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/model/entity/StrategyAwardEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/model/entity/StrategyEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/model/entity/StrategyRuleEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/model/valobj/RuleLogicCheckTypeVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/repository/IStrategyRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/IRaffleStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/annotation/LogicStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/armory/IStrategyArmory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/armory/IStrategyDispatch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/armory/StrategyArmoryDispatch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/raffle/AbstractRaffleStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/raffle/DefaultRaffleStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/rule/ILogicFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/rule/factory/DefaultLogicFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/rule/impl/RuleBackListLogicFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/src/main/java/com/tgm/marketing/domain/strategy/service/rule/impl/RuleWeightLogicFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RaffleAwardEntity$RaffleAwardEntityBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RaffleAwardEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RaffleFactorEntity$RaffleFactorEntityBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RaffleFactorEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RuleActionEntity$RaffleAfterEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RuleActionEntity$RaffleBeforeEntity$RaffleBeforeEntityBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RuleActionEntity$RaffleBeforeEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RuleActionEntity$RaffleCenterEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RuleActionEntity$RaffleEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RuleActionEntity$RuleActionEntityBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RuleActionEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RuleMatterEntity$RuleMatterEntityBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/RuleMatterEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/StrategyAwardEntity$StrategyAwardEntityBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/StrategyAwardEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/StrategyEntity$StrategyEntityBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/StrategyEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/StrategyRuleEntity$StrategyRuleEntityBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/entity/StrategyRuleEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/model/valobj/RuleLogicCheckTypeVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/repository/IStrategyRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/IRaffleStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/annotation/LogicStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/armory/IStrategyArmory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/armory/IStrategyDispatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/armory/StrategyArmoryDispatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/raffle/AbstractRaffleStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/raffle/DefaultRaffleStrategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/rule/ILogicFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/rule/factory/DefaultLogicFactory$LogicModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/rule/factory/DefaultLogicFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/rule/impl/RuleBackListLogicFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/classes/com/tgm/marketing/domain/strategy/service/rule/impl/RuleWeightLogicFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-domain/target/tgm-marketing-domain-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/dao/IAwardDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/dao/IStrategyAwardDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/dao/IStrategyDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/dao/IStrategyRuleDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/dao/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/po/Award.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/po/Strategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/po/StrategyAward.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/po/StrategyRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/po/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/redis/IRedisService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/redis/RedissonService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/src/main/java/com/tgm/marketing/infrastructure/persistent/repository/StrategyRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/dao/IAwardDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/dao/IStrategyAwardDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/dao/IStrategyDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/dao/IStrategyRuleDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/dao/package-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/po/Award.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/po/Strategy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/po/StrategyAward.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/po/StrategyRule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/po/package-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/redis/IRedisService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/redis/RedissonService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/classes/com/tgm/marketing/infrastructure/persistent/repository/StrategyRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-infrastructure/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-trigger/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-trigger/src/test/java/com/tgm/marketing/trigger/TgmMarketingTriggerApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-trigger/target/test-classes/com/tgm/marketing/trigger/TgmMarketingTriggerApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/src/main/java/com/tgm/marketing/types/common/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/src/main/java/com/tgm/marketing/types/enums/ResponseCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/src/main/java/com/tgm/marketing/types/exception/AppException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/src/test/java/com/tgm/marketing/types/TgmMarketingTypesApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/classes/com/tgm/marketing/types/common/Constants$RedisKey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/classes/com/tgm/marketing/types/common/Constants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/classes/com/tgm/marketing/types/enums/ResponseCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/classes/com/tgm/marketing/types/exception/AppException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/test-classes/com/tgm/marketing/types/TgmMarketingTypesApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tgm-marketing/tgm-marketing-types/target/tgm-marketing-types-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/message/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/message/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/domain/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/order/domain/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/order/target/.rustc_info.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,24 +52,24 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "VCCICCV"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;VCCICCV&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/VCCICCV/MGR.git",
-    "accountId": "bc5e86bc-c5fd-4dda-b1d4-d7dd65495d4b"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/VCCICCV/MGR.git&quot;,
+    &quot;accountId&quot;: &quot;bc5e86bc-c5fd-4dda-b1d4-d7dd65495d4b&quot;
   }
-}]]></component>
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="3j23zppa" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2oZ2GEX0W6vCadmYN4Z7TyhewSW" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -419,6 +89,7 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.disableDetachedFileInspectionC:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/customer/domain/src/model/entity/receive_address.rs": "true",
     "org.rust.disableDetachedFileInspectionC:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/customer/domain/src/model/vo/customer_id.rs": "true",
+    "org.rust.disableDetachedFileInspectionC:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/customer/infrastructure/src/client/email.rs": "true",
     "org.rust.first.attach.projects": "true"
   }
 }]]></component>
@@ -439,7 +110,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731062683173</updated>
-      <workItem from="1731062685115" duration="7507000" />
+      <workItem from="1731062685115" duration="7700000" />
+      <workItem from="1731141795458" duration="1030000" />
     </task>
     <servers />
   </component>

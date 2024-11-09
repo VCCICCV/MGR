@@ -1,5 +1,5 @@
 
-use common::error::InfraError;
+use shared::error::InfraError;
 use redis::{Client, RedisError};
 use std::time::Duration;
 use tracing::log::info;

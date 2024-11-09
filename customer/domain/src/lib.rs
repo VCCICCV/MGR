@@ -15,7 +15,8 @@ pub mod model{
     pub mod vo{
         pub mod customer_email;
         pub mod customer_name;
-        pub mod user_password;
+        pub mod customer_id;
+        // pub mod user_password;
     }
     // 领域原语：领域层中定义的一些基本类型，比如用户ID、商品ID等，将隐形的概念显性化
     // 主要用于参数校验

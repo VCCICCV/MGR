@@ -1,4 +1,4 @@
-use common::error::InfraError;
+use shared::error::InfraError;
 
 use crate::config::AppConfig;
 // 传输配置文件到客户端

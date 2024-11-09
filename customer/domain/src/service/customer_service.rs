@@ -1,5 +1,5 @@
 use shared::error::InfraError;
-use crate::{model::aggregate::customer::Customer, repositories::customer_repository::CustomerRepository};
+use crate::{model::{aggregate::customer::Customer, vo::customer_id::CustomerId}, repositories::customer_repository::CustomerRepository};
 
 pub struct CustomerService<R> where R: CustomerRepository {
     customer_repository:R,
@@ -16,7 +16,9 @@ impl<R> CustomerService<R> where R: CustomerRepository {
     pub async fn  get_by_email(&self, email: String) -> Result<Option<Customer>, InfraError> {
         self.customer_repository.find_by_email(email).await
     }
-    pub async fn get_by_customer_id(&self,)
+    pub async fn get_by_customer_id(&self,customer_id:CustomerId)->Result<Option<Customer>, InfraError>{
+        self.customer_repository.find_by_id(customer_id).await
+    }
 }
 
 

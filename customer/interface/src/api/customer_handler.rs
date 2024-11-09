@@ -1,45 +1,45 @@
-use application::{
-    dto::{ request_command::CustomerCommand, response_dto::Res },
-    use_case::customer_use_case::CustomerUseCase,
-};
-use axum::{ extract::State, response::IntoResponse };
-use infrastructure::{
-    persistence::customer_repository_impl::CustomerRepositoryImpl,
-    state::AppState,
-};
-pub async fn get_all(State(app_state): State<AppState>) -> impl IntoResponse {
-    let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
-    let use_case = CustomerUseCase::new(customer_repository_impl);
-    let customers = use_case.get_all().await;
-    match customers {
-        Ok(customers) => Res::with_data(customers),
-        Err(err) => Res::with_err(&err.to_string()),
-    }
-}
-pub async fn create_customer(
-    State(app_state): State<AppState>,
-    command: axum::extract::Json<CustomerCommand>
-) -> impl IntoResponse {
-    let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
-    let use_case = CustomerUseCase::new(customer_repository_impl);
-    let customer = use_case.create(command.0).await;
-    match customer {
-        Ok(msg) => Res::<String>::with_msg(&msg),
-        Err(err) => Res::with_err(&err.to_string()),
-    }
-}
-pub async fn send_mail(
-    State(app_state): State<AppState>,
-    email: axum::extract::Path<String>
-) -> impl IntoResponse {
-    let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
-    let use_case = CustomerUseCase::new(customer_repository_impl);
-    let code = use_case.send_mail(email).await;
-    match code {
-        Ok(msg) => Res::<String>::with_msg(&msg),
-        Err(err) => Res::with_err(&err.to_string()),
-    }
-}
+// use application::{
+//     dto::{ request_command::CustomerCommand, response_dto::Res },
+//     use_case::customer_use_case::CustomerUseCase,
+// };
+// use axum::{ extract::State, response::IntoResponse };
+// use infrastructure::{
+//     persistence::customer_repository_impl::CustomerRepositoryImpl,
+//     state::AppState,
+// };
+// pub async fn get_all(State(app_state): State<AppState>) -> impl IntoResponse {
+//     let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
+//     let use_case = CustomerUseCase::new(customer_repository_impl);
+//     let customers = use_case.get_all().await;
+//     match customers {
+//         Ok(customers) => Res::with_data(customers),
+//         Err(err) => Res::with_err(&err.to_string()),
+//     }
+// }
+// pub async fn create_customer(
+//     State(app_state): State<AppState>,
+//     command: axum::extract::Json<CustomerCommand>
+// ) -> impl IntoResponse {
+//     let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
+//     let use_case = CustomerUseCase::new(customer_repository_impl);
+//     let customer = use_case.create(command.0).await;
+//     match customer {
+//         Ok(msg) => Res::<String>::with_msg(&msg),
+//         Err(err) => Res::with_err(&err.to_string()),
+//     }
+// }
+// pub async fn send_mail(
+//     State(app_state): State<AppState>,
+//     email: axum::extract::Path<String>
+// ) -> impl IntoResponse {
+//     let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
+//     let use_case = CustomerUseCase::new(customer_repository_impl);
+//     let code = use_case.send_mail(email).await;
+//     match code {
+//         Ok(msg) => Res::<String>::with_msg(&msg),
+//         Err(err) => Res::with_err(&err.to_string()),
+//     }
+// }
 // pub async fn register_customer(
 //     State(app_state): State<AppState>,
 //     command: axum::extract::Json<CustomerCommand>

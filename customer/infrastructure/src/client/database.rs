@@ -1,5 +1,5 @@
 use std::time::Duration;
-use common::error::InfraError;
+use shared::error::InfraError;
 use sea_orm::{ConnectOptions, Database, DatabaseConnection};
 use tracing::info;
 use crate::config::AppConfig;

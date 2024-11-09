@@ -8,15 +8,16 @@
 /// 例如创建订单，创建订单需要调用用户服务的接口->调用商品服务的接口->调用订单服务的接口
 /// excute执行具体的domain能力
 
-pub mod dto{
+pub mod dto {
     pub mod request_command;
     pub mod response_dto;
+    pub mod dto;
 }
 // 在这里注入依赖，通过调用领域服务的接口来完成具体的业务逻辑
-pub mod use_case{
+pub mod use_case {
     pub mod customer_use_case;
 }
 // // 将entity转换为dto
-pub mod assembler{
+pub mod assembler {
     pub mod customer_assembler;
 }
