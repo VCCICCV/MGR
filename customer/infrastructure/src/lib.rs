@@ -49,6 +49,7 @@ pub mod client {
     pub mod kafka;
     pub mod es;
     pub mod email;
+
 }
 // 全局配置
 pub mod config;

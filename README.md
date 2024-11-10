@@ -2,7 +2,19 @@
 
 ## MGR（motor getting rusty，锈化动力）
 
-关于配置请查看`customer`模块
+关于配置请查看`customer`模块，本项目集成了各个客户端配置，充分利用Rust类型系统 ，无论作为学习还是生产模板都是不错的选择
+
+## 技术栈
+
+* Rust，采用DDD领域驱动设计
+* Config-rs，使用config加载配置文件
+* Axum，Web框架
+* Sea-orm，ORM框架
+* Redis、Postgres、Elasticsearch
+* Swagger-ui，整合OpenAPI
+* Tracing，日志追踪
+* JWT鉴权
+* TONIC，RPC通信
 
 ## 项目简介
 

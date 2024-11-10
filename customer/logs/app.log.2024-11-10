@@ -1,0 +1,19 @@
+[2m2024-11-10T06:46:46.9737041Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T06:46:46.9745872Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T06:49:11.0528577Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T06:49:11.0537945Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T07:30:12.0058751Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T07:30:12.0066034Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T07:48:19.21082Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T07:48:19.2124338Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T07:56:06.5353824Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T07:56:20.8759561Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T07:57:00.3457258Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T07:57:00.346714Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T08:36:47.0802664Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m error while maintaining min_connections [3merror[0m[2m=[0mencountered unexpected or invalid data: unexpected response from SSLRequest: 0x00
+[2m2024-11-10T08:36:47.0977814Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m error while maintaining min_connections [3merror[0m[2m=[0mencountered unexpected or invalid data: unexpected response from SSLRequest: 0x00
+[2m2024-11-10T08:37:22.5825758Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m error while maintaining min_connections [3merror[0m[2m=[0mencountered unexpected or invalid data: unexpected response from SSLRequest: 0x00
+[2m2024-11-10T08:37:25.5751031Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline
+[2m2024-11-10T08:37:25.5756698Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline
+[2m2024-11-10T08:37:25.5760526Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline
+[2m2024-11-10T08:37:25.5764684Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline

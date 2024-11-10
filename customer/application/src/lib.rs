@@ -9,7 +9,7 @@
 /// excute执行具体的domain能力
 
 pub mod dto {
-    pub mod request_command;
+    pub mod request_dto;
     pub mod response_dto;
     pub mod dto;
 }

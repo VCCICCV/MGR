@@ -10,6 +10,10 @@ pub mod api{
     pub mod customer_handler;
     // pub mod auth_handler;
 }
+/// cmd
+pub mod cmd{
+    pub mod shutdown;
+}
 /// 公共响应，用于封装应用程序的响应数据
 /// 为什么不放在common中？
 /// 我们希望在handler中将应用层和路由解耦，应用层和基础设施层只进行错误处理，响应码和信息在handler统一进行返回

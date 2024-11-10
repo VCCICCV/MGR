@@ -8,13 +8,15 @@ use axum::{
 
 use serde::{ Deserialize, Serialize };
 #[derive(Default, Debug, Clone, Serialize, Deserialize)]
-pub struct UserRegisterRespDTO {
+pub struct SignUpDTO {
     // 用户名
     pub username: String,
     // 邮箱
     pub email: String,
     // 密码
     pub password: String,
+    // 邮箱验证码
+    pub verification_code: String,
 }
 
 #[derive(Default, Debug, Clone, Serialize, Deserialize)]

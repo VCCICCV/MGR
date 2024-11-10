@@ -1,3 +1,14 @@
+use application::dto::{ request_dto::SignUpDTO, response_dto::Res };
+use axum::{ extract::{ State, Json }, response::IntoResponse };
+use infrastructure::state::AppState;
+use tracing::info;
+pub async fn signup(
+    State(app_state): State<AppState>,
+    signupdto: Json<SignUpDTO>
+) -> impl IntoResponse {
+    info!("signupdto: {:?}", signupdto);
+    Res::<String>::with_msg("ok")
+}
 // use application::{
 //     dto::{ request_command::CustomerCommand, response_dto::Res },
 //     use_case::customer_use_case::CustomerUseCase,

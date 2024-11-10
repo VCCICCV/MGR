@@ -1,11 +1,10 @@
 use serde::{ Deserialize, Serialize };
 use validator::Validate;
 #[derive(Default, Debug, Clone, Validate, Serialize, Deserialize)]
-pub struct CustomerCommand{
-    pub username: String,
+pub struct SignInDto {
+    #[validate(email)]
     pub email: String,
     pub password: String,
-    pub avatar: Option<String>,
 }
 // #[derive(Default, Debug, Clone, Validate, Serialize, Deserialize)]
 // pub struct UserDTO {
@@ -29,7 +28,7 @@ pub struct CustomerCommand{
 //     pub jti: String, // jwt的唯一标识
 // }
 #[derive(Default, Debug, Clone, Validate, Serialize, Deserialize)]
-pub struct UserRegisterCommand {
+pub struct SignUpDTO {
     // 用户名
     pub username: String,
     // 邮箱
@@ -42,17 +41,11 @@ pub struct UserRegisterCommand {
 }
 
 #[derive(Default, Debug, Clone, Validate, Serialize, Deserialize)]
-pub struct CustomerVerifyCodeCommand {
+pub struct VerifyCodeDto {
     //  验证码类型 注册、登录
     pub code_type: String,
     // 接收邮箱
     pub recevive_email: String,
-}
-#[derive(Default, Debug, Clone, Validate, Serialize, Deserialize)]
-pub struct UserLoginCommand {
-    #[validate(email)]
-    pub email: String,
-    pub password: String,
 }
 #[derive(Default, Debug, Clone, Validate, Serialize, Deserialize)]
 pub struct ForgotPasswordRequestDto {
@@ -60,7 +53,7 @@ pub struct ForgotPasswordRequestDto {
     pub email: String,
 }
 #[derive(Default, Debug, Clone, Serialize, Deserialize)]
-pub struct ReceiveAddressUpdateCommand {
+pub struct ReceiveAddressUpdateDto {
     pub token: String,
     pub new_password: String,
 }
