@@ -24,6 +24,8 @@ pub mod model{
     //  聚合对象，由值对象和领域实体组成
     pub mod aggregate{
         pub mod customer;
+        pub mod order;
+        pub mod receiver;
     }
     // 领域实体，有的项目叫BO业务对象
     pub mod entity{
@@ -45,10 +47,7 @@ pub mod repositories {
 }
 /// 领域服务（领域能力）：这个领域提供的能力，比如提供了删除的能力，如果要判断有没有权限删除，那就在application编排先鉴权、再删除的用例，
 /// 领域服务是领域层的核心，它应该是无状态的，并且不应该依赖于任何其他领域层的组件，应该通过repository来获取数据
-pub mod service {
-    pub mod customer_service;
 
-}
 /// 值对象：没有唯一标识的对象，由其属性的值定义，通常是不可变的
 /// 比如，地址可以作为一个值对象。地址由国家、省份、城市、街道、邮编等属性组成，这些属性的值共同定义了一个地址；数据校验可以作为值对象
 /// 如果两个地址的所有属性的值都相同，那么这两个地址就是相等的

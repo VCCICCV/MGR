@@ -22,13 +22,7 @@ pub mod utils {
 // }
 /// 持久层具体实现，对应表的CRUD
 pub mod persistence {
-    pub mod user_persistence;
-    pub mod user_role_persistence;
-}
-// 持久层具体CRUD接口实现，对应domain的repository实现，这里用于对象转换和具体持久接口调用
-pub mod repositories {
-    pub mod customer_repository;
-    pub mod auth_repository;
+    pub mod customer_repository_impl;
 }
 // RPC调用
 pub mod remote {}

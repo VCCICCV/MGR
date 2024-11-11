@@ -1,13 +1,30 @@
-use application::dto::{ request_dto::SignUpDTO, response_dto::Res };
+use application::dto::{ request_dto::{ SignUpDTO, VerifyCodeDto }, response_dto::Res };
 use axum::{ extract::{ State, Json }, response::IntoResponse };
-use infrastructure::state::AppState;
+use domain::model::aggregate::customer;
+use infrastructure::{
+    persistence::customer_repository_impl::{ self, CustomerRepositoryImpl },
+    state::AppState,
+};
 use tracing::info;
-pub async fn signup(
+#[warn(unused_variables)]
+pub async fn sign_up(
     State(app_state): State<AppState>,
-    signupdto: Json<SignUpDTO>
+    signup_dto: Json<SignUpDTO>
 ) -> impl IntoResponse {
-    info!("signupdto: {:?}", signupdto);
+    info!("signupdto: {:?}", signup_dto);
     Res::<String>::with_msg("ok")
+}
+pub async fn send_email(
+    State(app_state): State<AppState>,
+    verify_code_send_dto: Json<VerifyCodeSendDto>
+) -> impl IntoResponse {
+    info!("verify: {:?}", verify_code_send_dto);
+    let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
+    let use_case = CustomerUseCase::new(customer_repository_impl);
+    match use_case.send_email() {
+        Ok(_) => Res::<String>::with_msg("ok"),
+        Err(err) => Res::with_err(&err.to_string()),
+    }
 }
 // use application::{
 //     dto::{ request_command::CustomerCommand, response_dto::Res },

@@ -10,9 +10,6 @@
 //             email: user.email,
 //             password: user.password,
 //             avatar: user.avatar,
-//             is_deleted: user.is_deleted,
-//             create_time: user.create_time,
-//             update_time: user.update_time,
 //         }
 //     }
 // }

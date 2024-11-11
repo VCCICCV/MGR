@@ -32,3 +32,4 @@ bb8 = { workspace = true }
 bb8-redis = { workspace = true }
 utoipa = { workspace = true }
 utoipa-swagger-ui = { workspace = true }
+validator = { workspace = true }

@@ -39,13 +39,12 @@ pub struct SignUpDTO {
     // 邮箱验证码
     pub mail_validate_code: String,
 }
-
 #[derive(Default, Debug, Clone, Validate, Serialize, Deserialize)]
-pub struct VerifyCodeDto {
+pub struct VerifyCodeSendDto {
     //  验证码类型 注册、登录
     pub code_type: String,
     // 接收邮箱
-    pub recevive_email: String,
+    pub receive_email: String,
 }
 #[derive(Default, Debug, Clone, Validate, Serialize, Deserialize)]
 pub struct ForgotPasswordRequestDto {

@@ -17,3 +17,32 @@
 [2m2024-11-10T08:37:25.5756698Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline
 [2m2024-11-10T08:37:25.5760526Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline
 [2m2024-11-10T08:37:25.5764684Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline
+[2m2024-11-10T08:52:35.8988787Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T08:52:35.9015398Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T09:00:56.2747943Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m error while maintaining min_connections [3merror[0m[2m=[0mencountered unexpected or invalid data: unexpected response from SSLRequest: 0x00
+[2m2024-11-10T09:00:58.9881117Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline
+[2m2024-11-10T09:00:58.9885417Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline
+[2m2024-11-10T09:00:58.9889257Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline
+[2m2024-11-10T09:00:58.9892244Z[0m [34mDEBUG[0m [2msqlx_core::pool::inner[0m[2m:[0m unable to complete `min_connections` maintenance before deadline
+[2m2024-11-10T10:13:00.4967005Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T10:13:00.4979462Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T10:18:43.0760373Z[0m [32m INFO[0m [2minterface::api::customer_handler[0m[2m:[0m signupdto: Json(SignUpDTO { username: "杀", email: "jlb.@qq.com", password: "deserunt et tempor", mail_validate_code: "sdasdsd" })
+[2m2024-11-10T10:20:36.75815Z[0m [32m INFO[0m [2minterface::api::customer_handler[0m[2m:[0m signupdto: Json(SignUpDTO { username: "杀", email: "jlb.@qq.com", password: "deserunt et tempor", mail_validate_code: "sdasdsd" })
+[2m2024-11-10T10:21:09.5258138Z[0m [32m INFO[0m [2minterface::api::customer_handler[0m[2m:[0m signupdto: Json(SignUpDTO { username: "杀", email: "jlb.@qq.com", password: "deserunt et tempor", mail_validate_code: "sdasdsd" })
+[2m2024-11-10T10:39:51.0293317Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T10:39:51.0305209Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T10:41:57.097499Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T10:41:57.0988419Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T10:44:17.2000283Z[0m [32m INFO[0m [2minterface::api::customer_handler[0m[2m:[0m email: Json("email")
+[2m2024-11-10T10:45:51.7970363Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T10:45:51.798201Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T10:49:03.9184301Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T10:49:03.9199773Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T10:51:58.4950583Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-10T10:51:58.4961Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-10T10:52:07.0068039Z[0m [32m INFO[0m [2minterface::api::customer_handler[0m[2m:[0m verify: Json(VerifyCodeDto { code_type: "sdsss", receive_email: "212121" })
+[2m2024-11-10T10:58:37.5172504Z[0m [34mDEBUG[0m [2msqlx_core::pool::connection[0m[2m:[0m error occurred while closing the pool connection [3merror[0m[2m=[0merror communicating with database: 远程主机强迫关闭了一个现有的连接。 (os error 10054)
+[2m2024-11-10T10:58:37.8711077Z[0m [34mDEBUG[0m [2msqlx_core::pool::connection[0m[2m:[0m error occurred while closing the pool connection [3merror[0m[2m=[0merror communicating with database: 远程主机强迫关闭了一个现有的连接。 (os error 10054)
+[2m2024-11-10T10:58:38.2083917Z[0m [34mDEBUG[0m [2msqlx_core::pool::connection[0m[2m:[0m error occurred while closing the pool connection [3merror[0m[2m=[0merror communicating with database: 远程主机强迫关闭了一个现有的连接。 (os error 10054)
+[2m2024-11-10T10:58:38.5213387Z[0m [34mDEBUG[0m [2msqlx_core::pool::connection[0m[2m:[0m error occurred while closing the pool connection [3merror[0m[2m=[0merror communicating with database: 远程主机强迫关闭了一个现有的连接。 (os error 10054)
+[2m2024-11-10T10:58:38.820405Z[0m [34mDEBUG[0m [2msqlx_core::pool::connection[0m[2m:[0m error occurred while closing the pool connection [3merror[0m[2m=[0merror communicating with database: 远程主机强迫关闭了一个现有的连接。 (os error 10054)

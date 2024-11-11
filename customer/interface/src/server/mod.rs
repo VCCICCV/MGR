@@ -9,7 +9,7 @@ use tower_http::cors::CorsLayer;
 use tracing::info;
 use infrastructure::state::AppState;
 use utoipa::OpenApi;
-use crate::{cmd::shutdown::shutdown_signal, routers::customer_routes::setup_customer_routes};
+use crate::{ cmd::shutdown::shutdown_signal, routers::customer_routes::setup_customer_routes };
 use utoipa_swagger_ui::SwaggerUi;
 pub async fn start() -> anyhow::Result<()> {
     // 加载.env 环境配置文件，成功返回包含的值，失败返回None
@@ -39,8 +39,8 @@ pub async fn start() -> anyhow::Result<()> {
 pub async fn setup_routes() -> Router<AppState> {
     let doc = ApiDoc::openapi();
     Router::new()
-        .nest("/customers", setup_customer_routes().await)
-        // .nest("/auth", setup_auth_routes().await)
+        .nest("/api/customers", setup_customer_routes().await)
+        // .nest("/api//auth", setup_auth_routes().await)
         //请注意，对于某些请求类型，例如发布content-style：app/json
         //需要添加“.allow_heads（[http：：header：：CONTENT_GROUP]）”
         .layer(

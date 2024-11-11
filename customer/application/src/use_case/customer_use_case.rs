@@ -1,34 +1,30 @@
-// use anyhow::Ok;
-// use common::error::InfraError;
-// use domain::{model::aggregate::user::User, repositories::user_repository::UserRepository};
+use domain::{
+    model::aggregate::customer::Customer,
+    repositories::customer_repository::CustomerRepository,
+};
+use shared::error::AppError;
+use tracing::info;
 
-// use crate::{assembler::user_assembler, dto::request_command::UserRegisterCommand};
-
-// pub struct UserUseCase<U>
-// where U: UserRepository,
-
-// {
-//     user_repository: U,
-
-// }
-// impl<U> UserUseCase<U>
-// where U: UserRepository,
-// {
-//     pub fn new(user_repository: U,user_assembler:A) -> Self {
-//         Self {
-//             user_repository,
-//             user_assembler,
-//         }
-//     }
-//     // 执行用例逻辑
-//     pub async fn execute(&self, user_register_command: UserRegisterCommand) -> Result<(), InfraError> {
-//         // Ok()
-//         // 转换BO
-//         let user:User =
-//         unimplemented!("UserUseCase::execute")
-//     }
-// }
-
+pub struct CustomerUseCase<U> where U: CustomerRepository {
+    customer_repository: U,
+}
+impl<U> CustomerUseCase<U> where U: CustomerRepository {
+    pub fn new(customer_repository: U) -> Self {
+        Self {
+            customer_repository,
+        }
+    }
+}
+impl<U> CustomerUseCase<U> where U: CustomerRepository {
+    pub async fn sign_up(&self, customer: Customer) -> Result<(), AppError> {
+        info!("sign up");
+        self.customer_repository.save(customer).await.map_err(|e|AppError::OtherError(e.to_string()))
+    }
+    pub async fn send_email(&self, email: String) -> Result<(), AppError> {
+        info!("send email");
+        self.customer_repository.send_email(email).await.map_err(|e|AppError::OtherError(e.to_string()))
+    }
+}
 // use common::error::AppError;
 // use domain::{
 //     repositories::user_repository::UserRepository,
