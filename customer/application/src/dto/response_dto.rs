@@ -96,6 +96,14 @@ impl<T: Serialize> Res<T> {
             msg: Some("Success".to_string()),
         }
     }
+    // 成功无数据
+    pub fn with_success() -> Self {
+        Self {
+            code: StatusCode::OK.as_u16(),
+            data: None,
+            msg: Some("Success".to_string()),
+        }
+    }
     // 成功消息
     pub fn with_msg(msg: &str) -> Self {
         Self {

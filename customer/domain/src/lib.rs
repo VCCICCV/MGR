@@ -42,8 +42,6 @@ pub mod model{
 pub mod repositories {
     // 用户接口，抽象trait，在基础设施层中实现
     pub mod customer_repository;
-    // redis的接口，抽象trait，在基础设施层中实现，基础设施需要用redis的地方通过redis_util调用
-    pub mod cache_repository;
 }
 /// 领域服务（领域能力）：这个领域提供的能力，比如提供了删除的能力，如果要判断有没有权限删除，那就在application编排先鉴权、再删除的用例，
 /// 领域服务是领域层的核心，它应该是无状态的，并且不应该依赖于任何其他领域层的组件，应该通过repository来获取数据

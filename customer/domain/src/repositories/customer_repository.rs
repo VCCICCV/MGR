@@ -1,5 +1,5 @@
 use shared::error::InfraError;
-use crate::model::{aggregate::customer::Customer, vo::customer_id::CustomerId};
+use crate::model::{ aggregate::customer::Customer, vo::customer_id::CustomerId };
 
 // // use crate::model::{ dto::Customer_dto::RegisterCustomerDTO, Customer::Customer };
 // // use common::error::InfraError;
@@ -19,7 +19,8 @@ pub trait CustomerRepository {
     async fn find_by_email(&self, email: String) -> Result<Option<Customer>, InfraError>;
     async fn save(&self, customer: Customer) -> Result<(), InfraError>;
     async fn find_by_id(&self, id: CustomerId) -> Result<Option<Customer>, InfraError>;
-    async fn send_email(&self, email:String) -> Result<(), InfraError>;
+    async fn send_email(&self, email: String) -> Result<(), InfraError>;
+    async fn verify_code_send(&self, customer:Customer) -> Result<(), InfraError>;
     // async fn save(&self, Customer: Customer) -> Result<(), InfraError>;
     // async fn update(&self, Customer: Customer) -> Result<(), InfraError>;
     // async fn delete(&self, id: i32) -> Result<(), InfraError>;

@@ -1,8 +1,7 @@
-use application::dto::{ request_dto::{ SignUpDTO, VerifyCodeDto }, response_dto::Res };
+use application::{dto::{ request_dto::{ SignUpDTO, VerifyCodeSendDto }, response_dto::Res }, use_case::customer_use_case::CustomerUseCase};
 use axum::{ extract::{ State, Json }, response::IntoResponse };
-use domain::model::aggregate::customer;
 use infrastructure::{
-    persistence::customer_repository_impl::{ self, CustomerRepositoryImpl },
+    persistence::customer_repository_impl::CustomerRepositoryImpl,
     state::AppState,
 };
 use tracing::info;
@@ -21,8 +20,8 @@ pub async fn send_email(
     info!("verify: {:?}", verify_code_send_dto);
     let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
     let use_case = CustomerUseCase::new(customer_repository_impl);
-    match use_case.send_email() {
-        Ok(_) => Res::<String>::with_msg("ok"),
+    match use_case.send_email(verify_code_send_dto.receive_email.clone()).await {
+        Ok(()) => Res::<String>::with_success(),
         Err(err) => Res::with_err(&err.to_string()),
     }
 }

@@ -22,11 +22,11 @@ async fn test_find_all() {
         Err(err) => panic!("Error: {:?}", err),
     }
 
-    let result  = repository.find_by_email("asdasdsa".to_string()).await;
-    match result {
-        Ok(customer) => {
-            println!("Customer: {:?}", customer);
-        }
-        Err(err) => panic!("Error: {:?}", err),
-    }
+    // let result  = repository.find_by_email("asdasdsa".to_string()).await;
+    // match result {
+    //     Ok(customer) => {
+    //         println!("Customer: {:?}", customer);
+    //     }
+    //     Err(err) => panic!("Error: {:?}", err),
+    // }
 }

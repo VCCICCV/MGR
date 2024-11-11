@@ -14,6 +14,8 @@ pub struct Customer {
     pub password: String,
     // 头像
     pub avatar: Option<String>,
+    // 验证码
+    pub verify_code: Option<String>,
     // 收货地址
     pub receive_address: Vec<ReceiveAddress>,
 }
@@ -25,6 +27,7 @@ impl Customer {
         email: String,
         password: String,
         avatar: Option<String>,
+        verify_code: Option<String>,
         receive_address: Vec<ReceiveAddress>
     ) -> Self {
         Customer {
@@ -33,8 +36,8 @@ impl Customer {
             email,
             password,
             avatar,
-
             receive_address,
+            verify_code,
         }
     }
     // 重构
@@ -45,6 +48,7 @@ impl Customer {
         email: String,
         password: String,
         avatar: Option<String>,
+        verify_code: Option<String>,
         receive_address: Vec<ReceiveAddress>
     ) -> Self {
         Customer {
@@ -54,6 +58,7 @@ impl Customer {
             password,
             avatar,
             receive_address,
+            verify_code,
         }
     }
     // 更新id

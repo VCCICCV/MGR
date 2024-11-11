@@ -4,6 +4,7 @@
 pub mod po {
     pub mod prelude;
     pub mod user;
+    pub mod receive_address;
 }
 
 /// 工具类
@@ -23,6 +24,7 @@ pub mod utils {
 /// 持久层具体实现，对应表的CRUD
 pub mod persistence {
     pub mod customer_repository_impl;
+
 }
 // RPC调用
 pub mod remote {}
