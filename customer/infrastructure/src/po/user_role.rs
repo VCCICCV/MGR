@@ -7,10 +7,10 @@ use sea_orm::entity::prelude::*;
 pub struct Model {
     #[sea_orm(primary_key)]
     pub id: i64,
-    pub user_id: i64,
+    pub user_id: String,
     pub role_id: i32,
-    pub create_by: i64,
-    pub update_by: i64,
+    pub create_by: String,
+    pub update_by: String,
     pub create_time: DateTime,
     pub update_time: DateTime,
     pub is_deleted: i16,

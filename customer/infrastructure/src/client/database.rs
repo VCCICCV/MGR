@@ -1,6 +1,6 @@
 use std::time::Duration;
-use shared::error::InfraError;
-use sea_orm::{ConnectOptions, Database, DatabaseConnection};
+use shared::error::AppResult;
+use sea_orm::{ ConnectOptions, Database, DatabaseConnection };
 use tracing::info;
 use crate::config::AppConfig;
 
@@ -8,11 +8,11 @@ use crate::config::AppConfig;
 pub type DatabaseClient = DatabaseConnection;
 
 pub trait DatabaseClientExt: Sized {
-    fn build_from_config(config: &AppConfig) -> impl std::future::Future<Output = Result<Self,InfraError>>;
+    fn build_from_config(config: &AppConfig) -> impl std::future::Future<Output = AppResult<Self>>;
 }
 
 impl DatabaseClientExt for DatabaseClient {
-    async fn build_from_config(config: &AppConfig) -> Result<Self,InfraError> {
+    async fn build_from_config(config: &AppConfig) -> AppResult<Self> {
         let mut opt = ConnectOptions::new(config.db.get_url());
         opt.max_connections(100)
             .min_connections(5)

@@ -25,7 +25,8 @@ migration = { path = "migration" }
 shared = { path = "shared" }
 
 axum = "0.7.7"
-axum-extra = "0.9.4"
+# axum提取器
+axum-extra = { version = "0.9.3", features = ["typed-header"] }
 # ORM
 sea-orm = { version = "1.0.1", features = [
     "runtime-tokio-native-tls",
@@ -33,6 +34,8 @@ sea-orm = { version = "1.0.1", features = [
     "macros",
 ] }
 tokio = { version = "1", features = ["full"] }
+# 异步 WebSocket
+tokio-tungstenite = "0.24.0"
 # # 处理HTTP请求例如解析请求体
 # hyper = { version = "1.4.1", features = ["full"] }
 # 处理HTTP请求例如跨域处理
@@ -54,14 +57,13 @@ thiserror = "1.0.64"
 # 读取env
 dotenvy = "0.15.7"
 # 分布式跟踪的 SDK，用于采集监控数据，这里用其日志功能
-tracing = "0.1.40"
+# attributes自动为函数添加追踪
+# 在函数定义前添加 #[tracing::instrument]，当函数被调用时，tracing 库会自动记录函数的进入、退出情况以及执行时长等信息，并且可以携带函数的参数等作为额外的上下文信息
+tracing = { version = "0.1.40", features = ["attributes"] }
 # 将 Rust 的错误类型与 Tracing 的 span 相关联的库
+# 当出现错误时，通常希望能将错误的发生与当时的执行上下文（也就是 tracing 所记录的 span 相关信息）结合起来，以便更好地理解错误产生的背景和原因
 tracing-error = "0.2.0"
-# 日志
-log = "0.4.22"
-# 日志派生
-log-derive = "0.4.1"
-# 日志过滤器
+# 配置和管理 tracing 所产生的日志和追踪数据的收集、格式化以及输出等操作
 tracing-subscriber = { version = "0.3", default-features = true, features = [
     "std",
     "env-filter",
@@ -69,15 +71,24 @@ tracing-subscriber = { version = "0.3", default-features = true, features = [
     "local-time",
     "fmt",
 ] }
-# 日志记录器
+# 处理日志数据的写入目标和写入方式
 tracing-appender = "0.2.3"
+# 用于将 Rust 标准库中的 log 宏记录的日志与 tracing 库的日志记录机制进行集成，使得使用 log 宏编写的旧有日志记录代码能够无缝地与基于 tracing 的新日志系统协同工作，方便在项目迁移或者同时使用两种日志记录方式的场景下进行统一管理和输出
+tracing-log = "0.2.0"
+# 用于将 tracing 库产生的日志按照 Bunyan 格式进行格式化的库
+tracing-bunyan-formatter = "0.3.9"
+# 日志
+log = "0.4.22"
+# 日志派生
+log-derive = "0.4.1"
+
 # redis 客户端
 redis = { version = "0.27.4", features = ["aio", "tokio-comp"] }
 # 使用tokio实现的连接池，支持postgres、redis、redis cluster、rsmq等
 bb8 = "0.8.5"
 bb8-redis = "0.17.0"
 # Kafka
-rdkafka = "0.36.2"
+rdkafka = { version = "0.36.2", features = ["cmake-build"] }
 # 异步 kafka 客户端
 # rdkafka-sys = "4.7.0"
 #Media Type
@@ -103,15 +114,15 @@ utoipa-axum = { version = "0", features = ["debug"] }
 # 异步锁
 once_cell = "1.20.2"
 # 表单验证
-validator = { version = "0.18.1", features = ["derive"] }
+garde = { version = "0.20.0", features = ["full"] }
+# validator = { version = "0.18.1", features = ["derive"] }
 # 枚举处理
 strum = { version = "0.26", features = ["derive"] }
 # 异步请求
 reqwest = { version = "0.12.2", features = ["json", "multipart", "stream"] }
 # 
 base64 = "0.22.1"
-# 异步 WebSocket
-tokio-tungstenite = "0.24.0"
+
 fake = { version = "3.0.1", features = ["derive", "uuid", "chrono"] }
 # 随机数生成
 rand = "0.8.5"
@@ -120,7 +131,8 @@ rand = "0.8.5"
 test-context = "0.3.0"
 # ES
 elasticsearch = "8.15.0-alpha.1"
-
+# 捕获错误、监控错误、告警
+sentry = "0.34.0"
 # 启动和测试需要添加
 [dependencies]
 
@@ -128,3 +140,4 @@ elasticsearch = "8.15.0-alpha.1"
 interface = { workspace = true }
 infrastructure = { workspace = true }
 tokio = { workspace = true }
+tokio-tungstenite.workspace = true

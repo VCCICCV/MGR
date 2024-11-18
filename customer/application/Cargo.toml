@@ -5,10 +5,11 @@ edition = "2021"
 
 [dependencies]
 domain = { workspace = true }
+infrastructure = { workspace = true }
 
 axum = { workspace = true }
 anyhow = { workspace = true }
-
+garde = { workspace = true }
 tracing = { workspace = true }
 shared = { workspace = true }
 tokio = { workspace = true }
@@ -17,23 +18,18 @@ password-hash = { workspace = true }
 argon2 = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
-validator = { workspace = true }
-mime = { workspace = true }
+
 utoipa = { workspace = true }
 jsonwebtoken = { workspace = true }
-uuid = {workspace = true}
+uuid = { workspace = true }
 axum-extra = { workspace = true }
-
 config = { workspace = true }
-
 lettre = { workspace = true }
 tokio-tungstenite = { workspace = true }
-
 test-context = { workspace = true }
 base64 = { workspace = true }
-
 reqwest = { workspace = true }
-
 strum = { workspace = true }
 thiserror = { workspace = true }
 sea-orm = { workspace = true }
+rdkafka = { workspace = true }

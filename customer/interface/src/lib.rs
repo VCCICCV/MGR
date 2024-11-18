@@ -6,27 +6,25 @@ pub mod server;
 /// CQRS职责分离，这里的目的是为了将业务逻辑和HTTP请求处理解耦，使应用程序的核心逻辑更加清晰，易于测试和维护
 /// 将从业务逻辑层获取的数据转换为适合接口（例如 HTTP 响应）的格式
 /// 只关注如何与外部进行交互，而不涉及具体的业务逻辑的实现细节
+// restful api 适配器
 pub mod api{
     pub mod customer_handler;
     // pub mod auth_handler;
+}
+// 如果响应是grpc，那么就加一个grpc适配器，和infrastructure的grpc不同，这里是响应前端，infrasteucture的grpc是请求第三方服务
+pub mod grpc{
+
 }
 /// cmd
 pub mod cmd{
     pub mod shutdown;
 }
-/// 公共响应，用于封装应用程序的响应数据
-/// 为什么不放在common中？
-/// 我们希望在handler中将应用层和路由解耦，应用层和基础设施层只进行错误处理，响应码和信息在handler统一进行返回
-// pub mod common{
-//     pub mod response;
-// }
 /// 路由
-pub mod routers{
-    pub mod customer_routes;
-}
+pub mod routers;
 // pub mod routers{
 //     pub mod customer_routes;
 // }
+// 依赖注入
+pub mod inject{
 
-// state
-// pub mod state;
+}

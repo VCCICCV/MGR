@@ -1,110 +1,91 @@
 use std::sync::Arc;
-use std::time::Duration;
-use application::dto::dto::Email;
-use sea_orm::{ EntityTrait, QuerySelect, Set };
-use crate::client::email::EmailClientExt;
-use crate::client::redis::RedisClientExt;
-use crate::constant::{ CONFIG, EMAIL, REDIS };
-use crate::po::prelude::ReceiveAddress;
-use crate::utils::random::generate_random_code;
+use chrono::Utc;
+use domain::model::dp::customer_id::CustomerId;
+use sea_orm::{ ActiveModelTrait, Set };
+use tracing::info;
 use domain::model::aggregate::customer::Customer;
-use domain::model::vo::customer_id::CustomerId;
+
 use domain::repositories::customer_repository::CustomerRepository;
-use shared::error::InfraError;
+use shared::error::AppResult;
 use crate::client::database::DatabaseClient;
-use crate::po::prelude::User;
-use crate::po::user::ActiveModel;
+use crate::client::redis::RedisClient;
+use crate::po::user;
 
 pub struct CustomerRepositoryImpl {
-    db: Arc<DatabaseClient>,
+    // db: Arc<DatabaseClient>,
+    // redis: Arc<RedisClient>,
 }
+/// 静态分发
+/// 当你在代码中调用这个结构体实现的方法（如果后续为它实现了如 CustomerRepository 等相关 trait 的方法）时，编译器在编译阶段就可以明确知道具体要调用的是 CustomerRepositoryImpl 这个类型所实现的对应方法，因为类型是确定的
+/// 这种基于具体类型的、在编译时就能确定调用关系的方式就是静态分发，它通常具有更好的性能，因为编译器可以进行内联优化等操作，直接生成高效的机器码来执行对应的方法调用
 // 注入数据库连接
-impl CustomerRepositoryImpl {
-    pub fn new(db: Arc<DatabaseClient>) -> Self {
-        Self {
-            db,
-        }
-    }
-}
+// impl CustomerRepositoryImpl {
+//     pub fn new(db: Arc<DatabaseClient>, redis: Arc<RedisClient>) -> Self {
+//         Self {
+//             db,
+//             redis,
+//         }
+//     }
+// }
+/// self是调用该实例方法当前对象的引用
 impl CustomerRepository for CustomerRepositoryImpl {
-    async fn find_all(&self) -> Result<Vec<Customer>, shared::error::InfraError> {
-        todo!();
-        // // 查询用户表数据
-        // let users = User::find().all(&*self.db).await?;
-        // // 查询收货地址表数据
-        // let addresses = ReceiveAddress::find().all(&*self.db).await?;
-
-        // let mut customers: Vec<Customer> = Vec::new();
-
-        // for user in users {
-        //     let mut user_addresses: Vec<ReceiveAddress> = addresses
-        //         .iter()
-        //         .filter(|address| address.user_id == user.user_id)
-        //         .cloned()
-        //         .collect();
-
-        //     let customer = Customer {
-        //         user_id: user.user_id,
-        //         username: user.username,
-        //         email: user.email,
-        //         password: user.password,
-        //         avatar: user.avatar,
-        //         receive_address: user_addresses,
-        //     };
-
-        //     customers.push(customer);
-        // }
-        // Ok(customers)
-    }
-    async fn find_by_email(
-        &self,
-        email: String
-    ) -> Result<Option<Customer>, shared::error::InfraError> {
-        todo!();
-        // let model = User::find()
-        //     .filter(<User as EntityTrait>::Column::Email.eq(email))
-        //     .one(&*self.db).await?;
-        // // 转Bo
-        // Ok(model.map(|m| Customer::from(m)))
-    }
-
-    async fn save(&self, customer: Customer) -> Result<(), shared::error::InfraError> {
-        // 转 po
-        let active_model = ActiveModel {
-            user_id: Set(customer.user_id),
-            username: Set(customer.username),
-            email: Set(customer.email),
-            password: Set(customer.password),
-            avatar: Set(customer.avatar),
-            ..Default::default()
-        };
-        // 插入
-        let _ = User::insert(active_model).exec(&*self.db).await?;
-        Ok(())
-    }
-
-    async fn find_by_id(&self, id: CustomerId) -> Result<Option<Customer>, InfraError> {
+     fn find_all(&self) -> AppResult<Vec<Customer>> {
         todo!()
     }
 
-    async fn send_email(&self, email: String) -> Result<(), InfraError> {
-        // 生成验证码
-        let code = generate_random_code();
-        // 发送到redis
-        REDIS.set(&email, &code, Duration::from_secs(60)).await?;
-        // 发送到邮箱
-        let email = Email::new(
-            CONFIG.email.username.clone(),
-            CONFIG.email.username.clone(),
-            email.to_string(),
-            "锈化动力商城验证码".to_string(),
-            format!("您的验证码是：{}", code),
-        );
-        EMAIL.send_email(&email).await?;
-        Ok(())
+     fn find_by_email(
+        &self,
+        tx: &sea_orm::DatabaseTransaction,
+        email: &str
+    ) -> AppResult<Option<Customer>> {
+        todo!()
+    }
+     fn save(&self, tx: &sea_orm::DatabaseTransaction, customer: Customer) -> AppResult<String> {
+        let user = (user::ActiveModel {
+            user_id: Set(customer.user_id().to_owned()),
+            username: Set(customer.username().to_owned()),
+            email: Set(customer.email().to_owned()),
+            password: Set(customer.password().to_owned()),
+            create_time: Set(Utc::now().naive_utc()),
+            ..Default::default()
+        }).insert(tx);
+
+        Ok(user.user_id)
+    }``
+
+     fn find_by_id(
+        &self,
+        tx: &sea_orm::DatabaseTransaction,
+        id: CustomerId
+    ) -> AppResult<Option<Customer>> {
+        todo!()
     }
 
-    async fn verify_code_send(&self, customer: Customer) -> Result<(), InfraError> {
+     fn send_email(&self, tx: &sea_orm::DatabaseTransaction, email: &str) -> AppResult<()> {
+        todo!()
+    }
+
+     fn find_code_by_email(
+        &self,
+        tx: &sea_orm::DatabaseTransaction,
+        email: &str
+    ) -> AppResult<Option<String>> {
+        todo!()
+    }
+
+     fn check_unique_by_username(
+        &self,
+        tx: &sea_orm::DatabaseTransaction,
+        username: &str
+    ) -> AppResult<bool> {
+        todo!()
+    }
+
+     fn check_unique_by_email(
+        &self,
+        tx: &sea_orm::DatabaseTransaction,
+        email: &str
+    ) -> AppResult<bool> {
         todo!()
     }
 }

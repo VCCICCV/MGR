@@ -1,75 +1,99 @@
 use serde::{ Deserialize, Serialize };
-use uuid::Uuid;
 use crate::model::entity::receive_address::ReceiveAddress;
 
-#[derive(Serialize, Deserialize, Clone, Debug)]
+#[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct Customer {
     // uuid
-    pub user_id: String,
+    user_id: String,
     // 用户名
-    pub username: String,
+    username: String,
     // 邮件
-    pub email: String,
+    email: String,
     // 密码
-    pub password: String,
+    password: String,
     // 头像
-    pub avatar: Option<String>,
+    avatar: Option<String>,
     // 验证码
-    pub verify_code: Option<String>,
+    verify_code: Option<String>,
     // 收货地址
-    pub receive_address: Vec<ReceiveAddress>,
+    receive_address: Vec<ReceiveAddress>,
 }
+// 建造(者结构体，包含一个需要构建的对象
+#[derive(Default)]
+pub struct CustomerBuilder {
+    customer: Customer,
+}
+impl CustomerBuilder {
+    pub fn new() -> Self {
+        CustomerBuilder::default()
+    }
+    pub fn user_id(&mut self, user_id: String) -> &mut Self {
+        self.customer.user_id = user_id;
+        self
+    }
+
+    pub fn username(&mut self, username: String) -> &mut Self {
+        self.customer.username = username;
+        self
+    }
+
+    pub fn email(&mut self, email: String) -> &mut Self {
+        self.customer.email = email;
+        self
+    }
+
+    pub fn password(&mut self, password: String) -> &mut Self {
+        self.customer.password = password;
+        self
+    }
+
+    pub fn avatar(&mut self, avatar: Option<String>) -> &mut Self {
+        self.customer.avatar = avatar;
+        self
+    }
+
+    pub fn verify_code(&mut self, verify_code: Option<String>) -> &mut Self {
+        self.customer.verify_code = verify_code;
+        self
+    }
+
+    pub fn receive_address(&mut self, receive_address: Vec<ReceiveAddress>) -> &mut Self {
+        self.customer.receive_address = receive_address;
+        self
+    }
+    pub fn build(&self) -> Customer {
+        Customer {
+            user_id: self.customer.user_id.clone(),
+            username: self.customer.username.clone(),
+            email: self.customer.email.clone(),
+            password: self.customer.password.clone(),
+            avatar: self.customer.avatar.clone(),
+            verify_code: self.customer.verify_code.clone(),
+            receive_address: self.customer.receive_address.clone(),
+        }
+    }
+}
+// getter
 impl Customer {
-    // 关联
-    pub fn new(
-        user_id: String,
-        username: String,
-        email: String,
-        password: String,
-        avatar: Option<String>,
-        verify_code: Option<String>,
-        receive_address: Vec<ReceiveAddress>
-    ) -> Self {
-        Customer {
-            user_id,
-            username,
-            email,
-            password,
-            avatar,
-            receive_address,
-            verify_code,
-        }
+    pub fn user_id(&self) -> &str {
+        &self.user_id
     }
-    // 重构
-    pub fn reconstruct(
-        &self,
-        user_id: String,
-        username: String,
-        email: String,
-        password: String,
-        avatar: Option<String>,
-        verify_code: Option<String>,
-        receive_address: Vec<ReceiveAddress>
-    ) -> Self {
-        Customer {
-            user_id,
-            username,
-            email,
-            password,
-            avatar,
-            receive_address,
-            verify_code,
-        }
+    pub fn username(&self) -> &str {
+        &self.username
     }
-    // 更新id
-    pub fn update(&mut self, user_id: Option<String>) {
-        if let Some(user_id) = user_id {
-            self.user_id = user_id;
-        }
+    pub fn email(&self) -> &str {
+        &self.email
     }
-    // 初始化uuid
-    pub fn init_uuid(&mut self) {
-        let user_id = Uuid::new_v4();
-        self.user_id = user_id.to_string();
+    pub fn password(&self) -> &str {
+        &self.password
+    }
+    pub fn avatar(&self) -> &Option<String> {
+        &self.avatar
+    }
+    pub fn verify_code(&self) -> &Option<String> {
+        &self.verify_code
+    }
+    pub fn receive_address(&self) -> &Vec<ReceiveAddress> {
+        &self.receive_address
     }
 }

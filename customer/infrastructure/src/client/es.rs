@@ -1,7 +1,6 @@
-use shared::error::InfraError;
 use elasticsearch::http::transport::{ SingleNodeConnectionPool, TransportBuilder };
 use elasticsearch::Elasticsearch;
-use std::future::Future;
+use shared::error::AppResult;
 use std::sync::Arc;
 use crate::config::AppConfig;
 
@@ -9,11 +8,11 @@ use crate::config::AppConfig;
 pub type EsClient = Arc<Elasticsearch>;
 // 加载配置文件
 pub trait EsClientExt: Sized {
-    fn build_from_config(config: &AppConfig) -> impl Future<Output = Result<Self, InfraError>>;
+    fn build_from_config(config: &AppConfig) -> impl std::future::Future<Output = AppResult<Self>>;
 }
 
 impl EsClientExt for EsClient {
-    async fn build_from_config(config: &AppConfig) -> Result<Self, InfraError> {
+    async fn build_from_config(config: &AppConfig) -> AppResult<Self> {
         // 1、使用single_node方式创建client
         // let transport = Transport::single_node(&config.es.get_url()).unwrap();
         // let client = Elasticsearch::new(transport);
@@ -22,13 +21,11 @@ impl EsClientExt for EsClient {
         // 2、使用builder方式创建client
         let url = config.es.get_url();
         let url_parsed = url
-            .parse::<elasticsearch::http::Url>()
-            .map_err(|_| InfraError::OtherError("url err".to_string()))?;
+            .parse::<elasticsearch::http::Url>().expect("Failed to parse url");
         let conn_pool = SingleNodeConnectionPool::new(url_parsed);
         let transport = TransportBuilder::new(conn_pool)
             .disable_proxy()
-            .build()
-            .map_err(|_| InfraError::OtherError("transport err".to_string()))?;
+            .build().expect("Failed to build transport");
         let client = Elasticsearch::new(transport);
         Ok(Arc::new(client))
     }

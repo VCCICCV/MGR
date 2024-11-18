@@ -10,12 +10,14 @@ pub static CONFIG: Lazy<crate::config::AppConfig> = Lazy::new(||
 // redis客户端，由于redis建立链接比数据库快，所以不需要放在appstate中，直接放在全局变量中即可
 // 很多时候redis不是必须的，所以为了更灵活的使用，将其放在全局变量中，emial客户端同理
 // 如果将redis作为主数据库使用，请在appstate中使用redis
+// 这里测试使用常量，实际生产在appstate中使用redis
 pub static REDIS: Lazy<RedisClient> = Lazy::new(||
     RedisClient::build_from_config(&CONFIG).unwrap()
 );
 // 常量
 pub const NORMAL_USER: &str = "normal_user";
 // email客户端
+// 这里存放在appstate中使用
 pub static EMAIL: Lazy<EmailClient> = Lazy::new(||
     EmailClient::build_from_config(&CONFIG).unwrap()
 );

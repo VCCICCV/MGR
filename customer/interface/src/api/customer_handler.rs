@@ -1,30 +1,38 @@
-use application::{dto::{ request_dto::{ SignUpDTO, VerifyCodeSendDto }, response_dto::Res }, use_case::customer_use_case::CustomerUseCase};
-use axum::{ extract::{ State, Json }, response::IntoResponse };
-use infrastructure::{
-    persistence::customer_repository_impl::CustomerRepositoryImpl,
-    state::AppState,
-};
+use application::{ dto::command::SignUpCommand, use_case::customer_use_case };
+use axum::extract::{ State, Json };
+use application::state::AppState;
+use shared::{ error::AppResult, response::SignUpDto };
 use tracing::info;
-#[warn(unused_variables)]
+use garde::Validate;
 pub async fn sign_up(
-    State(app_state): State<AppState>,
-    signup_dto: Json<SignUpDTO>
-) -> impl IntoResponse {
-    info!("signupdto: {:?}", signup_dto);
-    Res::<String>::with_msg("ok")
-}
-pub async fn send_email(
-    State(app_state): State<AppState>,
-    verify_code_send_dto: Json<VerifyCodeSendDto>
-) -> impl IntoResponse {
-    info!("verify: {:?}", verify_code_send_dto);
-    let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
-    let use_case = CustomerUseCase::new(customer_repository_impl);
-    match use_case.send_email(verify_code_send_dto.receive_email.clone()).await {
-        Ok(()) => Res::<String>::with_success(),
-        Err(err) => Res::with_err(&err.to_string()),
+    State(state): State<AppState>,
+    Json(signup_command): Json<SignUpCommand>
+) -> AppResult<Json<SignUpDto>> {
+    info!("Register new user with request: {:?}", signup_command);
+    // 数据校验
+    signup_command.validate()?;
+    match customer_use_case::sign_up(state, signup_command).await {
+        Ok(user_id) => {
+            let res = SignUpDto{user_id};
+            Ok(Json(res))
+        },
+        Err(err) => Err(err),
     }
 }
+// pub async fn send_email(
+//     State(state): State<AppState>,
+//     verify_code_send_command: Json<VerifyCodeSendCommand>
+// ) -> AppResult<Json<Res<String>>> {
+//     todo!();
+//     // info!("verify: {:?}", verify_code_command);
+//     // let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db);
+//     // let use_case = CustomerUseCase::new(customer_repository_impl);
+//     // match use_case.send_email(verify_code_send_command.receive_email.clone()).await {
+//     //     Ok(()) => Res::<String>::with_success(),
+//     //     Err(err) => Res::with_err(&err.to_string()),
+//     // }
+// }
+
 // use application::{
 //     dto::{ request_command::CustomerCommand, response_dto::Res },
 //     use_case::customer_use_case::CustomerUseCase,

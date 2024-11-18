@@ -1,12 +1,9 @@
 use rand::{ distributions::Alphanumeric, Rng };
-
+// 生成随机字符串
 pub fn generate_random_string(len: usize) -> String {
     rand::thread_rng().sample_iter(&Alphanumeric).take(len).map(char::from).collect()
 }
-pub fn generate_random_code() -> String {
-    let code = rand::thread_rng().gen_range(100000..=999999);
-    code.to_string()
-}
+// 生成随机字符串并加上前缀
 pub fn generate_random_string_with_prefix(prefix: &str) -> String {
     format!("{prefix}_{}", generate_random_string(10))
 }
@@ -34,7 +31,8 @@ mod tests {
     }
     #[test]
     fn test_generate_random_code() {
-        let code = generate_random_code();
+        let len = 6;
+        let code = generate_random_string(len);
         println!("code: {code}");
         assert_eq!(code.len(), 6);
     }

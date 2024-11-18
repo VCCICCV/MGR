@@ -1,7 +1,7 @@
 use crate::config::AppConfig;
 
 use crate::client::builder::ClientBuilder;
-use application::dto::dto::Email;
+use domain::event::email::Email;
 use lettre::{
     transport::smtp::authentication::Credentials,
     AsyncSmtpTransport,
@@ -9,23 +9,20 @@ use lettre::{
     Message,
     Tokio1Executor,
 };
-use shared::error::InfraError;
+
+use shared::error::AppResult;
 use tracing::info;
 pub type EmailClient = AsyncSmtpTransport<Tokio1Executor>;
 
 pub trait EmailClientExt: Clone + Send + Sync + ClientBuilder {
-    fn send_email(
-        &self,
-        email: &Email
-    ) -> impl std::future::Future<Output = Result<Self, InfraError>>;
+    fn send_email(&self, email: &Email) -> impl std::future::Future<Output = AppResult>;
 }
 
 impl ClientBuilder for EmailClient {
-    fn build_from_config(config: &AppConfig) -> Result<Self, InfraError> {
+    fn build_from_config(config: &AppConfig) -> AppResult<Self> {
         Ok(
             AsyncSmtpTransport::<Tokio1Executor>
-                ::starttls_relay(&config.email.host)
-                .map_err(|e| InfraError::ConnectionError(e.to_string()))?
+                ::starttls_relay(&config.email.host)?
                 .credentials(
                     Credentials::new(config.email.username.clone(), config.email.password.clone())
                 )
@@ -36,14 +33,13 @@ impl ClientBuilder for EmailClient {
 }
 
 impl EmailClientExt for EmailClient {
-    async fn send_email(&self, email: &Email) -> Result<Self, InfraError> {
+    async fn send_email(&self, email: &Email) -> AppResult {
         let resp = self
             .send(
-                Message::try_from(email).map_err(|e| InfraError::ConvertError(e.to_string()))?
-            ).await
-            .map_err(|e| InfraError::SendingError(e.to_string()))?;
+                Message::try_from(email)?
+            ).await?;
         info!("Sent email successfully code: {:?}.", resp.code());
-        Ok(self.clone())
+        Ok(())
     }
 }
 

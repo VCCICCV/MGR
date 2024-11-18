@@ -9,7 +9,7 @@ pub mod po {
 
 /// 工具类
 pub mod utils {
-    pub mod random;
+   
     pub mod redis_util;
     // pub mod jwt_util;
     pub mod password_util;
@@ -28,10 +28,6 @@ pub mod persistence {
 }
 // RPC调用
 pub mod remote {}
-// 日志
-pub mod logger {
-    pub mod log;
-}
 // 聚合转DO，这里DO就是entity下与数据表对应的结构体
 pub mod converter {
     pub mod customer_converter;
@@ -42,17 +38,17 @@ pub mod client {
     pub mod builder;
     pub mod database;
     pub mod redis;
-    pub mod kafka;
     pub mod es;
     pub mod email;
-
+    pub mod kafka;
 }
 // 全局配置
 pub mod config;
 pub mod constant;
-pub mod mq {
-    pub mod consumer;
-    pub mod producer;
+// 消息队列
+pub mod event{
+    pub mod consumer_impl;
+    pub mod producer_impl;
 }
 // state
-pub mod state;
+// pub mod state;

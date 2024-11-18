@@ -20,6 +20,7 @@ anyhow = { workspace = true }
 dotenvy = { workspace = true }
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true }
+tracing-bunyan-formatter = { workspace = true }
 axum-extra = { workspace = true }
 mime = { workspace = true }
 tower-http = { workspace = true }
@@ -32,4 +33,5 @@ bb8 = { workspace = true }
 bb8-redis = { workspace = true }
 utoipa = { workspace = true }
 utoipa-swagger-ui = { workspace = true }
-validator = { workspace = true }
+# validator = { workspace = true }
+garde = { workspace = true }

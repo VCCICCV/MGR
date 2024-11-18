@@ -14,6 +14,7 @@ pub struct Model {
     pub password: String,
     pub avatar: Option<String>,
     pub is_deleted: i16,
+    pub is_2fa: i16,
     pub create_time: DateTime,
     pub update_time: Option<DateTime>,
 }

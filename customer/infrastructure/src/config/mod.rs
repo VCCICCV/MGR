@@ -1,4 +1,3 @@
-
 pub mod database;
 pub mod env;
 pub mod redis;
@@ -12,25 +11,25 @@ use std::str::FromStr;
 use database::DatabaseConfig;
 use email::EmailConfig;
 use es::EsConfig;
+use kafka::KafkaConfig;
 use profile::Profile;
 use redis::RedisConfig;
 use server::ServerConfig;
-use ::tracing::info;
-use config::{ConfigError, Environment};
+use config::{ ConfigError, Environment };
 use serde::Deserialize;
-use tracing::TracingConfig;
+use ::tracing::info;
 use utils::dir::get_project_root;
 use crate::utils;
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct AppConfig {
     pub profile: Profile,
-    pub tracing: TracingConfig,
     pub server: ServerConfig,
     pub db: DatabaseConfig,
     pub redis: RedisConfig,
-    pub es:EsConfig,
-    pub email:EmailConfig,
+    pub es: EsConfig,
+    pub email: EmailConfig,
+    pub kafka: KafkaConfig,
 }
 
 impl AppConfig {
@@ -39,13 +38,15 @@ impl AppConfig {
         let config_dir = get_settings_dir()?;
         info!("config_dir: {:#?}", config_dir);
         // 获取配置文件环境
-        let run_mode = std::env::var("RUN_MODE")
+        let run_mode = std::env
+            ::var("RUN_MODE")
             .map(|env| Profile::from_str(&env).map_err(|e| ConfigError::Message(e.to_string())))
             .unwrap_or_else(|_e| Ok(Profile::Dev))?;
         // 当前配置文件名
         let profile_filename = format!("{run_mode}.toml");
         // 获取配置
-        let config = config::Config::builder()
+        let config = config::Config
+            ::builder()
             // 添加默认配置
             .add_source(config::File::from(config_dir.join("default.toml")))
             // 添加自定义前缀配置
@@ -60,9 +61,11 @@ impl AppConfig {
 }
 // 获取配置文件目录
 pub fn get_settings_dir() -> Result<std::path::PathBuf, ConfigError> {
-    Ok(get_project_root()
-        .map_err(|e| ConfigError::Message(e.to_string()))?
-        .join("settings"))
+    Ok(
+        get_project_root()
+            .map_err(|e| ConfigError::Message(e.to_string()))?
+            .join("settings")
+    )
 }
 // // 获取静态文件目录
 // pub fn get_static_dir() -> Result<std::path::PathBuf, ConfigError> {

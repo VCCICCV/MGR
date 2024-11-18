@@ -5,7 +5,7 @@ profile = "development"
 log_level = "debug"
 [server]
 host = "127.0.0.1"
-port = 8_080
+port = 65500
 [email]
 host = "smtp.qq.com"
 port = 587
@@ -22,13 +22,13 @@ port = 5_432
 database_name = "postgres"
 
 [redis]
-host = "127.0.0.1"
+host = "36.138.97.124"
 port = 6_379
 [es]
 host = "36.138.97.124"
 port = 9_200
 [kafka]
-brokers = "36.138.97:9092"
+brokers = "127.0.0.1:9092"
 # 生产者配置
 producer = "test"
 # 消费者配置

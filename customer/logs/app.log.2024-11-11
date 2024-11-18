@@ -1,0 +1,7 @@
+[2m2024-11-11T09:58:33.0693788Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m The initialization of Tracing was successful
+[2m2024-11-11T09:58:33.070005Z[0m [32m INFO[0m [2minterface::server[0m[2m:[0m 🚀 listening on 127.0.0.1:8080
+[2m2024-11-11T09:58:54.5540025Z[0m [32m INFO[0m [2minterface::api::customer_handler[0m[2m:[0m verify: Json(VerifyCodeSendDto { code_type: "注册", receive_email: "chaochen497@gmail.com" })
+[2m2024-11-11T09:58:54.5541886Z[0m [32m INFO[0m [2mapplication::use_case::customer_use_case[0m[2m:[0m send email
+[2m2024-11-11T09:58:54.5548464Z[0m [32m INFO[0m [2minfrastructure::config[0m[2m:[0m config_dir: "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\customer\\settings"
+[2m2024-11-11T09:58:54.5568097Z[0m [32m INFO[0m [2minfrastructure::config[0m[2m:[0m Successfully read config profile: development.
+[2m2024-11-11T09:58:55.9160918Z[0m [32m INFO[0m [2minfrastructure::client::email[0m[2m:[0m Sent email successfully code: Code { severity: PositiveCompletion, category: MailSystem, detail: Zero }.

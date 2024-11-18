@@ -7,7 +7,7 @@ edition = "2021"
 # 不应该直接依赖于 domain（领域层）和 application（应用层），但可以通过抽象接口与它们交互，比如repository
 # 这样可以避免直接依赖于具体的实现，从而提高代码的可维护性和可测试性。
 domain = { workspace = true }
-application = { workspace = true }
+# application = { workspace = true }
 shared = { workspace = true }
 
 axum = { workspace = true }
@@ -18,14 +18,17 @@ serde_json = { workspace = true }
 anyhow = { workspace = true }
 dotenvy = { workspace = true }
 tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-log = { workspace = true }
+tracing-appender = { workspace = true }
+tracing-bunyan-formatter = { workspace = true }
 thiserror = { workspace = true }
 lettre = { workspace = true }
 bb8 = { workspace = true }
 redis = { workspace = true }
 bb8-redis = { workspace = true }
 once_cell = { workspace = true }
-tracing-subscriber = { workspace = true }
-tracing-appender = { workspace = true }
+
 config = { workspace = true }
 strum = { workspace = true }
 rand = { workspace = true }
@@ -35,4 +38,5 @@ test-context = { workspace = true }
 uuid = { workspace = true }
 # rdkafka = { workspace = true }
 elasticsearch = { workspace = true }
-
+rdkafka = { workspace = true }
+chrono = { workspace = true }

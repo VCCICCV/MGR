@@ -30,6 +30,12 @@ impl MigrationTrait for Migration {
                         .not_null()
                         .comment("删除标记；0-未删除；1-已删除")
                 )
+                .col(
+                    ColumnDef::new(User::Is_2fa)
+                        .tiny_integer()
+                        .not_null()
+                        .comment("是否2FA；0-未验证；1-已验证")
+                )
                 .col(ColumnDef::new(User::CreateTime).date_time().not_null().comment("创建时间"))
                 .col(ColumnDef::new(User::UpdateTime).date_time().comment("更新时间"))
                 .to_owned()
@@ -275,6 +281,7 @@ enum User {
     Password,
     Avatar,
     IsDeleted,
+    Is_2fa,
     CreateTime,
     UpdateTime,
 }

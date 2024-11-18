@@ -1,27 +1,17 @@
-use shared::error::InfraError;
-use crate::model::{ aggregate::customer::Customer, vo::customer_id::CustomerId };
-
-// // use crate::model::{ dto::Customer_dto::RegisterCustomerDTO, Customer::Customer };
-// // use common::error::InfraError;
-// // pub trait CustomerRepository {
-// //     async fn find_all(&self) -> Result<Vec<Customer>, InfraError>;
-// //     async fn find_by_id(&self, id: i32) -> Result<Option<Customer>, InfraError>;
-// //     async fn find_by_email(&self, email: String) -> Result<Option<Customer>, InfraError>;
-// //     async fn Customer_exists(&self, email: &str) -> Result<bool, InfraError>;
-// //     async fn create(&self, Customer: RegisterCustomerDTO) -> Result<bool, InfraError>;
-// //     async fn update(&self, Customer: Customer) -> Result<bool, InfraError>;
-// //     async fn delete(&self, id: i32) -> Result<bool, InfraError>;
-// //     async fn generate_jwt(&self, Customer: Customer) -> Result<String, InfraError>;
-// //     async fn generate_refresh_jwt(&self, Customer: Customer) -> Result<String, InfraError>;
-// // }
-pub trait CustomerRepository {
-    async fn find_all(&self) -> Result<Vec<Customer>, InfraError>;
-    async fn find_by_email(&self, email: String) -> Result<Option<Customer>, InfraError>;
-    async fn save(&self, customer: Customer) -> Result<(), InfraError>;
-    async fn find_by_id(&self, id: CustomerId) -> Result<Option<Customer>, InfraError>;
-    async fn send_email(&self, email: String) -> Result<(), InfraError>;
-    async fn verify_code_send(&self, customer:Customer) -> Result<(), InfraError>;
-    // async fn save(&self, Customer: Customer) -> Result<(), InfraError>;
-    // async fn update(&self, Customer: Customer) -> Result<(), InfraError>;
-    // async fn delete(&self, id: i32) -> Result<(), InfraError>;
+use sea_orm::DatabaseTransaction;
+use shared::error::AppResult;
+use crate::model::{ aggregate::customer::Customer, dp::customer_id::CustomerId };
+pub trait CustomerRepository: Send + Sync {
+    fn find_all(&self) -> AppResult<Vec<Customer>>;
+    fn find_by_email(&self, tx: &DatabaseTransaction, email: &str) -> AppResult<Option<Customer>>;
+    fn save(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<String>;
+    fn find_by_id(&self, tx: &DatabaseTransaction, id: CustomerId) -> AppResult<Option<Customer>>;
+    fn send_email(&self, tx: &DatabaseTransaction, email: &str) -> AppResult<()>;
+    fn find_code_by_email(
+        &self,
+        tx: &DatabaseTransaction,
+        email: &str
+    ) -> AppResult<Option<String>>;
+    fn check_unique_by_username(&self, tx: &DatabaseTransaction, username: &str) -> AppResult<bool>;
+    fn check_unique_by_email(&self, tx: &DatabaseTransaction, email: &str) -> AppResult<bool>;
 }

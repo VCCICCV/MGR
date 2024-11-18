@@ -9,13 +9,17 @@ sea-orm = { workspace = true }
 
 serde = { workspace = true }
 anyhow = { workspace = true }
-tracing={workspace = true}
+tracing = { workspace = true }
 thiserror = { workspace = true }
-shared = {workspace = true}
-tokio = {workspace = true}
-chrono ={workspace = true}
-jsonwebtoken ={workspace = true}
-uuid = {workspace = true}
-password-hash = {workspace = true}
-argon2 ={ workspace = true }
-serde_json={workspace = true}
+shared = { workspace = true }
+tokio = { workspace = true }
+chrono = { workspace = true }
+jsonwebtoken = { workspace = true }
+uuid = { workspace = true }
+password-hash = { workspace = true }
+argon2 = { workspace = true }
+serde_json = { workspace = true }
+lettre = { workspace = true }
+fake = { workspace = true }
+rand = { workspace = true }
+

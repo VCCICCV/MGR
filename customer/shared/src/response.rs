@@ -5,30 +5,20 @@ use axum::{
     http::{ header, HeaderValue, StatusCode },
     response::{ IntoResponse, Response },
 };
+use serde::Serialize;
 
-use serde::{ Deserialize, Serialize };
-#[derive(Default, Debug, Clone, Serialize, Deserialize)]
-pub struct SignUpDTO {
-    // 用户名
-    pub username: String,
-    // 邮箱
-    pub email: String,
-    // 密码
-    pub password: String,
-    // 邮箱验证码
-    pub verification_code: String,
-}
-
-#[derive(Default, Debug, Clone, Serialize, Deserialize)]
-pub struct UserLoginRespDTO {
-    // 用户名
-    pub username: String,
-    // 邮箱
-    pub email: String,
+use uuid::Uuid;
+//
+#[derive(Debug, Serialize)]
+pub struct SignUpDto {
+    // pub token: String,
+    // pub refresh_token: String,
+    // pub expires_in: u64,
+    pub user_id: Uuid,
 }
 /// 验证响应
 #[derive(Debug, Serialize)]
-pub struct AuthenticationResponse {
+pub struct AuthenticationDto {
     pub token: String,
     pub refresh_token: String,
     pub expires_in: u64,
@@ -40,22 +30,13 @@ pub struct ListData<T> {
 }
 // 转换为ListData
 impl<T> From<Vec<T>> for ListData<T> {
-    fn from(items:Vec<T>)->Self{
-        Self{
-            list:items
+    fn from(items: Vec<T>) -> Self {
+        Self {
+            list: items,
         }
     }
 }
 
-// pub total: u64,
-// pub total_pages: u64,
-// pub page_num: u64,
-/// 分页参数
-#[derive(Deserialize, Clone, Debug, Serialize, Default)]
-pub struct PageParams {
-    pub page_num: Option<u64>,
-    pub page_size: Option<u64>,
-}
 /// 数据统一响应格式
 #[derive(Debug, Serialize, Default)]
 pub struct Res<T> {
@@ -122,7 +103,7 @@ impl<T: Serialize> Res<T> {
         }
     }
     // 失败消息
-    pub fn with_err(err:&str) -> Self {
+    pub fn with_err(err: &str) -> Self {
         Self {
             code: StatusCode::INTERNAL_SERVER_ERROR.as_u16(),
             data: None,
