@@ -8,7 +8,7 @@ use tracing::info;
 use uuid::Uuid;
 use crate::{ dto::command::SignUpCommand, state::AppState };
 
-pub async fn sign_up(state: AppState, signup_command: SignUpCommand) -> AppResult<Uuid> {
+pub async fn sign_up(state: AppState, signup_command: SignUpCommand) -> AppResult<String> {
     info!("Register a new user request: {signup_command:?}.");
     // 开启事务
     let tx = state.db.begin().await?;

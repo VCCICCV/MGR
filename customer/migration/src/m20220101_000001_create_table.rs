@@ -31,7 +31,7 @@ impl MigrationTrait for Migration {
                         .comment("删除标记；0-未删除；1-已删除")
                 )
                 .col(
-                    ColumnDef::new(User::Is_2fa)
+                    ColumnDef::new(User::Is2fa)
                         .tiny_integer()
                         .not_null()
                         .comment("是否2FA；0-未验证；1-已验证")
@@ -281,7 +281,7 @@ enum User {
     Password,
     Avatar,
     IsDeleted,
-    Is_2fa,
+    Is2fa,
     CreateTime,
     UpdateTime,
 }

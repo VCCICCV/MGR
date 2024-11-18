@@ -41,17 +41,16 @@ impl CustomerRepository for CustomerRepositoryImpl {
         todo!()
     }
      fn save(&self, tx: &sea_orm::DatabaseTransaction, customer: Customer) -> AppResult<String> {
-        let user = (user::ActiveModel {
+        let _user = user::ActiveModel {
             user_id: Set(customer.user_id().to_owned()),
             username: Set(customer.username().to_owned()),
             email: Set(customer.email().to_owned()),
             password: Set(customer.password().to_owned()),
             create_time: Set(Utc::now().naive_utc()),
             ..Default::default()
-        }).insert(tx);
-
-        Ok(user.user_id)
-    }``
+        }.insert(tx);
+        Ok(customer.user_id().to_string())
+    }
 
      fn find_by_id(
         &self,
