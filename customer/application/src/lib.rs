@@ -9,13 +9,8 @@
 /// 例如创建订单，创建订单需要调用用户服务的接口->调用商品服务的接口->调用订单服务的接口
 /// excute执行具体的domain能力
 /// 这一层可以放在shared中
-/// 入参：命令（返回DTO或Bool）、查询对象（返回DTO或Collection）、事件对象（无返回值）
-pub mod dto {
-    // 查询
-    pub mod query;
-    // 命令
-    pub mod command;
-}
+
+
 // 在这里注入依赖，通过调用领域服务的接口来完成具体的业务逻辑
 
 // CQE规范：用例入参只有command、query、event

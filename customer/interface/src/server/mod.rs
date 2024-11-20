@@ -1,6 +1,6 @@
 use axum::response::IntoResponse;
+use domain::model::vo::response::{EmptyData, Res};
 use infrastructure::{ config::{ env::get_env_source, AppConfig }, constant::ENV_PREFIX };
-use shared::response::{ EmptyData, Res };
 use tracing::info;
 use application::state::AppState;
 use crate::{ cmd::shutdown::shutdown_signal, routers::setup_routes };

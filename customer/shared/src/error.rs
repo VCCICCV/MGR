@@ -1,6 +1,6 @@
 use axum::{ http::StatusCode, response::{ IntoResponse, Response }, Json };
 use bb8_redis::redis;
-use rdkafka::error::KafkaError;
+// use rdkafka::error::KafkaError;
 use serde::Deserialize;
 use serde::Serialize;
 use strum::EnumString;
@@ -58,7 +58,7 @@ pub enum AppError {
     #[error(transparent)] UnknownError(#[from] anyhow::Error),
     #[error(transparent)] Infallible(#[from] std::convert::Infallible),
     #[error(transparent)] TypeHeaderError(#[from] axum_extra::typed_header::TypedHeaderRejection),
-    #[error(transparent)] MessageError(#[from] KafkaError),
+    // #[error(transparent)] MessageError(#[from] KafkaError),
 }
 
 impl From<argon2::password_hash::Error> for AppError {
@@ -171,8 +171,8 @@ impl AppError {
                 ("REDIS_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
             TypeHeaderError(_err) =>
                 ("TYPE_HEADER_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
-            MessageError(_kafka_error) =>
-                ("KAFKA_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+            // MessageError(_kafka_error) =>
+            //     ("KAFKA_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
         };
 
         (status_code, AppResponseError::new(kind, message, code, data))

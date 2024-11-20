@@ -21,15 +21,15 @@ impl MigrationTrait for Migration {
                 )
                 .col(
                     ColumnDef::new(CartItem::ProductSpuId)
-                        .string_len(36).not_null()
+                        .uuid().not_null()
                         .comment("商品SPU ID")
                 )
                 .col(
                     ColumnDef::new(CartItem::ProductSkuId)
-                        .string_len(36).not_null()
+                        .uuid().not_null()
                         .comment("商品SKU ID")
                 )
-                .col(ColumnDef::new(CartItem::UserId).string_len(36).not_null().comment("用户ID"))
+                .col(ColumnDef::new(CartItem::UserId).uuid().not_null().comment("用户ID"))
                 .col(
                     ColumnDef::new(CartItem::ProductPicture).string().not_null().comment("商品图片")
                 )

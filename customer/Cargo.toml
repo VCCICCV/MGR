@@ -2,7 +2,10 @@
 name = "customer"
 version = "0.1.0"
 edition = "2021"
-
+[profile.dev]
+opt-level = 1
+[profile.dev.package."*"]
+opt-level = 3
 # 工作区成员
 [workspace]
 members = [
@@ -88,7 +91,7 @@ redis = { version = "0.27.4", features = ["aio", "tokio-comp"] }
 bb8 = "0.8.5"
 bb8-redis = "0.17.0"
 # Kafka
-rdkafka = { version = "0.36.2", features = ["cmake-build"] }
+# rdkafka = { version = "0.36.2", features = ["cmake-build"] }
 # 异步 kafka 客户端
 # rdkafka-sys = "4.7.0"
 #Media Type

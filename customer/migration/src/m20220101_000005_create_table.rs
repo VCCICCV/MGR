@@ -27,7 +27,7 @@ impl MigrationTrait for Migration {
                         .not_null()
                         .comment("消息状态；0：Pending，1：Sending，2：Success，3：Failed")
                 )
-                .col(ColumnDef::new(Message::UserId).big_integer().not_null().comment("用户id"))
+                .col(ColumnDef::new(Message::UserId).uuid().not_null().comment("用户id"))
                 .col(ColumnDef::new(Message::CreateTime).date_time().not_null().comment("创建时间"))
                 .col(ColumnDef::new(Message::UpdateTime).date_time().comment("更新时间"))
                 .to_owned()

@@ -9,11 +9,6 @@ pub mod po {
 
 /// 工具类
 pub mod utils {
-   
-    pub mod redis_util;
-    // pub mod jwt_util;
-    pub mod password_util;
-    pub mod task;
     pub mod dir;
 }
 /// 与表的映射实体
@@ -31,6 +26,7 @@ pub mod remote {}
 // 聚合转DO，这里DO就是entity下与数据表对应的结构体
 pub mod converter {
     pub mod customer_converter;
+    pub mod user_converter;
 }
 
 // 客户端

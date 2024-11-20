@@ -9,7 +9,9 @@ pub mod server;
 // restful api 适配器
 pub mod api{
     pub mod customer_handler;
-    // pub mod auth_handler;
+    pub mod admin{
+        pub mod user_handler;
+    }
 }
 // 如果响应是grpc，那么就加一个grpc适配器，和infrastructure的grpc不同，这里是响应前端，infrasteucture的grpc是请求第三方服务
 pub mod grpc{
@@ -24,7 +26,3 @@ pub mod routers;
 // pub mod routers{
 //     pub mod customer_routes;
 // }
-// 依赖注入
-pub mod inject{
-
-}

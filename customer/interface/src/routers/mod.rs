@@ -1,9 +1,13 @@
+// use admin::user_router::setup_user_routes;
 use axum::{ http::{ HeaderValue, Method }, Router };
 use application::state::AppState;
 use utoipa_swagger_ui::SwaggerUi;
 use tower_http::cors::CorsLayer;
 use utoipa::OpenApi;
 pub mod customer_router;
+pub mod admin {
+    pub mod user_router;
+}
 /// 嵌套路由
 pub async fn setup_routes(state: AppState) -> Router {
     let router = Router::new()
@@ -17,7 +21,7 @@ pub async fn setup_routes(state: AppState) -> Router {
         .merge(SwaggerUi::new("/swagger-ui").url("/apidoc/openapi.json", ApiDoc::openapi()));
     let router = customer_router::setup_customer_routes(router);
     // 添加其他路由
-
+    // let router = setup_user_routes(router.await);
     router.await.with_state(state)
 }
 // 定义 API 文档结构体

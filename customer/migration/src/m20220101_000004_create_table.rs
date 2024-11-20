@@ -93,7 +93,7 @@ impl MigrationTrait for Migration {
                 )
                 .col(
                     ColumnDef::new(ProductAttributeValue::ProductId)
-                        .big_integer()
+                        .uuid()
                         .comment("商品 ID")
                 )
                 .col(
@@ -202,13 +202,13 @@ impl MigrationTrait for Migration {
                         .default(0)
                         .comment("上级 ID，一级评论为 0")
                 )
-                .col(ColumnDef::new(ProductComment::ProductId).string_len(36).not_null().comment("商品 ID"))
+                .col(ColumnDef::new(ProductComment::ProductId).uuid().not_null().comment("商品 ID"))
                 .col(
                     ColumnDef::new(ProductComment::ProductSkuId)
-                        .string_len(36).not_null()
+                        .uuid().not_null()
                         .comment("商品 SKU ID")
                 )
-                .col(ColumnDef::new(ProductComment::UserId).string_len(36).not_null().comment("用户 ID"))
+                .col(ColumnDef::new(ProductComment::UserId).uuid().not_null().comment("用户 ID"))
                 .col(
                     ColumnDef::new(ProductComment::LikeCount).integer().default(0).comment("点赞数")
                 )

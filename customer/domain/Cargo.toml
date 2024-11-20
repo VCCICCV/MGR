@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 # domain不应该依赖于任何层
 sea-orm = { workspace = true }
-
+axum = { workspace = true }
 serde = { workspace = true }
 anyhow = { workspace = true }
 tracing = { workspace = true }
@@ -22,4 +22,6 @@ serde_json = { workspace = true }
 lettre = { workspace = true }
 fake = { workspace = true }
 rand = { workspace = true }
+garde = { workspace = true }
+mime = { workspace = true }
 

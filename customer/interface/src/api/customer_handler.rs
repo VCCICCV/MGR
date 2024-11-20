@@ -1,140 +1,43 @@
-use application::{ dto::command::SignUpCommand, use_case::customer_use_case };
-use axum::extract::{ State, Json };
+use application::use_case::customer_use_case::CustomerUseCase;
+use axum::{ extract::{ Json, State }, response::IntoResponse };
 use application::state::AppState;
-use shared::{ error::AppResult, response::SignUpDto };
-use tracing::info;
+use domain::model::{
+    dto::command::{ ActiveCommand, SignUpCommand },
+    vo::response::{ MessageDto, Res, SignUpDto },
+};
 use garde::Validate;
+use shared::error::AppResult;
+use tracing::info;
+
 pub async fn sign_up(
     State(state): State<AppState>,
     Json(signup_command): Json<SignUpCommand>
 ) -> AppResult<Json<SignUpDto>> {
     info!("Register new user with request: {:?}", signup_command);
-    // 数据校验
-    signup_command.validate()?;
-    match customer_use_case::sign_up(state, signup_command).await {
-        Ok(user_id) => {
-            let res = SignUpDto{user_id};
-            Ok(Json(res))
-        },
-        Err(err) => Err(err),
+    let use_case = CustomerUseCase::new(state.into());
+    match use_case.sign_up(signup_command).await {
+        Ok(user_id) =>
+            Ok(
+                Json(SignUpDto {
+                    user_id: user_id,
+                })
+            ),
+        Err(e) => Err(e),
     }
 }
-// pub async fn send_email(
-//     State(state): State<AppState>,
-//     verify_code_send_command: Json<VerifyCodeSendCommand>
-// ) -> AppResult<Json<Res<String>>> {
-//     todo!();
-//     // info!("verify: {:?}", verify_code_command);
-//     // let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db);
-//     // let use_case = CustomerUseCase::new(customer_repository_impl);
-//     // match use_case.send_email(verify_code_send_command.receive_email.clone()).await {
-//     //     Ok(()) => Res::<String>::with_success(),
-//     //     Err(err) => Res::with_err(&err.to_string()),
-//     // }
-// }
-
-// use application::{
-//     dto::{ request_command::CustomerCommand, response_dto::Res },
-//     use_case::customer_use_case::CustomerUseCase,
-// };
-// use axum::{ extract::State, response::IntoResponse };
-// use infrastructure::{
-//     persistence::customer_repository_impl::CustomerRepositoryImpl,
-//     state::AppState,
-// };
-// pub async fn get_all(State(app_state): State<AppState>) -> impl IntoResponse {
-//     let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
-//     let use_case = CustomerUseCase::new(customer_repository_impl);
-//     let customers = use_case.get_all().await;
-//     match customers {
-//         Ok(customers) => Res::with_data(customers),
-//         Err(err) => Res::with_err(&err.to_string()),
-//     }
-// }
-// pub async fn create_customer(
-//     State(app_state): State<AppState>,
-//     command: axum::extract::Json<CustomerCommand>
-// ) -> impl IntoResponse {
-//     let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
-//     let use_case = CustomerUseCase::new(customer_repository_impl);
-//     let customer = use_case.create(command.0).await;
-//     match customer {
-//         Ok(msg) => Res::<String>::with_msg(&msg),
-//         Err(err) => Res::with_err(&err.to_string()),
-//     }
-// }
-// pub async fn send_mail(
-//     State(app_state): State<AppState>,
-//     email: axum::extract::Path<String>
-// ) -> impl IntoResponse {
-//     let customer_repository_impl = CustomerRepositoryImpl::new(app_state.db.clone());
-//     let use_case = CustomerUseCase::new(customer_repository_impl);
-//     let code = use_case.send_mail(email).await;
-//     match code {
-//         Ok(msg) => Res::<String>::with_msg(&msg),
-//         Err(err) => Res::with_err(&err.to_string()),
-//     }
-// }
-// pub async fn register_customer(
-//     State(app_state): State<AppState>,
-//     command: axum::extract::Json<CustomerCommand>
-// ) {}
-// DI：我们把查询用户的trait和命令用户的trait注入到handler中
-
-// pub async fn register_handler(
-//     State(state): State<AppState>,
-//     user_name: Path<String>,
-//     password: Path<String>
-// ) -> impl IntoResponse {
-//     let user_command = UserRegisterCommand::new(user_name, password);
-//     // 创建用例实例
-//     let user_use_case = user_use_case::UserUseCase::new(state.user_repository);
-
-//     let result = UserUseCase.execute(user_command).await;
-//     match result {
-//         Ok(user) => Res::with_data(user),
-//         Err(err) => Res::with_err(&err.to_string()),
-//     }
-// }
-// Res::with_data("register".to_string())
-// pub async fn list_users() -> impl IntoResponse {
-//     let use_case = UserUseCase::new();
-//     let users = use_case.list_users().await;
-//     match users {
-//         Ok(users) => Res::with_data(users),
-//         Err(err) => {
-//             return Res::with_err(&err.to_string());
-//         }
-//     }
-// }
-
-// pub async fn create_user(user: axum::extract::Json<RegisterUserDTO>) -> impl IntoResponse {
-//     let use_case = UserUseCase::new();
-//     let result = use_case.create_user(user.0).await;
-//     match result {
-//         Ok(new_user) => Res::with_data(new_user),
-//         Err(err) => Res::with_err(&err.to_string()),
-//     }
-// }
-// pub async fn update_user(user: axum::extract::Json<User>) -> impl IntoResponse {
-//     let use_case = UserUseCase::new();
-//     let result = use_case.update_user(user.0).await;
-//     match result {
-//         Ok(new_user) => Res::with_data(new_user),
-//         Err(err) => Res::with_err(&err.to_string()),
-//     }
-// }
-// pub async fn delete_user(id: axum::extract::Path<i32>) -> impl IntoResponse {
-//     let use_case = UserUseCase::new();
-//     let result = use_case.delete_user(*id).await;
-//     match result {
-//         Ok(deleted) => {
-//             if deleted {
-//                 Res::with_data("User deleted successfully")
-//             } else {
-//                 Res::with_err("User not found or deletion failed")
-//             }
-//         }
-//         Err(err) => Res::with_err(&err.to_string()),
-//     }
-// }
+pub async fn active(
+    State(state): State<AppState>,
+    Json(active_command): Json<ActiveCommand>
+) -> AppResult<Json<MessageDto>> {
+    let use_case = CustomerUseCase::new(state.clone().into());
+    match use_case.active(active_command).await {
+        Ok(_) => {
+            info!("User successfully activated.");
+            Ok(Json(MessageDto::new("User successfully activated.")))
+        }
+        Err(e) => {
+            info!("The user activation operation was not successful: {e:?}");
+            Err(e)
+        }
+    }
+}

@@ -1,11 +1,20 @@
 use serde::{ Deserialize, Serialize };
 use garde::Validate;
+use uuid::Uuid;
 #[derive(Default, Debug, Clone, Serialize, Deserialize)]
 pub struct VerifyCodeSendCommand {
     //  验证码类型 注册、登录
     pub code_type: String,
     // 接收邮箱
     pub receive_email: String,
+}
+// 激活命令
+#[derive(Default, Debug, Clone, Serialize, Deserialize, Validate)]
+pub struct ActiveCommand {
+    #[garde(length(min = 5))]
+    pub verify_code: String,
+    #[garde(skip)]
+    pub user_id: Uuid,
 }
 #[derive(Default, Debug, Clone, Serialize, Deserialize, Validate)]
 pub struct SignInCommand {
@@ -26,7 +35,7 @@ impl SignInCommand {
 #[derive(Default, Debug, Clone, Serialize, Deserialize, Validate)]
 pub struct SignUpCommand {
     // 用户名
-    #[garde(ascii, length(min = 3, max = 25))]
+    #[garde(length(min = 3, max = 25))]
     pub username: String,
     // 邮箱
     #[garde(email)]

@@ -6,8 +6,8 @@ use axum::{
     response::{ IntoResponse, Response },
 };
 use serde::Serialize;
-
 use uuid::Uuid;
+
 //
 #[derive(Debug, Serialize)]
 pub struct SignUpDto {
@@ -33,6 +33,18 @@ impl<T> From<Vec<T>> for ListData<T> {
     fn from(items: Vec<T>) -> Self {
         Self {
             list: items,
+        }
+    }
+}
+// 消息响应
+#[derive(Debug, Serialize, Default)]
+pub struct MessageDto {
+    pub message: String,
+}
+impl MessageDto {
+    pub fn new<S: Into<String>>(message: S) -> Self {
+        Self {
+            message: message.into(),
         }
     }
 }
