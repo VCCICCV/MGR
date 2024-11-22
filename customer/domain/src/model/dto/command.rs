@@ -2,6 +2,36 @@ use serde::{ Deserialize, Serialize };
 use garde::Validate;
 use utoipa::{ IntoParams, ToSchema };
 use uuid::Uuid;
+// 重置密码请求
+#[derive(Debug, Deserialize, Serialize, ToSchema, Validate, IntoParams)]
+pub struct SetPasswordCommand{
+    #[garde(length(min = 8))]
+    pub new_password: String,
+    #[garde(length(min = 5))]
+    pub code: String,
+    #[garde(skip)]
+    pub user_id: Uuid,
+}
+// 2fa登录请求
+#[derive(Debug, Deserialize, Serialize, ToSchema, Validate)]
+pub struct Login2faCommand {
+    #[garde(skip)]
+    pub user_id: Uuid,
+    #[garde(length(min = 5))]
+    pub code: String,
+}
+// 刷新token请求
+#[derive(Debug, Serialize, Deserialize, ToSchema, Validate, IntoParams)]
+pub struct RefreshTokenCommand {
+    #[garde(length(min = 30))]
+    pub token: String,
+}
+// 使用token请求
+#[derive(Debug, Serialize, Deserialize, ToSchema, Validate, IntoParams)]
+pub struct TokenInfoCommand {
+    #[garde(length(min = 30))]
+    pub token: String,
+}
 #[derive(Default, Debug, Clone, Serialize, Deserialize, ToSchema, IntoParams)]
 pub struct VerifyCodeSendCommand {
     //  验证码类型 注册、登录

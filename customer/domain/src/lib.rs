@@ -47,6 +47,10 @@ pub mod model {
         pub mod error;
     }
     /// 入参：命令（返回DTO或Bool）、查询对象（返回DTO或Collection）、事件对象（无返回值）
+    /// 如何区分一个请求是查询还是命令
+    /// 
+    /// 查询：请求不会对系统状态产生修改
+    /// 命令：请求会对系统状态产生修改
     pub mod dto {
         pub mod command;
         pub mod query;

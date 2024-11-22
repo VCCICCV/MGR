@@ -12,6 +12,7 @@ use domain::utils::password;
 use sea_orm::{
     ActiveModelTrait,
     ColumnTrait,
+    DatabaseConnection,
     DatabaseTransaction,
     EntityTrait,
     PaginatorTrait,
@@ -27,7 +28,12 @@ use domain::repositories::customer_repository::CustomerRepository;
 use uuid::Uuid;
 use crate::client::database::DatabaseClient;
 use crate::client::redis::RedisClient;
-use crate::constant::{ACCESS_TOKEN_ENCODE_KEY, EXPIRE_BEARER_TOKEN_SECS, EXPIRE_REFRESH_TOKEN_SECS, REFRESH_TOKEN_ENCODE_KEY};
+use crate::constant::{
+    ACCESS_TOKEN_ENCODE_KEY,
+    EXPIRE_BEARER_TOKEN_SECS,
+    EXPIRE_REFRESH_TOKEN_SECS,
+    REFRESH_TOKEN_ENCODE_KEY,
+};
 use crate::po;
 use crate::po::user::{ self };
 
@@ -50,6 +56,29 @@ impl CustomerRepositoryImpl {
 // 这里的标记是动态派发
 #[async_trait]
 impl CustomerRepository for CustomerRepositoryImpl {
+    async fn find_by_username_and_status(
+        &self,
+        email: &str,
+        is_delete: i16
+    ) -> AppResult<Option<Customer>> {
+        let result = user::Entity
+            ::find()
+            .filter(user::Column::Username.eq(email).and(user::Column::IsDeleted.eq(is_delete)))
+            .one(&*self.db).await?;
+        // 转bo
+        if let Some(model) = result {
+            let customer = CustomerBuilder::new()
+                .user_id(model.user_id)
+                .username(model.username)
+                .email(model.email)
+                .avatar(model.avatar)
+                .password(model.password)
+                .is2fa(model.is2fa)
+                .build();
+            return Ok(Some(customer));
+        }
+        Ok(None)
+    }
     async fn generate_token(
         &self,
         user_id: Uuid,
@@ -82,15 +111,11 @@ impl CustomerRepository for CustomerRepositoryImpl {
         user.update(tx).await?;
         Ok(())
     }
-    async fn find_by_user_id(
-        &self,
-        tx: &DatabaseTransaction,
-        user_id: Uuid
-    ) -> AppResult<Option<Customer>> {
+    async fn find_by_user_id(&self, user_id: Uuid) -> AppResult<Option<Customer>> {
         let result = po::user::Entity
             ::find()
             .filter(user::Column::UserId.eq(user_id))
-            .one(tx).await?;
+            .one(&*self.db).await?;
         // 转bo，这里使用if let进行有值判断
         if let Some(model) = result {
             let customer = CustomerBuilder::new()

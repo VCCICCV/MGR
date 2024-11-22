@@ -10,6 +10,9 @@ pub mod po {
 /// 工具类
 pub mod utils {
     pub mod dir;
+    pub mod session;
+    pub mod redis;
+    pub mod token;
 }
 /// 与表的映射实体
 // pub mod entities{
@@ -19,8 +22,6 @@ pub mod utils {
 /// 持久层具体实现，对应表的CRUD
 pub mod persistence {
     pub mod customer_repository_impl;
-    pub mod session;
-    pub mod redis;
 }
 // RPC调用
 pub mod remote {}
@@ -43,7 +44,7 @@ pub mod client {
 pub mod config;
 pub mod constant;
 // 消息队列
-pub mod event{
+pub mod event {
     pub mod consumer_impl;
     pub mod producer_impl;
 }

@@ -3,18 +3,16 @@ use domain::{
     model::{
         aggregate::customer::CustomerBuilder,
         dto::{ command::{ ActiveCommand, LoginCommand, SignUpCommand }, query::PageParams },
-        entity::user::User, vo::error::{AppError, AppResult},
+        entity::user::User,
+        vo::{ error::{ AppError, AppResult }, response::LoginResponse },
     },
-    utils,
+    utils::{ self, password },
 };
-use infrastructure::client::redis::RedisClientExt;
-
+use infrastructure::{ client::redis::RedisClientExt, utils::token::generate_tokens };
 use sea_orm::TransactionTrait;
-
 use tracing::info;
 use uuid::Uuid;
 use crate::state::AppState;
-
 
 use std::sync::Arc;
 pub struct CustomerUseCase {
@@ -26,15 +24,29 @@ impl CustomerUseCase {
             state,
         }
     }
-    pub async fn  login(&self,login_command:LoginCommand) -> AppResult<()> {
+    pub async fn login(&self, login_command: LoginCommand) -> AppResult<()> {
         info!("登录用户请求: {login_command:?}.");
         // 判断用户是否被删除
-
-        // 判断密码是否正确
+        if
+            let Some(customer) = self.state.customer_repository.find_by_username_and_status(
+                &login_command.email,
+                0
+            ).await?
+        {
+            // 判断密码是否正确
+            password::verify(login_command.password, customer.password().to_string()).await?;
+            if *customer.is2fa() == 0 {
+                //
+                let key = Loginkey { user_id };
+                let ttl = redis::get_tll(&state.redis, &key).await?;
+            }
+        }
         // 判断是否需要2fa
         // 生成sessionid
         // 返回token
-        todo!()
+
+        let token = generate_tokens(user.user_id(), user.role(), session_id)?;
+        Ok(LoginResponse::Token(resp))
     }
     pub async fn active(&self, active_command: ActiveCommand) -> AppResult<()> {
         info!("激活用户请求: {active_command:?}.");
@@ -43,12 +55,16 @@ impl CustomerUseCase {
         // 检查是否已激活
         if
             let Some(mut customer) = self.state.customer_repository.find_by_user_id(
-                &tx,
+                &*self.state.db,
                 active_command.user_id
             ).await?
         {
             // 更新BO
-            customer = CustomerBuilder::new().user_id(active_command.user_id).is_deleted(0).verify_code(Some(active_command.verify_code)).build();
+            customer = CustomerBuilder::new()
+                .user_id(active_command.user_id)
+                .is_deleted(0)
+                .verify_code(Some(active_command.verify_code))
+                .build();
             // 获取缓存验证码
             let code = self.state.redis.get(&active_command.user_id.to_string()).await?;
             // 传入缓存验证码检查验证码正确性

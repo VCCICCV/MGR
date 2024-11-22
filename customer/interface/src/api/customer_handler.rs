@@ -80,12 +80,15 @@ pub async fn active(
 )]
 pub async fn login(
     State(state): State<AppState>,
-    Json(login_command): Json<LoginCommand>,
-)->AppResult<Res<LoginResponse>>{
+    Json(login_command): Json<LoginCommand>
+) -> AppResult<Res<LoginResponse>> {
     info!("用户登录请求: {:?}", login_command);
     let use_case = CustomerUseCase::new(state.clone().into());
     match use_case.login(login_command).await {
-        Ok(token) => Ok(Res::with_data(LoginResponse { token })),
+        Ok(token) => {
+            info!("Success login: {token:?}");
+            Ok(Res::with_data(LoginResponse::Token(token)))
+        }
         Err(e) => Err(e),
     }
 }

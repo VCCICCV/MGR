@@ -30,6 +30,7 @@ pub enum AppError {
     #[error("{0} already exists")] ResourceExistsError(Resource),
     #[error("{0}")] PermissionDeniedError(String),
     #[error("{0}")] UserNotActiveError(String),
+    #[error("{0}")] UserNotFound(String),
     #[error("{0}")] InvalidSessionError(String),
     #[error("{0}")] ConflictError(String),
     #[error("{0}")] UnauthorizedError(String),
@@ -171,6 +172,8 @@ impl AppError {
                 ("REDIS_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
             TypeHeaderError(_err) =>
                 ("TYPE_HEADER_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+            UserNotFound(_) =>
+                ("DATABASE_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
             // MessageError(_kafka_error) =>
             //     ("KAFKA_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
         };

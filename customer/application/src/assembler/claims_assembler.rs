@@ -1,8 +1,8 @@
-use axum::{async_trait, extract::FromRequestParts, http::request::Parts, RequestPartsExt};
-use axum_extra::{headers::{authorization::Bearer, Authorization}, TypedHeader};
-use domain::model::{dp::claims::UserClaims, vo::error::AppError};
+use axum::{ async_trait, extract::FromRequestParts, http::request::Parts, RequestPartsExt };
+use axum_extra::{ headers::{ authorization::Bearer, Authorization }, TypedHeader };
+use domain::model::{ dp::claims::UserClaims, vo::error::AppError };
 use infrastructure::constant::ACCESS_TOKEN_DECODE_KEY;
-
+use infrastructure::utils::session;
 use crate::state::AppState;
 
 // 从header中提取claims
@@ -18,7 +18,7 @@ impl FromRequestParts<AppState> for UserClaims {
             parts.extract::<TypedHeader<Authorization<Bearer>>>().await?;
         let user_claims = UserClaims::decode(bearer.token(), &ACCESS_TOKEN_DECODE_KEY)?.claims;
         // 检查session是否存在
-        service::session::check(&state.redis, &user_claims).await?;
+        session::check(&state.redis, &user_claims).await?;
         Ok(user_claims)
     }
 }

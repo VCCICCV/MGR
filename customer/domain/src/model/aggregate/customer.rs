@@ -1,9 +1,8 @@
-use sea_orm::metric::Info;
 use serde::{ Deserialize, Serialize };
 
 use tracing::info;
 use uuid::Uuid;
-use crate::model::{ entity::receive_address::ReceiveAddress, vo::error::{ AppError, AppResult } };
+use crate::model::{ dp::role::Role, entity::receive_address::ReceiveAddress, vo::error::{ AppError, AppResult } };
 
 #[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct Customer {
@@ -23,6 +22,8 @@ pub struct Customer {
     verify_code: Option<String>,
     // 二次验证
     is2fa: i16,
+    // 角色
+    role: Role,
     // 收货地址
     receive_address: Vec<ReceiveAddress>,
 }
@@ -72,6 +73,10 @@ impl CustomerBuilder {
         self.customer.is2fa = is2fa;
         self
     }
+    pub fn role(&mut self, role: Role) -> &mut Self {
+        self.customer.role = role;
+        self
+    }
     pub fn receive_address(&mut self, receive_address: Vec<ReceiveAddress>) -> &mut Self {
         self.customer.receive_address = receive_address;
         self
@@ -87,6 +92,7 @@ impl CustomerBuilder {
             receive_address: self.customer.receive_address.clone(),
             is2fa: self.customer.is2fa.clone(),
             is_deleted: self.customer.is_deleted.clone(),
+            role:self.customer.role.clone(),
         }
     }
 }
@@ -115,6 +121,9 @@ impl Customer {
     }
     pub fn is2fa(&self) -> &i16 {
         &self.is2fa
+    }
+    pub fn role(&self) -> &Role {
+        &self.role
     }
     pub fn receive_address(&self) -> &Vec<ReceiveAddress> {
         &self.receive_address

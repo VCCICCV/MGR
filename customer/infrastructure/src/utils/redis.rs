@@ -73,6 +73,7 @@ pub struct LoginValue {
     pub code: String,
 }
 // redis工具
+// 设置值
 pub async fn set<K>(client: &RedisClient, (key, value): (&K, &K::Value)) -> AppResult<()>
     where K: RedisKey
 {
@@ -81,7 +82,7 @@ pub async fn set<K>(client: &RedisClient, (key, value): (&K, &K::Value)) -> AppR
     client.set(&key.to_string(), &value, K::EXPIRE_TIME).await?;
     Ok(())
 }
-
+// 获取值
 pub async fn get<K>(client: &RedisClient, key: &K) -> AppResult<Option<K::Value>> where K: RedisKey {
     info!("Get value from redis key :{key}");
     Ok(
@@ -91,16 +92,17 @@ pub async fn get<K>(client: &RedisClient, key: &K) -> AppResult<Option<K::Value>
             .transpose()?
     )
 }
+//  删除值
 pub async fn del(client: &RedisClient, key: &impl RedisKey) -> Result<bool, redis::RedisError> {
     info!("Delete key in redis :{key:?}");
     client.del(&key.to_string()).await
 }
-
+// 获取ttl
 pub async fn get_tll(client: &RedisClient, key: &impl RedisKey) -> Result<i64, redis::RedisError> {
     info!("Get ttl key in redis :{key:?}");
     client.ttl(&key.to_string()).await
 }
-
+// 判断key是否存在
 pub async fn check_exist_key(redis: &RedisClient, key: &impl RedisKey) -> AppResult<bool> {
     Ok(redis.exist(&key.to_string()).await?)
 }

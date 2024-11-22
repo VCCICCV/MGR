@@ -1,6 +1,13 @@
+use garde::Validate;
 use sea_orm::strum::Display;
 use serde::{ Deserialize, Serialize };
-
+use utoipa::{IntoParams, ToSchema};
+// 忘记密码请求
+#[derive(Debug, Deserialize, ToSchema, Validate, IntoParams)]
+pub struct ForgetPasswordQuery {
+    #[garde(email)]
+    pub email: String,
+}
 /// 分页参数
 #[derive(Deserialize, Clone, Debug, Serialize, Default)]
 pub struct PageParams {
