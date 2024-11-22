@@ -9,12 +9,10 @@ pub mod po {
 
 /// 工具类
 pub mod utils {
-   
-    pub mod redis_util;
-    // pub mod jwt_util;
-    pub mod password_util;
-    pub mod task;
     pub mod dir;
+    pub mod session;
+    pub mod redis;
+    pub mod token;
 }
 /// 与表的映射实体
 // pub mod entities{
@@ -24,13 +22,13 @@ pub mod utils {
 /// 持久层具体实现，对应表的CRUD
 pub mod persistence {
     pub mod customer_repository_impl;
-
 }
 // RPC调用
 pub mod remote {}
 // 聚合转DO，这里DO就是entity下与数据表对应的结构体
 pub mod converter {
-    pub mod customer_converter;
+    pub mod customer_convert;
+    pub mod user_convert;
 }
 
 // 客户端
@@ -46,7 +44,7 @@ pub mod client {
 pub mod config;
 pub mod constant;
 // 消息队列
-pub mod event{
+pub mod event {
     pub mod consumer_impl;
     pub mod producer_impl;
 }

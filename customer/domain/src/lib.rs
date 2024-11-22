@@ -24,9 +24,9 @@ pub mod model {
     // 将隐性的概念显性化
     // 封装 多对象 行为
     pub mod dp {
-        // pub mod customer_email;
-        // pub mod customer_name;
         pub mod customer_id;
+        pub mod role;
+        pub mod claims;
     }
     //  聚合对象，由值对象和领域实体组成
     pub mod aggregate {
@@ -37,10 +37,23 @@ pub mod model {
     // 领域实体，有的项目叫BO业务对象
     pub mod entity {
         pub mod receive_address;
-        // pub mod user;
+        pub mod user;
         // pub mod permission;
         // pub mod role_permission;
         // pub mod role;
+    }
+    pub mod vo {
+        pub mod response;
+        pub mod error;
+    }
+    /// 入参：命令（返回DTO或Bool）、查询对象（返回DTO或Collection）、事件对象（无返回值）
+    /// 如何区分一个请求是查询还是命令
+    /// 
+    /// 查询：请求不会对系统状态产生修改
+    /// 命令：请求会对系统状态产生修改
+    pub mod dto {
+        pub mod command;
+        pub mod query;
     }
 }
 /// 高层Domain不应该依赖于低层Infrastructure，而是应该依赖于抽象trait
@@ -74,6 +87,9 @@ pub mod event {
     pub mod producer;
 }
 pub mod utils {
-    pub mod jwt_util;
+    pub mod key;
+    pub mod jwt;
     pub mod random;
+    pub mod hash;
+    pub mod password;
 }

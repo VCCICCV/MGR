@@ -28,6 +28,6 @@ mod tests {
     #[test]
     fn test_get_cargo_project_root() {
         let root = get_cargo_project_root().unwrap().unwrap();
-        assert_eq!(root.file_name().unwrap().to_str().unwrap(), "auth");
+        assert_eq!(root.file_name().unwrap().to_str().unwrap(), "customer");
     }
 }

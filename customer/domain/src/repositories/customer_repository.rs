@@ -1,17 +1,27 @@
+use axum::async_trait;
 use sea_orm::DatabaseTransaction;
-use shared::error::AppResult;
-use crate::model::{ aggregate::customer::Customer, dp::customer_id::CustomerId };
+
+use uuid::Uuid;
+use crate::model::{
+    aggregate::customer::Customer, dp::role::Role, dto::query::PageParams, entity::user::User, vo::{error::AppResult, response::TokenResponse}
+};
+//在编译阶段进行转换使其符合对象安全，以dyn Trait的形式访问
+// 命令以事务实现，查询以非事务实现
+#[async_trait]
 pub trait CustomerRepository: Send + Sync {
-    fn find_all(&self) -> AppResult<Vec<Customer>>;
-    fn find_by_email(&self, tx: &DatabaseTransaction, email: &str) -> AppResult<Option<Customer>>;
-    fn save(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<String>;
-    fn find_by_id(&self, tx: &DatabaseTransaction, id: CustomerId) -> AppResult<Option<Customer>>;
-    fn send_email(&self, tx: &DatabaseTransaction, email: &str) -> AppResult<()>;
-    fn find_code_by_email(
+    async fn find_by_username_and_status(&self, email: &str, is_delete: i16) -> AppResult<Option<Customer>>;
+    async fn generate_token(&self, user_id: Uuid, role: Role, session_id: Uuid)->AppResult<TokenResponse>;
+    async fn active(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<()>;
+    async fn find_by_user_id(
+        &self,
+        user_id: Uuid
+    ) -> AppResult<Option<Customer>>;
+    async fn find_page(&self, param: PageParams) -> AppResult<Vec<User>>;
+    async fn save(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<Uuid>;
+    async fn check_unique_by_username(
         &self,
         tx: &DatabaseTransaction,
-        email: &str
-    ) -> AppResult<Option<String>>;
-    fn check_unique_by_username(&self, tx: &DatabaseTransaction, username: &str) -> AppResult<bool>;
-    fn check_unique_by_email(&self, tx: &DatabaseTransaction, email: &str) -> AppResult<bool>;
+        username: &str
+    ) -> AppResult<bool>;
+    async fn check_unique_by_email(&self, tx: &DatabaseTransaction, email: &str) -> AppResult<bool>;
 }

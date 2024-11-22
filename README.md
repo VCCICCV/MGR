@@ -4,6 +4,10 @@
 
 关于配置请查看`customer`模块，本项目集成了各个客户端配置，充分利用Rust类型系统 ，无论作为学习还是生产模板都是不错的选择
 
+## 架构
+
+![img](README.assets/webp.webp)
+
 ## 技术栈
 
 * Rust，采用DDD领域驱动设计
@@ -18,11 +22,11 @@
 
 ## 项目简介
 
-`MGR`是一个基于DDD整洁架构设计的web3D购车商城，采用Docker、Elasticsearch、Kubernetes等技术
+`MGR`是一个基于DDD清晰架构设计的web3D购车商城，采用Docker、Elasticsearch、Kubernetes等技术
 
 ## 架构
 
-* Interface：适配器层，有的地方叫Adapter层，用于处理页面请求的Controller
+* Interface：适配器层，有的地方叫Adapter层，用于处理页面请求的Controller，对应主动适配器
   * api：web接口
   * cmd：命令行接口
 * Application：
@@ -33,9 +37,9 @@
   * repositories：仓储接口，在Infrastructure实现
   * service：领域能力
   * event：事件定义
-* Infrastructure：
+* Infrastructure：对应被动适配器
   * config：各种配置
-  * client：数据库、MQ客户端
+  * client：数据库、MQ客户端 
   * persistence：仓储实现
   * PO（Persistence Object）：持久化对象，有的叫DO（Data Object）数据对象，都是和表一 一对应的对象
 * shared：公共模块，有的项目叫common

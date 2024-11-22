@@ -1,6 +1,7 @@
+use domain::model::vo::error::AppResult;
 use elasticsearch::http::transport::{ SingleNodeConnectionPool, TransportBuilder };
 use elasticsearch::Elasticsearch;
-use shared::error::AppResult;
+
 use std::sync::Arc;
 use crate::config::AppConfig;
 

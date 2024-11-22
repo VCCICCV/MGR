@@ -1,5 +1,6 @@
+use domain::model::vo::error::AppResult;
 use redis::{ Client, RedisError };
-use shared::error::AppResult;
+
 use std::time::Duration;
 use tracing::log::info;
 use test_context::AsyncTestContext;

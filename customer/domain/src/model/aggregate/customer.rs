@@ -1,10 +1,13 @@
 use serde::{ Deserialize, Serialize };
-use crate::model::entity::receive_address::ReceiveAddress;
+
+use tracing::info;
+use uuid::Uuid;
+use crate::model::{ dp::role::Role, entity::receive_address::ReceiveAddress, vo::error::{ AppError, AppResult } };
 
 #[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct Customer {
     // uuid
-    user_id: String,
+    user_id: Uuid,
     // 用户名
     username: String,
     // 邮件
@@ -13,8 +16,14 @@ pub struct Customer {
     password: String,
     // 头像
     avatar: Option<String>,
+    // 是否删除
+    is_deleted: i16,
     // 验证码
     verify_code: Option<String>,
+    // 二次验证
+    is2fa: i16,
+    // 角色
+    role: Role,
     // 收货地址
     receive_address: Vec<ReceiveAddress>,
 }
@@ -27,7 +36,7 @@ impl CustomerBuilder {
     pub fn new() -> Self {
         CustomerBuilder::default()
     }
-    pub fn user_id(&mut self, user_id: String) -> &mut Self {
+    pub fn user_id(&mut self, user_id: Uuid) -> &mut Self {
         self.customer.user_id = user_id;
         self
     }
@@ -56,7 +65,18 @@ impl CustomerBuilder {
         self.customer.verify_code = verify_code;
         self
     }
-
+    pub fn is_deleted(&mut self, is_deleted: i16) -> &mut Self {
+        self.customer.is_deleted = is_deleted;
+        self
+    }
+    pub fn is2fa(&mut self, is2fa: i16) -> &mut Self {
+        self.customer.is2fa = is2fa;
+        self
+    }
+    pub fn role(&mut self, role: Role) -> &mut Self {
+        self.customer.role = role;
+        self
+    }
     pub fn receive_address(&mut self, receive_address: Vec<ReceiveAddress>) -> &mut Self {
         self.customer.receive_address = receive_address;
         self
@@ -70,12 +90,15 @@ impl CustomerBuilder {
             avatar: self.customer.avatar.clone(),
             verify_code: self.customer.verify_code.clone(),
             receive_address: self.customer.receive_address.clone(),
+            is2fa: self.customer.is2fa.clone(),
+            is_deleted: self.customer.is_deleted.clone(),
+            role:self.customer.role.clone(),
         }
     }
 }
 // getter
 impl Customer {
-    pub fn user_id(&self) -> &str {
+    pub fn user_id(&self) -> &Uuid {
         &self.user_id
     }
     pub fn username(&self) -> &str {
@@ -90,10 +113,53 @@ impl Customer {
     pub fn avatar(&self) -> &Option<String> {
         &self.avatar
     }
+    pub fn is_deleted(&self) -> &i16 {
+        &self.is_deleted
+    }
     pub fn verify_code(&self) -> &Option<String> {
         &self.verify_code
     }
+    pub fn is2fa(&self) -> &i16 {
+        &self.is2fa
+    }
+    pub fn role(&self) -> &Role {
+        &self.role
+    }
     pub fn receive_address(&self) -> &Vec<ReceiveAddress> {
         &self.receive_address
+    }
+    pub fn checkout_valid_code(&mut self, verify_code: Option<&str>) -> AppResult<()> {
+        match verify_code {
+            None => {
+                return Err(AppError::UserNotActiveError("验证码已失效".to_string()).into());
+            }
+            Some(code) if code.is_empty() => {
+                return Err(AppError::UserNotActiveError("验证码已失效".to_string()).into());
+            }
+            Some(code) => {
+                info!("缓存验证码：{:?}", code);
+                //
+                match self.verify_code.as_deref() {
+                    // 未携带验证码
+                    None => {
+                        return Err(
+                            AppError::UserNotActiveError(
+                                "未找到对应的验证码记录".to_string()
+                            ).into()
+                        );
+                    }
+                    // 携带验证码与缓存的验证码不同
+                    Some(saved_code) if saved_code != code => {
+                        info!("携带验证码：{:?}", saved_code);
+                        return Err(AppError::UserNotActiveError("验证码错误".to_string()).into());
+                    }
+                    // 相同什么都不做
+                    _ => {
+                        ();
+                    }
+                }
+            }
+        }
+        Ok(())
     }
 }

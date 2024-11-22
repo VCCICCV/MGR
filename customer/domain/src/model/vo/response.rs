@@ -1,30 +1,64 @@
 use std::fmt::Debug;
-
 use axum::{
     body::Body,
     http::{ header, HeaderValue, StatusCode },
     response::{ IntoResponse, Response },
 };
-use serde::Serialize;
-
+use serde::{ Deserialize, Serialize };
+use shared::constant::BEARER;
+use utoipa::ToSchema;
 use uuid::Uuid;
-//
+// 登录响应
+#[derive(Debug, Serialize, ToSchema)]
+pub enum LoginResponse {
+    Token(TokenResponse),
+    Code {
+        message: String,
+        expire_in: u64,
+    },
+}
+impl From<TokenResponse> for LoginResponse {
+    fn from(value: TokenResponse) -> Self {
+        LoginResponse::Token(value)
+    }
+}
+// token响应
+#[derive(Debug, Serialize, Deserialize, ToSchema, Clone)]
+pub struct TokenResponse {
+    // token类型
+    pub token_type: String,
+    // token
+    pub access_token: String,
+    // 刷新token
+    pub refresh_token: String,
+    // 过期时间
+    pub expire_in: u64,
+}
+impl TokenResponse {
+  pub fn new(access_token: String, refresh_token: String, expire_in: u64) -> Self {
+    Self {
+      token_type: BEARER.to_string(),
+      access_token,
+      refresh_token,
+      expire_in,
+    }
+  }
+}
+// 注册响应
 #[derive(Debug, Serialize)]
-pub struct SignUpDto {
-    // pub token: String,
-    // pub refresh_token: String,
-    // pub expires_in: u64,
+pub struct SignUpResponse {
     pub user_id: Uuid,
 }
-/// 验证响应
+// 验证响应
 #[derive(Debug, Serialize)]
-pub struct AuthenticationDto {
+pub struct AuthenticationResponse {
     pub token: String,
     pub refresh_token: String,
     pub expires_in: u64,
 }
+
 #[derive(Debug, Serialize)]
-/// 查 数据返回
+// 查 数据返回
 pub struct ListData<T> {
     pub list: Vec<T>,
 }
@@ -36,13 +70,25 @@ impl<T> From<Vec<T>> for ListData<T> {
         }
     }
 }
+// 消息响应
+#[derive(Debug, Serialize, Default, ToSchema)]
+pub struct MessageResponse {
+    pub message: String,
+}
+impl MessageResponse {
+    pub fn new<S: Into<String>>(message: S) -> Self {
+        Self {
+            message: message.into(),
+        }
+    }
+}
 
 /// 数据统一响应格式
 #[derive(Debug, Serialize, Default)]
 pub struct Res<T> {
     pub code: u16,
     pub data: Option<T>,
-    pub msg: Option<String>,
+    pub message: Option<String>,
 }
 
 impl<T> IntoResponse for Res<T> where T: Serialize + Send + Sync + Debug + 'static {
@@ -74,7 +120,7 @@ impl<T: Serialize> Res<T> {
         Self {
             code: StatusCode::OK.as_u16(),
             data: Some(data),
-            msg: Some("Success".to_string()),
+            message: Some("Success".to_string()),
         }
     }
     // 成功无数据
@@ -82,7 +128,7 @@ impl<T: Serialize> Res<T> {
         Self {
             code: StatusCode::OK.as_u16(),
             data: None,
-            msg: Some("Success".to_string()),
+            message: Some("Success".to_string()),
         }
     }
     // 成功消息
@@ -90,7 +136,7 @@ impl<T: Serialize> Res<T> {
         Self {
             code: StatusCode::OK.as_u16(),
             data: None,
-            msg: Some(msg.to_string()),
+            message: Some(msg.to_string()),
         }
     }
     // 成功数据和消息
@@ -99,7 +145,7 @@ impl<T: Serialize> Res<T> {
         Self {
             code: StatusCode::OK.as_u16(),
             data: Some(data),
-            msg: Some(msg.to_string()),
+            message: Some(msg.to_string()),
         }
     }
     // 失败消息
@@ -107,7 +153,7 @@ impl<T: Serialize> Res<T> {
         Self {
             code: StatusCode::INTERNAL_SERVER_ERROR.as_u16(),
             data: None,
-            msg: Some(err.to_string()),
+            message: Some(err.to_string()),
         }
     }
 }
@@ -120,7 +166,7 @@ impl Res<EmptyData> {
         Self {
             code: StatusCode::NOT_FOUND.as_u16(),
             data: None,
-            msg: Some("Not Found".to_string()),
+            message: Some("Not Found".to_string()),
         }
     }
 }

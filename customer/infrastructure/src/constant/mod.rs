@@ -1,6 +1,12 @@
 use once_cell::sync::Lazy;
+use std::time::Duration;
+use jsonwebtoken::{ DecodingKey, EncodingKey };
+use crate::{
+    client::{ builder::ClientBuilder, email::EmailClient, redis::RedisClient },
+    config::env::get_env_source,
+};
+// 这里的常量需要依赖基础设施层，且仅在基础设施使用
 
-use crate::{ client::{ builder::ClientBuilder, email::EmailClient, redis::RedisClient }, config::env::get_env_source };
 // 环境变量前缀
 pub const ENV_PREFIX: &str = "APP";
 // 配置
@@ -14,10 +20,44 @@ pub static CONFIG: Lazy<crate::config::AppConfig> = Lazy::new(||
 pub static REDIS: Lazy<RedisClient> = Lazy::new(||
     RedisClient::build_from_config(&CONFIG).unwrap()
 );
-// 常量
-pub const NORMAL_USER: &str = "normal_user";
+
 // email客户端
 // 这里存放在appstate中使用
 pub static EMAIL: Lazy<EmailClient> = Lazy::new(||
     EmailClient::build_from_config(&CONFIG).unwrap()
 );
+// Authorization header
+pub const AUTHORIZATION: &str = "Authorization";
+
+// 常量
+pub const NORMAL_USER: &str = "normal_user";
+// 2FA验证码过期时间
+pub const EXPIRE_TWO_FACTOR_CODE_SECS: Duration = Duration::from_secs(200);
+// Bearer token过期时间
+pub const EXPIRE_BEARER_TOKEN_SECS: Duration = Duration::from_secs(600);
+// Refresh token过期时间
+pub const EXPIRE_REFRESH_TOKEN_SECS: Duration = Duration::from_secs(3600);
+// 刷新token加密key
+pub static REFRESH_TOKEN_ENCODE_KEY: Lazy<EncodingKey> = Lazy::new(|| {
+    let key = CONFIG.secret.read_private_refresh_key().unwrap();
+    EncodingKey::from_rsa_pem(key.as_bytes()).unwrap()
+});
+// 刷新token解密key
+pub static REFRESH_TOKEN_DECODE_KEY: Lazy<DecodingKey> = Lazy::new(|| {
+    let key = CONFIG.secret.read_public_refresh_key().unwrap();
+    DecodingKey::from_rsa_pem(key.as_bytes()).unwrap()
+});
+// access token加密key
+pub static ACCESS_TOKEN_ENCODE_KEY: Lazy<EncodingKey> = Lazy::new(|| {
+    let key = CONFIG.secret.read_private_access_key().unwrap();
+    EncodingKey::from_rsa_pem(key.as_bytes()).unwrap()
+});
+// access token解密key
+pub static ACCESS_TOKEN_DECODE_KEY: Lazy<DecodingKey> = Lazy::new(|| {
+    let key = CONFIG.secret.read_public_access_key().unwrap();
+    DecodingKey::from_rsa_pem(key.as_bytes()).unwrap()
+});
+// 忘记密码验证码过期时间
+pub const EXPIRE_FORGET_PASS_CODE_SECS: Duration = Duration::from_secs(120);
+// session过期时间约半小时33.333
+pub const EXPIRE_SESSION_CODE_SECS: Duration = Duration::from_secs(2000);

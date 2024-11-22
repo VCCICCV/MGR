@@ -9,7 +9,7 @@ infrastructure = { workspace = true }
 
 axum = { workspace = true }
 anyhow = { workspace = true }
-garde = { workspace = true }
+
 tracing = { workspace = true }
 shared = { workspace = true }
 tokio = { workspace = true }
@@ -32,4 +32,4 @@ reqwest = { workspace = true }
 strum = { workspace = true }
 thiserror = { workspace = true }
 sea-orm = { workspace = true }
-rdkafka = { workspace = true }
+# rdkafka = { workspace = true }

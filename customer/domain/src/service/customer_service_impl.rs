@@ -1,7 +1,4 @@
 use std::sync::Arc;
-
-use shared::error::AppResult;
-
 use crate::repositories::{customer_repository::CustomerRepository, customer_service::CustomerService};
 /// 动态分发
 /// 编译器无法知道具体要调用的是 CustomerRepositoryImpl 这个类型所实现的对应方法，因为类型是不确定的
@@ -19,34 +16,6 @@ impl CustomerServiceImpl {
 }
 // 这里是领域能力
 impl CustomerService for CustomerServiceImpl {
-
-    // // 校验用户是否已经存在
-    //  fn sign_up(&self, customer: Customer) -> AppResult<bool> {
-    //     self.customer_repository.save(customer)?;
-    //     //     // 1.校验验证码
-    //     //     if let Some(code) = self.customer_repository.find_code_by_email(customer.email()).await? {
-    //     //         if let Some(verify_code) = customer.verify_code() {
-    //     //             if *code != *verify_code {
-    //     //                 return Ok(false);
-    //     //             }
-    //     //         }
-    //     //     }
-    //     //     // 2. 校验用户是否已经存在
-    //     //     // 2. 校验用户是否已经存在
-    //     //     if
-    //     //         let Some(_existing_customer) = self.customer_repository.find_by_email(
-    //     //             customer.email()
-    //     //         ).await?
-    //     //     {
-    //     //         return Err(InfraError::OtherError("用户已经存在".to_string()));
-    //     //     } else {
-    //     //         // 3. 保存用户
-    //     //         self.customer_repository.save(customer).await?;
-    //     //         Ok(true)
-    //     //     }
-    //     // }
-    //     todo!();
-    // }
 }
 
 
