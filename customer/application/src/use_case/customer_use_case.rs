@@ -55,7 +55,6 @@ impl CustomerUseCase {
         // 检查是否已激活
         if
             let Some(mut customer) = self.state.customer_repository.find_by_user_id(
-                &*self.state.db,
                 active_command.user_id
             ).await?
         {
