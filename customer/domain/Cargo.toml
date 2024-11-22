@@ -24,4 +24,18 @@ fake = { workspace = true }
 rand = { workspace = true }
 garde = { workspace = true }
 mime = { workspace = true }
+utoipa = { workspace = true }
 
+bb8-redis = { workspace = true }
+elasticsearch = { workspace = true }
+
+strum = { workspace = true }
+
+config = { workspace = true }
+
+base64 = { workspace = true }
+axum-extra = { workspace = true }
+reqwest = { workspace = true }
+
+openssl = { workspace = true }
+once_cell = { workspace = true }

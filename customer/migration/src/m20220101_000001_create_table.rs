@@ -16,10 +16,9 @@ impl MigrationTrait for Migration {
                         .not_null()
                         .big_integer()
                         .auto_increment()
-                        .primary_key()
                         .comment("自增ID")
                 )
-                .col(ColumnDef::new(User::UserId).uuid().not_null().comment("用户ID"))
+                .col(ColumnDef::new(User::UserId).uuid().not_null().primary_key().comment("用户ID"))
                 .col(ColumnDef::new(User::Username).string().not_null().comment("用户名"))
                 .col(ColumnDef::new(User::Email).string().not_null().unique_key().comment("邮箱"))
                 .col(ColumnDef::new(User::Password).string().not_null().comment("密码"))
@@ -54,12 +53,7 @@ impl MigrationTrait for Migration {
                         .primary_key()
                         .comment("自增ID")
                 )
-                .col(
-                    ColumnDef::new(ReceiveAddress::UserId)
-                        .uuid()
-                        .not_null()
-                        .comment("用户ID")
-                )
+                .col(ColumnDef::new(ReceiveAddress::UserId).uuid().not_null().comment("用户ID"))
                 .col(
                     ColumnDef::new(ReceiveAddress::IsDefault)
                         .tiny_integer()
@@ -177,12 +171,8 @@ impl MigrationTrait for Migration {
                 )
                 .col(ColumnDef::new(UserRole::UserId).uuid().not_null().comment("用户ID"))
                 .col(ColumnDef::new(UserRole::RoleId).integer().not_null().comment("角色ID"))
-                .col(
-                    ColumnDef::new(UserRole::CreateBy).uuid().not_null().comment("创建人ID")
-                )
-                .col(
-                    ColumnDef::new(UserRole::UpdateBy).uuid().not_null().comment("更新人ID")
-                )
+                .col(ColumnDef::new(UserRole::CreateBy).uuid().not_null().comment("创建人ID"))
+                .col(ColumnDef::new(UserRole::UpdateBy).uuid().not_null().comment("更新人ID"))
                 .col(
                     ColumnDef::new(UserRole::CreateTime).date_time().not_null().comment("创建时间")
                 )
@@ -222,18 +212,8 @@ impl MigrationTrait for Migration {
                         .not_null()
                         .comment("权限ID")
                 )
-                .col(
-                    ColumnDef::new(RolePermission::CreateBy)
-                        .uuid()
-                        .not_null()
-                        .comment("创建人ID")
-                )
-                .col(
-                    ColumnDef::new(RolePermission::UpdateBy)
-                        .uuid()
-                        .not_null()
-                        .comment("更新人ID")
-                )
+                .col(ColumnDef::new(RolePermission::CreateBy).uuid().not_null().comment("创建人ID"))
+                .col(ColumnDef::new(RolePermission::UpdateBy).uuid().not_null().comment("更新人ID"))
                 .col(
                     ColumnDef::new(RolePermission::IsDeleted)
                         .tiny_integer()

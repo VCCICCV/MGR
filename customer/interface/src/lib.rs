@@ -7,18 +7,18 @@ pub mod server;
 /// 将从业务逻辑层获取的数据转换为适合接口（例如 HTTP 响应）的格式
 /// 只关注如何与外部进行交互，而不涉及具体的业务逻辑的实现细节
 // restful api 适配器
-pub mod api{
+pub mod api {
+    pub mod openapi;
+    pub mod server_handler;
     pub mod customer_handler;
-    pub mod admin{
+    pub mod admin {
         pub mod user_handler;
     }
 }
 // 如果响应是grpc，那么就加一个grpc适配器，和infrastructure的grpc不同，这里是响应前端，infrasteucture的grpc是请求第三方服务
-pub mod grpc{
-
-}
+pub mod grpc {}
 /// cmd
-pub mod cmd{
+pub mod cmd {
     pub mod shutdown;
 }
 /// 路由

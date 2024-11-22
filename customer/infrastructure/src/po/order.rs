@@ -5,8 +5,9 @@ use sea_orm::entity::prelude::*;
 #[derive(Clone, Debug, PartialEq, DeriveEntityModel, Eq)]
 #[sea_orm(table_name = "order")]
 pub struct Model {
-    #[sea_orm(primary_key)]
+    #[sea_orm(unique)]
     pub id: i64,
+    #[sea_orm(primary_key, auto_increment = false)]
     pub order_sn: String,
     pub user_id: String,
     pub total_amount: Decimal,

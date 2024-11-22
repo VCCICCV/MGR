@@ -1,5 +1,6 @@
 use std::time::Duration;
-use shared::error::AppResult;
+
+use domain::model::vo::error::AppResult;
 use sea_orm::{ ConnectOptions, Database, DatabaseConnection };
 use tracing::info;
 use crate::config::AppConfig;

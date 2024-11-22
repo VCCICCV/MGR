@@ -108,9 +108,9 @@ argon2 = "0.5.3"
 # 邮件
 lettre = { version = "0.11.10", features = ["tokio1-native-tls", "builder"] }
 # ssl 证书
-openssl = "0.10.68"
+openssl = { version = "0.10.68", features = ["vendored"] }
 # openapi
-utoipa = { version = "5.1.1", features = ["axum_extras", "debug"] }
+utoipa = { version = "5.1.1", features = ["axum_extras", "debug", "uuid"] }
 # openapi 文档
 utoipa-swagger-ui = { version = "8.0.0", features = ["axum"] }
 utoipa-axum = { version = "0", features = ["debug"] }
@@ -139,7 +139,7 @@ sentry = "0.34.0"
 # 启动和测试需要添加
 [dependencies]
 
-# 假数据，用于测试
+# 假数据，用于测试    
 interface = { workspace = true }
 infrastructure = { workspace = true }
 tokio = { workspace = true }

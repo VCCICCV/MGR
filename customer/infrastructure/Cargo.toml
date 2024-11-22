@@ -38,6 +38,6 @@ test-context = { workspace = true }
 uuid = { workspace = true }
 # rdkafka = { workspace = true }
 elasticsearch = { workspace = true }
-# rdkafka = { workspace = true }
-chrono = { workspace = true }
 
+chrono = { workspace = true }
+jsonwebtoken = { workspace = true }

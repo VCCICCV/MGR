@@ -1,4 +1,4 @@
-use shared::error::AppResult;
+use domain::model::vo::error::AppResult;
 use tracing::{ subscriber, Subscriber };
 use tracing_appender::{ non_blocking::WorkerGuard, rolling::{ RollingFileAppender, Rotation } };
 use tracing_log::LogTracer;

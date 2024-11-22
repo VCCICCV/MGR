@@ -1,7 +1,8 @@
 use serde::{ Deserialize, Serialize };
 use garde::Validate;
+use utoipa::{ IntoParams, ToSchema };
 use uuid::Uuid;
-#[derive(Default, Debug, Clone, Serialize, Deserialize)]
+#[derive(Default, Debug, Clone, Serialize, Deserialize, ToSchema, IntoParams)]
 pub struct VerifyCodeSendCommand {
     //  验证码类型 注册、登录
     pub code_type: String,
@@ -9,14 +10,14 @@ pub struct VerifyCodeSendCommand {
     pub receive_email: String,
 }
 // 激活命令
-#[derive(Default, Debug, Clone, Serialize, Deserialize, Validate)]
+#[derive(Debug, Serialize, Deserialize, Validate, ToSchema, IntoParams)]
 pub struct ActiveCommand {
     #[garde(length(min = 5))]
     pub verify_code: String,
     #[garde(skip)]
     pub user_id: Uuid,
 }
-#[derive(Default, Debug, Clone, Serialize, Deserialize, Validate)]
+#[derive(Default, Debug, Clone, Serialize, Deserialize, Validate, ToSchema, IntoParams)]
 pub struct SignInCommand {
     #[garde(email)]
     pub email: String,
@@ -32,7 +33,7 @@ impl SignInCommand {
         }
     }
 }
-#[derive(Default, Debug, Clone, Serialize, Deserialize, Validate)]
+#[derive(Default, Debug, Clone, Serialize, Deserialize, Validate, ToSchema, IntoParams)]
 pub struct SignUpCommand {
     // 用户名
     #[garde(length(min = 3, max = 25))]
@@ -45,12 +46,14 @@ pub struct SignUpCommand {
     pub password: String,
 }
 
-#[derive(Default, Debug, Clone, Serialize, Deserialize)]
-pub struct UserLoginRespCommand {
-    // 用户名
-    pub username: String,
+#[derive(Default, Debug, Clone, Serialize, Deserialize, Validate, ToSchema, IntoParams)]
+pub struct LoginCommand {
     // 邮箱
+    #[garde(email)]
     pub email: String,
+    // 密码
+    #[garde(length(min = 8))]
+    pub password: String,
 }
 
 #[cfg(test)]

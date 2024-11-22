@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 tokio = { workspace = true }
-axum-extra = { workspace = true }
+
 axum = { workspace = true }
 anyhow = { workspace = true }
 thiserror = { workspace = true }

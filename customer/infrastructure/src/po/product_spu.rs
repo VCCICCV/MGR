@@ -5,15 +5,13 @@ use sea_orm::entity::prelude::*;
 #[derive(Clone, Debug, PartialEq, DeriveEntityModel, Eq)]
 #[sea_orm(table_name = "product_spu")]
 pub struct Model {
-    #[sea_orm(primary_key)]
-    pub id: i64,
+    #[sea_orm(primary_key)] pub id: i64,
     pub category_id: i64,
     pub brand_id: String,
     pub name: Option<String>,
     pub product_sn: Option<String>,
     pub pic: Option<String>,
-    #[sea_orm(column_type = "Text", nullable)]
-    pub photo_album: Option<String>,
+    #[sea_orm(column_type = "Text", nullable)] pub photo_album: Option<String>,
     pub price: Option<Decimal>,
     pub promotion_price: Option<Decimal>,
     pub promotion_start_time: Option<DateTime>,
@@ -21,8 +19,7 @@ pub struct Model {
     pub sub_title: Option<String>,
     pub sales: Option<i32>,
     pub unit: Option<String>,
-    #[sea_orm(column_type = "Text", nullable)]
-    pub detail: Option<String>,
+    #[sea_orm(column_type = "Text", nullable)] pub detail: Option<String>,
     pub publish_status: Option<i16>,
     pub new_status: Option<i16>,
     pub recommand_status: Option<i16>,

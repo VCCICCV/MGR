@@ -1,7 +1,7 @@
 use crate::config::AppConfig;
 
 use crate::client::builder::ClientBuilder;
-use domain::event::email::Email;
+use domain::{event::email::Email, model::vo::error::AppResult};
 use lettre::{
     transport::smtp::authentication::Credentials,
     AsyncSmtpTransport,
@@ -10,7 +10,7 @@ use lettre::{
     Tokio1Executor,
 };
 
-use shared::error::AppResult;
+
 use tracing::info;
 pub type EmailClient = AsyncSmtpTransport<Tokio1Executor>;
 

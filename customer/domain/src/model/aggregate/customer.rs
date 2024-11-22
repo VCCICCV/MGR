@@ -1,7 +1,9 @@
+use sea_orm::metric::Info;
 use serde::{ Deserialize, Serialize };
-use shared::error::{ AppError, AppResult };
+
+use tracing::info;
 use uuid::Uuid;
-use crate::model::entity::receive_address::ReceiveAddress;
+use crate::model::{ entity::receive_address::ReceiveAddress, vo::error::{ AppError, AppResult } };
 
 #[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct Customer {
@@ -15,8 +17,11 @@ pub struct Customer {
     password: String,
     // 头像
     avatar: Option<String>,
+    // 是否删除
+    is_deleted: i16,
     // 验证码
     verify_code: Option<String>,
+    // 二次验证
     is2fa: i16,
     // 收货地址
     receive_address: Vec<ReceiveAddress>,
@@ -59,7 +64,10 @@ impl CustomerBuilder {
         self.customer.verify_code = verify_code;
         self
     }
-
+    pub fn is_deleted(&mut self, is_deleted: i16) -> &mut Self {
+        self.customer.is_deleted = is_deleted;
+        self
+    }
     pub fn is2fa(&mut self, is2fa: i16) -> &mut Self {
         self.customer.is2fa = is2fa;
         self
@@ -78,6 +86,7 @@ impl CustomerBuilder {
             verify_code: self.customer.verify_code.clone(),
             receive_address: self.customer.receive_address.clone(),
             is2fa: self.customer.is2fa.clone(),
+            is_deleted: self.customer.is_deleted.clone(),
         }
     }
 }
@@ -98,6 +107,9 @@ impl Customer {
     pub fn avatar(&self) -> &Option<String> {
         &self.avatar
     }
+    pub fn is_deleted(&self) -> &i16 {
+        &self.is_deleted
+    }
     pub fn verify_code(&self) -> &Option<String> {
         &self.verify_code
     }
@@ -116,7 +128,10 @@ impl Customer {
                 return Err(AppError::UserNotActiveError("验证码已失效".to_string()).into());
             }
             Some(code) => {
+                info!("缓存验证码：{:?}", code);
+                //
                 match self.verify_code.as_deref() {
+                    // 未携带验证码
                     None => {
                         return Err(
                             AppError::UserNotActiveError(
@@ -124,10 +139,15 @@ impl Customer {
                             ).into()
                         );
                     }
+                    // 携带验证码与缓存的验证码不同
                     Some(saved_code) if saved_code != code => {
+                        info!("携带验证码：{:?}", saved_code);
                         return Err(AppError::UserNotActiveError("验证码错误".to_string()).into());
                     }
-                    _ => {}
+                    // 相同什么都不做
+                    _ => {
+                        ();
+                    }
                 }
             }
         }

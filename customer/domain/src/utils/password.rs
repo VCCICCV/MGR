@@ -2,6 +2,8 @@
 // use common::error::InfraError;
 // use password_hash::{ rand_core::OsRng, PasswordHasher, SaltString };
 
+use crate::model::vo::error::{invalid_input_error, AppResult};
+
 // /// hash验证不需要传salt，因为hash本身就带有salt
 // // 加盐加密
 // pub async fn hash_password(password: &str) -> Result<String, InfraError> {
@@ -23,7 +25,6 @@
 //         .map_err(|_| InfraError::OtherError("Password verification failed".to_string()))
 // }
 use super::hash;
-use shared::error::{invalid_input_error, AppResult};
 use tracing::debug;
 // hash密码
 pub async fn hash(password: String) -> AppResult<String> {

@@ -19,14 +19,15 @@ pub mod utils {
 /// 持久层具体实现，对应表的CRUD
 pub mod persistence {
     pub mod customer_repository_impl;
-
+    pub mod session;
+    pub mod redis;
 }
 // RPC调用
 pub mod remote {}
 // 聚合转DO，这里DO就是entity下与数据表对应的结构体
 pub mod converter {
-    pub mod customer_converter;
-    pub mod user_converter;
+    pub mod customer_convert;
+    pub mod user_convert;
 }
 
 // 客户端

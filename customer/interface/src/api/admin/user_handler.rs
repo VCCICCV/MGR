@@ -1,7 +1,7 @@
 use application::{ state::AppState, use_case::customer_use_case::CustomerUseCase };
 use axum::{ extract::State, Json };
-use domain::model::{ dto::query::PageParams, entity::user::User, vo::response::ListData };
-use shared::error::{AppError, AppResult};
+use domain::model::{ dto::query::PageParams, entity::user::User, vo::{error::{AppError, AppResult}, response::ListData} };
+
 use tracing::info;
 pub async fn list(State(state): State<AppState>, param: PageParams) -> AppResult<Json<ListData<User>>> {
     info!("Get user list with parameter: {param:?}");

@@ -25,6 +25,8 @@ pub mod model {
     // 封装 多对象 行为
     pub mod dp {
         pub mod customer_id;
+        pub mod role;
+        pub mod claims;
     }
     //  聚合对象，由值对象和领域实体组成
     pub mod aggregate {
@@ -42,6 +44,7 @@ pub mod model {
     }
     pub mod vo {
         pub mod response;
+        pub mod error;
     }
     /// 入参：命令（返回DTO或Bool）、查询对象（返回DTO或Collection）、事件对象（无返回值）
     pub mod dto {
@@ -80,7 +83,8 @@ pub mod event {
     pub mod producer;
 }
 pub mod utils {
-    pub mod jwt_util;
+    pub mod key;
+    pub mod jwt;
     pub mod random;
     pub mod hash;
     pub mod password;

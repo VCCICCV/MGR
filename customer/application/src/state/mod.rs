@@ -1,10 +1,9 @@
 use std::sync::Arc;
 // use use_case::customer_use_case::{ CustomerUseCase, CustomerUseCaseImpl };
 use domain::{
-    repositories::{ customer_repository::CustomerRepository, customer_service::CustomerService },
-    service::customer_service_impl::CustomerServiceImpl,
+    model::vo::error::AppResult, repositories::{ customer_repository::CustomerRepository, customer_service::CustomerService }, service::customer_service_impl::CustomerServiceImpl
 };
-use shared::error::AppResult;
+
 
 use infrastructure::{
     client::{

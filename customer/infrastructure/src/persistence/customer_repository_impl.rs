@@ -1,9 +1,13 @@
 use std::sync::Arc;
 use axum::async_trait;
 use chrono::Utc;
+use domain::model::dp::claims::UserClaims;
 use domain::model::dp::customer_id::CustomerId;
+use domain::model::dp::role::Role;
 use domain::model::dto::query::{ Direction, PageParams };
 use domain::model::entity::user::User;
+use domain::model::vo::error::{ AppError, AppResult };
+use domain::model::vo::response::TokenResponse;
 use domain::utils::password;
 use sea_orm::{
     ActiveModelTrait,
@@ -16,17 +20,16 @@ use sea_orm::{
     QueryResult,
     Set,
 };
-use test_context::futures::FutureExt;
+
 use tracing::info;
 use domain::model::aggregate::customer::{ Customer, CustomerBuilder };
-
 use domain::repositories::customer_repository::CustomerRepository;
-use shared::error::{ AppError, AppResult };
 use uuid::Uuid;
 use crate::client::database::DatabaseClient;
 use crate::client::redis::RedisClient;
+use crate::constant::{ACCESS_TOKEN_ENCODE_KEY, EXPIRE_BEARER_TOKEN_SECS, EXPIRE_REFRESH_TOKEN_SECS, REFRESH_TOKEN_ENCODE_KEY};
 use crate::po;
-use crate::po::user::{ self, Entity };
+use crate::po::user::{ self };
 
 pub struct CustomerRepositoryImpl {
     db: Arc<DatabaseClient>,
@@ -47,10 +50,33 @@ impl CustomerRepositoryImpl {
 // 这里的标记是动态派发
 #[async_trait]
 impl CustomerRepository for CustomerRepositoryImpl {
+    async fn generate_token(
+        &self,
+        user_id: Uuid,
+        role: Role,
+        session_id: Uuid
+    ) -> AppResult<TokenResponse> {
+        // 生成token
+        let access_token = UserClaims::new(
+            EXPIRE_BEARER_TOKEN_SECS,
+            user_id,
+            session_id,
+            role.clone()
+        ).encode(&ACCESS_TOKEN_ENCODE_KEY)?;
+        // 生成refresh_token
+        let refresh_token = UserClaims::new(
+            EXPIRE_REFRESH_TOKEN_SECS,
+            user_id,
+            session_id,
+            role
+        ).encode(&REFRESH_TOKEN_ENCODE_KEY)?;
+        Ok(TokenResponse::new(access_token, refresh_token, EXPIRE_BEARER_TOKEN_SECS.as_secs()))
+    }
     async fn active(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<()> {
+        info!("update user is2fa: {:?}", customer);
         let user = po::user::ActiveModel {
             user_id: Set(*customer.user_id()),
-            is2fa: Set(*customer.is2fa()),
+            is_deleted: Set(*customer.is_deleted()),
             ..Default::default()
         };
         user.update(tx).await?;
@@ -92,7 +118,7 @@ impl CustomerRepository for CustomerRepositoryImpl {
             username: Set(customer.username().to_owned()),
             email: Set(customer.email().to_owned()),
             password: Set(password::hash(customer.password().to_string()).await?),
-            is_deleted: Set(0),
+            is_deleted: Set(1),
             is2fa: Set(0),
             create_time: Set(Utc::now().naive_utc()),
             ..Default::default()
@@ -128,90 +154,3 @@ impl CustomerRepository for CustomerRepositoryImpl {
         }
     }
 }
-// #[async_trait]
-// /// self是调用该实例方法当前对象的引用
-// impl CustomerRepository for CustomerRepositoryImpl {
-//     async fn find_all(&self) -> AppResult<Vec<Customer>> {
-//         todo!()
-
-//     async fn find_by_email(
-//         &self,
-//         tx: &sea_orm::DatabaseTransaction,
-//         email: &str
-//     ) -> AppResult<Option<Customer>> {
-//         todo!()
-//     }
-//     async fn save(&self, tx: &sea_orm::DatabaseTransaction, customer: Customer) -> AppResult<()> {
-//         // let _user = (user::ActiveModel {
-//         //     user_id: Set(customer.user_id().to_owned()),
-//         //     username: Set(customer.username().to_owned()),
-//         //     email: Set(customer.email().to_owned()),
-//         //     password: Set(customer.password().to_owned()),
-//         //     create_time: Set(Utc::now().naive_utc()),
-//         //     ..Default::default()
-//         // }).insert(tx);
-//         // Ok(())
-//         todo!()
-//     }
-
-//     async fn find_by_id(
-//         &self,
-//         tx: &sea_orm::DatabaseTransaction,
-//         id: CustomerId
-//     ) -> AppResult<Option<Customer>> {
-//         todo!()
-//     }
-
-//     async fn send_email(&self, tx: &sea_orm::DatabaseTransaction, email: &str) -> AppResult<()> {
-//         todo!()
-//     }
-
-//     async fn find_code_by_email(
-//         &self,
-//         tx: &sea_orm::DatabaseTransaction,
-//         email: &str
-//     ) -> AppResult<Option<String>> {
-//         todo!()
-//     }
-
-//     async fn check_unique_by_username(
-//         &self,
-//         tx: &sea_orm::DatabaseTransaction,
-//         username: &str
-//     ) -> AppResult<bool> {
-//         todo!()
-//     }
-
-//     async fn check_unique_by_email(
-//         &self,
-//         tx: &sea_orm::DatabaseTransaction,
-//         email: &str
-//     ) -> AppResult<bool> {
-//         todo!()
-//     }
-
-//     async fn find_page(
-//         &self,
-//         param: PageParams
-//     ) -> AppResult<Vec<domain::model::entity::user::User>> {
-//         // 查询对象
-//         let mut select = po::user::Entity::find();
-//         // 选择分页方式
-//         match param.sort_direction {
-//             Some(Direction::DESC) => {
-//                 select = select.order_by_desc(po::user::Column::CreateTime);
-//             }
-//             _ => {
-//                 select = select.order_by_asc(po::user::Column::CreateTime);
-//             }
-//         }
-//         // 查询
-//         let models = select.paginate(&*self.db, param.page_size).await;
-//         // 转bo
-//         let users: Vec<User> = models
-//             .into_iter()
-//             .map(|model| User::from(model))
-//             .collect();
-//         Ok(users)
-//     }
-// }
