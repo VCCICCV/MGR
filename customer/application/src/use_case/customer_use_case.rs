@@ -2,7 +2,7 @@ use std::time::Duration;
 use domain::{
     constant::CODE_LEN,
     model::{
-        aggregate::customer::{Customer, CustomerBuilder},
+        aggregate::customer::{ Customer, CustomerBuilder },
         dto::{ command::{ ActiveCommand, LoginCommand, SignUpCommand }, query::PageParams },
         reponse::{ error::{ AppError, AppResult }, response::LoginResponse },
     },
@@ -69,14 +69,23 @@ impl CustomerUseCase {
         // 开启事务
         let tx = self.state.db.begin().await?;
         // 查询用户
-        let customer = self.state.customer_repository.find_by_user_id(
-            &active_command.user_id
-        ).await?;
-        // 激活
-        self.state.customer_service.active(customer).await?;
-
+        let customer = self.state.customer_repository
+            .find_by_user_id(&active_command.user_id).await?
+            .ok_or(AppError::UserNotActiveError("未找到对应的用户记录".to_string()))?;
+        // 冲redis查询用户验证码
+        let code = self.state.redis.get(&active_command.user_id.to_string()).await?;
+        // 转bo
+        let customer = CustomerBuilder::new()
+          .user_id(customer.user_id)
+          .is_deleted(customer.is_deleted)
+          .is2fa(customer.is2fa)
+          .verify_code(Some(active_command.verify_code))
+          .build();
+        // 通过领域服务激活
+        self.state.customer_service.active(customer, code).await?;
         // 发送消息
-        // 保存状态
+        
+        // 更新状态
         let user_id = self.state.customer_repository.save(&tx, customer).await?;
         // 提交事务
         tx.commit().await?;

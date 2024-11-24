@@ -15,6 +15,10 @@ use crate::{
 // 命令以事务实现，查询以非事务实现
 #[async_trait]
 pub trait CustomerRepository: Send + Sync {
+    async fn find_by_user_id(&self, user_id: &Uuid) -> AppResult<Option<Customer>>;
+    async fn update(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<()>;
+    async fn delete(&self, tx: &DatabaseTransaction, user_id: &Uuid) -> AppResult<()>;
+    async fn save(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<Uuid>;
     async fn find_by_username_and_status(
         &self,
         email: &str,
@@ -27,9 +31,7 @@ pub trait CustomerRepository: Send + Sync {
         session_id: Uuid
     ) -> AppResult<TokenResponse>;
     async fn active(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<()>;
-    async fn find_by_user_id(&self, user_id: &Uuid) -> AppResult<Option<Customer>>;
 
-    async fn save(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<Uuid>;
     async fn check_unique_by_username(
         &self,
         tx: &DatabaseTransaction,

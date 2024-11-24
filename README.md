@@ -29,10 +29,9 @@
 * Interface：适配器层，有的地方叫Adapter层，用于处理页面请求的Controller，对应主动适配器
   * api：web接口
   * cmd：命令行接口
-* Application：
-  * scheduler：处理定时任务
+* Application：应用层，事务、仓储（通过领域中的repository），协调领域服务
   * DTO：command、query、DTO定义
-* Domain：
+* Domain：领域服务，单一职责原则，领域服务不应该进行存储，只负责处理、封装业务逻辑，在应用层进行存储
   * model：领域模型，包含聚合、DP（Domain Primitive）或VO（值对象）
   * repositories：仓储接口，在Infrastructure实现
   * service：领域能力

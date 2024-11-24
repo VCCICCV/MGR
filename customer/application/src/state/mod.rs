@@ -2,14 +2,8 @@ use std::sync::Arc;
 // use use_case::customer_use_case::{ CustomerUseCase, CustomerUseCaseImpl };
 use domain::{
     model::reponse::error::AppResult,
-    repositories::{
-        customer_repository::CustomerRepository,
-        // customer_service::CustomerService,
-        session_repository,
-        token_repository,
-    },
-    service::customer_service_impl::{CustomerService, CustomerServiceImpl},
-    // service::customer_service_impl::CustomerServiceImpl,
+    repositories::
+        customer_repository::CustomerRepository, service::{customer_service::CustomerService, customer_service_impl::CustomerServiceImpl},
 };
 
 use infrastructure::{
@@ -19,7 +13,7 @@ use infrastructure::{
         email::EmailClient,
         redis::RedisClient,
     },
-    config::{ redis, AppConfig },
+    config::AppConfig,
     persistence::{
         customer_repository_impl::CustomerRepositoryImpl,
         // redis_repository_impl::RedisRepositoryImpl,
@@ -55,14 +49,7 @@ impl AppState {
         // let redis_repository = Arc::new(RedisRepositoryImpl::new(redis.clone()));
         // let session_repository = Arc::new(SessionRepositoryImpl::new(redis.clone()));
         // let token_repository = Arc::new(TokenRepositoryImpl::new(redis.clone()));
-        let customer_service = Arc::new(
-            CustomerServiceImpl::new(
-                customer_repository.clone()
-                // redis_repository.clone(),
-                // session_repository.clone(),
-                // token_repository.clone()
-            )
-        );
+        let customer_service = Arc::new(CustomerServiceImpl::new());
 
         // let customer_use_case = Arc::new(CustomerUseCaseImpl::new(customer_repository.clone(), customer_service.clone()));
         Ok(Self {
