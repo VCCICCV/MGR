@@ -1,4 +1,4 @@
-use domain::model::vo::error::AppResult;
+use domain::model::reponse::error::AppResult;
 use elasticsearch::http::transport::{ SingleNodeConnectionPool, TransportBuilder };
 use elasticsearch::Elasticsearch;
 

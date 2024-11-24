@@ -5,9 +5,9 @@ use domain::model::dp::claims::UserClaims;
 use domain::model::dp::customer_id::CustomerId;
 use domain::model::dp::role::Role;
 use domain::model::dto::query::{ Direction, PageParams };
-use domain::model::entity::user::User;
-use domain::model::vo::error::{ AppError, AppResult };
-use domain::model::vo::response::TokenResponse;
+use domain::query_model::user::User;
+use domain::model::reponse::error::{ AppError, AppResult };
+use domain::model::reponse::response::TokenResponse;
 use domain::utils::password;
 use sea_orm::{
     ActiveModelTrait,
@@ -111,10 +111,10 @@ impl CustomerRepository for CustomerRepositoryImpl {
         user.update(tx).await?;
         Ok(())
     }
-    async fn find_by_user_id(&self, user_id: Uuid) -> AppResult<Option<Customer>> {
+    async fn find_by_user_id(&self, user_id: &Uuid) -> AppResult<Option<Customer>> {
         let result = po::user::Entity
             ::find()
-            .filter(user::Column::UserId.eq(user_id))
+            .filter(user::Column::UserId.eq(*user_id))
             .one(&*self.db).await?;
         // 转bo，这里使用if let进行有值判断
         if let Some(model) = result {
@@ -133,7 +133,7 @@ impl CustomerRepository for CustomerRepositoryImpl {
     async fn find_page(
         &self,
         _param: PageParams
-    ) -> AppResult<Vec<domain::model::entity::user::User>> {
+    ) -> AppResult<Vec<domain::query_model::user::User>> {
         todo!()
     }
     async fn save(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<Uuid> {
