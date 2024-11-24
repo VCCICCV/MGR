@@ -1,4 +1,4 @@
-use domain::model::{dto::command::*, vo::response::*};
+use domain::model::{dto::command::*, reponse::response::*};
 use utoipa::OpenApi;
 // 定义 API 文档结构体
 #[derive(OpenApi)]
@@ -8,8 +8,8 @@ use utoipa::OpenApi;
         // server api
         crate::api::server_handler::health_check,
         //customer api
-        crate::api::customer_handler::sign_up,
-        crate::api::customer_handler::active,
+        // crate::api::customer_handler::sign_up,
+        // crate::api::customer_handler::active,
     ),
     components(
         schemas(

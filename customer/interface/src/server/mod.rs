@@ -1,5 +1,5 @@
 use axum::response::IntoResponse;
-use domain::model::vo::response::{EmptyData, Res};
+use domain::model::reponse::response::{EmptyData, Res};
 use infrastructure::{ config::{ env::get_env_source, AppConfig }, constant::ENV_PREFIX };
 use tracing::info;
 use application::state::AppState;

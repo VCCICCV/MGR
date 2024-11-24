@@ -1,9 +1,10 @@
 use std::sync::Arc;
 // use use_case::customer_use_case::{ CustomerUseCase, CustomerUseCaseImpl };
 use domain::{
-    model::vo::error::AppResult, repositories::{ customer_repository::CustomerRepository, customer_service::CustomerService }, service::customer_service_impl::CustomerServiceImpl
+    model::reponse::error::AppResult,
+    repositories::
+        customer_repository::CustomerRepository, service::{customer_service::CustomerService, customer_service_impl::CustomerServiceImpl},
 };
-
 
 use infrastructure::{
     client::{
@@ -13,7 +14,10 @@ use infrastructure::{
         redis::RedisClient,
     },
     config::AppConfig,
-    persistence::customer_repository_impl::CustomerRepositoryImpl,
+    persistence::{
+        customer_repository_impl::CustomerRepositoryImpl,
+        // redis_repository_impl::RedisRepositoryImpl,
+    },
 };
 
 // 使用Arc来共享数据，避免数据的复制和所有权的转移
@@ -28,6 +32,9 @@ pub struct AppState {
     // DI
     pub customer_repository: Arc<dyn CustomerRepository>,
     pub customer_service: Arc<dyn CustomerService>,
+    // pub redis_repository: Arc<RedisRepositoryImpl>,
+    // pub customer_service: Arc<dyn CustomerService>,
+    // pub redis_repository: Arc<RedisRepositoryImpl>,
     // pub customer_use_case: Arc<dyn CustomerUseCase>,
 }
 impl AppState {
@@ -39,7 +46,11 @@ impl AppState {
         // let consumer = Arc::new(KafkaClientConsumer::build_from_config(&config).await?);
         // DI ，这里使用Arc来共享数据，避免数据的复制和所有权的转移，clone()本质上是增加引用计数
         let customer_repository = Arc::new(CustomerRepositoryImpl::new(db.clone(), redis.clone()));
-        let customer_service = Arc::new(CustomerServiceImpl::new(customer_repository.clone()));
+        // let redis_repository = Arc::new(RedisRepositoryImpl::new(redis.clone()));
+        // let session_repository = Arc::new(SessionRepositoryImpl::new(redis.clone()));
+        // let token_repository = Arc::new(TokenRepositoryImpl::new(redis.clone()));
+        let customer_service = Arc::new(CustomerServiceImpl::new());
+
         // let customer_use_case = Arc::new(CustomerUseCaseImpl::new(customer_repository.clone(), customer_service.clone()));
         Ok(Self {
             config: Arc::new(config),
@@ -48,6 +59,8 @@ impl AppState {
             email,
             customer_repository,
             customer_service,
+            // redis_repository,
+            // redis_repository,
             // producer,
             // consumer,
             // customer_use_case,

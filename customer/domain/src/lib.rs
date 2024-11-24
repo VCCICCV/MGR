@@ -29,6 +29,7 @@ pub mod model {
         pub mod claims;
     }
     //  聚合对象，由值对象和领域实体组成
+    // 引起状态变化的方法放到充血模型
     pub mod aggregate {
         pub mod customer;
         pub mod order;
@@ -37,36 +38,45 @@ pub mod model {
     // 领域实体，有的项目叫BO业务对象
     pub mod entity {
         pub mod receive_address;
-        pub mod user;
         // pub mod permission;
         // pub mod role_permission;
         // pub mod role;
     }
-    pub mod vo {
+    pub mod reponse {
         pub mod response;
         pub mod error;
     }
     /// 入参：命令（返回DTO或Bool）、查询对象（返回DTO或Collection）、事件对象（无返回值）
     /// 如何区分一个请求是查询还是命令
-    /// 
+    ///
     /// 查询：请求不会对系统状态产生修改
     /// 命令：请求会对系统状态产生修改
     pub mod dto {
+        // 系统需要的传输对象，如写入redis的对象
+        pub mod info;
         pub mod command;
         pub mod query;
     }
 }
 /// 高层Domain不应该依赖于低层Infrastructure，而是应该依赖于抽象trait
+/// 在COLA架构中，这里叫gateway
 pub mod repositories {
     // 用户接口，抽象trait，在基础设施层中实现
     pub mod customer_repository;
-    // 领域服务抽象
-    pub mod customer_service;
+    pub mod token_repository;
+    pub mod session_repository;
+    pub mod redis_repository;
 }
-/// 领域服务（领域能力）：这个领域提供的能力，比如提供了删除的能力，如果要判断有没有权限删除，那就在application编排先鉴权、再删除的用例，
+
+/// 领域服务（领域能力）：这个领域提供的能力
 /// 领域服务是领域层的核心，它应该是无状态的，并且不应该依赖于任何其他领域层的组件，应该通过repository来获取数据
+/// 领域服务通过repository获取数据，只有业务无法归属于某个实体，那么这个能力就是一个领域服务
+/// 尽量避免领域服务之间的调用，应该通过repsitory提供能力
+/// 传入的参数应该是实体而不是单个参数，多对象操作通过领域服务实现
 pub mod service {
+    pub mod customer_service;
     pub mod customer_service_impl;
+    // pub mod token;
 }
 /// 值对象：没有唯一标识的对象，由其属性的值定义，通常是不可变的
 /// 比如，地址可以作为一个值对象。地址由国家、省份、城市、街道、邮编等属性组成，这些属性的值共同定义了一个地址；数据校验可以作为值对象
@@ -84,7 +94,6 @@ pub mod event {
     // 定义事件对象
     pub mod email;
     pub mod consumer;
-    pub mod producer;
 }
 pub mod utils {
     pub mod key;
@@ -92,4 +101,10 @@ pub mod utils {
     pub mod random;
     pub mod hash;
     pub mod password;
+}
+// 常量
+pub mod constant;
+// 查询模型
+pub mod query_model {
+    pub mod user;
 }

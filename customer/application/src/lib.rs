@@ -20,7 +20,7 @@
 // 每个方法处理一个用例；针对复杂业务流程可以增加command_handler、event_handler来降低代码量；
 // 如何判断是编排流程而不是业务：1、不要有if/else（决策） 2、不要有计算 3、不要有对象转换的逻辑，但是可以有对象转换的方法调用（对象转换的逻辑放到Assmbler中）
 // 用例做什么：1、准备数据（对象转换）2、调用领域服务domain service和领域repository编排业务逻辑和持久化
-
+// 这里的用例没有分为命令和查询是为了简单，如果用例比较复杂，可以考虑拆分
 pub mod use_case {
     pub mod customer_use_case;
 }
@@ -30,6 +30,8 @@ pub mod assembler {
     pub mod claims_assembler;
 }
 pub mod state;
-pub mod utils{
-    pub mod token;
-}
+// pub mod utils{
+//     pub mod token;
+// }
+
+

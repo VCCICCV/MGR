@@ -1,4 +1,4 @@
-use domain::model::vo::error::AppResult;
+use domain::model::reponse::error::AppResult;
 use redis::{ Client, RedisError };
 
 use std::time::Duration;

@@ -1,7 +1,7 @@
 use crate::config::AppConfig;
 
 use crate::client::builder::ClientBuilder;
-use domain::{event::email::Email, model::vo::error::AppResult};
+use domain::{event::email::Email, model::reponse::error::AppResult};
 use lettre::{
     transport::smtp::authentication::Credentials,
     AsyncSmtpTransport,

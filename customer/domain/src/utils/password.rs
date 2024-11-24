@@ -1,4 +1,4 @@
-use crate::model::vo::error::{invalid_input_error, AppResult};
+use crate::model::reponse::error::{invalid_input_error, AppResult};
 use super::hash;
 use tracing::debug;
 // hash密码

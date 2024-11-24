@@ -3,7 +3,7 @@ use axum::extract::{ Json, State };
 use application::state::AppState;
 use domain::model::{
     dto::command::{ ActiveCommand, LoginCommand, SignUpCommand },
-    vo::{
+    reponse::{
         error::{ AppResponseError, AppResult },
         response::{ LoginResponse, MessageResponse, Res, SignUpResponse },
     },
@@ -39,56 +39,56 @@ pub async fn sign_up(
         Err(e) => Err(e),
     }
 }
-/// 激活用户
-#[utoipa::path(
-    put,
-    request_body = ActiveCommand,
-    path = "/api/active",
-    responses(
-        (status = 200, description = "Success active user", body = [MessageResponse]),
-        (status = 400, description = "Invalid data input", body = [AppResponseError]),
-        (status = 500, description = "Internal server error", body = [AppResponseError])
-    )
-)]
-pub async fn active(
-    State(state): State<AppState>,
-    Json(active_command): Json<ActiveCommand>
-) -> AppResult<Res<MessageResponse>> {
-    let use_case = CustomerUseCase::new(state.clone().into());
-    match use_case.active(active_command).await {
-        Ok(_) => {
-            info!("User successfully activated.");
-            Ok(Res::with_msg("User successfully activated."))
-        }
-        Err(e) => {
-            info!("The user activation operation was not successful: {e:?}");
-            Err(e)
-        }
-    }
-}
-/// 用户登录
-#[utoipa::path(
-    post,
-    request_body = LoginCommand,
-    path = "/api/v1/user/login",
-    responses(
-        (status = 200, description = "Success login user", body = [LoginResponse]),
-        (status = 400, description = "Invalid data input", body = [AppResponseError]),
-        (status = 404, description = "User not found", body = [AppResponseError]),
-        (status = 500, description = "Internal server error", body = [AppResponseError])
-    )
-)]
-pub async fn login(
-    State(state): State<AppState>,
-    Json(login_command): Json<LoginCommand>
-) -> AppResult<Res<LoginResponse>> {
-    info!("用户登录请求: {:?}", login_command);
-    let use_case = CustomerUseCase::new(state.clone().into());
-    match use_case.login(login_command).await {
-        Ok(token) => {
-            info!("Success login: {token:?}");
-            Ok(Res::with_data(LoginResponse::Token(token)))
-        }
-        Err(e) => Err(e),
-    }
-}
+// /// 激活用户
+// #[utoipa::path(
+//     put,
+//     request_body = ActiveCommand,
+//     path = "/api/active",
+//     responses(
+//         (status = 200, description = "Success active user", body = [MessageResponse]),
+//         (status = 400, description = "Invalid data input", body = [AppResponseError]),
+//         (status = 500, description = "Internal server error", body = [AppResponseError])
+//     )
+// )]
+// pub async fn active(
+//     State(state): State<AppState>,
+//     Json(active_command): Json<ActiveCommand>
+// ) -> AppResult<Res<MessageResponse>> {
+//     let use_case = CustomerUseCase::new(state.clone().into());
+//     match use_case.active(active_command).await {
+//         Ok(_) => {
+//             info!("User successfully activated.");
+//             Ok(Res::with_msg("User successfully activated."))
+//         }
+//         Err(e) => {
+//             info!("The user activation operation was not successful: {e:?}");
+//             Err(e)
+//         }
+//     }
+// }
+// /// 用户登录
+// #[utoipa::path(
+//     post,
+//     request_body = LoginCommand,
+//     path = "/api/v1/user/login",
+//     responses(
+//         (status = 200, description = "Success login user", body = [LoginResponse]),
+//         (status = 400, description = "Invalid data input", body = [AppResponseError]),
+//         (status = 404, description = "User not found", body = [AppResponseError]),
+//         (status = 500, description = "Internal server error", body = [AppResponseError])
+//     )
+// )]
+// pub async fn login(
+//     State(state): State<AppState>,
+//     Json(login_command): Json<LoginCommand>
+// ) -> AppResult<Res<LoginResponse>> {
+//     info!("用户登录请求: {:?}", login_command);
+//     let use_case = CustomerUseCase::new(state.clone().into());
+//     match use_case.login(login_command).await {
+//         Ok(token) => {
+//             info!("Success login: {token:?}");
+//             Ok(Res::with_data(LoginResponse::Token(token)))
+//         }
+//         Err(e) => Err(e),
+//     }
+// }

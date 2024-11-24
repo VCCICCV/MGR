@@ -2,7 +2,7 @@ use serde::{ Deserialize, Serialize };
 
 use tracing::info;
 use uuid::Uuid;
-use crate::model::{ dp::role::Role, entity::receive_address::ReceiveAddress, vo::error::{ AppError, AppResult } };
+use crate::model::{ dp::role::Role, entity::receive_address::ReceiveAddress, reponse::error::{ AppError, AppResult } };
 
 #[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct Customer {

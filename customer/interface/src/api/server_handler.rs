@@ -1,4 +1,4 @@
-use domain::model::vo::{error::AppResult, response::{MessageResponse, Res}};
+use domain::model::reponse::{error::AppResult, response::{MessageResponse, Res}};
 
 /// 健康检查
 #[utoipa::path(

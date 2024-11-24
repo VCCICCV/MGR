@@ -10,8 +10,7 @@ pub mod po {
 /// 工具类
 pub mod utils {
     pub mod dir;
-    pub mod session;
-    pub mod redis;
+    // pub mod redis;
     pub mod token;
 }
 /// 与表的映射实体
@@ -20,8 +19,12 @@ pub mod utils {
 //     // pub mod user;
 // }
 /// 持久层具体实现，对应表的CRUD
+/// 在COLA架构中，这里叫gatewayimpl
 pub mod persistence {
     pub mod customer_repository_impl;
+    pub mod redis_repository_impl;
+    pub mod session_repository_impl;
+    pub mod token_repository_impl;
 }
 // RPC调用
 pub mod remote {}
@@ -45,8 +48,11 @@ pub mod config;
 pub mod constant;
 // 消息队列
 pub mod event {
-    pub mod consumer_impl;
-    pub mod producer_impl;
+    // pub mod consumer_impl;
+    // pub mod producer_impl;
+}
+pub mod middleware {
+    pub mod auth;
 }
 // state
 // pub mod state;

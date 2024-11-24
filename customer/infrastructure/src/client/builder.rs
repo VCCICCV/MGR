@@ -1,6 +1,6 @@
 
 
-use domain::model::vo::error::AppResult;
+use domain::model::reponse::error::AppResult;
 
 use crate::config::AppConfig;
 // 传输配置文件到客户端

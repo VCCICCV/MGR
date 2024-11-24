@@ -4,7 +4,7 @@ use once_cell::sync::Lazy;
 use serde::{ Deserialize, Serialize };
 use utoipa::ToSchema;
 use uuid::Uuid;
-use crate::model::{ dp::role::Role, vo::error::{ AppError, AppResult } };
+use crate::model::{ dp::role::Role, reponse::error::{ AppError, AppResult } };
 use std::time::Duration;
 // 常量
 pub static DECODE_HEADER: Lazy<Validation> = Lazy::new(|| Validation::new(Algorithm::RS256));

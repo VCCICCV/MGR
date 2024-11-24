@@ -5,9 +5,9 @@ use domain::model::dp::claims::UserClaims;
 use domain::model::dp::customer_id::CustomerId;
 use domain::model::dp::role::Role;
 use domain::model::dto::query::{ Direction, PageParams };
-use domain::model::entity::user::User;
-use domain::model::vo::error::{ AppError, AppResult };
-use domain::model::vo::response::TokenResponse;
+use domain::query_model::user::User;
+use domain::model::reponse::error::{ AppError, AppResult };
+use domain::model::reponse::response::TokenResponse;
 use domain::utils::password;
 use sea_orm::{
     ActiveModelTrait,
@@ -41,10 +41,6 @@ pub struct CustomerRepositoryImpl {
     db: Arc<DatabaseClient>,
     redis: Arc<RedisClient>,
 }
-/// 静态分发
-/// 当你在代码中调用这个结构体实现的方法（如果后续为它实现了如 CustomerRepository 等相关 trait 的方法）时，编译器在编译阶段就可以明确知道具体要调用的是 CustomerRepositoryImpl 这个类型所实现的对应方法，因为类型是确定的
-/// 这种基于具体类型的、在编译时就能确定调用关系的方式就是静态分发，它通常具有更好的性能，因为编译器可以进行内联优化等操作，直接生成高效的机器码来执行对应的方法调用
-// 注入数据库连接
 impl CustomerRepositoryImpl {
     pub fn new(db: Arc<DatabaseClient>, redis: Arc<RedisClient>) -> Self {
         Self {
@@ -56,6 +52,12 @@ impl CustomerRepositoryImpl {
 // 这里的标记是动态派发
 #[async_trait]
 impl CustomerRepository for CustomerRepositoryImpl {
+    async fn update(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<()> {
+        todo!()
+    }
+    async fn delete(&self, tx: &DatabaseTransaction, user_id: &Uuid) -> AppResult<()> {
+        todo!()
+    }
     async fn find_by_username_and_status(
         &self,
         email: &str,
@@ -111,10 +113,10 @@ impl CustomerRepository for CustomerRepositoryImpl {
         user.update(tx).await?;
         Ok(())
     }
-    async fn find_by_user_id(&self, user_id: Uuid) -> AppResult<Option<Customer>> {
+    async fn find_by_user_id(&self, user_id: &Uuid) -> AppResult<Option<Customer>> {
         let result = po::user::Entity
             ::find()
-            .filter(user::Column::UserId.eq(user_id))
+            .filter(user::Column::UserId.eq(*user_id))
             .one(&*self.db).await?;
         // 转bo，这里使用if let进行有值判断
         if let Some(model) = result {
@@ -133,7 +135,7 @@ impl CustomerRepository for CustomerRepositoryImpl {
     async fn find_page(
         &self,
         _param: PageParams
-    ) -> AppResult<Vec<domain::model::entity::user::User>> {
+    ) -> AppResult<Vec<domain::query_model::user::User>> {
         todo!()
     }
     async fn save(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<Uuid> {
@@ -179,3 +181,7 @@ impl CustomerRepository for CustomerRepositoryImpl {
         }
     }
 }
+/// 静态分发
+/// 当你在代码中调用这个结构体实现的方法（如果后续为它实现了如 CustomerRepository 等相关 trait 的方法）时，编译器在编译阶段就可以明确知道具体要调用的是 CustomerRepositoryImpl 这个类型所实现的对应方法，因为类型是确定的
+/// 这种基于具体类型的、在编译时就能确定调用关系的方式就是静态分发，它通常具有更好的性能，因为编译器可以进行内联优化等操作，直接生成高效的机器码来执行对应的方法调用
+// 注入数据库连接
