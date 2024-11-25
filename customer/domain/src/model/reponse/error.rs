@@ -72,113 +72,110 @@ impl AppError {
     pub fn response(self) -> (StatusCode, AppResponseError) {
         use AppError::*;
         let message = self.to_string();
-        let (kind, code, data, status_code) = match self {
+        let (kind, code, data) = match self {
             InvalidPayloadError(_err) =>
-                ("INVALID_PAYLOAD_ERROR".to_string(), None, vec![], StatusCode::BAD_REQUEST),
+                ("INVALID_PAYLOAD_ERROR".to_string(), StatusCode::BAD_REQUEST, vec![]),
             BadRequestError(_err) =>
-                ("BAD_REQUEST_ERROR".to_string(), None, vec![], StatusCode::BAD_REQUEST),
+                ("BAD_REQUEST_ERROR".to_string(), StatusCode::BAD_REQUEST, vec![]),
             NotAvailableError(resource) =>
-                (format!("{resource}_NOT_AVAILABLE_ERROR"), None, vec![], StatusCode::NOT_FOUND),
+                (format!("{resource}_NOT_AVAILABLE_ERROR"), StatusCode::NOT_FOUND, vec![]),
             NotFoundError(resource) =>
                 (
                     format!("{resource}_NOT_FOUND_ERROR"),
-                    Some(resource.resource_type as i32),
-                    resource.data.clone(),
                     StatusCode::NOT_FOUND,
+                    resource.data.clone(),
                 ),
             ResourceExistsError(resource) =>
                 (
                     format!("{resource}_ALREADY_EXISTS_ERROR"),
-                    Some(resource.resource_type as i32),
-                    resource.data.clone(),
                     StatusCode::CONFLICT,
+                    resource.data.clone(),
                 ),
             AxumError(_err) =>
-                ("AXUM_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("AXUM_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             ConfigError(_err) =>
-                ("CONFIG_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("CONFIG_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             AddrParseError(_err) =>
-                ("ADDR_PARSE_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("ADDR_PARSE_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             IoError(err) => {
-                let (status, kind, code) = match err.kind() {
-                    std::io::ErrorKind::NotFound =>
-                        (
-                            StatusCode::NOT_FOUND,
-                            format!("{}_NOT_FOUND_ERROR", ResourceType::File),
-                            Some(ResourceType::File as i32),
-                        ),
-                    std::io::ErrorKind::PermissionDenied => {
-                        (StatusCode::FORBIDDEN, "FORBIDDEN_ERROR".to_string(), None)
-                    }
-                    _ => (StatusCode::INTERNAL_SERVER_ERROR, "IO_ERROR".to_string(), None),
+                let code = match err.kind() {
+                    std::io::ErrorKind::NotFound => StatusCode::NOT_FOUND,
+                    std::io::ErrorKind::PermissionDenied => StatusCode::FORBIDDEN,
+                    _ => StatusCode::INTERNAL_SERVER_ERROR,
                 };
-                (kind, code, vec![], status)
+                (
+                    match err.kind() {
+                        std::io::ErrorKind::NotFound =>
+                            format!("{}_NOT_FOUND_ERROR", ResourceType::File),
+                        _ => "IO_ERROR".to_string(),
+                    },
+                    code,
+                    vec![],
+                )
             }
             // WebSocketError(_err) =>
-            //     ("WEBSOCKET_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+            //     ("WEBSOCKET_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![],),
             ParseJsonError(_err) =>
-                ("PARSE_JSON_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("PARSE_JSON_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             StrumParseError(_err) =>
-                ("STRUM_PARSE_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("STRUM_PARSE_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             HttpClientError(_err) =>
-                ("HTTP_CLIENT_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("HTTP_CLIENT_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             SystemTimeError(_err) =>
-                ("SYSTEM_TIME_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("SYSTEM_TIME_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             SpawnTaskError(_err) =>
-                ("SPAWN_TASK_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("SPAWN_TASK_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             UnknownError(_err) =>
-                ("UNKNOWN_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("UNKNOWN_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             PermissionDeniedError(_err) =>
-                ("PERMISSION_DENIED_ERROR".to_string(), None, vec![], StatusCode::FORBIDDEN),
+                ("PERMISSION_DENIED_ERROR".to_string(), StatusCode::FORBIDDEN, vec![]),
             InvalidSessionError(_err) =>
-                ("INVALID_SESSION_ERROR".to_string(), None, vec![], StatusCode::BAD_REQUEST),
+                ("INVALID_SESSION_ERROR".to_string(), StatusCode::BAD_REQUEST, vec![]),
             ConflictError(_err) =>
-                ("CONFLICT_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("CONFLICT_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             UserNotActiveError(_err) =>
-                ("USER_NOT_ACTIVE_ERROR".to_string(), None, vec![], StatusCode::FORBIDDEN),
+                ("USER_NOT_ACTIVE_ERROR".to_string(), StatusCode::FORBIDDEN, vec![]),
             UnauthorizedError(_err) =>
-                ("UNAUTHORIZED_ERROR".to_string(), None, vec![], StatusCode::UNAUTHORIZED),
+                ("UNAUTHORIZED_ERROR".to_string(), StatusCode::UNAUTHORIZED, vec![]),
             UuidError(_err) =>
-                ("UUID_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
-            JwtError(_err) =>
-                ("UNAUTHORIZED_ERROR".to_string(), None, vec![], StatusCode::UNAUTHORIZED),
+                ("UUID_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
+            JwtError(_err) => ("UNAUTHORIZED_ERROR".to_string(), StatusCode::UNAUTHORIZED, vec![]),
             RedisError(_err) =>
-                ("REDIS_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("REDIS_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             SmtpError(_err) =>
-                ("SMTP_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("SMTP_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             LetterError(_err) =>
-                ("LETTER_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("LETTER_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             HashError(_err) =>
-                ("HASH_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("HASH_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             ParseFloatError(_err) =>
-                ("PARSE_FLOAT_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("PARSE_FLOAT_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             Base64Error(_err) =>
-                ("BASE64_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("BASE64_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             InvalidInputError(err) =>
                 (
                     "INVALID_INPUT_ERROR".to_string(),
-                    None,
+                    StatusCode::BAD_REQUEST,
                     err
                         .iter()
                         .map(|(p, e)| (p.to_string(), e.to_string()))
                         .collect(),
-                    StatusCode::BAD_REQUEST,
                 ),
             DatabaseError(_err) =>
-                ("DATABASE_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("DATABASE_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             Infallible(_err) =>
-                ("INFALLIBLE".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("INFALLIBLE".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             RedisError(_redis_error) =>
-                ("REDIS_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("REDIS_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             TypeHeaderError(_err) =>
-                ("TYPE_HEADER_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("TYPE_HEADER_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             UserNotFound(_) =>
-                ("DATABASE_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+                ("DATABASE_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             // MessageError(_kafka_error) =>
-            //     ("KAFKA_ERROR".to_string(), None, vec![], StatusCode::INTERNAL_SERVER_ERROR),
+            //     ("KAFKA_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![],),
         };
 
-        (status_code, AppResponseError::new(kind, message, code, data))
+        (code, AppResponseError::new(kind, message, Some(code.as_u16()), data))
     }
 }
 // 错误响应
@@ -192,7 +189,7 @@ impl IntoResponse for AppError {
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Eq, utoipa::ToSchema)]
 pub struct AppResponseError {
     pub kind: String,
-    pub code: Option<i32>,
+    pub code: Option<u16>,
     pub data: Vec<(String, String)>,
     pub message: String,
 }
@@ -201,7 +198,7 @@ impl AppResponseError {
     pub fn new(
         kind: impl Into<String>,
         message: impl Into<String>,
-        code: Option<i32>,
+        code: Option<u16>,
         data: Vec<(String, String)>
     ) -> Self {
         Self {
