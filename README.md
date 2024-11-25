@@ -10,7 +10,7 @@
 
 ## 技术栈
 
-* Rust，采用DDD领域驱动设计
+* Rust，采用DDD领域驱动设计，通过依赖倒置和依赖注入解耦
 * Config-rs，使用config加载配置文件
 * Axum，Web框架
 * Sea-orm，ORM框架

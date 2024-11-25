@@ -1,20 +1,10 @@
 use std::time::Duration;
-use domain::{
-    constant::CODE_LEN,
-    model::{
-        aggregate::customer::{ Customer, CustomerBuilder },
-        dto::{ command::{ ActiveCommand, LoginCommand, SignUpCommand }, query::PageParams },
-        reponse::{ error::{ AppError, AppResult }, response::LoginResponse },
-    },
-    service,
-    utils::{ self, password },
-};
-use infrastructure::{ client::redis::RedisClientExt, utils::token::generate_tokens };
-use sea_orm::TransactionTrait;
+use domain::{ model::{ aggregate::customer::CustomerBuilder, reponse::error::AppResult }, utils };
+use crate::dto::command::{ ActiveCommand, SignUpCommand };
 use tracing::info;
 use uuid::Uuid;
 use crate::state::AppState;
-
+use sea_orm::TransactionTrait;
 use std::sync::Arc;
 pub struct CustomerUseCase {
     state: Arc<AppState>,
@@ -64,58 +54,43 @@ impl CustomerUseCase {
     //         // let token = generate_tokens(user.user_id(), user.role(), session_id)?;
     //         // Ok(LoginResponse::Token(resp))
     //     // }
-    pub async fn active(&self, active_command: ActiveCommand) -> AppResult<()> {
+    pub async fn active_command_handler(&self, active_command: ActiveCommand) -> AppResult<()> {
         info!("激活用户请求: {active_command:?}.");
         // 开启事务
         let tx = self.state.db.begin().await?;
-<<<<<<< HEAD
-        // 检查是否已激活
-        if
-            let Some(mut customer) = self.state.customer_repository.find_by_user_id(
-                active_command.user_id
-            ).await?
-        {
-            // 更新BO
-            customer = CustomerBuilder::new()
-                .user_id(active_command.user_id)
-                .is_deleted(0)
-                .verify_code(Some(active_command.verify_code))
-                .build();
-            // 获取缓存验证码
-            let code = self.state.redis.get(&active_command.user_id.to_string()).await?;
-            // 传入缓存验证码检查验证码正确性
-            customer.checkout_valid_code(code.as_deref())?;
-            // 删除缓存验证码
-            self.state.redis.del(&active_command.user_id.to_string()).await?;
-
-            // 更新激活状态
-            self.state.customer_repository.active(&tx, customer).await?;
-        } else {
-            return Err(AppError::UserNotActiveError("未找到对应的用户记录".to_string()));
-        }
-=======
-        // 查询用户
-        let customer = self.state.customer_repository
-            .find_by_user_id(&active_command.user_id).await?
-            .ok_or(AppError::UserNotActiveError("未找到对应的用户记录".to_string()))?;
-        // 冲redis查询用户验证码
-        let code = self.state.redis.get(&active_command.user_id.to_string()).await?;
         // 转bo
         let customer = CustomerBuilder::new()
-          .user_id(customer.user_id)
-          .is_deleted(customer.is_deleted)
-          .is2fa(customer.is2fa)
-          .verify_code(Some(active_command.verify_code))
-          .build();
-        // 通过领域服务激活
-        self.state.customer_service.active(customer, code).await?;
+            .user_id(active_command.user_id)
+            .verify_code(Some(active_command.verify_code))
+            .is_deleted(0)
+            .build();
+        // 调用领域服务激活
+        self.state.customer_service.active(&tx, customer).await?;
         // 发送消息
-        
-        // 更新状态
-        let user_id = self.state.customer_repository.save(&tx, customer).await?;
->>>>>>> 060613f1c423a3dd9be37fbc8d6576f837e4dca7
         // 提交事务
         tx.commit().await?;
+        Ok(())
+        // // 查询用户
+        // let customer = self.state.customer_repository
+        //     .find_by_user_id(&active_command.user_id).await?
+        //     .ok_or(AppError::UserNotActiveError("未找到对应的用户记录".to_string()))?;
+        // // 冲redis查询用户验证码
+        // // let code = self.state.redis.get(&active_command.user_id.to_string()).await?;
+        // // 转bo
+        // let customer = CustomerBuilder::new()
+        //   .user_id(customer.user_id)
+        //   .is_deleted(customer.is_deleted)
+        //   .is2fa(customer.is2fa)
+        //   .verify_code(Some(active_command.verify_code))
+        //   .build();
+        // // 通过领域服务激活
+        // self.state.customer_service.active(customer, code).await?;
+        // // 发送消息
+
+        // // 更新状态
+        // let user_id = self.state.customer_repository.save(&tx, customer).await?;
+        // // 提交事务
+        // tx.commit().await?;
         // 使用kafka通知激活发送
         // // 开启事务
         // let tx = self.state.db.begin().await?;
@@ -143,36 +118,24 @@ impl CustomerUseCase {
         // } else {
         //     return Err(AppError::UserNotActiveError("未找到对应的用户记录".to_string()));
         // }
-        // // 提交事务
-        // tx.commit().await?;
-        Ok(())
     }
-    pub async fn sign_up(&self, signup_command: SignUpCommand) -> AppResult<Uuid> {
+    pub async fn sign_up_command_handler(&self, signup_command: SignUpCommand) -> AppResult<Uuid> {
         info!("注册用户请求: {signup_command:?}.");
-        // 查询用户
         // 开启事务
         let tx = self.state.db.begin().await?;
-        self.state.customer_repository.check_unique_by_username(
-            &tx,
-            &signup_command.username.clone()
-        ).await?;
-        self.state.customer_repository.check_unique_by_email(
-            &tx,
-            &signup_command.email.clone()
-        ).await?;
-        // 转bo
+        // hash密码
+        let hash_password = utils::password::hash(signup_command.password).await?;
+        // 生成user_id
+        let user_id = Uuid::new_v4();
+        //转bo
         let customer = CustomerBuilder::new()
+            .user_id(user_id)
             .username(signup_command.username)
             .email(signup_command.email)
-            .password(signup_command.password)
+            .is_deleted(1)
+            .password(hash_password)
             .build();
-        // 生成激活码
-        let code = utils::random::generate_random_string(CODE_LEN);
-        // 保存用户
-        let user_id = self.state.customer_repository.save(&tx, customer).await?;
-        // 保存验证码到redis并设置120秒过期
-        self.state.redis.set(&user_id.to_string(), &code, Duration::from_secs(120)).await?;
-        // 提交事务
+        self.state.customer_service.sign_up(&tx, customer).await?;
         tx.commit().await?;
         // 使用kafka通知激活发送
         Ok(user_id)

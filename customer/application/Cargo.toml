@@ -33,3 +33,4 @@ strum = { workspace = true }
 thiserror = { workspace = true }
 sea-orm = { workspace = true }
 # rdkafka = { workspace = true }
+garde = { workspace = true }

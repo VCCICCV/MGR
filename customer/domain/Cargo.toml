@@ -37,5 +37,5 @@ base64 = { workspace = true }
 axum-extra = { workspace = true }
 reqwest = { workspace = true }
 
-openssl = { workspace = true }
+# openssl = { workspace = true }
 once_cell = { workspace = true }

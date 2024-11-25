@@ -7,7 +7,6 @@ pub mod tracing;
 pub mod kafka;
 pub mod es;
 pub mod email;
-pub mod secret;
 use std::str::FromStr;
 use database::DatabaseConfig;
 use email::EmailConfig;
@@ -15,7 +14,6 @@ use es::EsConfig;
 use kafka::KafkaConfig;
 use profile::Profile;
 use redis::RedisConfig;
-use secret::SecretConfig;
 use server::ServerConfig;
 use config::{ ConfigError, Environment };
 use serde::Deserialize;
@@ -32,7 +30,6 @@ pub struct AppConfig {
     pub es: EsConfig,
     pub email: EmailConfig,
     pub kafka: KafkaConfig,
-    pub secret: SecretConfig,
 }
 
 impl AppConfig {

@@ -2,7 +2,14 @@ use serde::{ Deserialize, Serialize };
 
 use tracing::info;
 use uuid::Uuid;
-use crate::model::{ dp::role::Role, entity::receive_address::ReceiveAddress, reponse::error::{ AppError, AppResult } };
+use crate::{
+    model::{
+        dp::role::Role,
+        entity::receive_address::ReceiveAddress,
+        reponse::error::{ AppError, AppResult },
+    },
+    utils,
+};
 
 #[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct Customer {
@@ -27,7 +34,7 @@ pub struct Customer {
     // 收货地址
     receive_address: Vec<ReceiveAddress>,
 }
-// 建造(者结构体，包含一个需要构建的对象
+// 建造者结构体，包含一个需要构建的对象
 #[derive(Default)]
 pub struct CustomerBuilder {
     customer: Customer,
@@ -92,7 +99,7 @@ impl CustomerBuilder {
             receive_address: self.customer.receive_address.clone(),
             is2fa: self.customer.is2fa.clone(),
             is_deleted: self.customer.is_deleted.clone(),
-            role:self.customer.role.clone(),
+            role: self.customer.role.clone(),
         }
     }
 }
@@ -128,7 +135,7 @@ impl Customer {
     pub fn receive_address(&self) -> &Vec<ReceiveAddress> {
         &self.receive_address
     }
-    pub fn checkout_valid_code(&mut self, verify_code: Option<&str>) -> AppResult<()> {
+    pub fn checkout_valid_code(&self, verify_code: Option<String>) -> AppResult<()> {
         match verify_code {
             None => {
                 return Err(AppError::UserNotActiveError("验证码已失效".to_string()).into());
@@ -138,8 +145,7 @@ impl Customer {
             }
             Some(code) => {
                 info!("缓存验证码：{:?}", code);
-                //
-                match self.verify_code.as_deref() {
+                match &self.verify_code {
                     // 未携带验证码
                     None => {
                         return Err(
@@ -149,7 +155,7 @@ impl Customer {
                         );
                     }
                     // 携带验证码与缓存的验证码不同
-                    Some(saved_code) if saved_code != code => {
+                    Some(saved_code) if *saved_code != code => {
                         info!("携带验证码：{:?}", saved_code);
                         return Err(AppError::UserNotActiveError("验证码错误".to_string()).into());
                     }

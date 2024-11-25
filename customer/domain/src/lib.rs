@@ -54,8 +54,6 @@ pub mod model {
     pub mod dto {
         // 系统需要的传输对象，如写入redis的对象
         pub mod info;
-        pub mod command;
-        pub mod query;
     }
 }
 /// 高层Domain不应该依赖于低层Infrastructure，而是应该依赖于抽象trait
@@ -74,7 +72,6 @@ pub mod repositories {
 /// 尽量避免领域服务之间的调用，应该通过repsitory提供能力
 /// 传入的参数应该是实体而不是单个参数，多对象操作通过领域服务实现
 pub mod service {
-    pub mod customer_service;
     pub mod customer_service_impl;
     // pub mod token;
 }
@@ -96,15 +93,15 @@ pub mod event {
     pub mod consumer;
 }
 pub mod utils {
-    pub mod key;
     pub mod jwt;
     pub mod random;
     pub mod hash;
     pub mod password;
 }
-// 常量
+// 常
 pub mod constant;
-// 查询模型
-pub mod query_model {
-    pub mod user;
+
+// 领域服务接口
+pub mod interface {
+    pub mod customer_service;
 }

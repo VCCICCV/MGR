@@ -1,40 +1,84 @@
 use std::sync::Arc;
 use axum::async_trait;
-
+use sea_orm::DatabaseTransaction;
+use tracing::info;
 use crate::{
-    model::{
-        aggregate::customer::Customer,
-        reponse::{ error::AppResult, response::TokenResponse },
-    },
+    constant::{ CODE_LEN, EXPIRE_ACTIVE_CODE_SECS },
+    interface::customer_service::CustomerService,
+    model::{ aggregate::customer::Customer, reponse::error::AppResult },
+    repositories::{ customer_repository::CustomerRepository, redis_repository::RedisRepository },
+    utils::{ self, random },
 };
-
-use super::customer_service::CustomerService;
 /// 动态分发
 /// 编译器无法知道具体要调用的是 CustomerRepositoryImpl 这个类型所实现的对应方法，因为类型是不确定的
 /// 当一个类型实现trait时，编译器会生成一个虚表（vtable）并用一个指针指向这个虚表，其中虚表包含了该类型所实现的所有方法的函数指针
 /// Arc包含了这两个指针，一个指向虚表的指针和一个指向数据的指针，当调用一个方法时，编译器会通过trait指向的虚表中的函数指针来确定具体要调用的方法
-pub struct CustomerServiceImpl {}
+pub struct CustomerServiceImpl {
+    customer_repository: Arc<dyn CustomerRepository>,
+    redis_repository: Arc<dyn RedisRepository>,
+}
 impl CustomerServiceImpl {
-    pub fn new() -> Self {
-        Self {}
+    pub fn new(
+        customer_repository: Arc<dyn CustomerRepository>,
+        redis_repository: Arc<dyn RedisRepository>
+    ) -> Self {
+        Self {
+            customer_repository,
+            redis_repository,
+        }
     }
 }
 // 这里是领域能力
 #[async_trait]
 impl CustomerService for CustomerServiceImpl {
+    async fn sign_up(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult {
+        info!("Customer sign up: {customer:?}");
+        // 检查唯一性
+        self.customer_repository.check_unique_by_username(tx, &customer.username()).await?;
+        self.customer_repository.check_unique_by_email(tx, &customer.email()).await?;
+        // 生成激活验证码
+        let code = random::generate_random_string(CODE_LEN);
+        // 保存激活验证码到redis
+        self.redis_repository.set(&customer.user_id().to_string(), &code, EXPIRE_ACTIVE_CODE_SECS).await?;
+        // 保存用户
+        self.customer_repository.insert(tx, customer.clone()).await?;
+        Ok(())
+    }
+    async fn login(&self, customer: &Customer) -> AppResult {
+        todo!()
+    }
+    async fn active(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult {
+        // 检查是否已激活，1未激活，0已激活
+        if let Some(user) = self.customer_repository.find_by_user_id(tx, &customer.user_id()).await?{
+            if *user.is_deleted() == 1 {
+                return Ok(());
+            }
+        }
+        // 检查验证码是否正确
+        let code = self.redis_repository.get(&customer.user_id().to_string()).await?;
+        info!("code: {code:?}");
+        customer.checkout_valid_code(code)?;
+        // if code.is_none() || *code != customer.active_code() {
+        //     return Err(utils::create_error("验证码错误"));
+        // }
+        // 更新用户状态
+        info!("********************Customer active: {customer:?}");
+        self.customer_repository.update_status(tx, customer).await?;
+        Ok(())
+    }
     // async fn login(&self, customer: &Customer) -> AppResult {
 
     // }
-    async fn active(&self, customer: &Customer, code: &str) -> AppResult {
-        if customer.is_active() {
-            Ok(())
-        } else {
-            // 校验验证码
-            customer.checkout_valid_code(code).await?;
-            // 激活
-            customer.is2fa(1)
-        }
-    }
+    // async fn active(&self, customer: &Customer, code: &str) -> AppResult {
+    //     if customer.is_deleted() == 0 {
+    //         Ok(())
+    //     } else {
+    //         // 校验验证码
+    //         customer.checkout_valid_code(code).await?;
+    //         // 激活
+    //         customer.is2fa(1)
+    //     }
+    // }
     // async fn login(&self, customer: Customer) -> AppResult<LoginResponse> {
     // // 判断用户是否激活，修正if let语句的格式，去掉多余的换行和括号，使其符合语法规范
     // if

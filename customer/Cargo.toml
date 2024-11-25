@@ -108,7 +108,7 @@ argon2 = "0.5.3"
 # 邮件
 lettre = { version = "0.11.10", features = ["tokio1-native-tls", "builder"] }
 # ssl 证书
-openssl = { version = "0.10.68", features = ["vendored"] }
+# openssl = { version = "0.10.68", features = ["vendored"] }
 # openapi
 utoipa = { version = "5.1.1", features = ["axum_extras", "debug", "uuid"] }
 # openapi 文档

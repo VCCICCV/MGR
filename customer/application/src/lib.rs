@@ -1,5 +1,5 @@
 //! 应用层
-///这一层可以做e2e
+///这一层可以做e2e，查询可以直接用raw sql
 ///
 ///
 /// 协调各层的具体业务流程，不应该实现具体的业务逻辑，只应该调用下层的接口
@@ -21,10 +21,11 @@
 // 如何判断是编排流程而不是业务：1、不要有if/else（决策） 2、不要有计算 3、不要有对象转换的逻辑，但是可以有对象转换的方法调用（对象转换的逻辑放到Assmbler中）
 // 用例做什么：1、准备数据（对象转换）2、调用领域服务domain service和领域repository编排业务逻辑和持久化
 // 这里的用例没有分为命令和查询是为了简单，如果用例比较复杂，可以考虑拆分
+// 所有操作先转bo，再调用领域服务
 pub mod use_case {
     pub mod customer_use_case;
 }
-// // 将entity转换为dto
+// 装配器，组装领域对象
 pub mod assembler {
     pub mod customer_assembler;
     pub mod claims_assembler;
@@ -34,4 +35,11 @@ pub mod state;
 //     pub mod token;
 // }
 
-
+pub mod dto {
+    pub mod command;
+    pub mod query;
+}
+// 查询模型
+pub mod query_model {
+    pub mod user;
+}
