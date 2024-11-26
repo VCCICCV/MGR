@@ -58,12 +58,10 @@ pub mod model {
 }
 /// 高层Domain不应该依赖于低层Infrastructure，而是应该依赖于抽象trait
 /// 在COLA架构中，这里叫gateway
+/// 领域仓储只负责领域对象的持久化和查询
 pub mod repositories {
     // 用户接口，抽象trait，在基础设施层中实现
     pub mod customer_repository;
-    pub mod token_repository;
-    pub mod session_repository;
-    pub mod redis_repository;
 }
 
 /// 领域服务（领域能力）：这个领域提供的能力
@@ -72,7 +70,7 @@ pub mod repositories {
 /// 尽量避免领域服务之间的调用，应该通过repsitory提供能力
 /// 传入的参数应该是实体而不是单个参数，多对象操作通过领域服务实现
 pub mod service {
-    pub mod customer_service_impl;
+    pub mod customer_service;
     // pub mod token;
 }
 /// 值对象：没有唯一标识的对象，由其属性的值定义，通常是不可变的
@@ -92,16 +90,5 @@ pub mod event {
     pub mod email;
     pub mod consumer;
 }
-pub mod utils {
-    pub mod jwt;
-    pub mod random;
-    pub mod hash;
-    pub mod password;
-}
 // 常
 pub mod constant;
-
-// 领域服务接口
-pub mod interface {
-    pub mod customer_service;
-}

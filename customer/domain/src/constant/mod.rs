@@ -9,5 +9,5 @@ pub const EXPIRE_FORGET_PASS_CODE_SECS: Duration = Duration::from_secs(100);
 pub const EXPIRE_TWO_FACTOR_CODE_SECS: Duration = Duration::from_secs(200);
 // ttl 2FA过期
 pub const CHECK_EMAIL_MESSAGE: &str = "Please check you email.";
-// 验证码长度
-pub const CODE_LEN: usize = 6;
+// // 验证码长度
+// pub const CODE_LEN: usize = 6;

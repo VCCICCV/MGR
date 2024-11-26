@@ -1,10 +1,14 @@
 use serde::{ Deserialize, Serialize };
 use utoipa::ToSchema;
-
-#[derive(Debug, Clone, Default, Serialize, Deserialize, PartialEq, Eq, PartialOrd, Ord, ToSchema)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq, PartialOrd, Ord, ToSchema)]
 pub enum Role {
-    #[default]
-    Admin,
-    User,
-    System,
+    Admin(i32),
+    User(i32),
+    System(i32),
+}
+// 默认为用户
+impl Default for Role {
+    fn default() -> Self {
+        Role::User(2)
+    }
 }

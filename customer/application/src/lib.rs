@@ -24,16 +24,14 @@
 // 所有操作先转bo，再调用领域服务
 pub mod use_case {
     pub mod customer_use_case;
+    pub mod customer_use_case_impl;
 }
 // 装配器，组装领域对象
 pub mod assembler {
     pub mod customer_assembler;
     pub mod claims_assembler;
 }
-pub mod state;
-// pub mod utils{
-//     pub mod token;
-// }
+
 
 pub mod dto {
     pub mod command;

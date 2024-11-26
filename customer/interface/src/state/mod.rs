@@ -1,13 +1,13 @@
 use std::sync::Arc;
-// use use_case::customer_use_case::{ CustomerUseCase, CustomerUseCaseImpl };
+use application::use_case::{
+    customer_use_case::CustomerUseCase,
+    customer_use_case_impl::CustomerUseCaseImpl,
+};
 use domain::{
-    interface::customer_service::CustomerService,
     model::reponse::error::AppResult,
-    repositories::{
-        customer_repository::CustomerRepository,
-        redis_repository::{ self, RedisRepository },
-    },
-    service::customer_service_impl::CustomerServiceImpl,
+    repositories::customer_repository::CustomerRepository,
+    service::customer_service::CustomerService,
+    utils::redis::RedisUtil,
 };
 
 use infrastructure::{
@@ -18,13 +18,9 @@ use infrastructure::{
         redis::RedisClient,
     },
     config::AppConfig,
-    persistence::{
-        customer_repository_impl::CustomerRepositoryImpl,
-        redis_repository_impl::RedisRepositoryImpl,
-        // redis_repository_impl::RedisRepositoryImpl,
-    },
+    persistence::customer_repository_impl::CustomerRepositoryImpl,
 };
-
+use infrastructure::domain::customer_service_impl::CustomerServiceImpl;
 // 使用Arc来共享数据，避免数据的复制和所有权的转移
 #[derive(Clone)]
 pub struct AppState {
@@ -35,7 +31,7 @@ pub struct AppState {
     // DI
     pub customer_repository: Arc<dyn CustomerRepository>,
     pub customer_service: Arc<dyn CustomerService>,
-    pub redis_repository: Arc<dyn RedisRepository>,
+    pub customer_use_case: Arc<dyn CustomerUseCase>,
 }
 impl AppState {
     pub async fn new(config: AppConfig) -> AppResult<Self> {
@@ -45,11 +41,12 @@ impl AppState {
 
         // DI ，这里使用Arc来共享数据，避免数据的复制和所有权的转移，clone()本质上是增加引用计数
         let customer_repository = Arc::new(CustomerRepositoryImpl::new(db.clone()));
-        let redis_repository = Arc::new(RedisRepositoryImpl::new(redis.clone()));
         let customer_service = Arc::new(
-            CustomerServiceImpl::new(customer_repository.clone(), redis_repository.clone())
+            CustomerServiceImpl::new(customer_repository.clone(), redis.clone())
         );
-
+        let customer_use_case = Arc::new(
+            CustomerUseCaseImpl::new(db.clone(), customer_service.clone())
+        );
         Ok(Self {
             config: Arc::new(config),
             db,
@@ -57,7 +54,7 @@ impl AppState {
             email,
             customer_repository,
             customer_service,
-            redis_repository,
+            customer_use_case,
         })
     }
 }

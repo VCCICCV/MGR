@@ -42,3 +42,5 @@ elasticsearch = { workspace = true }
 
 chrono = { workspace = true }
 jsonwebtoken = { workspace = true }
+password-hash = { workspace = true }
+argon2 = { workspace = true }

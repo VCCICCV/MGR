@@ -1,6 +1,5 @@
-use application::state::AppState;
 use axum::routing::get;
-use crate::api::server_handler::health_check;
+use crate::{api::server_handler::health_check, state::AppState};
 
 pub fn setup_server_routers(router: axum::Router<AppState>) -> axum::Router<AppState> {
     router

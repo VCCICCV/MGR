@@ -1,7 +1,6 @@
 use axum::Router;
 use axum::routing::post;
-use application::state::AppState;
-use crate::api::customer_handler::{active, sign_up};
+use crate::{api::customer_handler::{active, sign_up}, state::AppState};
 pub async fn setup_customer_routers(router: Router<AppState>) -> Router<AppState> {
     router
         // .route("/api/login", post(login))

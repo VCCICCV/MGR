@@ -2,8 +2,7 @@ use axum::response::IntoResponse;
 use domain::model::reponse::response::{EmptyData, Res};
 use infrastructure::{ config::{ env::get_env_source, AppConfig }, constant::ENV_PREFIX };
 use tracing::info;
-use application::state::AppState;
-use crate::{ cmd::shutdown::shutdown_signal, routers::setup_routers };
+use crate::{ cmd::shutdown::shutdown_signal, routers::setup_routers, state::AppState };
 
 pub async fn start() -> anyhow::Result<()> {
     // 加载.env 环境配置文件，成功返回包含的值，失败返回None

@@ -2,6 +2,13 @@ use serde::{ Deserialize, Serialize };
 use garde::Validate;
 use utoipa::{ IntoParams, ToSchema };
 use uuid::Uuid;
+
+// 命令
+pub enum Command{
+    SignIn(SignInCommand),
+    SignUp(SignUpCommand),
+    Login(LoginCommand),
+}
 // 重置密码请求
 #[derive(Debug, Deserialize, Serialize, ToSchema, Validate, IntoParams)]
 pub struct SetPasswordCommand{

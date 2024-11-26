@@ -1,6 +1,4 @@
-use application::use_case::customer_use_case::CustomerUseCase;
 use axum::extract::{ Json, State };
-use application::state::AppState;
 use domain::model::reponse::{
     error::{ AppResponseError, AppResult },
     response::{ MessageResponse, Res, SignUpResponse },
@@ -8,6 +6,8 @@ use domain::model::reponse::{
 use application::dto::command::*;
 use garde::Validate;
 use tracing::info;
+
+use crate::state::AppState;
 /// 注册用户
 #[utoipa::path(
     post,
@@ -26,8 +26,8 @@ pub async fn sign_up(
     info!("Register new user with request: {:?}", signup_command);
     // 数据校验
     signup_command.validate()?;
-    let use_case = CustomerUseCase::new(state.into());
-    match use_case.sign_up_command_handler(signup_command).await {
+    // let use_case = CustomerUseCase::new(state.into());
+    match state.customer_use_case.sign_up_command_handler(signup_command).await {
         Ok(user_id) =>
             Ok(
                 Res::with_data(SignUpResponse {
@@ -52,8 +52,9 @@ pub async fn active(
     State(state): State<AppState>,
     Json(active_command): Json<ActiveCommand>
 ) -> AppResult<Res<MessageResponse>> {
-    let use_case = CustomerUseCase::new(state.clone().into());
-    match use_case.active_command_handler(active_command).await {
+    // let use_case = CustomerUseCase::new(state.clone().into());
+
+    match state.customer_use_case.active_command_handler(active_command).await {
         Ok(_) => {
             info!("User successfully activated.");
             Ok(Res::with_msg("User successfully activated."))

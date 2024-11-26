@@ -1,11 +1,9 @@
 use std::sync::Arc;
 use axum::async_trait;
 use chrono::Utc;
-
 use domain::model::dp::role::Role;
-use domain::model::reponse::error::{ AppError, AppResult };
+use domain::model::reponse::error::{ AppError, AppResult, Resource, ResourceType };
 use domain::model::reponse::response::TokenResponse;
-use domain::utils::password;
 use sea_orm::{
     ActiveModelTrait,
     ColumnTrait,
@@ -18,14 +16,12 @@ use sea_orm::{
     QueryResult,
     Set,
 };
-
+use po::prelude::*;
 use tracing::info;
 use domain::model::aggregate::customer::{ Customer, CustomerBuilder };
 use domain::repositories::customer_repository::CustomerRepository;
 use uuid::Uuid;
 use crate::client::database::DatabaseClient;
-use crate::client::redis::RedisClient;
-
 use crate::po;
 use crate::po::user::{ self };
 
@@ -68,8 +64,7 @@ impl CustomerRepository for CustomerRepositoryImpl {
         email: &str,
         is_delete: i16
     ) -> AppResult<Option<Customer>> {
-        let result = user::Entity
-            ::find()
+        let result = User::find()
             .filter(user::Column::Username.eq(email).and(user::Column::IsDeleted.eq(is_delete)))
             .one(&*self.db).await?;
         // 转bo
@@ -85,40 +80,19 @@ impl CustomerRepository for CustomerRepositoryImpl {
             return Ok(Some(customer));
         }
         Ok(None)
+        // Ok(None) => {
+        //     // 构建合适的Resource对象
+        //     let resource = Resource {
+        //         data: Vec::new(),
+        //         resource_type: ResourceType::User, // 假设存在这样一个表示用户资源类型的枚举变体
+        //     };
+        //     Err(AppError::NotFoundError(resource))
+        // }
+        // Err(err) => {
+        //     // 这里直接将数据库查询出现的错误
+        //     Err(AppError::DatabaseError(err))
+        // }
     }
-    async fn generate_token(
-        &self,
-        user_id: &Uuid,
-        role: &Role,
-        session_id: &Uuid
-    ) -> AppResult<TokenResponse> {
-        todo!()
-        // // 生成token
-        // let access_token = UserClaims::new(
-        //     EXPIRE_BEARER_TOKEN_SECS,
-        //     user_id,
-        //     session_id,
-        //     role.clone()
-        // ).encode(&ACCESS_TOKEN_ENCODE_KEY)?;
-        // // 生成refresh_token
-        // let refresh_token = UserClaims::new(
-        //     EXPIRE_REFRESH_TOKEN_SECS,
-        //     user_id,
-        //     session_id,
-        //     role
-        // ).encode(&REFRESH_TOKEN_ENCODE_KEY)?;
-        // Ok(TokenResponse::new(access_token, refresh_token, EXPIRE_BEARER_TOKEN_SECS.as_secs()))
-    }
-    // async fn active(&self, tx: &DatabaseTransaction, customer: &Customer) -> AppResult {
-    //     info!("update user is_deleted: {:?}", customer);
-    //     let user = po::user::ActiveModel {
-    //         user_id: Set(*customer.user_id()),
-    //         is_deleted: Set(*customer.is_deleted()),
-    //         ..Default::default()
-    //     };
-    //     user.update(tx).await?;
-    //     Ok(())
-    // }
     async fn find_by_user_id(
         &self,
         tx: &DatabaseTransaction,
@@ -142,11 +116,6 @@ impl CustomerRepository for CustomerRepositoryImpl {
         }
         Ok(None)
     }
-    // async fn find_page(
-    //     &self,
-    //     _param: PageParams
-    // ) -> AppResult<Vec<domain::query_model::user::User>> {
-    //     todo!()    // }
     async fn insert(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<Uuid> {
         // 转po
         let user = (po::user::ActiveModel {
@@ -159,6 +128,15 @@ impl CustomerRepository for CustomerRepositoryImpl {
             create_time: Set(Utc::now().naive_utc()),
             ..Default::default()
         }).insert(tx).await?;
+        // 插入用户角色表
+        // UserRole::ActiveModel{
+        //     user_id: Set(customer.user_id().to_owned()),
+        //     role_id: Set(customer.role().to_owned()),
+        //     create_time: Set(Utc::now().naive_utc()),
+        //     is_deleted: Set(0),
+        //     ..Default::default()
+        // }.insert(tx).await?;
+
         Ok(user.user_id)
     }
 
@@ -167,7 +145,7 @@ impl CustomerRepository for CustomerRepositoryImpl {
         tx: &DatabaseTransaction,
         username: &str
     ) -> AppResult<bool> {
-        let result = user::Entity::find().filter(user::Column::Username.eq(username)).one(tx).await;
+        let result = User::find().filter(user::Column::Username.eq(username)).one(tx).await;
         match result {
             Ok(Some(_)) => Ok(false),
             Ok(None) => Ok(true),
@@ -179,8 +157,7 @@ impl CustomerRepository for CustomerRepositoryImpl {
         tx: &DatabaseTransaction,
         email: &str
     ) -> AppResult<bool> {
-        let result = user::Entity::find().filter(user::Column::Email.eq(email)).one(tx).await;
-
+        let result = User::find().filter(user::Column::Username.eq(email)).one(tx).await;
         match result {
             Ok(Some(_)) => Ok(false), // 如果找到了记录，说明邮箱不唯一，返回 false
             Ok(None) => Ok(true), // 如果没找到记录，说明邮箱是唯一的，返回 true

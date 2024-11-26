@@ -2,6 +2,9 @@ use garde::Validate;
 use sea_orm::strum::Display;
 use serde::{ Deserialize, Serialize };
 use utoipa::{IntoParams, ToSchema};
+pub enum Query{
+    
+}
 // 忘记密码请求
 #[derive(Debug, Deserialize, ToSchema, Validate, IntoParams)]
 pub struct ForgetPasswordQuery {

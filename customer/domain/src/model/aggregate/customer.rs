@@ -2,14 +2,9 @@ use serde::{ Deserialize, Serialize };
 
 use tracing::info;
 use uuid::Uuid;
-use crate::{
-    model::{
-        dp::role::Role,
-        entity::receive_address::ReceiveAddress,
-        reponse::error::{ AppError, AppResult },
-    },
-    utils,
-};
+use crate::model::{   
+        dp::role::Role, entity::receive_address::ReceiveAddress, reponse::error::{ AppError, AppResult }
+    };
 
 #[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct Customer {
@@ -135,6 +130,10 @@ impl Customer {
     pub fn receive_address(&self) -> &Vec<ReceiveAddress> {
         &self.receive_address
     }
+}
+// 充血方法
+impl Customer {
+    // 校验验证码
     pub fn checkout_valid_code(&self, verify_code: Option<String>) -> AppResult<()> {
         match verify_code {
             None => {

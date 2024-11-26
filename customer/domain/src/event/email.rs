@@ -1,6 +1,8 @@
 use lettre::Message;
 use serde::{ Deserialize, Serialize };
-
+pub enum Event{
+    Email(Email),
+}
 // 这里定义从系统产生的对象，但是是请求其他系统的DTO
 // 邮件数据传输对象
 #[derive(Debug, Deserialize, Serialize)]

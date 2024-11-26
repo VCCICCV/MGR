@@ -1,30 +1,41 @@
 use std::sync::Arc;
 use axum::async_trait;
+use domain::{
+    model::{
+        aggregate::customer::Customer,
+        dto::info::LoginKey,
+        reponse::{ error::AppResult, response::LoginResponse },
+    },
+    repositories::customer_repository::CustomerRepository,
+    service::customer_service::CustomerService,
+};
 use sea_orm::DatabaseTransaction;
 use tracing::info;
 use crate::{
-    constant::{ CODE_LEN, EXPIRE_ACTIVE_CODE_SECS },
-    interface::customer_service::CustomerService,
-    model::{ aggregate::customer::Customer, reponse::error::AppResult },
-    repositories::{ customer_repository::CustomerRepository, redis_repository::RedisRepository },
-    utils::{ self, random },
+    client::redis::RedisClientExt,
+    constant::{ CHECK_EMAIL_MESSAGE, EXPIRE_SESSION_CODE_SECS, EXPIRE_TWO_FACTOR_CODE_SECS },
+    utils::{password, session, token::generate_tokens},
 };
+use crate::{
+    client::redis::RedisClient,
+    constant::{ CODE_LEN, EXPIRE_ACTIVE_CODE_SECS },
+    utils::random,
+};
+
 /// 动态分发
 /// 编译器无法知道具体要调用的是 CustomerRepositoryImpl 这个类型所实现的对应方法，因为类型是不确定的
 /// 当一个类型实现trait时，编译器会生成一个虚表（vtable）并用一个指针指向这个虚表，其中虚表包含了该类型所实现的所有方法的函数指针
 /// Arc包含了这两个指针，一个指向虚表的指针和一个指向数据的指针，当调用一个方法时，编译器会通过trait指向的虚表中的函数指针来确定具体要调用的方法
 pub struct CustomerServiceImpl {
     customer_repository: Arc<dyn CustomerRepository>,
-    redis_repository: Arc<dyn RedisRepository>,
+    // redis_util: Arc<dyn RedisUtil>,
+    redis: Arc<RedisClient>,
 }
 impl CustomerServiceImpl {
-    pub fn new(
-        customer_repository: Arc<dyn CustomerRepository>,
-        redis_repository: Arc<dyn RedisRepository>
-    ) -> Self {
+    pub fn new(customer_repository: Arc<dyn CustomerRepository>, redis: Arc<RedisClient>) -> Self {
         Self {
             customer_repository,
-            redis_repository,
+            redis,
         }
     }
 }
@@ -39,30 +50,74 @@ impl CustomerService for CustomerServiceImpl {
         // 生成激活验证码
         let code = random::generate_random_string(CODE_LEN);
         // 保存激活验证码到redis
-        self.redis_repository.set(&customer.user_id().to_string(), &code, EXPIRE_ACTIVE_CODE_SECS).await?;
+        self.redis.set(&customer.user_id().to_string(), &code, EXPIRE_ACTIVE_CODE_SECS).await?;
         // 保存用户
         self.customer_repository.insert(tx, customer.clone()).await?;
         Ok(())
     }
-    async fn login(&self, customer: &Customer) -> AppResult {
-        todo!()
+    async fn login(&self, customer: Customer) -> AppResult<LoginResponse> {
+        // 检查用户是否已激活
+        if
+            let Some(result) = self.customer_repository.find_by_username_and_status(
+                &customer.email(),
+                0
+            ).await?
+        {
+            // 验证密码
+            password::verify(customer.password().to_string(), result.password().to_string()).await?;
+            // 检查是否需要2fa
+            if *result.is2fa() == 1 {
+                let key = LoginKey {
+                    user_id: *result.user_id(),
+                };
+                let ttl = self.redis.ttl(&key.to_string()).await?;
+                if ttl > 0 {
+                    return Ok(LoginResponse::Code {
+                        expire_in: ttl as u64,
+                        message: CHECK_EMAIL_MESSAGE.to_string(),
+                    });
+                }
+                // 生成验证码并保存到redis
+                let login_code = random::generate_random_string(CODE_LEN);
+                self.redis.set(&key.to_string(), &login_code, EXPIRE_ACTIVE_CODE_SECS).await?;
+                // 返回验证
+                return Ok(LoginResponse::Code {
+                    expire_in: EXPIRE_TWO_FACTOR_CODE_SECS.as_secs(),
+                    message: CHECK_EMAIL_MESSAGE.to_string(),
+                });
+            }
+        }
+        // 已经二次验证，直接登录
+        // 生成session key和session_id
+        let session = session::generate(*customer.user_id());
+        // 保存session到redis
+        self.redis.set(&session.0.to_string(), &session.1.to_string(), EXPIRE_SESSION_CODE_SECS).await?;
+        // 生成token
+        let resp = generate_tokens(
+            *customer.user_id(),
+            customer.role().clone(),
+            session.1
+        )?;
+        // 返回token
+        Ok(LoginResponse::Token(resp))
     }
     async fn active(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult {
         // 检查是否已激活，1未激活，0已激活
-        if let Some(user) = self.customer_repository.find_by_user_id(tx, &customer.user_id()).await?{
+        if
+            let Some(user) = self.customer_repository.find_by_user_id(
+                tx,
+                &customer.user_id()
+            ).await?
+        {
             if *user.is_deleted() == 1 {
                 return Ok(());
             }
         }
         // 检查验证码是否正确
-        let code = self.redis_repository.get(&customer.user_id().to_string()).await?;
+        let code = self.redis.get(&customer.user_id().to_string()).await?;
         info!("code: {code:?}");
         customer.checkout_valid_code(code)?;
-        // if code.is_none() || *code != customer.active_code() {
-        //     return Err(utils::create_error("验证码错误"));
-        // }
         // 更新用户状态
-        info!("********************Customer active: {customer:?}");
         self.customer_repository.update_status(tx, customer).await?;
         Ok(())
     }

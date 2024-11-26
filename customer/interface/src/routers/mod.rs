@@ -1,11 +1,10 @@
 // use admin::user_router::setup_user_routes;
 use axum::{ http::{ HeaderValue, Method }, Router };
-use application::state::AppState;
 use server::setup_server_routers;
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
 use tower_http::cors::CorsLayer;
-use crate::api::openapi::ApiDoc;
+use crate::{api::openapi::ApiDoc, state::AppState};
 pub mod customer_router;
 pub mod server;
 pub mod admin {

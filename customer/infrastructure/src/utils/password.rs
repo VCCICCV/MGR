@@ -1,6 +1,8 @@
-use crate::model::reponse::error::{invalid_input_error, AppResult};
-use super::hash;
+
+use domain::model::reponse::error::{invalid_input_error, AppResult};
 use tracing::debug;
+
+use super::hash;
 // hash密码
 pub async fn hash(password: String) -> AppResult<String> {
     let jh = tokio::task::spawn_blocking(move || hash::argon_hash(password));

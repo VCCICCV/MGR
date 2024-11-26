@@ -12,8 +12,8 @@
 // pub use super :: product_comment :: Entity as ProductComment ;
 // pub use super :: product_sku :: Entity as ProductSku ;
 // pub use super :: product_spu :: Entity as ProductSpu ;
-pub use super :: receive_address :: Entity as ReceiveAddress ;
+pub use super::receive_address::Entity as ReceiveAddress;
 // pub use super :: role :: Entity as Role ;
 // pub use super :: role_permission :: Entity as RolePermission ;
-pub use super :: user :: Entity as User ;
-// pub use super :: user_role :: Entity as UserRole ;
+pub use super::user::Entity as User;
+pub use super::user_role::Entity as UserRole;

@@ -2054,6 +2054,7 @@ name = "infrastructure"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "argon2",
  "axum",
  "bb8",
  "bb8-redis",
@@ -2067,6 +2068,7 @@ dependencies = [
  "lettre",
  "log",
  "once_cell",
+ "password-hash",
  "rand",
  "redis",
  "sea-orm",

@@ -26,3 +26,5 @@ pub mod routers;
 // pub mod routers{
 //     pub mod customer_routes;
 // }
+// 全局状态
+pub mod state;
