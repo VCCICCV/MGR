@@ -26,7 +26,6 @@ pub mod model {
     pub mod dp {
         pub mod customer_id;
         pub mod role;
-        pub mod claims;
     }
     //  聚合对象，由值对象和领域实体组成
     // 引起状态变化的方法放到充血模型
@@ -38,6 +37,7 @@ pub mod model {
     // 领域实体，有的项目叫BO业务对象
     pub mod entity {
         pub mod receive_address;
+        pub mod claims;
         // pub mod permission;
         // pub mod role_permission;
         // pub mod role;
@@ -71,7 +71,7 @@ pub mod repositories {
 /// 传入的参数应该是实体而不是单个参数，多对象操作通过领域服务实现
 pub mod service {
     pub mod customer_service;
-    // pub mod token;
+    pub mod customer_service_impl;
 }
 /// 值对象：没有唯一标识的对象，由其属性的值定义，通常是不可变的
 /// 比如，地址可以作为一个值对象。地址由国家、省份、城市、街道、邮编等属性组成，这些属性的值共同定义了一个地址；数据校验可以作为值对象
@@ -90,5 +90,13 @@ pub mod event {
     pub mod email;
     pub mod consumer;
 }
-// 常
+// 常量，像token需要用到加密的可以考虑将token抽象然后再基础设施实现
 pub mod constant;
+pub mod utils {
+    pub mod redis;
+    pub mod random;
+    pub mod session;
+    pub mod token;
+    pub mod password;
+    pub mod hash;
+}

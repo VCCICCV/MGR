@@ -165,8 +165,6 @@ impl AppError {
                 ("DATABASE_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             Infallible(_err) =>
                 ("INFALLIBLE".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
-            RedisError(_redis_error) =>
-                ("REDIS_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             TypeHeaderError(_err) =>
                 ("TYPE_HEADER_ERROR".to_string(), StatusCode::INTERNAL_SERVER_ERROR, vec![]),
             UserNotFound(_) =>

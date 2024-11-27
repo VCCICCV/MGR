@@ -1,26 +1,26 @@
 use std::sync::Arc;
 use axum::async_trait;
-use domain::{
+use sea_orm::DatabaseTransaction;
+use tracing::info;
+
+use crate::{
+    constant::{
+        CHECK_EMAIL_MESSAGE,
+        CODE_LEN,
+        EXPIRE_ACTIVE_CODE_SECS,
+        EXPIRE_SESSION_CODE_SECS,
+        EXPIRE_TWO_FACTOR_CODE_SECS,
+    },
     model::{
         aggregate::customer::Customer,
         dto::info::LoginKey,
         reponse::{ error::AppResult, response::LoginResponse },
     },
     repositories::customer_repository::CustomerRepository,
-    service::customer_service::CustomerService,
+    utils::{ password, random, redis::RedisUtil, session::{ self, Session }, token::Token },
 };
-use sea_orm::DatabaseTransaction;
-use tracing::info;
-use crate::{
-    client::redis::RedisClientExt,
-    constant::{ CHECK_EMAIL_MESSAGE, EXPIRE_SESSION_CODE_SECS, EXPIRE_TWO_FACTOR_CODE_SECS },
-    utils::{password, session, token::generate_tokens},
-};
-use crate::{
-    client::redis::RedisClient,
-    constant::{ CODE_LEN, EXPIRE_ACTIVE_CODE_SECS },
-    utils::random,
-};
+
+use super::customer_service::CustomerService;
 
 /// 动态分发
 /// 编译器无法知道具体要调用的是 CustomerRepositoryImpl 这个类型所实现的对应方法，因为类型是不确定的
@@ -28,14 +28,22 @@ use crate::{
 /// Arc包含了这两个指针，一个指向虚表的指针和一个指向数据的指针，当调用一个方法时，编译器会通过trait指向的虚表中的函数指针来确定具体要调用的方法
 pub struct CustomerServiceImpl {
     customer_repository: Arc<dyn CustomerRepository>,
-    // redis_util: Arc<dyn RedisUtil>,
-    redis: Arc<RedisClient>,
+    redis_util: Arc<dyn RedisUtil>,
+    session: Arc<dyn Session>,
+    token: Arc<dyn Token>,
 }
 impl CustomerServiceImpl {
-    pub fn new(customer_repository: Arc<dyn CustomerRepository>, redis: Arc<RedisClient>) -> Self {
+    pub fn new(
+        customer_repository: Arc<dyn CustomerRepository>,
+        redis_util: Arc<dyn RedisUtil>,
+        session: Arc<dyn Session>,
+        token: Arc<dyn Token>
+    ) -> Self {
         Self {
             customer_repository,
-            redis,
+            redis_util,
+            session,
+            token,
         }
     }
 }
@@ -50,7 +58,7 @@ impl CustomerService for CustomerServiceImpl {
         // 生成激活验证码
         let code = random::generate_random_string(CODE_LEN);
         // 保存激活验证码到redis
-        self.redis.set(&customer.user_id().to_string(), &code, EXPIRE_ACTIVE_CODE_SECS).await?;
+        self.redis_util.set(&customer.user_id().to_string(), &code, EXPIRE_ACTIVE_CODE_SECS).await?;
         // 保存用户
         self.customer_repository.insert(tx, customer.clone()).await?;
         Ok(())
@@ -70,7 +78,7 @@ impl CustomerService for CustomerServiceImpl {
                 let key = LoginKey {
                     user_id: *result.user_id(),
                 };
-                let ttl = self.redis.ttl(&key.to_string()).await?;
+                let ttl = self.redis_util.ttl(&key.to_string()).await?;
                 if ttl > 0 {
                     return Ok(LoginResponse::Code {
                         expire_in: ttl as u64,
@@ -79,7 +87,7 @@ impl CustomerService for CustomerServiceImpl {
                 }
                 // 生成验证码并保存到redis
                 let login_code = random::generate_random_string(CODE_LEN);
-                self.redis.set(&key.to_string(), &login_code, EXPIRE_ACTIVE_CODE_SECS).await?;
+                self.redis_util.set(&key.to_string(), &login_code, EXPIRE_ACTIVE_CODE_SECS).await?;
                 // 返回验证
                 return Ok(LoginResponse::Code {
                     expire_in: EXPIRE_TWO_FACTOR_CODE_SECS.as_secs(),
@@ -89,15 +97,13 @@ impl CustomerService for CustomerServiceImpl {
         }
         // 已经二次验证，直接登录
         // 生成session key和session_id
-        let session = session::generate(*customer.user_id());
-        // 保存session到redis
-        self.redis.set(&session.0.to_string(), &session.1.to_string(), EXPIRE_SESSION_CODE_SECS).await?;
+        let session = self.session.set(*customer.user_id()).await?;
         // 生成token
-        let resp = generate_tokens(
+        let resp = self.token.generate_token(
             *customer.user_id(),
             customer.role().clone(),
-            session.1
-        )?;
+            session
+        ).await?;
         // 返回token
         Ok(LoginResponse::Token(resp))
     }
@@ -114,7 +120,7 @@ impl CustomerService for CustomerServiceImpl {
             }
         }
         // 检查验证码是否正确
-        let code = self.redis.get(&customer.user_id().to_string()).await?;
+        let code = self.redis_util.get(&customer.user_id().to_string()).await?;
         info!("code: {code:?}");
         customer.checkout_valid_code(code)?;
         // 更新用户状态

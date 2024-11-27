@@ -1,7 +1,7 @@
 use axum::extract::{ Json, State };
 use domain::model::reponse::{
     error::{ AppResponseError, AppResult },
-    response::{ MessageResponse, Res, SignUpResponse },
+    response::{ LoginResponse, MessageResponse, Res, SignUpResponse },
 };
 use application::dto::command::*;
 use garde::Validate;
@@ -58,33 +58,32 @@ pub async fn active(
         Ok(_) => {
             info!("User successfully activated.");
             Ok(Res::with_msg("User successfully activated."))
-        },
+        }
         Err(e) => Err(e),
     }
 }
-// /// 用户登录
-// #[utoipa::path(
-//     post,
-//     request_body = LoginCommand,
-//     path = "/api/v1/user/login",
-//     responses(
-//         (status = 200, description = "Success login user", body = [LoginResponse]),
-//         (status = 400, description = "Invalid data input", body = [AppResponseError]),
-//         (status = 404, description = "User not found", body = [AppResponseError]),
-//         (status = 500, description = "Internal server error", body = [AppResponseError])
-//     )
-// )]
-// pub async fn login(
-//     State(state): State<AppState>,
-//     Json(login_command): Json<LoginCommand>
-// ) -> AppResult<Res<LoginResponse>> {
-//     info!("用户登录请求: {:?}", login_command);
-//     let use_case = CustomerUseCase::new(state.clone().into());
-//     match use_case.login(login_command).await {
-//         Ok(token) => {
-//             info!("Success login: {token:?}");
-//             Ok(Res::with_data(LoginResponse::Token(token)))
-//         }
-//         Err(e) => Err(e),
-//     }
-// }
+/// 用户登录
+#[utoipa::path(
+    post,
+    request_body = LoginCommand,
+    path = "/api/v1/user/login",
+    responses(
+        (status = 200, description = "Success login user", body = [LoginResponse]),
+        (status = 400, description = "Invalid data input", body = [AppResponseError]),
+        (status = 404, description = "User not found", body = [AppResponseError]),
+        (status = 500, description = "Internal server error", body = [AppResponseError])
+    )
+)]
+pub async fn login(
+    State(state): State<AppState>,
+    Json(login_command): Json<LoginCommand>
+) -> AppResult<Res<LoginResponse>> {
+    info!("用户登录请求: {:?}", login_command);
+    match state.customer_use_case.login_command_handler(login_command).await {
+        Ok(token) => {
+            info!("Success login: {token:?}");
+            Ok(Res::with_data(LoginResponse::Token(token)))
+        }
+        Err(e) => Err(e),
+    }
+}

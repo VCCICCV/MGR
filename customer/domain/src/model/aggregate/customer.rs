@@ -2,12 +2,15 @@ use serde::{ Deserialize, Serialize };
 
 use tracing::info;
 use uuid::Uuid;
-use crate::model::{   
-        dp::role::Role, entity::receive_address::ReceiveAddress, reponse::error::{ AppError, AppResult }
-    };
+use crate::model::{
+    dp::role::Role,
+    entity::receive_address::ReceiveAddress,
+    reponse::error::{ AppError, AppResult },
+};
 
 #[derive(Serialize, Deserialize, Clone, Debug, Default)]
 pub struct Customer {
+    id: i32,
     // uuid
     user_id: Uuid,
     // 用户名
@@ -37,6 +40,10 @@ pub struct CustomerBuilder {
 impl CustomerBuilder {
     pub fn new() -> Self {
         CustomerBuilder::default()
+    }
+    pub fn id(&mut self, id: i32) -> &mut Self {
+        self.customer.id = id;
+        self
     }
     pub fn user_id(&mut self, user_id: Uuid) -> &mut Self {
         self.customer.user_id = user_id;
@@ -95,6 +102,7 @@ impl CustomerBuilder {
             is2fa: self.customer.is2fa.clone(),
             is_deleted: self.customer.is_deleted.clone(),
             role: self.customer.role.clone(),
+            id: self.customer.id.clone(),
         }
     }
 }
@@ -129,6 +137,9 @@ impl Customer {
     }
     pub fn receive_address(&self) -> &Vec<ReceiveAddress> {
         &self.receive_address
+    }
+    pub fn id(&self) -> &i32 {
+        &self.id
     }
 }
 // 充血方法
@@ -166,5 +177,9 @@ impl Customer {
             }
         }
         Ok(())
+    }
+    // 添加收货地址
+    pub fn add_receive_address(&mut self, address: ReceiveAddress) {
+        self.receive_address.push(address);
     }
 }

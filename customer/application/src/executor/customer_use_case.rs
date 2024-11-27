@@ -2,6 +2,7 @@ use axum::async_trait;
 use domain::model::reponse::error::AppResult;
 use uuid::Uuid;
 use crate::dto::command::{ ActiveCommand, SignUpCommand };
+// 这里也可以抽象为一个execute，但是需要每个命令都构建一个execute方法，这样冗余代码太多
 
 #[async_trait]
 pub trait CustomerUseCase: Sync + Send {

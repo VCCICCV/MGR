@@ -22,7 +22,7 @@
 // 用例做什么：1、准备数据（对象转换）2、调用领域服务domain service和领域repository编排业务逻辑和持久化
 // 这里的用例没有分为命令和查询是为了简单，如果用例比较复杂，可以考虑拆分
 // 所有操作先转bo，再调用领域服务
-pub mod use_case {
+pub mod executor {
     pub mod customer_use_case;
     pub mod customer_use_case_impl;
 }

@@ -6,7 +6,7 @@
 
 ## 架构
 
-![img](README.assets/webp.webp)
+![架构.drawio](README.assets/%E6%9E%B6%E6%9E%84.drawio.png)
 
 ## 技术栈
 
@@ -97,7 +97,19 @@
 命令和查询通过事件解耦
 
 * 命令：表达意图，想要做什么和基于该意图所需的信息
-* 
+* 查询：简单查询复用基础设施实体或复用领域repository，复杂查询新建query_model从基础设施查，查询方式可以采用原始sql
+
+## 项目规约
+
+| CRUD     | 命名约定                                             |
+| -------- | ---------------------------------------------------- |
+| 新增     | Create                                               |
+| 添加     | Add                                                  |
+| 删除     | Remove(Application/Domain)，Delete（Infrastructure） |
+| 查询单个 | Find                                                 |
+| 查询多个 | List                                                 |
+| 分页查询 | Page                                                 |
+| 统计     | Count                                                |
 
 ## 后台管理（TODO）
 

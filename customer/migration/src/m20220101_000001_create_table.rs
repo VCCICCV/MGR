@@ -1,4 +1,4 @@
-use sea_orm::Set;
+
 use sea_orm_migration::prelude::*;
 #[derive(DeriveMigrationName)]
 // 用户表

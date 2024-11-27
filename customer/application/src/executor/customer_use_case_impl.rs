@@ -1,7 +1,7 @@
 use axum::async_trait;
 use domain::{
     model::{ aggregate::customer::CustomerBuilder, reponse::error::AppResult },
-    service::customer_service::CustomerService
+    service::customer_service::CustomerService, utils::password
 };
 use infrastructure::{client::database::DatabaseClient, utils};
 use crate::dto::command::{ ActiveCommand, SignUpCommand };
@@ -110,7 +110,7 @@ impl CustomerUseCase for CustomerUseCaseImpl {
         // 开启事务
         let tx = self.db.begin().await?;
         // hash密码
-        let hash_password = utils::password::hash(signup_command.password).await?;
+        let hash_password = password::hash(signup_command.password).await?;
         // 生成user_id
         let user_id = Uuid::new_v4();
         //转bo
@@ -122,6 +122,7 @@ impl CustomerUseCase for CustomerUseCaseImpl {
             .password(hash_password)
             .build();
         self.customer_service.sign_up(&tx, customer).await?;
+        // 设置角色
         tx.commit().await?;
         // 使用kafka通知激活发送
         Ok(user_id)

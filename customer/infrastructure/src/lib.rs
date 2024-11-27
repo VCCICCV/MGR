@@ -5,12 +5,11 @@ pub mod po;
 /// 工具类
 pub mod utils {
     pub mod dir;
-    pub mod token;
     pub mod random;
     pub mod hash;
-    pub mod password;
     pub mod session;
 }
+
 /// 与表的映射实体
 // pub mod entities{
 //     // pub mod prelude;
@@ -49,8 +48,10 @@ pub mod event {
 pub mod middleware {
     pub mod auth;
 }
-// state
-// pub mod state;
 pub mod domain {
-    pub mod customer_service_impl;
+    pub mod utils {
+        pub mod redis_impl;
+        pub mod token_impl;
+        pub mod session_impl;
+    }
 }
