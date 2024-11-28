@@ -4,14 +4,13 @@ use utoipa::{ IntoParams, ToSchema };
 use uuid::Uuid;
 
 // 命令
-pub enum Command{
+pub enum Command {
     SignIn(SignInCommand),
     SignUp(SignUpCommand),
-    Login(LoginCommand),
 }
 // 重置密码请求
 #[derive(Debug, Deserialize, Serialize, ToSchema, Validate, IntoParams)]
-pub struct SetPasswordCommand{
+pub struct SetPasswordCommand {
     #[garde(length(min = 8))]
     pub new_password: String,
     #[garde(length(min = 5))]
@@ -21,7 +20,7 @@ pub struct SetPasswordCommand{
 }
 // 2fa登录请求
 #[derive(Debug, Deserialize, Serialize, ToSchema, Validate)]
-pub struct Login2faCommand {
+pub struct SignIn2FaCommand {
     #[garde(skip)]
     pub user_id: Uuid,
     #[garde(length(min = 5))]
@@ -82,17 +81,6 @@ pub struct SignUpCommand {
     #[garde(length(min = 8))]
     pub password: String,
 }
-
-#[derive(Default, Debug, Clone, Serialize, Deserialize, Validate, ToSchema, IntoParams)]
-pub struct LoginCommand {
-    // 邮箱
-    #[garde(email)]
-    pub email: String,
-    // 密码
-    #[garde(length(min = 8))]
-    pub password: String,
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;

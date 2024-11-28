@@ -37,7 +37,6 @@ pub mod model {
     // 领域实体，有的项目叫BO业务对象
     pub mod entity {
         pub mod receive_address;
-        pub mod claims;
         // pub mod permission;
         // pub mod role_permission;
         // pub mod role;
@@ -99,4 +98,5 @@ pub mod utils {
     pub mod token;
     pub mod password;
     pub mod hash;
+    pub mod claim;
 }

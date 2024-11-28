@@ -45,9 +45,7 @@ pub mod event {
     // pub mod consumer_impl;
     // pub mod producer_impl;
 }
-pub mod middleware {
-    pub mod auth;
-}
+
 pub mod domain {
     pub mod utils {
         pub mod redis_impl;

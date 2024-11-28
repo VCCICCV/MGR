@@ -1,9 +1,12 @@
 use serde::{ de::DeserializeOwned, Deserialize, Serialize };
+
 use uuid::Uuid;
 use std::fmt::Debug;
 use core::fmt::Display;
 use std::time::Duration;
+
 use crate::constant::*;
+
 pub trait RedisKey: Debug + Display {
     type Value: Serialize + DeserializeOwned + Debug;
     const EXPIRE_TIME: Duration;

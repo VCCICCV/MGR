@@ -5,9 +5,9 @@ use application::executor::{
 };
 use domain::{
     model::reponse::error::AppResult,
-    repositories::customer_repository::{ self, CustomerRepository },
+    repositories::customer_repository::CustomerRepository,
     service::{ customer_service::CustomerService, customer_service_impl::CustomerServiceImpl },
-    utils::{ redis::RedisUtil, session::{ self, Session }, token::{ self, Token } },
+    utils::{ redis::RedisUtil, session::Session, token::Token },
 };
 
 use infrastructure::{
@@ -49,7 +49,7 @@ impl AppState {
         let redis_util = Arc::new(RedisUtilImpl::new(redis.clone()));
         let session = Arc::new(SessionImpl::new(redis.clone()));
         let customer_repository = Arc::new(CustomerRepositoryImpl::new(db.clone()));
-        let token = Arc::new(TokenImpl::new(session.clone(), customer_repository.clone()));
+        let token = Arc::new(TokenImpl::new());
 
         let customer_service = Arc::new(
             CustomerServiceImpl::new(
@@ -60,7 +60,12 @@ impl AppState {
             )
         );
         let customer_use_case = Arc::new(
-            CustomerUseCaseImpl::new(db.clone(), customer_service.clone())
+            CustomerUseCaseImpl::new(
+                db.clone(),
+                customer_service.clone(),
+                customer_repository.clone(),
+                session.clone()
+            )
         );
 
         Ok(Self {

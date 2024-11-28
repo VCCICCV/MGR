@@ -1,29 +1,14 @@
 use std::sync::Arc;
 use axum::async_trait;
 use chrono::Utc;
-use domain::model::dp::role::Role;
-use domain::model::reponse::error::{ AppError, AppResult, Resource, ResourceType };
-use domain::model::reponse::response::TokenResponse;
-use sea_orm::{
-    ActiveModelTrait,
-    ColumnTrait,
-    DatabaseConnection,
-    DatabaseTransaction,
-    EntityTrait,
-    PaginatorTrait,
-    QueryFilter,
-    QueryOrder,
-    QueryResult,
-    Set,
-};
-use po::prelude::*;
-use tracing::info;
+use domain::model::reponse::error::{ AppError, AppResult };
+use sea_orm::{ ActiveModelTrait, ColumnTrait, DatabaseTransaction, EntityTrait, QueryFilter, Set };
 use domain::model::aggregate::customer::{ Customer, CustomerBuilder };
 use domain::repositories::customer_repository::CustomerRepository;
+use tracing::info;
 use uuid::Uuid;
 use crate::client::database::DatabaseClient;
-use crate::po;
-use crate::po::user::{ self };
+use crate::po::{ self, prelude::* };
 
 pub struct CustomerRepositoryImpl {
     db: Arc<DatabaseClient>,
@@ -44,7 +29,6 @@ impl CustomerRepositoryImpl {
 #[async_trait]
 impl CustomerRepository for CustomerRepositoryImpl {
     async fn update_status(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult {
-        println!("update user is_deleted: {:?}", customer);
         info!("update user is_deleted: {:?}", customer);
         (po::user::ActiveModel {
             user_id: Set(*customer.user_id()),
@@ -59,17 +43,23 @@ impl CustomerRepository for CustomerRepositoryImpl {
     async fn delete(&self, tx: &DatabaseTransaction, user_id: &Uuid) -> AppResult {
         todo!()
     }
-    async fn find_by_username_and_status(
+    async fn find_by_email_and_status(
         &self,
         email: &str,
-        is_delete: i16
+        is_deleted: i16
     ) -> AppResult<Option<Customer>> {
+        info!("find user by email: {:?}.isdelete:{:?}", email, is_deleted);
+
         let result = User::find()
-            .filter(user::Column::Username.eq(email).and(user::Column::IsDeleted.eq(is_delete)))
+            .filter(
+                po::user::Column::Email.eq(email).and(po::user::Column::IsDeleted.eq(is_deleted))
+            )
             .one(&*self.db).await?;
+        info!("find user: {:?}", result);
         // 转bo
         if let Some(model) = result {
             let customer = CustomerBuilder::new()
+                .id(model.id)
                 .user_id(model.user_id)
                 .username(model.username)
                 .email(model.email)
@@ -77,9 +67,10 @@ impl CustomerRepository for CustomerRepositoryImpl {
                 .password(model.password)
                 .is2fa(model.is2fa)
                 .build();
-            return Ok(Some(customer));
+            Ok(Some(customer))
+        } else {
+            Err(AppError::UserNotFound("用户不存在".to_string()))
         }
-        Ok(None)
         // Ok(None) => {
         //     // 构建合适的Resource对象
         //     let resource = Resource {
@@ -95,13 +86,11 @@ impl CustomerRepository for CustomerRepositoryImpl {
     }
     async fn find_by_user_id(
         &self,
-        tx: &DatabaseTransaction,
         user_id: &Uuid
     ) -> AppResult<Option<Customer>> {
-        let result = po::user::Entity
-            ::find()
-            .filter(user::Column::UserId.eq(*user_id))
-            .one(tx).await?;
+        let result = User::find()
+            .filter(po::user::Column::UserId.eq(*user_id))
+            .one(&*self.db).await?;
         // 转bo，这里使用if let进行有值判断
         if let Some(model) = result {
             let customer = CustomerBuilder::new()
@@ -112,9 +101,10 @@ impl CustomerRepository for CustomerRepositoryImpl {
                 .password(model.password)
                 .is2fa(model.is2fa)
                 .build();
-            return Ok(Some(customer));
+            Ok(Some(customer))
+        } else {
+            Err(AppError::UserNotFound("用户不存在".to_string()))
         }
-        Ok(None)
     }
     async fn insert(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<Uuid> {
         // 转po
@@ -128,15 +118,6 @@ impl CustomerRepository for CustomerRepositoryImpl {
             create_time: Set(Utc::now().naive_utc()),
             ..Default::default()
         }).insert(tx).await?;
-        // 插入用户角色表
-        // UserRole::ActiveModel{
-        //     user_id: Set(customer.user_id().to_owned()),
-        //     role_id: Set(customer.role().to_owned()),
-        //     create_time: Set(Utc::now().naive_utc()),
-        //     is_deleted: Set(0),
-        //     ..Default::default()
-        // }.insert(tx).await?;
-
         Ok(user.user_id)
     }
 
@@ -145,7 +126,7 @@ impl CustomerRepository for CustomerRepositoryImpl {
         tx: &DatabaseTransaction,
         username: &str
     ) -> AppResult<bool> {
-        let result = User::find().filter(user::Column::Username.eq(username)).one(tx).await;
+        let result = User::find().filter(po::user::Column::Username.eq(username)).one(tx).await;
         match result {
             Ok(Some(_)) => Ok(false),
             Ok(None) => Ok(true),
@@ -157,7 +138,7 @@ impl CustomerRepository for CustomerRepositoryImpl {
         tx: &DatabaseTransaction,
         email: &str
     ) -> AppResult<bool> {
-        let result = User::find().filter(user::Column::Username.eq(email)).one(tx).await;
+        let result = User::find().filter(po::user::Column::Username.eq(email)).one(tx).await;
         match result {
             Ok(Some(_)) => Ok(false), // 如果找到了记录，说明邮箱不唯一，返回 false
             Ok(None) => Ok(true), // 如果没找到记录，说明邮箱是唯一的，返回 true

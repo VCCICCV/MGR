@@ -1,10 +1,18 @@
 use axum::async_trait;
 use domain::{
-    model::{ aggregate::customer::CustomerBuilder, reponse::error::AppResult },
-    service::customer_service::CustomerService, utils::password
+    model::{
+        aggregate::customer::CustomerBuilder,
+        reponse::{ error::{ AppError, AppResult }, response::{ SignInResponse, TokenResponse } },
+    },
+    repositories::customer_repository::CustomerRepository,
+    service::customer_service::CustomerService,
+    utils::{ claim::UserClaims, password, session::Session },
 };
-use infrastructure::{client::database::DatabaseClient, utils};
-use crate::dto::command::{ ActiveCommand, SignUpCommand };
+use infrastructure::{ client::database::DatabaseClient, constant::REFRESH_TOKEN_DECODE_KEY };
+use crate::dto::{
+    command::{ ActiveCommand, RefreshTokenCommand, SignIn2FaCommand, SignInCommand, SignUpCommand },
+    query::TokenInfoQuery,
+};
 use tracing::info;
 use uuid::Uuid;
 use sea_orm::TransactionTrait;
@@ -13,32 +21,100 @@ use super::customer_use_case::CustomerUseCase;
 pub struct CustomerUseCaseImpl {
     db: Arc<DatabaseClient>,
     customer_service: Arc<dyn CustomerService>,
+    customer_repository: Arc<dyn CustomerRepository>,
+    session: Arc<dyn Session>,
 }
 impl CustomerUseCaseImpl {
-    pub fn new(db: Arc<DatabaseClient>, customer_service: Arc<dyn CustomerService>) -> Self {
+    pub fn new(
+        db: Arc<DatabaseClient>,
+        customer_service: Arc<dyn CustomerService>,
+        customer_repository: Arc<dyn CustomerRepository>,
+        session: Arc<dyn Session>
+    ) -> Self {
         Self {
             db,
             customer_service,
+            customer_repository,
+            session,
         }
     }
 }
 #[async_trait]
 impl CustomerUseCase for CustomerUseCaseImpl {
-     async fn login_command_handler(&self, sign_up_command: SignUpCommand) -> AppResult {
-        info!("注册用户请求: {sign_up_command:?}.");
-        // // 转bo
+    async fn info_query_handler(
+        &self,
+        claims: UserClaims,
+        token_info_query: TokenInfoQuery
+    ) -> AppResult<UserClaims> {
+        info!("Info request:{claims:?}: {token_info_query:?}");
+        // 解码
+        let token_data = UserClaims::decode(&token_info_query.token, &REFRESH_TOKEN_DECODE_KEY)?;
+        // 校验是否存在
+        self.session.check(&token_data.claims).await?;
+        Ok(token_data.claims)
+    }
+    async fn refresh_command_handler(
+        &self,
+        refresh_token_command: RefreshTokenCommand
+    ) -> AppResult<TokenResponse> {
+        // 解码token
+        let user_claims = UserClaims::decode(
+            &refresh_token_command.token,
+            &REFRESH_TOKEN_DECODE_KEY
+        )?.claims;
+        // 调用领域服务
+        match self.customer_service.refresh(&user_claims).await {
+            Ok(resp) => Ok(resp),
+            Err(e) => Err(e),
+        }
+    }
+    async fn logout_command_handler(&self, user_id: Uuid) -> AppResult {
+        // 调用领域服务注销
+        match self.customer_service.logout(&user_id).await {
+            Ok(()) => Ok(()),
+            Err(e) => Err(e),
+        }
+    }
+    async fn sign_in_2fa_command_handler(
+        &self,
+        sign_in_2fa_command: SignIn2FaCommand
+    ) -> AppResult<SignInResponse> {
+        // 转bo
         let customer = CustomerBuilder::new()
-            .username(sign_up_command.username)
-            .email(sign_up_command.email)
-            .password(sign_up_command.password)
+            .user_id(sign_in_2fa_command.user_id)
+            .verify_code(Some(sign_in_2fa_command.code))
             .build();
-        // 调用领域服务登录验证
-        let token = self.customer_service.login(customer).await?;
-        // 生成sessionid并保存到redis
-        // 生成token
-        // 发送消息
-        // 返回token
-        todo!();
+        // 调用领域服务验证
+        match self.customer_service.sign_in_2fa(customer).await {
+            Ok(resp) => Ok(resp),
+            Err(e) => Err(e),
+        }
+    }
+    async fn sign_in_command_handler(
+        &self,
+        sign_in_command: SignInCommand
+    ) -> AppResult<SignInResponse> {
+        info!("Sign in request: {sign_in_command:?}.");
+        match self.customer_repository.find_by_email_and_status(&sign_in_command.email, 0).await {
+            Ok(Some(result)) => {
+                // 转bo
+                let customer = CustomerBuilder::new()
+                    .id(*result.id())
+                    .user_id(*result.user_id())
+                    .username((*result.username()).to_string())
+                    .email(sign_in_command.email)
+                    .password(sign_in_command.password)
+                    .is2fa(*result.is2fa())
+                    .build();
+                // 调用领域服务登录验证
+                match self.customer_service.sign_in(customer).await {
+                    Ok(resp) => Ok(resp),
+                    Err(e) => Err(e),
+                }
+            }
+            Ok(None) => Err(AppError::UserNotFound("用户不存在或未激活".to_string())),
+            Err(e) => Err(e),
+        }
     }
     async fn active_command_handler(&self, active_command: ActiveCommand) -> AppResult {
         info!("激活用户请求: {active_command:?}.");
@@ -56,54 +132,6 @@ impl CustomerUseCase for CustomerUseCaseImpl {
         // 提交事务
         tx.commit().await?;
         Ok(())
-        // // 查询用户
-        // let customer = self.state.customer_repository
-        //     .find_by_user_id(&active_command.user_id).await?
-        //     .ok_or(AppError::UserNotActiveError("未找到对应的用户记录".to_string()))?;
-        // // 冲redis查询用户验证码
-        // // let code = self.state.redis.get(&active_command.user_id.to_string()).await?;
-        // // 转bo
-        // let customer = CustomerBuilder::new()
-        //   .user_id(customer.user_id)
-        //   .is_deleted(customer.is_deleted)
-        //   .is2fa(customer.is2fa)
-        //   .verify_code(Some(active_command.verify_code))
-        //   .build();
-        // // 通过领域服务激活
-        // self.state.customer_service.active(customer, code).await?;
-        // // 发送消息
-
-        // // 更新状态
-        // let user_id = self.state.customer_repository.save(&tx, customer).await?;
-        // // 提交事务
-        // tx.commit().await?;
-        // 使用kafka通知激活发送
-        // // 开启事务
-        // let tx = self.state.db.begin().await?;
-        // // 激活并发送消息
-        // // 检查是否已激活
-        // if
-        //     let Some(mut customer) = self.state.customer_repository.find_by_user_id(
-        //         active_command.user_id
-        //     ).await?
-        // {
-        //     // 更新BO
-        //     customer = CustomerBuilder::new()
-        //         .user_id(active_command.user_id)
-        //         .is_deleted(0)
-        //         .verify_code(Some(active_command.verify_code))
-        //         .build();
-        //     // 获取缓存验证码
-        //     let code = self.state.redis.get(&active_command.user_id.to_string()).await?;
-        //     // 传入缓存验证码检查验证码正确性
-        //     customer.checkout_valid_code(code.as_deref())?;
-        //     // 删除缓存验证码
-        //     self.state.redis.del(&active_command.user_id.to_string()).await?;
-        //     // 更新激活状态
-        //     self.state.customer_repository.active(&tx, customer).await?;
-        // } else {
-        //     return Err(AppError::UserNotActiveError("未找到对应的用户记录".to_string()));
-        // }
     }
     async fn sign_up_command_handler(&self, signup_command: SignUpCommand) -> AppResult<Uuid> {
         info!("注册用户请求: {signup_command:?}.");

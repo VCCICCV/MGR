@@ -2,22 +2,22 @@ use std::sync::Arc;
 use axum::async_trait;
 use sea_orm::DatabaseTransaction;
 use tracing::info;
+use uuid::Uuid;
 
 use crate::{
     constant::{
         CHECK_EMAIL_MESSAGE,
         CODE_LEN,
         EXPIRE_ACTIVE_CODE_SECS,
-        EXPIRE_SESSION_CODE_SECS,
         EXPIRE_TWO_FACTOR_CODE_SECS,
     },
     model::{
         aggregate::customer::Customer,
-        dto::info::LoginKey,
-        reponse::{ error::AppResult, response::LoginResponse },
+        dto::info::{ LoginKey, SessionKey },
+        reponse::{ error::{ AppError, AppResult }, response::{ SignInResponse, TokenResponse } },
     },
     repositories::customer_repository::CustomerRepository,
-    utils::{ password, random, redis::RedisUtil, session::{ self, Session }, token::Token },
+    utils::{ claim::UserClaims, password, random, redis::RedisUtil, session::Session, token::Token },
 };
 
 use super::customer_service::CustomerService;
@@ -50,6 +50,62 @@ impl CustomerServiceImpl {
 // 这里是领域能力
 #[async_trait]
 impl CustomerService for CustomerServiceImpl {
+    async fn refresh(&self, user_claims: &UserClaims) -> AppResult<TokenResponse> {
+        // 检查session是否存在
+        let user_id = self.session.check(&user_claims).await?;
+        // 查询用户
+        if let Some(user) = self.customer_repository.find_by_user_id(&user_id).await? {
+            // 生成session并保存到redis
+            let session = self.session.set(*user.user_id()).await?;
+            // 生成token
+            let resp = self.token.generate_token(
+                *user.user_id(),
+                user.role().clone(),
+                session
+            ).await?;
+            Ok(resp)
+        } else {
+            Err(AppError::PermissionDeniedError("User not found".to_string()))
+        }
+    }
+    async fn logout(&self, user_id: &Uuid) -> AppResult {
+        // 清除session
+        let key = SessionKey {
+            user_id: *user_id,
+        };
+        self.redis_util.del(&key.to_string()).await?;
+        Ok(())
+    }
+    async fn sign_in_2fa(&self, customer: Customer) -> AppResult<SignInResponse> {
+        // 获取登录key
+        let key = LoginKey {
+            user_id: *customer.user_id(),
+        };
+        info!("key: {key:?}");
+        // 从redis中获取验证码
+        let code = self.redis_util.get(&key.to_string()).await?;
+        info!("code: {code:?}");
+        // 判断验证码是否正确
+        customer.checkout_valid_code(code)?;
+        // 根据user_id查询用户
+        if let Some(result) = self.customer_repository.find_by_user_id(&customer.user_id()).await? {
+            // 生成session
+            let session = self.session.set(*result.user_id()).await?;
+            // 生成token
+            let resp = self.token.generate_token(
+                *customer.user_id(),
+                customer.role().clone(),
+                session
+            ).await?;
+            // 返回token
+            Ok(SignInResponse::Token(resp))
+        } else {
+            Ok(SignInResponse::Code {
+                expire_in: EXPIRE_TWO_FACTOR_CODE_SECS.as_secs(),
+                message: CHECK_EMAIL_MESSAGE.to_string(),
+            })
+        }
+    }
     async fn sign_up(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult {
         info!("Customer sign up: {customer:?}");
         // 检查唯一性
@@ -63,37 +119,37 @@ impl CustomerService for CustomerServiceImpl {
         self.customer_repository.insert(tx, customer.clone()).await?;
         Ok(())
     }
-    async fn login(&self, customer: Customer) -> AppResult<LoginResponse> {
+    async fn sign_in(&self, customer: Customer) -> AppResult<SignInResponse> {
         // 检查用户是否已激活
         if
-            let Some(result) = self.customer_repository.find_by_username_and_status(
+            let Some(result) = self.customer_repository.find_by_email_and_status(
                 &customer.email(),
                 0
             ).await?
         {
             // 验证密码
             password::verify(customer.password().to_string(), result.password().to_string()).await?;
-            // 检查是否需要2fa
-            if *result.is2fa() == 1 {
-                let key = LoginKey {
-                    user_id: *result.user_id(),
-                };
-                let ttl = self.redis_util.ttl(&key.to_string()).await?;
-                if ttl > 0 {
-                    return Ok(LoginResponse::Code {
-                        expire_in: ttl as u64,
-                        message: CHECK_EMAIL_MESSAGE.to_string(),
-                    });
-                }
-                // 生成验证码并保存到redis
-                let login_code = random::generate_random_string(CODE_LEN);
-                self.redis_util.set(&key.to_string(), &login_code, EXPIRE_ACTIVE_CODE_SECS).await?;
-                // 返回验证
-                return Ok(LoginResponse::Code {
-                    expire_in: EXPIRE_TWO_FACTOR_CODE_SECS.as_secs(),
+        }
+        // 检查是否需要2fa
+        if *customer.is2fa() == 0 {
+            let key = LoginKey {
+                user_id: *customer.user_id(),
+            };
+            let ttl = self.redis_util.ttl(&key.to_string()).await?;
+            if ttl > 0 {
+                return Ok(SignInResponse::Code {
+                    expire_in: ttl as u64,
                     message: CHECK_EMAIL_MESSAGE.to_string(),
                 });
             }
+            // 生成验证码并保存到redis
+            let login_code = random::generate_random_string(CODE_LEN);
+            self.redis_util.set(&key.to_string(), &login_code, EXPIRE_ACTIVE_CODE_SECS).await?;
+            // 返回验证
+            return Ok(SignInResponse::Code {
+                expire_in: EXPIRE_TWO_FACTOR_CODE_SECS.as_secs(),
+                message: CHECK_EMAIL_MESSAGE.to_string(),
+            });
         }
         // 已经二次验证，直接登录
         // 生成session key和session_id
@@ -105,16 +161,11 @@ impl CustomerService for CustomerServiceImpl {
             session
         ).await?;
         // 返回token
-        Ok(LoginResponse::Token(resp))
+        Ok(SignInResponse::Token(resp))
     }
     async fn active(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult {
         // 检查是否已激活，1未激活，0已激活
-        if
-            let Some(user) = self.customer_repository.find_by_user_id(
-                tx,
-                &customer.user_id()
-            ).await?
-        {
+        if let Some(user) = self.customer_repository.find_by_user_id(&customer.user_id()).await? {
             if *user.is_deleted() == 1 {
                 return Ok(());
             }
@@ -127,9 +178,6 @@ impl CustomerService for CustomerServiceImpl {
         self.customer_repository.update_status(tx, customer).await?;
         Ok(())
     }
-    // async fn login(&self, customer: &Customer) -> AppResult {
-
-    // }
     // async fn active(&self, customer: &Customer, code: &str) -> AppResult {
     //     if customer.is_deleted() == 0 {
     //         Ok(())

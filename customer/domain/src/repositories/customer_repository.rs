@@ -10,14 +10,13 @@ use crate::model::{aggregate::customer::Customer, reponse::error::AppResult};
 pub trait CustomerRepository: Send + Sync {
     async fn find_by_user_id(
         &self,
-        tx: &DatabaseTransaction,
         user_id: &Uuid
     ) -> AppResult<Option<Customer>>;
     async fn update_status(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult;
     async fn update(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult;
     async fn delete(&self, tx: &DatabaseTransaction, user_id: &Uuid) -> AppResult;
     async fn insert(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult<Uuid>;
-    async fn find_by_username_and_status(
+    async fn find_by_email_and_status(
         &self,
         email: &str,
         is_deleted: i16
@@ -28,6 +27,4 @@ pub trait CustomerRepository: Send + Sync {
         username: &str
     ) -> AppResult<bool>;
     async fn check_unique_by_email(&self, tx: &DatabaseTransaction, email: &str) -> AppResult<bool>;
-    // 查询仓储，不经过业务
-    // async fn find_page(&self, param: PageParams) -> AppResult<Vec<User>>;
 }

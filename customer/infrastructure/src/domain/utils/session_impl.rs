@@ -2,15 +2,14 @@ use axum::async_trait;
 use domain::{
     model::{
         dto::info::SessionKey,
-        entity::claims::UserClaims,
         reponse::error::{ AppError, AppResult, Resource, ResourceType },
     },
-    utils::session::Session,
+    utils::{claim::UserClaims, session::Session},
 };
 use tracing::info;
 use uuid::Uuid;
 use std::sync::Arc;
-use crate::{client::redis::RedisClient, constant::EXPIRE_SESSION_CODE_SECS};
+use crate::{ client::redis::RedisClient, constant::EXPIRE_SESSION_CODE_SECS };
 use crate::client::redis::RedisClientExt;
 pub struct SessionImpl {
     redis: Arc<RedisClient>,
@@ -22,6 +21,7 @@ impl SessionImpl {
 }
 #[async_trait]
 impl Session for SessionImpl {
+    //  检查session_key是否存在
     async fn check(&self, claims: &UserClaims) -> AppResult<Uuid> {
         let session_key = SessionKey {
             user_id: claims.uid,
@@ -29,7 +29,7 @@ impl Session for SessionImpl {
         let session_id = self.redis.get(&session_key.to_string()).await?.ok_or_else(|| {
             AppError::NotFoundError(Resource {
                 resource_type: ResourceType::Session,
-                data:  vec![("session_key".to_string(), claims.sid.to_string())],
+                data: vec![("session_key".to_string(), claims.sid.to_string())],
             })
         })?;
         //  检查session_id是否一致
@@ -40,10 +40,11 @@ impl Session for SessionImpl {
         }
         Ok(claims.uid)
     }
+    //  生成session_key和session_id
     async fn set(&self, user_id: Uuid) -> AppResult<Uuid> {
+        info!("Generating session for user_id: {user_id:?}.");
         // 生成session_key和session_id
         let (key, value) = generate(user_id);
-
         self.redis.set(&key.to_string(), &value.to_string(), EXPIRE_SESSION_CODE_SECS).await?;
         Ok(value)
     }

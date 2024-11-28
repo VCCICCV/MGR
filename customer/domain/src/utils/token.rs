@@ -10,9 +10,4 @@ pub trait Token: Send + Sync {
         role: Role,
         session_id: Uuid
     ) -> AppResult<TokenResponse>;
-    async fn refresh(&self, token: &str) -> AppResult<TokenResponse>;
-    // async fn info(
-    //     user: UserClaims,
-    //     req: TokenInfoRequest
-    // ) -> AppResult<UserClaims>;
 }

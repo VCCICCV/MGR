@@ -1,8 +1,8 @@
 use axum::extract::{ Json, State };
-use domain::model::reponse::{
-    error::{ AppResponseError, AppResult },
-    response::{ LoginResponse, MessageResponse, Res, SignUpResponse },
-};
+use domain::{model::reponse::{
+        error::{ AppResponseError, AppResult },
+        response::{ MessageResponse, Res, SignInResponse, SignUpResponse },
+    }, utils::claim::UserClaims};
 use application::dto::command::*;
 use garde::Validate;
 use tracing::info;
@@ -52,8 +52,6 @@ pub async fn active(
     State(state): State<AppState>,
     Json(active_command): Json<ActiveCommand>
 ) -> AppResult<Res<MessageResponse>> {
-    // let use_case = CustomerUseCase::new(state.clone().into());
-
     match state.customer_use_case.active_command_handler(active_command).await {
         Ok(_) => {
             info!("User successfully activated.");
@@ -65,24 +63,51 @@ pub async fn active(
 /// 用户登录
 #[utoipa::path(
     post,
-    request_body = LoginCommand,
-    path = "/api/v1/user/login",
+    request_body = SignInCommand,
+    path = "/api/sign_in",
     responses(
-        (status = 200, description = "Success login user", body = [LoginResponse]),
+        (status = 200, description = "Success login user", body = [SignInResponse]),
         (status = 400, description = "Invalid data input", body = [AppResponseError]),
         (status = 404, description = "User not found", body = [AppResponseError]),
         (status = 500, description = "Internal server error", body = [AppResponseError])
     )
 )]
-pub async fn login(
+pub async fn sign_in(
     State(state): State<AppState>,
-    Json(login_command): Json<LoginCommand>
-) -> AppResult<Res<LoginResponse>> {
-    info!("用户登录请求: {:?}", login_command);
-    match state.customer_use_case.login_command_handler(login_command).await {
-        Ok(token) => {
-            info!("Success login: {token:?}");
-            Ok(Res::with_data(LoginResponse::Token(token)))
+    Json(sign_in_command): Json<SignInCommand>
+) -> AppResult<Res<SignInResponse>> {
+    info!("Sign in copmmand: {:?}", sign_in_command);
+    match state.customer_use_case.sign_in_command_handler(sign_in_command).await {
+        Ok(token_resp) => {
+            info!("Success login: {token_resp:?}");
+            Ok(Res::with_data(token_resp))
+        }
+        Err(e) => Err(e),
+    }
+}
+pub async fn sign_in_2fa(
+    State(state): State<AppState>,
+    Json(sign_in_2fa_command): Json<SignIn2FaCommand>
+) -> AppResult<Res<SignInResponse>> {
+    info!("Sign in 2fa command: {:?}", sign_in_2fa_command);
+    match state.customer_use_case.sign_in_2fa_command_handler(sign_in_2fa_command).await {
+        Ok(resp) => {
+            info!("Success login 2fa.");
+            Ok(Res::with_data(resp))
+        }
+        Err(e) => Err(e),
+    }
+}
+/// 用户登出，由于实现了
+pub async fn logout(
+    State(state): State<AppState>,
+    claims: UserClaims
+) -> AppResult<Res<MessageResponse>> {
+    info!("Logout user: {:?}", claims);
+    match state.customer_use_case.logout_command_handler(claims.uid).await {
+        Ok(_) => {
+            info!("Success logout.");
+            Ok(Res::with_msg("Success logout."))
         }
         Err(e) => Err(e),
     }

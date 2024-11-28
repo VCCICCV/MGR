@@ -10,16 +10,16 @@ use utoipa::ToSchema;
 use uuid::Uuid;
 // 登录响应
 #[derive(Debug, Serialize, ToSchema)]
-pub enum LoginResponse {
+pub enum SignInResponse {
     Token(TokenResponse),
     Code {
         message: String,
         expire_in: u64,
     },
 }
-impl From<TokenResponse> for LoginResponse {
+impl From<TokenResponse> for SignInResponse {
     fn from(value: TokenResponse) -> Self {
-        LoginResponse::Token(value)
+        SignInResponse::Token(value)
     }
 }
 // token响应

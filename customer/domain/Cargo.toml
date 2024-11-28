@@ -7,6 +7,7 @@ edition = "2021"
 # domain不应该依赖于任何层
 sea-orm = { workspace = true }
 axum = { workspace = true }
+axum-extra = { workspace = true }
 serde = { workspace = true }
 anyhow = { workspace = true }
 tracing = { workspace = true }
@@ -34,7 +35,6 @@ strum = { workspace = true }
 config = { workspace = true }
 
 base64 = { workspace = true }
-axum-extra = { workspace = true }
 reqwest = { workspace = true }
 
 # openssl = { workspace = true }

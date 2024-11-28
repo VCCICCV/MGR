@@ -14,6 +14,7 @@ pub mod api {
     pub mod admin {
         pub mod user_handler;
     }
+    pub mod token;
 }
 // 如果响应是grpc，那么就加一个grpc适配器，和infrastructure的grpc不同，这里是响应前端，infrasteucture的grpc是请求第三方服务
 pub mod grpc {}
@@ -28,3 +29,7 @@ pub mod routers;
 // }
 // 全局状态
 pub mod state;
+// 中间件
+pub mod middleware {
+    pub mod auth;
+}

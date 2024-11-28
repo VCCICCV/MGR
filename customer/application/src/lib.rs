@@ -29,7 +29,6 @@ pub mod executor {
 // 装配器，组装领域对象
 pub mod assembler {
     pub mod customer_assembler;
-    pub mod claims_assembler;
 }
 
 
