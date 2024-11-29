@@ -4,6 +4,26 @@
 
 关于配置请查看`customer`模块，本项目集成了各个客户端配置，充分利用Rust类型系统 ，无论作为学习还是生产模板都是不错的选择
 
+## 快速开始
+
+运行迁移
+
+```
+cargo add seaorm-cli
+
+
+```
+
+
+
+启动应用
+
+```
+cargo run
+```
+
+
+
 ## 架构
 
 ![架构.drawio](README.assets/%E6%9E%B6%E6%9E%84.drawio.png)
