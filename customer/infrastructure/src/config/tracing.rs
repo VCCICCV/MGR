@@ -4,6 +4,11 @@ use tracing_appender::{ non_blocking::WorkerGuard, rolling::{ RollingFileAppende
 use tracing_log::LogTracer;
 use tracing_subscriber::{ fmt::{ self, MakeWriter }, layer::SubscriberExt, EnvFilter, Registry };
 use tracing_bunyan_formatter::{ BunyanFormattingLayer, JsonStorageLayer };
+use opentelemetry::KeyValue;
+use opentelemetry_sdk::trace::RandomIdGenerator;
+use opentelemetry_sdk::{ trace, Resource };
+use opentelemetry_sdk::trace::Sampler;
+use anyhow::anyhow;
 // 创建订阅者
 fn create_subscriber<W>(
     name: &str,
@@ -12,6 +17,25 @@ fn create_subscriber<W>(
 ) -> impl Subscriber + Sync + Send
     where W: for<'a> MakeWriter<'a> + Send + Sync + 'static
 {
+    // 创建 opentelemetry 订阅者
+    let tracer = opentelemetry_otlp
+        ::new_pipeline()
+        .tracing()
+        .with_exporter(opentelemetry_otlp::new_exporter().tonic())
+        .with_trace_config(
+            opentelemetry_sdk::trace
+                ::config()
+                .with_sampler(trace::Sampler::AlwaysOn)
+                .with_id_generator(trace::RandomIdGenerator::default())
+                .with_resource(Resource::new([KeyValue::new("service.name", "customer")]))
+        )
+        .install_batch(opentelemetry_sdk::runtime::Tokio)
+        .map_err(|e| anyhow!("failed to initialize OTLP tracer: {}", e))
+        .map(|tracer| tracer) // 这里可以对tracer做进一步处理，比如配置等，当前只是简单返回
+        .unwrap_or_else(|e| {
+            eprintln!("failed to initialize OTLP tracer: {}", e);
+            opentelemetry::trace::NoopTracer
+        });
     // 创建格式化层
     let fmt_layer = fmt::Layer
         ::default()
@@ -28,6 +52,7 @@ fn create_subscriber<W>(
     Registry::default()
         .with(env_filter)
         .with(fmt_layer)
+        .with(tracing_opentelemetry::layer().with_tracer(tracer))
         // 以 JSON 格式进行处理
         .with(JsonStorageLayer)
         // 以文本格式进行输出到控制台
@@ -53,28 +78,3 @@ pub fn init() -> AppResult<WorkerGuard> {
     init_subscriber(create_subscriber("app", EnvFilter::from_default_env(), file_appender))?;
     Ok(file_appender_guard)
 }
-
-// use serde::Deserialize;
-// #[derive(Debug, Deserialize, Clone)]
-// pub struct TracingConfig {
-//     log_level: String,
-// }
-// impl TracingConfig {
-//     // 获取地址
-//     pub fn get_log_level(&self) -> String {
-//         format!("{}", self.log_level)
-//     }
-// }
-// #[cfg(test)]
-// pub mod tests {
-
-//     use super::*;
-
-//     #[test]
-//     pub fn app_config_http_addr_test() {
-//         let config = TracingConfig {
-//             log_level: "debug".to_string(),
-//         };
-//         assert_eq!(config.get_log_level(), "debug");
-//     }
-// }

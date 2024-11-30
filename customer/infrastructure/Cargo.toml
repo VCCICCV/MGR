@@ -44,3 +44,7 @@ chrono = { workspace = true }
 jsonwebtoken = { workspace = true }
 password-hash = { workspace = true }
 argon2 = { workspace = true }
+tracing-opentelemetry = { workspace = true }
+opentelemetry_sdk = { workspace = true }
+opentelemetry-otlp = { workspace = true }
+opentelemetry = { workspace = true }
