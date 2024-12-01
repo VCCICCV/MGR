@@ -1,11 +1,14 @@
 use axum::extract::{ Json, State };
-use domain::{model::reponse::{
+use domain::{
+    model::reponse::{
         error::{ AppResponseError, AppResult },
         response::{ MessageResponse, Res, SignInResponse, SignUpResponse },
-    }, utils::claim::UserClaims};
+    },
+    utils::claim::UserClaims,
+};
 use application::dto::command::*;
 use garde::Validate;
-use tracing::info;
+use tracing::{ info, instrument };
 
 use crate::state::AppState;
 /// 注册用户
@@ -71,6 +74,10 @@ pub async fn active(
         (status = 404, description = "User not found", body = [AppResponseError]),
         (status = 500, description = "Internal server error", body = [AppResponseError])
     )
+)]
+#[instrument(
+    skip(state, sign_in_command),
+    fields(sign_in_command = tracing::field::Empty, state = tracing::field::Empty)
 )]
 pub async fn sign_in(
     State(state): State<AppState>,

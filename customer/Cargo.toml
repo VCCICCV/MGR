@@ -27,7 +27,7 @@ interface = { path = "interface" }
 migration = { path = "migration" }
 shared = { path = "shared" }
 
-axum = "0.7.7"
+axum = "0.7.9"
 # axum提取器
 axum-extra = { version = "0.9.3", features = ["typed-header"] }
 # ORM
@@ -51,7 +51,7 @@ serde_json = "1.0.128"
 serde_yaml = "0.9.19"
 # 错误处理
 anyhow = "1.0.86"
-# 动态修改配置
+# 配置
 config = "0.14.0"
 # 
 notify = "6.0"
@@ -81,10 +81,14 @@ tracing-log = "0.2.0"
 # 用于将 tracing 库产生的日志按照 Bunyan 格式进行格式化的库
 tracing-bunyan-formatter = "0.3.9"
 # 链路追踪
-tracing-opentelemetry = "0.22.0"
-opentelemetry = "0.21.0"
-opentelemetry-otlp = "0.14.0"
-opentelemetry_sdk = { version = "0.21.2", features = ["rt-tokio"] }
+tracing-opentelemetry = "0.28.0"
+opentelemetry = "0.27.1"
+opentelemetry_sdk = { version = "0.27.1", features = ["rt-tokio"] }
+opentelemetry-otlp = { version = "0.27.0", features = [
+    "trace",
+    "metrics",
+    "grpc-tonic",
+] }
 # 日志
 log = "0.4.22"
 # 日志派生

@@ -1,6 +1,5 @@
 use axum::{ http::StatusCode, response::{ IntoResponse, Response }, Json };
 use bb8_redis::redis;
-// use rdkafka::error::KafkaError;
 use serde::Deserialize;
 use serde::Serialize;
 use strum::EnumString;
@@ -18,7 +17,6 @@ pub struct Resource {
 
 impl std::fmt::Display for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        // TODO
         self.resource_type.fmt(f)
     }
 }
@@ -59,7 +57,6 @@ pub enum AppError {
     #[error(transparent)] UnknownError(#[from] anyhow::Error),
     #[error(transparent)] Infallible(#[from] std::convert::Infallible),
     #[error(transparent)] TypeHeaderError(#[from] axum_extra::typed_header::TypedHeaderRejection),
-    // #[error(transparent)] MessageError(#[from] KafkaError),
 }
 
 impl From<argon2::password_hash::Error> for AppError {
