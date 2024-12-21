@@ -4,14 +4,14 @@
 
 关于配置请查看`customer`模块，本项目集成了各个客户端配置，充分利用Rust类型系统 ，无论作为学习还是生产模板都是不错的选择
 
+> 注意：不建议使用虚拟清单强制依赖关系，例如常量在基础设施、Domain都可能用到，建议直接用文件夹分包，见`Product`模块
+
 ## 快速开始
 
 运行迁移
 
 ```
 cargo add seaorm-cli
-
-
 ```
 
 
@@ -21,7 +21,6 @@ cargo add seaorm-cli
 ```
 cargo run
 ```
-
 
 
 ## 架构
@@ -68,8 +67,15 @@ cargo run
   * event_processing：由本应用生成的事件需要被分派
   * PO（Persistence Object）：持久化对象，有的叫DO（Data Object）数据对象，都是和表一 一对应的对象
 * shared：公共模块，有的项目叫common
-
 > 本项目仿造COLA架构实现：<https://github.com/alibaba/COLA>，client相关代码整合到`application`和`interface`
+
+## 业务流程
+
+1. HTTP调用命令处理器或Application service
+2. 加载聚合根
+3. 执行业务逻辑
+4. 保存新的聚合根（使用repository将事务和聚合根都保存到数据库，）
+5. 
 
 ## 如何判断业务属于应用服务、聚合根还是无法归属于聚合根的领域服务？
 

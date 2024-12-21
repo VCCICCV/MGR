@@ -1,0 +1,59 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.31/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CPack.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CPackComponent.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceRuns.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CheckFunctionExists.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/FeatureSummary.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CMakeCLinkerInformation.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckFlagCommonConfig.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceRuns.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/Linker/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/Linker/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/Windows-Initialize.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.31/Modules/WriteBasicConfigVersionFile.cmake
+C:/Program Files/CMake/share/cmake-3.31/Templates/CPackConfig.cmake.in
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/CMakeLists.txt
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/cmake/detect-arch.cmake
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/cmake/detect-coverage.cmake
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/cmake/detect-install-dirs.cmake
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/cmake/detect-intrinsics.cmake
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/cmake/detect-sanitizer.cmake
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/cmake/fallback-macros.cmake
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/gzread.c.in
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/zlib-ng-config.cmake.in
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/zlib-ng.h.in
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/zlib.pc.cmakein
+C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/zlib_name_mangling.h.empty
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-084aaa1530e6fb84/out/build/CMakeFiles/3.31.0/CMakeCCompiler.cmake
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-084aaa1530e6fb84/out/build/CMakeFiles/3.31.0/CMakeRCCompiler.cmake
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-084aaa1530e6fb84/out/build/CMakeFiles/3.31.0/CMakeSystem.cmake
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-084aaa1530e6fb84/out/build/zconf-ng.h.cmakein

@@ -20,11 +20,6 @@ impl CustomerRepositoryImpl {
         }
     }
 }
-// 这里的标记是动态派发
-/// 静态分发
-/// 当你在代码中调用这个结构体实现的方法（如果后续为它实现了如 CustomerRepository 等相关 trait 的方法）时，编译器在编译阶段就可以明确知道具体要调用的是 CustomerRepositoryImpl 这个类型所实现的对应方法，因为类型是确定的
-/// 这种基于具体类型的、在编译时就能确定调用关系的方式就是静态分发，它通常具有更好的性能，因为编译器可以进行内联优化等操作，直接生成高效的机器码来执行对应的方法调用
-// 注入数据库连接
 
 #[async_trait]
 impl CustomerRepository for CustomerRepositoryImpl {
@@ -84,10 +79,7 @@ impl CustomerRepository for CustomerRepositoryImpl {
         //     Err(AppError::DatabaseError(err))
         // }
     }
-    async fn find_by_user_id(
-        &self,
-        user_id: &Uuid
-    ) -> AppResult<Option<Customer>> {
+    async fn find_by_user_id(&self, user_id: &Uuid) -> AppResult<Option<Customer>> {
         let result = User::find()
             .filter(po::user::Column::UserId.eq(*user_id))
             .one(&*self.db).await?;
@@ -148,3 +140,8 @@ impl CustomerRepository for CustomerRepositoryImpl {
         }
     }
 }
+// 静态分发
+// 这里的标记是动态派发
+// 注入数据库连接
+// 当你在代码中调用这个结构体实现的方法（如果后续为它实现了如 CustomerRepository 等相关 trait 的方法）时，编译器在编译阶段就可以明确知道具体要调用的是 CustomerRepositoryImpl 这个类型所实现的对应方法，因为类型是确定的
+//这种基于具体类型的、在编译时就能确定调用关系的方式就是静态分发，它通常具有更好的性能，因为编译器可以进行内联优化等操作，直接生成高效的机器码来执行对应的方法调用

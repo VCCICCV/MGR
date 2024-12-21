@@ -1,0 +1,2 @@
+cargo:rustc-check-cfg=cfg(bench)
+cargo:rustc-check-cfg=cfg(read_buf)

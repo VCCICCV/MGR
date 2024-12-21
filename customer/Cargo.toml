@@ -14,7 +14,6 @@ members = [
     "application",
     "domain",
     "infrastructure",
-    "migration",
     "shared",
 ]
 
@@ -24,7 +23,6 @@ domain = { path = "domain" }
 application = { path = "application" }
 infrastructure = { path = "infrastructure" }
 interface = { path = "interface" }
-migration = { path = "migration" }
 shared = { path = "shared" }
 
 axum = "0.7.9"

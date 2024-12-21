@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\libz-ng-sys-084aaa1530e6fb84\out\build\CMakeFiles\f543d6c981a7700ae29615809a2559a2\PACKAGE_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{405F852D-BD46-348B-9B0C-48DF7EC42542}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,8 +1,0 @@
-[package]
-name = "application"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-domain = { workspace = true }
-infrastructure = { workspace = true }

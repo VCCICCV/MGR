@@ -1,0 +1,39 @@
+#[derive(Serialize, Deserialize, Clone, Debug, Default)]
+pub struct ProductSpu {
+    // id
+    id: i32,
+    // 分类id
+    category_id: i64,
+    // 品牌id
+    brand_id: String,
+    // 商品名称
+    name: Option<String>,
+    // 商品编码
+    product_sn: Option<String>,
+    // 商品主图
+    pic: Option<String>,
+    // 商品图集
+    photo_album: Option<String>,
+    // 商品价格
+    price: Option<Decimal>,
+    // 促销价格
+    promotion_price: Option<Decimal>,
+    // 促销开始时间
+    promotion_start_time: Option<DateTime>,
+    // 促销结束时间
+    promotion_end_time: Option<DateTime>,
+    // 副标题
+    sub_title: Option<String>,
+    // 销量
+    sales: Option<i32>,
+    // 单位
+    unit: Option<String>,
+    // 商品详情
+    detail: Option<String>,
+    // 发布状态0：发布1：非发布
+    publish_status: Option<i16>,
+    // 新品状态0：非新品1：新品
+    new_status: Option<i16>,
+    // 推荐状态0：推荐1：不推荐
+    recommand_status: Option<i16>,
+}

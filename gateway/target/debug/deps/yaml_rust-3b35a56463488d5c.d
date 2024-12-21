@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\deps\libyaml_rust-3b35a56463488d5c.rmeta: C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\emitter.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\parser.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\scanner.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\yaml.rs
+
+C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\deps\yaml_rust-3b35a56463488d5c.d: C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\emitter.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\parser.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\scanner.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\yaml.rs
+
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\lib.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\emitter.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\parser.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\scanner.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\yaml-rust-0.4.5\src\yaml.rs:

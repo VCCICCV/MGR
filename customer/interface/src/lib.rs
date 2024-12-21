@@ -24,9 +24,7 @@ pub mod cmd {
 }
 /// 路由
 pub mod routers;
-// pub mod routers{
-//     pub mod customer_routes;
-// }
+
 // 全局状态
 pub mod state;
 // 中间件

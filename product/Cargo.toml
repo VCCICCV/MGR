@@ -2,32 +2,15 @@
 name = "product"
 version = "0.1.0"
 edition = "2021"
-# 启动需要
-[dependencies]
-interface = { workspace = true }
-infrastructure = { workspace = true }
-# 工作区成员
-[workspace]
-members = [
-    ".",
-    "interface",
-    "application",
-    "domain",
-    "infrastructure",
-    "shared",
-]
 
+# 这里不使用工作清单
 # 工作区依赖仅指定版本，serde = { workspace = true }才是真正导入
-[workspace.dependencies]
-domain = { path = "domain" }
-application = { path = "application" }
-infrastructure = { path = "infrastructure" }
-interface = { path = "interface" }
-shared = { path = "shared" }
+[dependencies]
 
 axum = "0.7.9"
 # axum提取器
 axum-extra = { version = "0.9.3", features = ["typed-header"] }
+eventually = "0.4.0"
 # ORM
 sea-orm = { version = "1.0.1", features = [
     "runtime-tokio-native-tls",
@@ -90,3 +73,7 @@ dotenvy = "0.15.7"
 thiserror = "1.0.64"
 # 异步锁
 once_cell = "1.20.2"
+garde = { version = "0.20.0", features = ["full"] }
+mime = "0.3.17"
+# 处理HTTP请求例如跨域处理
+tower-http = { version = "0.6.1", features = ["cors"] }
