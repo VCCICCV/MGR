@@ -1,0 +1,1885 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:35 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:35 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:35 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: -nologo;-MD;-Brepro
+      Id flags:  
+      
+      The output was:
+      0
+      閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+      鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:51:44銆?
+      
+      鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\3.31.0\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)銆?
+      PrepareForBuild:
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\鈥濄€?
+        宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+        姝ｅ湪鍒涘缓鐩綍鈥淒ebug\\CompilerIdC.tlog\\鈥濄€?
+      InitializeBuildStatus:
+        姝ｅ湪鍒涘缓鈥淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+      ClCompile:
+        E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\3.31.0\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        姝ｅ湪鍒犻櫎鏂囦欢鈥淒ebug\\CompilerIdC.tlog\\unsuccessfulbuild鈥濄€?
+        姝ｅ湪瀵光€淒ebug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+      宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\3.31.0\\CompilerIdC\\CompilerIdC.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+      
+      宸叉垚鍔熺敓鎴愩€?
+          0 涓鍛?
+          0 涓敊璇?
+      
+      宸茬敤鏃堕棿 00:00:05.57
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/3.31.0/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:35 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-m6o5qq"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-m6o5qq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-m6o5qq'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_12642.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:51:51銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m6o5qq\\cmTC_12642.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_12642.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m6o5qq\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_12642.dir\\Debug\\cmTC_12642.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_12642.dir\\Debug\\cmTC_12642.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_12642.dir\\Debug\\cmTC_12642.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_12642.dir\\Debug\\\\" /Fd"cmTC_12642.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m6o5qq\\Debug\\cmTC_12642.exe" /INCREMENTAL /ILK:"cmTC_12642.dir\\Debug\\cmTC_12642.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-m6o5qq/Debug/cmTC_12642.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-m6o5qq/Debug/cmTC_12642.lib" /MACHINE:X64  /machine:x64 cmTC_12642.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_12642.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m6o5qq\\Debug\\cmTC_12642.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_12642.dir\\Debug\\cmTC_12642.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_12642.dir\\Debug\\cmTC_12642.tlog\\cmTC_12642.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m6o5qq\\cmTC_12642.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:05.50
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:35 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': E:/Development/VisualStudioIDE/VC/Tools/MSVC/14.41.34120/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:35 (project)"
+    message: |
+      Running the C compiler's linker: "E:/Development/VisualStudioIDE/VC/Tools/MSVC/14.41.34120/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.41.34120.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:364 (check_include_file)"
+    checks:
+      - "Looking for arm_acle.h"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-auqs6f"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-auqs6f"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_ARM_ACLE_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-auqs6f'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_ed9af.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:51:59銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auqs6f\\cmTC_ed9af.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ed9af.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auqs6f\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ed9af.dir\\Debug\\cmTC_ed9af.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_ed9af.dir\\Debug\\cmTC_ed9af.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_ed9af.dir\\Debug\\cmTC_ed9af.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_ed9af.dir\\Debug\\\\" /Fd"cmTC_ed9af.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auqs6f\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auqs6f\\CheckIncludeFile.c(1,1): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥渁rm_acle.h鈥? No such file or directory [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auqs6f\\cmTC_ed9af.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auqs6f\\cmTC_ed9af.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auqs6f\\cmTC_ed9af.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auqs6f\\CheckIncludeFile.c(1,1): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥渁rm_acle.h鈥? No such file or directory [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-auqs6f\\cmTC_ed9af.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.59
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:368 (check_include_file)"
+    checks:
+      - "Looking for sys/auxv.h"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-nlwess"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-nlwess"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_SYS_AUXV_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-nlwess'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_a06a6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:01銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nlwess\\cmTC_a06a6.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_a06a6.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nlwess\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_a06a6.dir\\Debug\\cmTC_a06a6.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_a06a6.dir\\Debug\\cmTC_a06a6.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_a06a6.dir\\Debug\\cmTC_a06a6.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_a06a6.dir\\Debug\\\\" /Fd"cmTC_a06a6.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nlwess\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nlwess\\CheckIncludeFile.c(1,1): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥渟ys/auxv.h鈥? No such file or directory [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nlwess\\cmTC_a06a6.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nlwess\\cmTC_a06a6.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nlwess\\cmTC_a06a6.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nlwess\\CheckIncludeFile.c(1,1): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥渟ys/auxv.h鈥? No such file or directory [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nlwess\\cmTC_a06a6.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.51
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:372 (check_include_file)"
+    checks:
+      - "Looking for sys/sdt.h"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-hb75bm"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-hb75bm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_SYS_SDT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-hb75bm'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_62718.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:03銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hb75bm\\cmTC_62718.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_62718.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hb75bm\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_62718.dir\\Debug\\cmTC_62718.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_62718.dir\\Debug\\cmTC_62718.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_62718.dir\\Debug\\cmTC_62718.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_62718.dir\\Debug\\\\" /Fd"cmTC_62718.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hb75bm\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hb75bm\\CheckIncludeFile.c(1,1): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥渟ys/sdt.h鈥? No such file or directory [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hb75bm\\cmTC_62718.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hb75bm\\cmTC_62718.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hb75bm\\cmTC_62718.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hb75bm\\CheckIncludeFile.c(1,1): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥渟ys/sdt.h鈥? No such file or directory [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hb75bm\\cmTC_62718.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.41
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:376 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-jefsjo"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-jefsjo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-jefsjo'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_03936.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:07銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jefsjo\\cmTC_03936.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_03936.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jefsjo\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_03936.dir\\Debug\\cmTC_03936.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_03936.dir\\Debug\\cmTC_03936.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_03936.dir\\Debug\\cmTC_03936.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_03936.dir\\Debug\\\\" /Fd"cmTC_03936.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jefsjo\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jefsjo\\CheckIncludeFile.c(1,1): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥渦nistd.h鈥? No such file or directory [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jefsjo\\cmTC_03936.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jefsjo\\cmTC_03936.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jefsjo\\cmTC_03936.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jefsjo\\CheckIncludeFile.c(1,1): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥渦nistd.h鈥? No such file or directory [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jefsjo\\cmTC_03936.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:02.19
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "CMakeLists.txt:381 (check_include_file)"
+    checks:
+      - "Looking for linux/auxvec.h"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-b045w9"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-b045w9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_LINUX_AUXVEC_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-b045w9'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_9301d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:10銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b045w9\\cmTC_9301d.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_9301d.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b045w9\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_9301d.dir\\Debug\\cmTC_9301d.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_9301d.dir\\Debug\\cmTC_9301d.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_9301d.dir\\Debug\\cmTC_9301d.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_9301d.dir\\Debug\\\\" /Fd"cmTC_9301d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b045w9\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b045w9\\CheckIncludeFile.c(1,1): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥渓inux/auxvec.h鈥? No such file or directory [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b045w9\\cmTC_9301d.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b045w9\\cmTC_9301d.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b045w9\\cmTC_9301d.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b045w9\\CheckIncludeFile.c(1,1): error C1083: 鏃犳硶鎵撳紑鍖呮嫭鏂囦欢: 鈥渓inux/auxvec.h鈥? No such file or directory [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-b045w9\\cmTC_9301d.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.47
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:262 (check_include_file)"
+      - "CMakeLists.txt:390 (check_type_size)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-6vzm8s"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-6vzm8s"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-6vzm8s'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_ad897.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:12銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6vzm8s\\cmTC_ad897.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ad897.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6vzm8s\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ad897.dir\\Debug\\cmTC_ad897.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_ad897.dir\\Debug\\cmTC_ad897.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_ad897.dir\\Debug\\cmTC_ad897.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D _LARGEFILE64_SOURCE=1 /D __USE_LARGEFILE64 /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_ad897.dir\\Debug\\\\" /Fd"cmTC_ad897.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6vzm8s\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6vzm8s\\Debug\\cmTC_ad897.exe" /INCREMENTAL /ILK:"cmTC_ad897.dir\\Debug\\cmTC_ad897.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-6vzm8s/Debug/cmTC_ad897.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-6vzm8s/Debug/cmTC_ad897.lib" /MACHINE:X64  /machine:x64 cmTC_ad897.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_ad897.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6vzm8s\\Debug\\cmTC_ad897.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_ad897.dir\\Debug\\cmTC_ad897.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_ad897.dir\\Debug\\cmTC_ad897.tlog\\cmTC_ad897.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6vzm8s\\cmTC_ad897.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.63
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:263 (check_include_file)"
+      - "CMakeLists.txt:390 (check_type_size)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-dm5f1v"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-dm5f1v"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-dm5f1v'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_b67d8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:14銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dm5f1v\\cmTC_b67d8.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_b67d8.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dm5f1v\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_b67d8.dir\\Debug\\cmTC_b67d8.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_b67d8.dir\\Debug\\cmTC_b67d8.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_b67d8.dir\\Debug\\cmTC_b67d8.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D _LARGEFILE64_SOURCE=1 /D __USE_LARGEFILE64 /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_b67d8.dir\\Debug\\\\" /Fd"cmTC_b67d8.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dm5f1v\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dm5f1v\\Debug\\cmTC_b67d8.exe" /INCREMENTAL /ILK:"cmTC_b67d8.dir\\Debug\\cmTC_b67d8.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-dm5f1v/Debug/cmTC_b67d8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-dm5f1v/Debug/cmTC_b67d8.lib" /MACHINE:X64  /machine:x64 cmTC_b67d8.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_b67d8.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dm5f1v\\Debug\\cmTC_b67d8.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_b67d8.dir\\Debug\\cmTC_b67d8.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_b67d8.dir\\Debug\\cmTC_b67d8.tlog\\cmTC_b67d8.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dm5f1v\\cmTC_b67d8.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.48
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:264 (check_include_file)"
+      - "CMakeLists.txt:390 (check_type_size)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-gwnbve"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-gwnbve"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-gwnbve'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_16711.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:16銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gwnbve\\cmTC_16711.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_16711.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gwnbve\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_16711.dir\\Debug\\cmTC_16711.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_16711.dir\\Debug\\cmTC_16711.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_16711.dir\\Debug\\cmTC_16711.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D _LARGEFILE64_SOURCE=1 /D __USE_LARGEFILE64 /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_16711.dir\\Debug\\\\" /Fd"cmTC_16711.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gwnbve\\CheckIncludeFile.c"
+          CheckIncludeFile.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gwnbve\\Debug\\cmTC_16711.exe" /INCREMENTAL /ILK:"cmTC_16711.dir\\Debug\\cmTC_16711.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-gwnbve/Debug/cmTC_16711.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-gwnbve/Debug/cmTC_16711.lib" /MACHINE:X64  /machine:x64 cmTC_16711.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_16711.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gwnbve\\Debug\\cmTC_16711.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_16711.dir\\Debug\\cmTC_16711.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_16711.dir\\Debug\\cmTC_16711.tlog\\cmTC_16711.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-gwnbve\\cmTC_16711.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.58
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:390 (check_type_size)"
+    checks:
+      - "Check size of off64_t"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ixck0e"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ixck0e"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_OFF64_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ixck0e'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_838e0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:19銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_838e0.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_838e0.dir\\Debug\\cmTC_838e0.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_838e0.dir\\Debug\\cmTC_838e0.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_838e0.dir\\Debug\\cmTC_838e0.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D _LARGEFILE64_SOURCE=1 /D __USE_LARGEFILE64 /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_838e0.dir\\Debug\\\\" /Fd"cmTC_838e0.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c"
+          OFF64_T.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c(29,12): error C2065: 鈥渙ff64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c(30,12): error C2065: 鈥渙ff64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c(31,12): error C2065: 鈥渙ff64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c(32,12): error C2065: 鈥渙ff64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c(33,12): error C2065: 鈥渙ff64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c(29,12): error C2065: 鈥渙ff64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c(30,12): error C2065: 鈥渙ff64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c(31,12): error C2065: 鈥渙ff64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c(32,12): error C2065: 鈥渙ff64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\OFF64_T.c(33,12): error C2065: 鈥渙ff64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ixck0e\\cmTC_838e0.vcxproj]
+        
+            0 涓鍛?
+            5 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.63
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:394 (check_type_size)"
+    checks:
+      - "Check size of _off64_t"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-79ijp1"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-79ijp1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE__OFF64_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-79ijp1'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_5f53a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:21銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_5f53a.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_5f53a.dir\\Debug\\cmTC_5f53a.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_5f53a.dir\\Debug\\cmTC_5f53a.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_5f53a.dir\\Debug\\cmTC_5f53a.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D _LARGEFILE64_SOURCE=1 /D __USE_LARGEFILE64 /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_5f53a.dir\\Debug\\\\" /Fd"cmTC_5f53a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c"
+          _OFF64_T.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c(29,12): error C2065: 鈥淿off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c(30,12): error C2065: 鈥淿off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c(31,12): error C2065: 鈥淿off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c(32,12): error C2065: 鈥淿off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c(33,12): error C2065: 鈥淿off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c(29,12): error C2065: 鈥淿off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c(30,12): error C2065: 鈥淿off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c(31,12): error C2065: 鈥淿off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c(32,12): error C2065: 鈥淿off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\_OFF64_T.c(33,12): error C2065: 鈥淿off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-79ijp1\\cmTC_5f53a.vcxproj]
+        
+            0 涓鍛?
+            5 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.53
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:156 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckTypeSize.cmake:283 (__check_type_size_impl)"
+      - "CMakeLists.txt:398 (check_type_size)"
+    checks:
+      - "Check size of __off64_t"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-lcarhx"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-lcarhx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE___OFF64_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-lcarhx'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_f9e89.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:23銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_f9e89.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_f9e89.dir\\Debug\\cmTC_f9e89.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_f9e89.dir\\Debug\\cmTC_f9e89.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_f9e89.dir\\Debug\\cmTC_f9e89.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D _LARGEFILE64_SOURCE=1 /D __USE_LARGEFILE64 /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_f9e89.dir\\Debug\\\\" /Fd"cmTC_f9e89.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c"
+          __OFF64_T.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c(29,12): error C2065: 鈥淿_off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c(30,12): error C2065: 鈥淿_off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c(31,12): error C2065: 鈥淿_off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c(32,12): error C2065: 鈥淿_off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c(33,12): error C2065: 鈥淿_off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c(29,12): error C2065: 鈥淿_off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c(30,12): error C2065: 鈥淿_off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c(31,12): error C2065: 鈥淿_off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c(32,12): error C2065: 鈥淿_off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\__OFF64_T.c(33,12): error C2065: 鈥淿_off64_t鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lcarhx\\cmTC_f9e89.vcxproj]
+        
+            0 涓鍛?
+            5 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.33
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:406 (check_function_exists)"
+    checks:
+      - "Looking for fseeko"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-8atgar"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-8atgar"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_FSEEKO"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-8atgar'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_dd85b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:25銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\cmTC_dd85b.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_dd85b.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_dd85b.dir\\Debug\\cmTC_dd85b.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_dd85b.dir\\Debug\\cmTC_dd85b.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_dd85b.dir\\Debug\\cmTC_dd85b.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D CHECK_FUNCTION_EXISTS=fseeko /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_dd85b.dir\\Debug\\\\" /Fd"cmTC_dd85b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\Debug\\cmTC_dd85b.exe" /INCREMENTAL /ILK:"cmTC_dd85b.dir\\Debug\\cmTC_dd85b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-8atgar/Debug/cmTC_dd85b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-8atgar/Debug/cmTC_dd85b.lib" /MACHINE:X64  /machine:x64 cmTC_dd85b.dir\\Debug\\CheckFunctionExists.obj
+        CheckFunctionExists.obj : error LNK2019: 鏃犳硶瑙ｆ瀽鐨勫閮ㄧ鍙?fseeko锛屽嚱鏁?main 涓紩鐢ㄤ簡璇ョ鍙?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\cmTC_dd85b.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\Debug\\cmTC_dd85b.exe : fatal error LNK1120: 1 涓棤娉曡В鏋愮殑澶栭儴鍛戒护 [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\cmTC_dd85b.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\cmTC_dd85b.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\cmTC_dd85b.vcxproj鈥?榛樿鐩爣) (1) ->
+        (Link 鐩爣) -> 
+          CheckFunctionExists.obj : error LNK2019: 鏃犳硶瑙ｆ瀽鐨勫閮ㄧ鍙?fseeko锛屽嚱鏁?main 涓紩鐢ㄤ簡璇ョ鍙?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\cmTC_dd85b.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\Debug\\cmTC_dd85b.exe : fatal error LNK1120: 1 涓棤娉曡В鏋愮殑澶栭儴鍛戒护 [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8atgar\\cmTC_dd85b.vcxproj]
+        
+            0 涓鍛?
+            2 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.40
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckFunctionExists.cmake:93 (try_compile)"
+      - "CMakeLists.txt:411 (check_function_exists)"
+    checks:
+      - "Looking for strerror"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-65mz06"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-65mz06"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_STRERROR"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-65mz06'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_5f419.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:27銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-65mz06\\cmTC_5f419.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_5f419.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-65mz06\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_5f419.dir\\Debug\\cmTC_5f419.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_5f419.dir\\Debug\\cmTC_5f419.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_5f419.dir\\Debug\\cmTC_5f419.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D CHECK_FUNCTION_EXISTS=strerror /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_5f419.dir\\Debug\\\\" /Fd"cmTC_5f419.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-65mz06\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-65mz06\\Debug\\cmTC_5f419.exe" /INCREMENTAL /ILK:"cmTC_5f419.dir\\Debug\\cmTC_5f419.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-65mz06/Debug/cmTC_5f419.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-65mz06/Debug/cmTC_5f419.lib" /MACHINE:X64  /machine:x64 cmTC_5f419.dir\\Debug\\CheckFunctionExists.obj
+          cmTC_5f419.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-65mz06\\Debug\\cmTC_5f419.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_5f419.dir\\Debug\\cmTC_5f419.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_5f419.dir\\Debug\\cmTC_5f419.tlog\\cmTC_5f419.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-65mz06\\cmTC_5f419.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.47
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMakeLists.txt:417 (check_symbol_exists)"
+    checks:
+      - "Looking for posix_memalign"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-pxqqz9"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-pxqqz9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_POSIX_MEMALIGN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-pxqqz9'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_3bbf0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:29銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pxqqz9\\cmTC_3bbf0.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_3bbf0.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pxqqz9\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_3bbf0.dir\\Debug\\cmTC_3bbf0.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_3bbf0.dir\\Debug\\cmTC_3bbf0.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_3bbf0.dir\\Debug\\cmTC_3bbf0.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D _POSIX_C_SOURCE=200112L /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_3bbf0.dir\\Debug\\\\" /Fd"cmTC_3bbf0.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pxqqz9\\CheckSymbolExists.c"
+          CheckSymbolExists.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pxqqz9\\CheckSymbolExists.c(8,19): error C2065: 鈥減osix_memalign鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pxqqz9\\cmTC_3bbf0.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pxqqz9\\cmTC_3bbf0.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pxqqz9\\cmTC_3bbf0.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pxqqz9\\CheckSymbolExists.c(8,19): error C2065: 鈥減osix_memalign鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pxqqz9\\cmTC_3bbf0.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.39
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:163 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckSymbolExists.cmake:68 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "CMakeLists.txt:424 (check_symbol_exists)"
+    checks:
+      - "Looking for aligned_alloc"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-g28jkp"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-g28jkp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_ALIGNED_ALLOC"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-g28jkp'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_ed090.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:31銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g28jkp\\cmTC_ed090.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ed090.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g28jkp\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ed090.dir\\Debug\\cmTC_ed090.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_ed090.dir\\Debug\\cmTC_ed090.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_ed090.dir\\Debug\\cmTC_ed090.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D _ISOC11_SOURCE=1 /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_ed090.dir\\Debug\\\\" /Fd"cmTC_ed090.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g28jkp\\CheckSymbolExists.c"
+          CheckSymbolExists.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g28jkp\\CheckSymbolExists.c(8,19): error C2065: 鈥渁ligned_alloc鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g28jkp\\cmTC_ed090.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g28jkp\\cmTC_ed090.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g28jkp\\cmTC_ed090.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g28jkp\\CheckSymbolExists.c(8,19): error C2065: 鈥渁ligned_alloc鈥? 鏈０鏄庣殑鏍囪瘑绗?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g28jkp\\cmTC_ed090.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.44
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "CMakeLists.txt:443 (check_c_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_NO_INTERPOSITION"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-cp8eys"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-cp8eys"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_NO_INTERPOSITION"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-cp8eys'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_b4d75.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:33銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cp8eys\\cmTC_b4d75.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_b4d75.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cp8eys\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_b4d75.dir\\Debug\\cmTC_b4d75.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_b4d75.dir\\Debug\\cmTC_b4d75.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_b4d75.dir\\Debug\\cmTC_b4d75.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_NO_INTERPOSITION /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_b4d75.dir\\Debug\\\\" /Fd"cmTC_b4d75.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro -fno-semantic-interposition "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cp8eys\\src.c"
+        cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fno-semantic-interposition鈥?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cp8eys\\cmTC_b4d75.vcxproj]
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cp8eys\\Debug\\cmTC_b4d75.exe" /INCREMENTAL /ILK:"cmTC_b4d75.dir\\Debug\\cmTC_b4d75.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-cp8eys/Debug/cmTC_b4d75.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-cp8eys/Debug/cmTC_b4d75.lib" /MACHINE:X64  /machine:x64 cmTC_b4d75.dir\\Debug\\src.obj
+          cmTC_b4d75.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cp8eys\\Debug\\cmTC_b4d75.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_b4d75.dir\\Debug\\cmTC_b4d75.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_b4d75.dir\\Debug\\cmTC_b4d75.tlog\\cmTC_b4d75.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cp8eys\\cmTC_b4d75.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cp8eys\\cmTC_b4d75.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          cl : 鍛戒护琛? warning D9002: 蹇界暐鏈煡閫夐」鈥?fno-semantic-interposition鈥?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cp8eys\\cmTC_b4d75.vcxproj]
+        
+            1 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.62
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:448 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_ATTRIBUTE_VISIBILITY_HIDDEN"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ufmf87"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ufmf87"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_ATTRIBUTE_VISIBILITY_HIDDEN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ufmf87'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_5c79d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:35銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_5c79d.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_5c79d.dir\\Debug\\cmTC_5c79d.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_5c79d.dir\\Debug\\cmTC_5c79d.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_5c79d.dir\\Debug\\cmTC_5c79d.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_ATTRIBUTE_VISIBILITY_HIDDEN /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_5c79d.dir\\Debug\\\\" /Fd"cmTC_5c79d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c"
+          src.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥?鈥?鍦ㄢ€?鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2091: 鍑芥暟杩斿洖鍑芥暟 [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥?鈥?鍦ㄢ€滃瓧绗︿覆鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥渰鈥?鍦ㄢ€滃瓧绗︿覆鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2059: 璇硶閿欒:鈥滃瓧绗︿覆鈥?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2059: 璇硶閿欒:鈥?鈥?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥?鈥?鍦ㄢ€?鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2091: 鍑芥暟杩斿洖鍑芥暟 [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥?鈥?鍦ㄢ€滃瓧绗︿覆鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥渰鈥?鍦ㄢ€滃瓧绗︿覆鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2059: 璇硶閿欒:鈥滃瓧绗︿覆鈥?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\src.c(2,9): error C2059: 璇硶閿欒:鈥?鈥?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ufmf87\\cmTC_5c79d.vcxproj]
+        
+            0 涓鍛?
+            6 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.41
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:462 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_ATTRIBUTE_VISIBILITY_INTERNAL"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-6tf83t"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-6tf83t"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_ATTRIBUTE_VISIBILITY_INTERNAL"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-6tf83t'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_c39cd.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:37銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_c39cd.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_c39cd.dir\\Debug\\cmTC_c39cd.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_c39cd.dir\\Debug\\cmTC_c39cd.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_c39cd.dir\\Debug\\cmTC_c39cd.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_ATTRIBUTE_VISIBILITY_INTERNAL /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_c39cd.dir\\Debug\\\\" /Fd"cmTC_c39cd.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c"
+          src.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥?鈥?鍦ㄢ€?鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2091: 鍑芥暟杩斿洖鍑芥暟 [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥?鈥?鍦ㄢ€滃瓧绗︿覆鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥渰鈥?鍦ㄢ€滃瓧绗︿覆鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2059: 璇硶閿欒:鈥滃瓧绗︿覆鈥?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2059: 璇硶閿欒:鈥?鈥?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥?鈥?鍦ㄢ€?鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2091: 鍑芥暟杩斿洖鍑芥暟 [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥?鈥?鍦ㄢ€滃瓧绗︿覆鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2143: 璇硶閿欒: 缂哄皯鈥渰鈥?鍦ㄢ€滃瓧绗︿覆鈥濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2059: 璇硶閿欒:鈥滃瓧绗︿覆鈥?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\src.c(2,9): error C2059: 璇硶閿欒:鈥?鈥?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-6tf83t\\cmTC_c39cd.vcxproj]
+        
+            0 涓鍛?
+            6 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:05.57
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:476 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_ATTRIBUTE_ALIGNED"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-80cizh"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-80cizh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_ATTRIBUTE_ALIGNED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-80cizh'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_67535.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:45銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-80cizh\\cmTC_67535.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_67535.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-80cizh\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_67535.dir\\Debug\\cmTC_67535.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_67535.dir\\Debug\\cmTC_67535.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_67535.dir\\Debug\\cmTC_67535.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_ATTRIBUTE_ALIGNED /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_67535.dir\\Debug\\\\" /Fd"cmTC_67535.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-80cizh\\src.c"
+          src.c
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-80cizh\\src.c(2,37): error C2143: 璇硶閿欒: 缂哄皯鈥?鈥?鍦ㄢ€滅被鍨嬧€濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-80cizh\\cmTC_67535.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-80cizh\\cmTC_67535.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-80cizh\\cmTC_67535.vcxproj鈥?榛樿鐩爣) (1) ->
+        (ClCompile 鐩爣) -> 
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-80cizh\\src.c(2,37): error C2143: 璇硶閿欒: 缂哄皯鈥?鈥?鍦ㄢ€滅被鍨嬧€濈殑鍓嶉潰) [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-80cizh\\cmTC_67535.vcxproj]
+        
+            0 涓鍛?
+            1 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:03.32
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:490 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_BUILTIN_ASSUME_ALIGNED"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ei7qsz"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ei7qsz"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_BUILTIN_ASSUME_ALIGNED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ei7qsz'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_06e46.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:49銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ei7qsz\\cmTC_06e46.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_06e46.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ei7qsz\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_06e46.dir\\Debug\\cmTC_06e46.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_06e46.dir\\Debug\\cmTC_06e46.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_06e46.dir\\Debug\\cmTC_06e46.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_BUILTIN_ASSUME_ALIGNED /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_06e46.dir\\Debug\\\\" /Fd"cmTC_06e46.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ei7qsz\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ei7qsz\\Debug\\cmTC_06e46.exe" /INCREMENTAL /ILK:"cmTC_06e46.dir\\Debug\\cmTC_06e46.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ei7qsz/Debug/cmTC_06e46.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-ei7qsz/Debug/cmTC_06e46.lib" /MACHINE:X64  /machine:x64 cmTC_06e46.dir\\Debug\\src.obj
+          cmTC_06e46.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ei7qsz\\Debug\\cmTC_06e46.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_06e46.dir\\Debug\\cmTC_06e46.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_06e46.dir\\Debug\\cmTC_06e46.tlog\\cmTC_06e46.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ei7qsz\\cmTC_06e46.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.97
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:506 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_BUILTIN_CTZ"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-waxiqb"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-waxiqb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_BUILTIN_CTZ"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-waxiqb'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_99746.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:52銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\cmTC_99746.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_99746.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_99746.dir\\Debug\\cmTC_99746.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_99746.dir\\Debug\\cmTC_99746.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_99746.dir\\Debug\\cmTC_99746.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_BUILTIN_CTZ /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_99746.dir\\Debug\\\\" /Fd"cmTC_99746.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\Debug\\cmTC_99746.exe" /INCREMENTAL /ILK:"cmTC_99746.dir\\Debug\\cmTC_99746.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-waxiqb/Debug/cmTC_99746.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-waxiqb/Debug/cmTC_99746.lib" /MACHINE:X64  /machine:x64 cmTC_99746.dir\\Debug\\src.obj
+        src.obj : error LNK2019: 鏃犳硶瑙ｆ瀽鐨勫閮ㄧ鍙?__builtin_ctz锛屽嚱鏁?main 涓紩鐢ㄤ簡璇ョ鍙?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\cmTC_99746.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\Debug\\cmTC_99746.exe : fatal error LNK1120: 1 涓棤娉曡В鏋愮殑澶栭儴鍛戒护 [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\cmTC_99746.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\cmTC_99746.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\cmTC_99746.vcxproj鈥?榛樿鐩爣) (1) ->
+        (Link 鐩爣) -> 
+          src.obj : error LNK2019: 鏃犳硶瑙ｆ瀽鐨勫閮ㄧ鍙?__builtin_ctz锛屽嚱鏁?main 涓紩鐢ㄤ簡璇ョ鍙?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\cmTC_99746.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\Debug\\cmTC_99746.exe : fatal error LNK1120: 1 涓棤娉曡В鏋愮殑澶栭儴鍛戒护 [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-waxiqb\\cmTC_99746.vcxproj]
+        
+            0 涓鍛?
+            2 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.77
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:522 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_BUILTIN_CTZLL"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-vv5cqp"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-vv5cqp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_BUILTIN_CTZLL"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-vv5cqp'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_10db2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:55銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\cmTC_10db2.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_10db2.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_10db2.dir\\Debug\\cmTC_10db2.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_10db2.dir\\Debug\\cmTC_10db2.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_10db2.dir\\Debug\\cmTC_10db2.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_BUILTIN_CTZLL /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_10db2.dir\\Debug\\\\" /Fd"cmTC_10db2.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\Debug\\cmTC_10db2.exe" /INCREMENTAL /ILK:"cmTC_10db2.dir\\Debug\\cmTC_10db2.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-vv5cqp/Debug/cmTC_10db2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-vv5cqp/Debug/cmTC_10db2.lib" /MACHINE:X64  /machine:x64 cmTC_10db2.dir\\Debug\\src.obj
+        src.obj : error LNK2019: 鏃犳硶瑙ｆ瀽鐨勫閮ㄧ鍙?__builtin_ctzll锛屽嚱鏁?main 涓紩鐢ㄤ簡璇ョ鍙?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\cmTC_10db2.vcxproj]
+        C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\Debug\\cmTC_10db2.exe : fatal error LNK1120: 1 涓棤娉曡В鏋愮殑澶栭儴鍛戒护 [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\cmTC_10db2.vcxproj]
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\cmTC_10db2.vcxproj鈥?榛樿鐩爣)鐨勬搷浣?- 澶辫触銆?
+        
+        鐢熸垚澶辫触銆?
+        
+        鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\cmTC_10db2.vcxproj鈥?榛樿鐩爣) (1) ->
+        (Link 鐩爣) -> 
+          src.obj : error LNK2019: 鏃犳硶瑙ｆ瀽鐨勫閮ㄧ鍙?__builtin_ctzll锛屽嚱鏁?main 涓紩鐢ㄤ簡璇ョ鍙?[C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\cmTC_10db2.vcxproj]
+          C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\Debug\\cmTC_10db2.exe : fatal error LNK1120: 1 涓棤娉曡В鏋愮殑澶栭儴鍛戒护 [C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vv5cqp\\cmTC_10db2.vcxproj]
+        
+            0 涓鍛?
+            2 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.65
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "CMakeLists.txt:538 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_PTRDIFF_T"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-fr0rhc"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-fr0rhc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_PTRDIFF_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-fr0rhc'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_bdb3d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:57銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fr0rhc\\cmTC_bdb3d.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_bdb3d.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fr0rhc\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_bdb3d.dir\\Debug\\cmTC_bdb3d.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_bdb3d.dir\\Debug\\cmTC_bdb3d.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_bdb3d.dir\\Debug\\cmTC_bdb3d.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_PTRDIFF_T /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_bdb3d.dir\\Debug\\\\" /Fd"cmTC_bdb3d.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fr0rhc\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fr0rhc\\Debug\\cmTC_bdb3d.exe" /INCREMENTAL /ILK:"cmTC_bdb3d.dir\\Debug\\cmTC_bdb3d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-fr0rhc/Debug/cmTC_bdb3d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-fr0rhc/Debug/cmTC_bdb3d.lib" /MACHINE:X64  /machine:x64 cmTC_bdb3d.dir\\Debug\\src.obj
+          cmTC_bdb3d.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fr0rhc\\Debug\\cmTC_bdb3d.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_bdb3d.dir\\Debug\\cmTC_bdb3d.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_bdb3d.dir\\Debug\\cmTC_bdb3d.tlog\\cmTC_bdb3d.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-fr0rhc\\cmTC_bdb3d.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.71
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/detect-intrinsics.cmake:592 (check_c_source_compiles)"
+      - "CMakeLists.txt:883 (check_xsave_intrinsics)"
+    checks:
+      - "Performing Test HAVE_XSAVE_INTRIN"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-y7bf1c"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-y7bf1c"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_XSAVE_INTRIN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-y7bf1c'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_a83c5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:52:59銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y7bf1c\\cmTC_a83c5.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_a83c5.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y7bf1c\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_a83c5.dir\\Debug\\cmTC_a83c5.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_a83c5.dir\\Debug\\cmTC_a83c5.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_a83c5.dir\\Debug\\cmTC_a83c5.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_XSAVE_INTRIN /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_a83c5.dir\\Debug\\\\" /Fd"cmTC_a83c5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y7bf1c\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y7bf1c\\Debug\\cmTC_a83c5.exe" /INCREMENTAL /ILK:"cmTC_a83c5.dir\\Debug\\cmTC_a83c5.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-y7bf1c/Debug/cmTC_a83c5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-y7bf1c/Debug/cmTC_a83c5.lib" /MACHINE:X64  /machine:x64 cmTC_a83c5.dir\\Debug\\src.obj
+          cmTC_a83c5.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y7bf1c\\Debug\\cmTC_a83c5.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_a83c5.dir\\Debug\\cmTC_a83c5.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_a83c5.dir\\Debug\\cmTC_a83c5.tlog\\cmTC_a83c5.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y7bf1c\\cmTC_a83c5.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.79
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/detect-intrinsics.cmake:505 (check_c_source_compiles)"
+      - "CMakeLists.txt:894 (check_sse2_intrinsics)"
+    checks:
+      - "Performing Test HAVE_SSE2_INTRIN"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-aq7dcq"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-aq7dcq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_SSE2_INTRIN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-aq7dcq'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_8271c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:53:02銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aq7dcq\\cmTC_8271c.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_8271c.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aq7dcq\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_8271c.dir\\Debug\\cmTC_8271c.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_8271c.dir\\Debug\\cmTC_8271c.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_8271c.dir\\Debug\\cmTC_8271c.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_SSE2_INTRIN /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_8271c.dir\\Debug\\\\" /Fd"cmTC_8271c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aq7dcq\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aq7dcq\\Debug\\cmTC_8271c.exe" /INCREMENTAL /ILK:"cmTC_8271c.dir\\Debug\\cmTC_8271c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-aq7dcq/Debug/cmTC_8271c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-aq7dcq/Debug/cmTC_8271c.lib" /MACHINE:X64  /machine:x64 cmTC_8271c.dir\\Debug\\src.obj
+          cmTC_8271c.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aq7dcq\\Debug\\cmTC_8271c.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_8271c.dir\\Debug\\cmTC_8271c.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_8271c.dir\\Debug\\cmTC_8271c.tlog\\cmTC_8271c.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aq7dcq\\cmTC_8271c.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.73
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/detect-intrinsics.cmake:528 (check_c_source_compiles)"
+      - "CMakeLists.txt:911 (check_ssse3_intrinsics)"
+    checks:
+      - "Performing Test HAVE_SSSE3_INTRIN"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-rl4q1v"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-rl4q1v"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_SSSE3_INTRIN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-rl4q1v'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_9ebcc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:53:04銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rl4q1v\\cmTC_9ebcc.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_9ebcc.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rl4q1v\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_9ebcc.dir\\Debug\\cmTC_9ebcc.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_9ebcc.dir\\Debug\\cmTC_9ebcc.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_9ebcc.dir\\Debug\\cmTC_9ebcc.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_SSSE3_INTRIN /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_9ebcc.dir\\Debug\\\\" /Fd"cmTC_9ebcc.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rl4q1v\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rl4q1v\\Debug\\cmTC_9ebcc.exe" /INCREMENTAL /ILK:"cmTC_9ebcc.dir\\Debug\\cmTC_9ebcc.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-rl4q1v/Debug/cmTC_9ebcc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-rl4q1v/Debug/cmTC_9ebcc.lib" /MACHINE:X64  /machine:x64 cmTC_9ebcc.dir\\Debug\\src.obj
+          cmTC_9ebcc.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rl4q1v\\Debug\\cmTC_9ebcc.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_9ebcc.dir\\Debug\\cmTC_9ebcc.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_9ebcc.dir\\Debug\\cmTC_9ebcc.tlog\\cmTC_9ebcc.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rl4q1v\\cmTC_9ebcc.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.74
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/detect-intrinsics.cmake:553 (check_c_source_compiles)"
+      - "CMakeLists.txt:923 (check_sse42_intrinsics)"
+    checks:
+      - "Performing Test HAVE_SSE42_INTRIN"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-wypfhk"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-wypfhk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_SSE42_INTRIN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-wypfhk'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_561dd.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:53:07銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wypfhk\\cmTC_561dd.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_561dd.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wypfhk\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_561dd.dir\\Debug\\cmTC_561dd.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_561dd.dir\\Debug\\cmTC_561dd.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_561dd.dir\\Debug\\cmTC_561dd.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_SSE42_INTRIN /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_561dd.dir\\Debug\\\\" /Fd"cmTC_561dd.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wypfhk\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wypfhk\\Debug\\cmTC_561dd.exe" /INCREMENTAL /ILK:"cmTC_561dd.dir\\Debug\\cmTC_561dd.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-wypfhk/Debug/cmTC_561dd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-wypfhk/Debug/cmTC_561dd.lib" /MACHINE:X64  /machine:x64 cmTC_561dd.dir\\Debug\\src.obj
+          cmTC_561dd.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wypfhk\\Debug\\cmTC_561dd.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_561dd.dir\\Debug\\cmTC_561dd.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_561dd.dir\\Debug\\cmTC_561dd.tlog\\cmTC_561dd.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-wypfhk\\cmTC_561dd.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.77
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/detect-intrinsics.cmake:275 (check_c_source_compiles)"
+      - "CMakeLists.txt:935 (check_pclmulqdq_intrinsics)"
+    checks:
+      - "Performing Test HAVE_PCLMULQDQ_INTRIN"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-f64psy"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-f64psy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_PCLMULQDQ_INTRIN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-f64psy'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_28a04.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:53:09銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f64psy\\cmTC_28a04.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_28a04.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f64psy\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_28a04.dir\\Debug\\cmTC_28a04.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_28a04.dir\\Debug\\cmTC_28a04.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_28a04.dir\\Debug\\cmTC_28a04.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_PCLMULQDQ_INTRIN /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_28a04.dir\\Debug\\\\" /Fd"cmTC_28a04.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f64psy\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f64psy\\Debug\\cmTC_28a04.exe" /INCREMENTAL /ILK:"cmTC_28a04.dir\\Debug\\cmTC_28a04.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-f64psy/Debug/cmTC_28a04.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-f64psy/Debug/cmTC_28a04.lib" /MACHINE:X64  /machine:x64 cmTC_28a04.dir\\Debug\\src.obj
+          cmTC_28a04.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f64psy\\Debug\\cmTC_28a04.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_28a04.dir\\Debug\\cmTC_28a04.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_28a04.dir\\Debug\\cmTC_28a04.tlog\\cmTC_28a04.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f64psy\\cmTC_28a04.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.77
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/detect-intrinsics.cmake:166 (check_c_source_compiles)"
+      - "CMakeLists.txt:947 (check_avx2_intrinsics)"
+    checks:
+      - "Performing Test HAVE_AVX2_INTRIN"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-i4neb9"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-i4neb9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_AVX2_INTRIN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-i4neb9'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_c6cb3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:53:11銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4neb9\\cmTC_c6cb3.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_c6cb3.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4neb9\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_c6cb3.dir\\Debug\\cmTC_c6cb3.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_c6cb3.dir\\Debug\\cmTC_c6cb3.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_c6cb3.dir\\Debug\\cmTC_c6cb3.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_AVX2_INTRIN /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /arch:AVX2 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_c6cb3.dir\\Debug\\\\" /Fd"cmTC_c6cb3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4neb9\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4neb9\\Debug\\cmTC_c6cb3.exe" /INCREMENTAL /ILK:"cmTC_c6cb3.dir\\Debug\\cmTC_c6cb3.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-i4neb9/Debug/cmTC_c6cb3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-i4neb9/Debug/cmTC_c6cb3.lib" /MACHINE:X64  /machine:x64 cmTC_c6cb3.dir\\Debug\\src.obj
+          cmTC_c6cb3.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4neb9\\Debug\\cmTC_c6cb3.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_c6cb3.dir\\Debug\\cmTC_c6cb3.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_c6cb3.dir\\Debug\\cmTC_c6cb3.tlog\\cmTC_c6cb3.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i4neb9\\cmTC_c6cb3.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.76
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/detect-intrinsics.cmake:102 (check_c_source_compiles)"
+      - "CMakeLists.txt:965 (check_avx512_intrinsics)"
+    checks:
+      - "Performing Test HAVE_AVX512_INTRIN"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-aotwq4"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-aotwq4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_AVX512_INTRIN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-aotwq4'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_7991b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:53:14銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aotwq4\\cmTC_7991b.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_7991b.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aotwq4\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_7991b.dir\\Debug\\cmTC_7991b.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_7991b.dir\\Debug\\cmTC_7991b.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_7991b.dir\\Debug\\cmTC_7991b.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_AVX512_INTRIN /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /arch:AVX512 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_7991b.dir\\Debug\\\\" /Fd"cmTC_7991b.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aotwq4\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aotwq4\\Debug\\cmTC_7991b.exe" /INCREMENTAL /ILK:"cmTC_7991b.dir\\Debug\\cmTC_7991b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-aotwq4/Debug/cmTC_7991b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-aotwq4/Debug/cmTC_7991b.lib" /MACHINE:X64  /machine:x64 cmTC_7991b.dir\\Debug\\src.obj
+          cmTC_7991b.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aotwq4\\Debug\\cmTC_7991b.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_7991b.dir\\Debug\\cmTC_7991b.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_7991b.dir\\Debug\\cmTC_7991b.tlog\\cmTC_7991b.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-aotwq4\\cmTC_7991b.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.75
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/detect-intrinsics.cmake:138 (check_c_source_compiles)"
+      - "CMakeLists.txt:978 (check_avx512vnni_intrinsics)"
+    checks:
+      - "Performing Test HAVE_AVX512VNNI_INTRIN"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-hyvmwj"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-hyvmwj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_AVX512VNNI_INTRIN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-hyvmwj'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_684eb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:53:16銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyvmwj\\cmTC_684eb.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_684eb.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyvmwj\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_684eb.dir\\Debug\\cmTC_684eb.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_684eb.dir\\Debug\\cmTC_684eb.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_684eb.dir\\Debug\\cmTC_684eb.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_AVX512VNNI_INTRIN /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /arch:AVX512 /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_684eb.dir\\Debug\\\\" /Fd"cmTC_684eb.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyvmwj\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyvmwj\\Debug\\cmTC_684eb.exe" /INCREMENTAL /ILK:"cmTC_684eb.dir\\Debug\\cmTC_684eb.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-hyvmwj/Debug/cmTC_684eb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-hyvmwj/Debug/cmTC_684eb.lib" /MACHINE:X64  /machine:x64 cmTC_684eb.dir\\Debug\\src.obj
+          cmTC_684eb.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyvmwj\\Debug\\cmTC_684eb.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_684eb.dir\\Debug\\cmTC_684eb.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_684eb.dir\\Debug\\cmTC_684eb.tlog\\cmTC_684eb.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hyvmwj\\cmTC_684eb.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.77
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/detect-intrinsics.cmake:297 (check_c_source_compiles)"
+      - "CMakeLists.txt:990 (check_vpclmulqdq_intrinsics)"
+    checks:
+      - "Performing Test HAVE_VPCLMULQDQ_INTRIN"
+    directories:
+      source: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-rcuats"
+      binary: "C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-rcuats"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -nologo -MD -Brepro"
+      CMAKE_C_FLAGS_DEBUG: " -nologo -MD -Brepro"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "HAVE_VPCLMULQDQ_INTRIN"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-rcuats'
+        
+        Run Build Command(s): E:/Development/VisualStudioIDE/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_ddd35.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        閫傜敤浜?.NET Framework MSBuild 鐗堟湰 17.11.2+c078802d4
+        鐢熸垚鍚姩鏃堕棿涓?2024/12/22 21:53:19銆?
+        
+        鑺傜偣 1 涓婄殑椤圭洰鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rcuats\\cmTC_ddd35.vcxproj鈥?榛樿鐩爣)銆?
+        PrepareForBuild:
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ddd35.dir\\Debug\\鈥濄€?
+          宸插惎鐢ㄧ粨鏋勫寲杈撳嚭銆傜紪璇戝櫒璇婃柇鐨勬牸寮忚缃皢鍙嶆槧閿欒灞傛缁撴瀯銆傛湁鍏宠缁嗕俊鎭紝璇峰弬闃?https://aka.ms/cpp/structured-output銆?
+          姝ｅ湪鍒涘缓鐩綍鈥淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rcuats\\Debug\\鈥濄€?
+          姝ｅ湪鍒涘缓鐩綍鈥渃mTC_ddd35.dir\\Debug\\cmTC_ddd35.tlog\\鈥濄€?
+        InitializeBuildStatus:
+          姝ｅ湪鍒涘缓鈥渃mTC_ddd35.dir\\Debug\\cmTC_ddd35.tlog\\unsuccessfulbuild鈥濓紝鍥犱负宸叉寚瀹氣€淎lwaysCreate鈥濄€?
+          姝ｅ湪瀵光€渃mTC_ddd35.dir\\Debug\\cmTC_ddd35.tlog\\unsuccessfulbuild鈥濇墽琛?Touch 浠诲姟銆?
+        ClCompile:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\CL.exe /c /Zi /nologo /W1 /WX- /diagnostics:column /D _MBCS /D HAVE_VPCLMULQDQ_INTRIN /D "CMAKE_INTDIR=\\"Debug\\"" /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c11 /Fo"cmTC_ddd35.dir\\Debug\\\\" /Fd"cmTC_ddd35.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue  -Brepro -Brepro "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rcuats\\src.c"
+          src.c
+        Link:
+          E:\\Development\\VisualStudioIDE\\VC\\Tools\\MSVC\\14.41.34120\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rcuats\\Debug\\cmTC_ddd35.exe" /INCREMENTAL /ILK:"cmTC_ddd35.dir\\Debug\\cmTC_ddd35.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-rcuats/Debug/cmTC_ddd35.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/CMakeFiles/CMakeScratch/TryCompile-rcuats/Debug/cmTC_ddd35.lib" /MACHINE:X64  /machine:x64 cmTC_ddd35.dir\\Debug\\src.obj
+          cmTC_ddd35.vcxproj -> C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rcuats\\Debug\\cmTC_ddd35.exe
+        FinalizeBuildStatus:
+          姝ｅ湪鍒犻櫎鏂囦欢鈥渃mTC_ddd35.dir\\Debug\\cmTC_ddd35.tlog\\unsuccessfulbuild鈥濄€?
+          姝ｅ湪瀵光€渃mTC_ddd35.dir\\Debug\\cmTC_ddd35.tlog\\cmTC_ddd35.lastbuildstate鈥濇墽琛?Touch 浠诲姟銆?
+        宸插畬鎴愮敓鎴愰」鐩€淐:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build\\CMakeFiles\\CMakeScratch\\TryCompile-rcuats\\cmTC_ddd35.vcxproj鈥?榛樿鐩爣)鐨勬搷浣溿€?
+        
+        宸叉垚鍔熺敓鎴愩€?
+            0 涓鍛?
+            0 涓敊璇?
+        
+        宸茬敤鏃堕棿 00:00:01.81
+        
+      exitCode: 0
+...

@@ -1,0 +1,10 @@
+^C:\USERS\ADMINISTRATOR\DESKTOP\THREEGORGESMOTOR\MGR\GATEWAY\TARGET\DEBUG\BUILD\LIBZ-NG-SYS-0AE3FFBF34CE5201\OUT\BUILD\CMAKEFILES\BF186AC09A33A954C678D1BDB4B91711\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng -BC:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build/zlib.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

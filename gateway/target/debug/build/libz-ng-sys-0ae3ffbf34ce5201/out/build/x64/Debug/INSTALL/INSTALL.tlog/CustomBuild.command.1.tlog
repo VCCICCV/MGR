@@ -1,0 +1,10 @@
+^C:\USERS\ADMINISTRATOR\DESKTOP\THREEGORGESMOTOR\MGR\GATEWAY\TARGET\DEBUG\BUILD\LIBZ-NG-SYS-0AE3FFBF34CE5201\OUT\BUILD\CMAKEFILES\BF186AC09A33A954C678D1BDB4B91711\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,18 @@
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.10 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_ASM_FLAGS
+    CMAKE_ASM_FLAGS_DEBUG
+    CMAKE_BUILD_TYPE
+    CMAKE_CXX_FLAGS
+    CMAKE_CXX_FLAGS_DEBUG
+
+

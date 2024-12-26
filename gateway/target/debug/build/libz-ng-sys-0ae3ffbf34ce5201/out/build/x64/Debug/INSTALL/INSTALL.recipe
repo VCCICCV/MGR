@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\libz-ng-sys-0ae3ffbf34ce5201\out\build\x64\Debug\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\libz-ng-sys-0ae3ffbf34ce5201\out\build\x64\Debug\ALL_BUILD</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\libz-ng-sys-0ae3ffbf34ce5201\out\build\x64\Debug\INSTALL</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

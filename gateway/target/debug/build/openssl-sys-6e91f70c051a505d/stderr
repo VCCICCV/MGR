@@ -1,0 +1,274 @@
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+
+Microsoft (R) 程序维护实用工具 14.41.34120.0 版
+版权所有 (C) Microsoft Corporation。  保留所有权利。
+
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+DEBUG: all keys: APPLINKDIR, BINDIR, CMAKECONFIGDIR, ENGINESDIR, INCLUDEDIR, LDLIBS, LIBDIR, MODULESDIR, PKGCONFIGDIR, PREFIX, VERSION, libdir
+No value given for CMAKECONFIGDIR
+No value given for PKGCONFIGDIR
+No value given for libdir
+DEBUG: PREFIX = . => PREFIX = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src
+DEBUG: libdir = . => libdir = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src
+DEBUG: BINDIR = apps => BINDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src\apps, BINDIR_REL_PREFIX = apps
+DEBUG: LIBDIR =  => LIBDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src, LIBDIR_REL_PREFIX = 
+DEBUG: INCLUDEDIR = [ include, ./include ] => INCLUDEDIR = [ C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src\include, C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src\include ], INCLUDEDIR_REL_PREFIX = [ include, ./include ]
+DEBUG: APPLINKDIR = ms => APPLINKDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src\ms, APPLINKDIR_REL_PREFIX = ms
+DEBUG: ENGINESDIR = engines => ENGINESDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src\engines, ENGINESDIR_REL_LIBDIR = engines
+DEBUG: MODULESDIR = providers => MODULESDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src\providers, MODULESDIR_REL_LIBDIR = providers
+DEBUG: PKGCONFIGDIR = . => PKGCONFIGDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src, PKGCONFIGDIR_REL_LIBDIR = .
+DEBUG: CMAKECONFIGDIR = . => CMAKECONFIGDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src, CMAKECONFIGDIR_REL_LIBDIR = .
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+DEBUG: all keys: APPLINKDIR, BINDIR, CMAKECONFIGDIR, ENGINESDIR, INCLUDEDIR, LDLIBS, LIBDIR, MODULESDIR, PKGCONFIGDIR, PREFIX, VERSION, libdir
+DEBUG: PREFIX = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install => PREFIX = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install
+DEBUG: libdir = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib => libdir = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib
+DEBUG: BINDIR = bin => BINDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\bin, BINDIR_REL_PREFIX = bin
+DEBUG: LIBDIR = lib => LIBDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib, LIBDIR_REL_PREFIX = lib
+DEBUG: INCLUDEDIR = include => INCLUDEDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\include, INCLUDEDIR_REL_PREFIX = include
+DEBUG: APPLINKDIR = include/openssl => APPLINKDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\include\openssl, APPLINKDIR_REL_PREFIX = include/openssl
+DEBUG: ENGINESDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib\engines-3 => ENGINESDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib\engines-3, ENGINESDIR_REL_LIBDIR = engines-3
+DEBUG: MODULESDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib\ossl-modules => MODULESDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib\ossl-modules, MODULESDIR_REL_LIBDIR = ossl-modules
+DEBUG: PKGCONFIGDIR =  => PKGCONFIGDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib, PKGCONFIGDIR_REL_LIBDIR = 
+DEBUG: CMAKECONFIGDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib\cmake\OpenSSL => CMAKECONFIGDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib\cmake\OpenSSL, CMAKECONFIGDIR_REL_LIBDIR = cmake\OpenSSL
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+
+Microsoft (R) 程序维护实用工具 14.41.34120.0 版
+版权所有 (C) Microsoft Corporation。  保留所有权利。
+
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+
+Microsoft (R) 程序维护实用工具 14.41.34120.0 版
+版权所有 (C) Microsoft Corporation。  保留所有权利。
+
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+
+Microsoft (R) 程序维护实用工具 14.41.34120.0 版
+版权所有 (C) Microsoft Corporation。  保留所有权利。
+
+
+Microsoft (R) 程序维护实用工具 14.41.34120.0 版
+版权所有 (C) Microsoft Corporation。  保留所有权利。
+
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+
+Microsoft (R) 程序维护实用工具 14.41.34120.0 版
+版权所有 (C) Microsoft Corporation。  保留所有权利。
+
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.

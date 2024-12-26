@@ -1,0 +1,9 @@
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/zlibstatic-ngd.lib
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/include/zlib-ng.h
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/include/zlib_name_mangling-ng.h
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/include/zconf-ng.h
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/pkgconfig/zlib-ng.pc
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/cmake/zlib-ng/zlib-ng.cmake
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/cmake/zlib-ng/zlib-ng-debug.cmake
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/cmake/zlib-ng/zlib-ng-config.cmake
+C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/cmake/zlib-ng/zlib-ng-config-version.cmake

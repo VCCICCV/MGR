@@ -1,0 +1,218 @@
+CMAKE_TOOLCHAIN_FILE_x86_64-pc-windows-msvc = None
+CMAKE_TOOLCHAIN_FILE_x86_64_pc_windows_msvc = None
+HOST_CMAKE_TOOLCHAIN_FILE = None
+CMAKE_TOOLCHAIN_FILE = None
+CMAKE_GENERATOR_x86_64-pc-windows-msvc = None
+CMAKE_GENERATOR_x86_64_pc_windows_msvc = None
+HOST_CMAKE_GENERATOR = None
+CMAKE_GENERATOR = None
+CMAKE_PREFIX_PATH_x86_64-pc-windows-msvc = None
+CMAKE_PREFIX_PATH_x86_64_pc_windows_msvc = None
+HOST_CMAKE_PREFIX_PATH = None
+CMAKE_PREFIX_PATH = None
+CMAKE_x86_64-pc-windows-msvc = None
+CMAKE_x86_64_pc_windows_msvc = None
+HOST_CMAKE = None
+CMAKE = None
+running: "cmake" "C:\\Users\\Administrator\\.cargo\\registry\\src\\index.crates.io-6f17d22bba15001f\\libz-ng-sys-1.1.20\\src/zlib-ng" "-G" "Visual Studio 17 2022" "-Thost=x64" "-Ax64" "-DBUILD_SHARED_LIBS=OFF" "-DZLIB_COMPAT=OFF" "-DZLIB_ENABLE_TESTS=OFF" "-DWITH_GZFILEOP=ON" "-DCMAKE_INSTALL_PREFIX=c:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out" "-DCMAKE_C_FLAGS= -nologo -MD -Brepro" "-DCMAKE_C_FLAGS_DEBUG= -nologo -MD -Brepro" "-DCMAKE_CXX_FLAGS= -nologo -MD -Brepro" "-DCMAKE_CXX_FLAGS_DEBUG= -nologo -MD -Brepro" "-DCMAKE_ASM_FLAGS= -nologo -MD -Brepro" "-DCMAKE_ASM_FLAGS_DEBUG= -nologo -MD -Brepro" "-DCMAKE_BUILD_TYPE=Debug"
+-- Using CMake version 3.31.0
+-- ZLIB_HEADER_VERSION: 1.3.1
+-- ZLIBNG_HEADER_VERSION: 2.2.2
+-- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.22631.
+-- The C compiler identification is MSVC 19.41.34120.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: E:/Development/VisualStudioIDE/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Arch detected: 'x86_64'
+-- Basearch of 'x86_64' has been detected as: 'x86'
+-- Looking for arm_acle.h
+-- Looking for arm_acle.h - not found
+-- Looking for sys/auxv.h
+-- Looking for sys/auxv.h - not found
+-- Looking for sys/sdt.h
+-- Looking for sys/sdt.h - not found
+-- Looking for unistd.h
+-- Looking for unistd.h - not found
+-- Looking for linux/auxvec.h
+-- Looking for linux/auxvec.h - not found
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of off64_t
+-- Check size of off64_t - failed
+-- Check size of _off64_t
+-- Check size of _off64_t - failed
+-- Check size of __off64_t
+-- Check size of __off64_t - failed
+-- Looking for fseeko
+-- Looking for fseeko - not found
+-- Looking for strerror
+-- Looking for strerror - found
+-- Looking for posix_memalign
+-- Looking for posix_memalign - not found
+-- Looking for aligned_alloc
+-- Looking for aligned_alloc - not found
+-- Performing Test HAVE_NO_INTERPOSITION
+-- Performing Test HAVE_NO_INTERPOSITION - Failed
+-- Performing Test HAVE_ATTRIBUTE_VISIBILITY_HIDDEN
+-- Performing Test HAVE_ATTRIBUTE_VISIBILITY_HIDDEN - Failed
+-- Performing Test HAVE_ATTRIBUTE_VISIBILITY_INTERNAL
+-- Performing Test HAVE_ATTRIBUTE_VISIBILITY_INTERNAL - Failed
+-- Performing Test HAVE_ATTRIBUTE_ALIGNED
+-- Performing Test HAVE_ATTRIBUTE_ALIGNED - Failed
+-- Performing Test HAVE_BUILTIN_ASSUME_ALIGNED
+-- Performing Test HAVE_BUILTIN_ASSUME_ALIGNED - Success
+-- Performing Test HAVE_BUILTIN_CTZ
+-- Performing Test HAVE_BUILTIN_CTZ - Failed
+-- Performing Test HAVE_BUILTIN_CTZLL
+-- Performing Test HAVE_BUILTIN_CTZLL - Failed
+-- Performing Test HAVE_PTRDIFF_T
+-- Performing Test HAVE_PTRDIFF_T - Success
+-- Performing Test HAVE_XSAVE_INTRIN
+-- Performing Test HAVE_XSAVE_INTRIN - Success
+-- Performing Test HAVE_SSE2_INTRIN
+-- Performing Test HAVE_SSE2_INTRIN - Success
+-- Performing Test HAVE_SSSE3_INTRIN
+-- Performing Test HAVE_SSSE3_INTRIN - Success
+-- Performing Test HAVE_SSE42_INTRIN
+-- Performing Test HAVE_SSE42_INTRIN - Success
+-- Performing Test HAVE_PCLMULQDQ_INTRIN
+-- Performing Test HAVE_PCLMULQDQ_INTRIN - Success
+-- Performing Test HAVE_AVX2_INTRIN
+-- Performing Test HAVE_AVX2_INTRIN - Success
+-- Performing Test HAVE_AVX512_INTRIN
+-- Performing Test HAVE_AVX512_INTRIN - Success
+-- Performing Test HAVE_AVX512VNNI_INTRIN
+-- Performing Test HAVE_AVX512VNNI_INTRIN - Success
+-- Performing Test HAVE_VPCLMULQDQ_INTRIN
+-- Performing Test HAVE_VPCLMULQDQ_INTRIN - Success
+-- Architecture-specific source files: arch/x86/x86_features.c;arch/x86/chunkset_sse2.c;arch/x86/compare256_sse2.c;arch/x86/slide_hash_sse2.c;arch/x86/adler32_ssse3.c;arch/x86/chunkset_ssse3.c;arch/x86/adler32_sse42.c;arch/x86/crc32_pclmulqdq.c;arch/x86/slide_hash_avx2.c;arch/x86/chunkset_avx2.c;arch/x86/compare256_avx2.c;arch/x86/adler32_avx2.c;arch/x86/adler32_avx512.c;arch/x86/adler32_avx512_vnni.c;arch/x86/crc32_vpclmulqdq.c
+-- The following features have been enabled:
+
+ * XSAVE, Support XSAVE intrinsics using ""
+ * SSSE3_ADLER32, Support SSSE3-accelerated adler32, using ""
+ * SSE42_CRC, Support SSE4.2 optimized adler32 hash generation, using ""
+ * PCLMUL_CRC, Support CRC hash generation using PCLMULQDQ, using " "
+ * AVX2_SLIDEHASH, Support AVX2 optimized slide_hash, using "/arch:AVX2"
+ * AVX2_CHUNKSET, Support AVX2 optimized chunkset, using "/arch:AVX2"
+ * AVX2_COMPARE256, Support AVX2 optimized compare256, using "/arch:AVX2"
+ * AVX2_ADLER32, Support AVX2-accelerated adler32, using "/arch:AVX2"
+ * AVX512_ADLER32, Support AVX512-accelerated adler32, using "/arch:AVX512"
+ * AVX512VNNI_ADLER32, Support AVX512VNNI adler32, using "/arch:AVX512"
+ * VPCLMUL_CRC, Support CRC hash generation using VPCLMULQDQ, using "  /arch:AVX512"
+ * WITH_GZFILEOP, Compile with support for gzFile related functions
+ * ZLIBNG_ENABLE_TESTS, Test zlib-ng specific API
+ * WITH_SANITIZER, Enable sanitizer support
+ * WITH_GTEST, Build gtest_zlib
+ * WITH_OPTIM, Build with optimisation
+ * WITH_NEW_STRATEGIES, Use new strategies
+ * WITH_RUNTIME_CPU_DETECTION, Build with runtime CPU detection
+ * WITH_AVX2, Build with AVX2
+ * WITH_AVX512, Build with AVX512
+ * WITH_AVX512VNNI, Build with AVX512 VNNI
+ * WITH_SSE2, Build with SSE2
+ * WITH_SSSE3, Build with SSSE3
+ * WITH_SSE42, Build with SSE42
+ * WITH_PCLMULQDQ, Build with PCLMULQDQ
+ * WITH_VPCLMULQDQ, Build with VPCLMULQDQ
+
+-- The following features have been disabled:
+
+ * ZLIB_SYMBOL_PREFIX, Publicly exported symbols DO NOT have a custom prefix
+ * ZLIB_COMPAT, Compile with zlib compatible API
+ * ZLIB_ENABLE_TESTS, Build test binaries
+ * WITH_FUZZERS, Build test/fuzz
+ * WITH_BENCHMARKS, Build test/benchmarks
+ * WITH_BENCHMARK_APPS, Build application benchmarks
+ * WITH_NATIVE_INSTRUCTIONS, Instruct the compiler to use the full instruction set on this host (gcc/clang -march=native)
+ * WITH_MAINTAINER_WARNINGS, Build with project maintainer warnings
+ * WITH_CODE_COVERAGE, Enable code coverage reporting
+ * WITH_INFLATE_STRICT, Build with strict inflate distance checking
+ * WITH_INFLATE_ALLOW_INVALID_DIST, Build with zero fill for inflate invalid distances
+ * INSTALL_UTILS, Copy minigzip and minideflate during install
+
+-- Configuring done (103.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/build
+running: "cmake" "--build" "c:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-0ae3ffbf34ce5201\\out\\build" "--target" "install" "--config" "Debug" "--parallel" "12"
+适用于 .NET Framework MSBuild 版本 17.11.2+c078802d4
+
+  1>Checking Build System
+  Building Custom Rule C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/CMakeLists.txt
+  adler32_c.c
+  adler32_fold_c.c
+  chunkset_c.c
+  compare256_c.c
+  crc32_braid_c.c
+  crc32_fold_c.c
+  slide_hash_c.c
+  adler32.c
+  compress.c
+  crc32.c
+  crc32_braid_comb.c
+  deflate.c
+  deflate_fast.c
+  deflate_huff.c
+  deflate_medium.c
+  deflate_quick.c
+  deflate_rle.c
+  deflate_slow.c
+  deflate_stored.c
+  functable.c
+  正在生成代码...
+  正在编译...
+  infback.c
+  inflate.c
+  inftrees.c
+  insert_string.c
+  insert_string_roll.c
+  trees.c
+  uncompr.c
+  zutil.c
+  cpu_features.c
+  x86_features.c
+  chunkset_sse2.c
+  compare256_sse2.c
+  slide_hash_sse2.c
+  adler32_ssse3.c
+  chunkset_ssse3.c
+  adler32_sse42.c
+  crc32_pclmulqdq.c
+  gzlib.c
+  gzread.c
+  gzwrite.c
+  正在生成代码...
+  slide_hash_avx2.c
+  chunkset_avx2.c
+  compare256_avx2.c
+  adler32_avx2.c
+  正在生成代码...
+  adler32_avx512.c
+  adler32_avx512_vnni.c
+  crc32_vpclmulqdq.c
+  正在生成代码...
+  zlib.vcxproj -> C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\libz-ng-sys-0ae3ffbf34ce5201\out\build\Debug\zlibstatic-ngd.lib
+  Building Custom Rule C:/Users/Administrator/.cargo/registry/src/index.crates.io-6f17d22bba15001f/libz-ng-sys-1.1.20/src/zlib-ng/CMakeLists.txt
+  1>
+  -- Install configuration: "Debug"
+  -- Installing: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/zlibstatic-ngd.lib
+  -- Installing: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/include/zlib-ng.h
+  -- Installing: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/include/zlib_name_mangling-ng.h
+  -- Installing: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/include/zconf-ng.h
+  -- Installing: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/pkgconfig/zlib-ng.pc
+  -- Installing: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/cmake/zlib-ng/zlib-ng.cmake
+  -- Installing: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/cmake/zlib-ng/zlib-ng-debug.cmake
+  -- Installing: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/cmake/zlib-ng/zlib-ng-config.cmake
+  -- Installing: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-0ae3ffbf34ce5201/out/lib/cmake/zlib-ng/zlib-ng-config-version.cmake
+cargo:root=c:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\libz-ng-sys-0ae3ffbf34ce5201\out
+cargo:rustc-link-search=native=c:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\libz-ng-sys-0ae3ffbf34ce5201\out\lib
+cargo:rustc-link-search=native=c:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\libz-ng-sys-0ae3ffbf34ce5201\out\lib64
+cargo:rustc-link-lib=static=zlibstatic-ngd
+cargo:root=c:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\libz-ng-sys-0ae3ffbf34ce5201\out
+cargo:include=c:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\libz-ng-sys-0ae3ffbf34ce5201\out\include
+cargo:rustc-cfg=zng

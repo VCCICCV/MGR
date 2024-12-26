@@ -1,0 +1,10 @@
+c:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\deps\libtrackable-d1966332fa26dafb.rmeta: C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\macros.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\error.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\result.rs
+
+c:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\deps\libtrackable-d1966332fa26dafb.rlib: C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\macros.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\error.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\result.rs
+
+c:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\deps\trackable-d1966332fa26dafb.d: C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\macros.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\error.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\result.rs
+
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\lib.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\macros.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\error.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\trackable-0.2.24\src\result.rs:

@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\deps\libtokio_test-fc30fcccbc9e22ea.rmeta: C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\io.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\stream_mock.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\macros.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\task.rs
+
+C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\deps\tokio_test-fc30fcccbc9e22ea.d: C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\lib.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\io.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\stream_mock.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\macros.rs C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\task.rs
+
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\lib.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\io.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\stream_mock.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\macros.rs:
+C:\Users\Administrator\.cargo\registry\src\index.crates.io-6f17d22bba15001f\tokio-test-0.4.4\src\task.rs:
