@@ -4,3 +4,7 @@
 /tgm-front/node_modules/
 /customer/target/*
 /product/target/*
+/gateway/target/*
+/email/target/*
+/pay/target/*
+/apisix/*
