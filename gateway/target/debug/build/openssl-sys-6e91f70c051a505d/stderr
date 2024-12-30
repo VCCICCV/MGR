@@ -1,9 +1,30 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
 
 Microsoft (R) 程序维护实用工具 14.41.34120.0 版
 版权所有 (C) Microsoft Corporation。  保留所有权利。
 
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
 DEBUG: all keys: APPLINKDIR, BINDIR, CMAKECONFIGDIR, ENGINESDIR, INCLUDEDIR, LDLIBS, LIBDIR, MODULESDIR, PKGCONFIGDIR, PREFIX, VERSION, libdir
 No value given for CMAKECONFIGDIR
@@ -19,9 +40,37 @@ DEBUG: ENGINESDIR = engines => ENGINESDIR = C:\Users\Administrator\Desktop\Three
 DEBUG: MODULESDIR = providers => MODULESDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src\providers, MODULESDIR_REL_LIBDIR = providers
 DEBUG: PKGCONFIGDIR = . => PKGCONFIGDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src, PKGCONFIGDIR_REL_LIBDIR = .
 DEBUG: CMAKECONFIGDIR = . => CMAKECONFIGDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\build\src, CMAKECONFIGDIR_REL_LIBDIR = .
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
 DEBUG: all keys: APPLINKDIR, BINDIR, CMAKECONFIGDIR, ENGINESDIR, INCLUDEDIR, LDLIBS, LIBDIR, MODULESDIR, PKGCONFIGDIR, PREFIX, VERSION, libdir
 DEBUG: PREFIX = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install => PREFIX = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install
@@ -34,213 +83,1067 @@ DEBUG: ENGINESDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\
 DEBUG: MODULESDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib\ossl-modules => MODULESDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib\ossl-modules, MODULESDIR_REL_LIBDIR = ossl-modules
 DEBUG: PKGCONFIGDIR =  => PKGCONFIGDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib, PKGCONFIGDIR_REL_LIBDIR = 
 DEBUG: CMAKECONFIGDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib\cmake\OpenSSL => CMAKECONFIGDIR = C:\Users\Administrator\Desktop\ThreeGorgesMotor\mgr\gateway\target\debug\build\openssl-sys-6e91f70c051a505d\out\openssl-build\install\lib\cmake\OpenSSL, CMAKECONFIGDIR_REL_LIBDIR = cmake\OpenSSL
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
 
 Microsoft (R) 程序维护实用工具 14.41.34120.0 版
 版权所有 (C) Microsoft Corporation。  保留所有权利。
 
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
 
 Microsoft (R) 程序维护实用工具 14.41.34120.0 版
 版权所有 (C) Microsoft Corporation。  保留所有权利。
 
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
-Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
+Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
 Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
 Use of uninitialized value in join or string at C:/Strawberry/perl/lib/re.pm line 47.
@@ -256,19 +1159,103 @@ Microsoft (R) 程序维护实用工具 14.41.34120.0 版
 Microsoft (R) 程序维护实用工具 14.41.34120.0 版
 版权所有 (C) Microsoft Corporation。  保留所有权利。
 
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
 
 Microsoft (R) 程序维护实用工具 14.41.34120.0 版
 版权所有 (C) Microsoft Corporation。  保留所有权利。
 
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = (unset),
+	(possibly more locale environment variables)
+	LANG = "zh_CN.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the system default locale ("Chinese (Simplified)_China.936").
 Locale 'Chinese (Simplified)_China.936' is unsupported, and may crash the interpreter.

@@ -136,7 +136,7 @@ running: "cmake" "C:\\Users\\Administrator\\.cargo\\registry\\src\\index.crates.
  * WITH_INFLATE_ALLOW_INVALID_DIST, Build with zero fill for inflate invalid distances
  * INSTALL_UTILS, Copy minigzip and minideflate during install
 
--- Configuring done (92.4s)
+-- Configuring done (97.2s)
 -- Generating done (0.1s)
 -- Build files have been written to: C:/Users/Administrator/Desktop/ThreeGorgesMotor/mgr/gateway/target/debug/build/libz-ng-sys-084aaa1530e6fb84/out/build
 running: "cmake" "--build" "C:\\Users\\Administrator\\Desktop\\ThreeGorgesMotor\\mgr\\gateway\\target\\debug\\build\\libz-ng-sys-084aaa1530e6fb84\\out\\build" "--target" "install" "--config" "Debug" "--parallel" "12"

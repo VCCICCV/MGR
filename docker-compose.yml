@@ -1,4 +1,10 @@
 services:
+  etcd-apisix:
+    image: pachyderm/etcd:v3.5.2
+    container_name: etcd-apisix
+    # 容器使用宿主机的网络
+    network_mode: "host"
+    detach: true
   postgres:
     image: postgres
     container_name: postgres
