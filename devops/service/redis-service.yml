@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  labels:
+    name: redis-service
+    app: axum-ddd-start 
+spec:
+  ports:
+  - port: 6379 # 服务端口
+    targetPort: 6379 # Pod端口
+  selector: # 选择要暴露的Pod
+    name: redis-pod
+    app: axum-ddd-start

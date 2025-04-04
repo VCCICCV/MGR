@@ -1,0 +1,11 @@
+{
+	"name": "elasticsearch-sink-connector",
+	"config": {
+		"connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
+		"topics": "pg.public.user",
+		"connection.url": "es:9200",
+		"type.name": "_doc",
+		"key.ignore": true,
+		"value.converter": "org.apache.kafka.connect.json.JsonConverter"
+	}
+}

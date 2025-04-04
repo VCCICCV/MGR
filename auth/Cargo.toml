@@ -1,0 +1,22 @@
+[package]
+name = "auth"
+version = "0.1.0"
+edition = "2024"
+# 工作区成员
+[workspace]
+members = [
+    ".",
+    "interface",
+    "application",
+    "domain",
+    "infrastructure",
+    "shared",
+]
+
+# 工作区依赖仅指定版本，serde = { workspace = true }才是真正导入
+[workspace.dependencies]
+domain = { path = "domain" }
+application = { path = "application" }
+infrastructure = { path = "infrastructure" }
+interface = { path = "interface" }
+shared = { path = "shared" }

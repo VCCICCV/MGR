@@ -1,0 +1,29 @@
+[package]
+name = "shared"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { workspace = true }
+
+axum = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+sea-orm = { workspace = true }
+serde = { workspace = true }
+bb8-redis = { workspace = true }
+elasticsearch = { workspace = true }
+jsonwebtoken = { workspace = true }
+strum = { workspace = true }
+utoipa = { workspace = true }
+argon2 = { workspace = true }
+uuid = { workspace = true }
+config = { workspace = true }
+lettre = { workspace = true }
+base64 = { workspace = true }
+serde_json = { workspace = true }
+reqwest = { workspace = true }
+garde = { workspace = true }
+
+tokio-tungstenite = { workspace = true }
+# rdkafka = { workspace = true }

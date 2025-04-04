@@ -1,0 +1,31 @@
+aspiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: axum-ddd-start-deployment
+  labels:
+    name: axum-ddd-start-deployment
+    app: axum-ddd-start
+spec:
+  replicas: 1 # 副本数量
+  selector:
+    matchLabels: # 选择器，选择哪些pod
+      name: axum-ddd-start-pod
+      app: axum-ddd-start
+  strategy: # 策略，如何更新pod
+    type: RollingUpdate # 滚动更新
+  template: # 模板，我们要创建副本的的pod的模板
+    metadata:
+      name: axum-ddd-start-pod
+      labels:
+        name: axum-ddd-start-pod
+        app: axum-ddd-start
+    spec:
+      containers:
+        - name: axum-ddd-start
+          image: vcciccv/axum-ddd-start:latest
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"

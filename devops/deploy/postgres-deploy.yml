@@ -1,0 +1,34 @@
+aspiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+  labels:
+    name: postgres-deployment
+    app: axum-ddd-start
+spec:
+  replicas: 1 # 副本数量
+  selector:
+    matchLabels:
+      name: postgres-pod
+      app: axum-ddd-start
+  template:
+    metadata:
+      name: postgres-pod
+      labels:
+        name: postgres-pod
+        app: axum-ddd-start
+    spec:
+      containers:
+      - name: axum-ddd-start
+        image: vcciccv/axum-ddd-start:latest
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_PASSWORD
+          value: "root123456"
+        - name: POSTGRES_USER
+          value: "postgres"
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

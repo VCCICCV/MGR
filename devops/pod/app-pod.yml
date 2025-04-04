@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-pod
+  labels:
+    name: app-pod
+    app: axum-ddd-start
+spec:
+  containers:
+    - name: worker-app
+      image: vcciccv/axum-ddd-start:latest
+      ports: # 端口
+        - containerPort: 8080
+      resources: # 限制资源
+        limits:
+          memory: "128Mi"
+          cpu: "500m"

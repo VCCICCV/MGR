@@ -1,0 +1,29 @@
+aspiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deployment
+  labels:
+    name: redis-deployment
+    app: axum-ddd-start
+spec:
+  replicas: 1 # 副本数量
+  selector:
+    matchLabels:
+      name: redis-pod
+      app: axum-ddd-start
+  template:
+    metadata:
+      name: redis-pod
+      labels:
+        name: redis-pod
+        app: axum-ddd-start
+    spec:
+      containers:
+      - name: axum-ddd-start
+        image: vcciccv/axum-ddd-start:latest
+        ports:
+        - containerPort: 6379
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

@@ -1,0 +1,37 @@
+[package]
+name = "interface"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+shared = { workspace = true }
+# 依赖于application层数据和业务逻辑的处理结果
+application = { workspace = true }
+domain = { workspace = true }
+# 依赖于基础设施层的实现
+infrastructure = { workspace = true }
+
+axum = { workspace = true }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+sea-orm = { workspace = true }
+anyhow = { workspace = true }
+dotenvy = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-bunyan-formatter = { workspace = true }
+axum-extra = { workspace = true }
+mime = { workspace = true }
+tower-http = { workspace = true }
+thiserror = { workspace = true }
+tracing-appender = { workspace = true }
+config = { workspace = true }
+serde_yaml = { workspace = true }
+notify = { workspace = true }
+bb8 = { workspace = true }
+bb8-redis = { workspace = true }
+utoipa = { workspace = true }
+utoipa-swagger-ui = { workspace = true }
+# validator = { workspace = true }
+garde = { workspace = true }

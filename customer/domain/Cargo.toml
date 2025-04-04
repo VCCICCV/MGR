@@ -1,0 +1,41 @@
+[package]
+name = "domain"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# domain不应该依赖于任何层
+sea-orm = { workspace = true }
+axum = { workspace = true }
+axum-extra = { workspace = true }
+serde = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+thiserror = { workspace = true }
+shared = { workspace = true }
+tokio = { workspace = true }
+chrono = { workspace = true }
+jsonwebtoken = { workspace = true }
+uuid = { workspace = true }
+password-hash = { workspace = true }
+argon2 = { workspace = true }
+serde_json = { workspace = true }
+lettre = { workspace = true }
+fake = { workspace = true }
+rand = { workspace = true }
+garde = { workspace = true }
+mime = { workspace = true }
+utoipa = { workspace = true }
+
+bb8-redis = { workspace = true }
+elasticsearch = { workspace = true }
+
+strum = { workspace = true }
+
+config = { workspace = true }
+
+base64 = { workspace = true }
+reqwest = { workspace = true }
+
+# openssl = { workspace = true }
+once_cell = { workspace = true }

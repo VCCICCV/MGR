@@ -1,0 +1,51 @@
+[package]
+name = "infrastructure"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# 不应该直接依赖于 domain（领域层）和 application（应用层），但可以通过抽象接口与它们交互，比如repository
+# 这样可以避免直接依赖于具体的实现，从而提高代码的可维护性和可测试性。
+# 标准四层架构其他层都依赖于基础设施层，这里依赖倒置
+domain = { workspace = true }
+# application = { workspace = true }
+shared = { workspace = true }
+
+axum = { workspace = true }
+tokio = { workspace = true }
+sea-orm = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+dotenvy = { workspace = true }
+
+
+thiserror = { workspace = true }
+lettre = { workspace = true }
+bb8 = { workspace = true }
+redis = { workspace = true }
+bb8-redis = { workspace = true }
+once_cell = { workspace = true }
+
+config = { workspace = true }
+strum = { workspace = true }
+rand = { workspace = true }
+fake = { workspace = true }
+log = { workspace = true }
+test-context = { workspace = true }
+uuid = { workspace = true }
+elasticsearch = { workspace = true }
+
+chrono = { workspace = true }
+jsonwebtoken = { workspace = true }
+password-hash = { workspace = true }
+argon2 = { workspace = true }
+tracing = { workspace = true }
+tracing-opentelemetry = { workspace = true }
+opentelemetry_sdk = { workspace = true }
+opentelemetry-otlp = { workspace = true }
+opentelemetry = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-log = { workspace = true }
+tracing-appender = { workspace = true }
+tracing-bunyan-formatter = { workspace = true }

@@ -1,0 +1,24 @@
+.vscode/
+.idea/
+# 忽略所有target
+**/target/
+**/logs/
+
+auth/target/
+tgm-front/node_modules/
+customer/target/
+customer/logs/
+auth/target/
+auth/logs/
+order/target/
+order/logs/
+product/target/
+product/logs/
+gateway/target/
+gateway/logs/
+email/target/
+email/logs/
+pay/target/
+pay/logs/
+nginx-1.26.3/
+migration/target/

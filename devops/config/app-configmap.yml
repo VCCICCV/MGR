@@ -1,0 +1,11 @@
+# 配置中心
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-configmap
+data:
+  DATABASE_URL: postgres://postgres:root123456@localhost:5432/postgres
+  REDIS_URL: redis://127.0.0.1
+  HOST: 127.0.0.1
+  PORT: "8080"
+  LOG_LEVEL: TRACE

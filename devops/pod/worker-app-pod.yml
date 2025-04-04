@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: worker-pod
+  labels:
+    name: worker-pod
+    app: axum-ddd-start
+spec:
+  containers:
+    - name: worker-app
+      image: vcciccv/axum-ddd-start:latest
+      resources: # 限制资源
+        limits:
+          memory: "128Mi"
+          cpu: "500m"

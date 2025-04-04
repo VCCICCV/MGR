@@ -1,0 +1,22 @@
+# nginx-pod.yml
+apiVersion: v1 # api版本
+kind: Pod # 创建的类型
+metadata: # 元数据
+  name: nginx-pod # 名称
+  labels: # 标签
+    name: nginx-pod # 标签名称
+spec: # 描述容器预期的状态
+  containers: # 容器
+    - name: nginx-pod # 容器名称
+      image: nginx:latest # 指定镜像
+      imagePullPolicy: IfNotPresent # 拉取策略
+      ports: # 端口
+        - containerPort: 80 # 容器端口
+      resources: # 限制资源
+        requests:
+          memory: "128Mi"
+          cpu: "500m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+  restartPolicy: Always # 重启策略

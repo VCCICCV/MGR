@@ -1,0 +1,79 @@
+[package]
+name = "product"
+version = "0.1.0"
+edition = "2021"
+
+# 这里不使用工作清单
+# 工作区依赖仅指定版本，serde = { workspace = true }才是真正导入
+[dependencies]
+
+axum = "0.7.9"
+# axum提取器
+axum-extra = { version = "0.9.3", features = ["typed-header"] }
+eventually = "0.4.0"
+# ORM
+sea-orm = { version = "1.0.1", features = [
+    "runtime-tokio-native-tls",
+    "sqlx-postgres",
+    "macros",
+] }
+tokio = { version = "1", features = ["full"] }
+# 序列化和反序列化数据
+serde = { version = "1.0.127", features = ["derive"] }
+# 序列化JSON
+serde_json = "1.0.128"
+# 序列化YAML
+serde_yaml = "0.9.19"
+# 配置
+config = "0.14.0"
+# 错误处理
+anyhow = "1.0.86"
+tracing = { version = "0.1.40", features = ["attributes"] }
+# 将 Rust 的错误类型与 Tracing 的 span 相关联的库
+# 当出现错误时，通常希望能将错误的发生与当时的执行上下文（也就是 tracing 所记录的 span 相关信息）结合起来，以便更好地理解错误产生的背景和原因
+tracing-error = "0.2.0"
+# 配置和管理 tracing 所产生的日志和追踪数据的收集、格式化以及输出等操作
+tracing-subscriber = { version = "0.3", default-features = true, features = [
+    "std",
+    "env-filter",
+    "registry",
+    "local-time",
+    "fmt",
+] }
+# 处理日志数据的写入目标和写入方式
+tracing-appender = "0.2.3"
+# 用于将 Rust 标准库中的 log 宏记录的日志与 tracing 库的日志记录机制进行集成，使得使用 log 宏编写的旧有日志记录代码能够无缝地与基于 tracing 的新日志系统协同工作，方便在项目迁移或者同时使用两种日志记录方式的场景下进行统一管理和输出
+tracing-log = "0.2.0"
+# 用于将 tracing 库产生的日志按照 Bunyan 格式进行格式化的库
+tracing-bunyan-formatter = "0.3.9"
+# 链路追踪
+tracing-opentelemetry = "0.28.0"
+opentelemetry = "0.27.1"
+opentelemetry_sdk = { version = "0.27.1", features = ["rt-tokio"] }
+opentelemetry-otlp = { version = "0.27.0", features = [
+    "trace",
+    "metrics",
+    "grpc-tonic",
+] }
+# redis 客户端
+redis = { version = "0.27.4", features = ["aio", "tokio-comp"] }
+# 使用tokio实现的连接池，支持postgres、redis、redis cluster、rsmq等
+bb8 = "0.8.5"
+bb8-redis = "0.17.0"
+uuid = { version = "1.11.0", features = ["v4", "serde"] }
+utoipa = { version = "5.1.1", features = ["axum_extras", "debug", "uuid"] }
+# openapi 文档
+utoipa-swagger-ui = { version = "8.0.0", features = ["axum"] }
+utoipa-axum = { version = "0", features = ["debug"] }
+# 枚举处理
+strum = { version = "0.26", features = ["derive"] }
+# 读取env
+dotenvy = "0.15.7"
+# 自定义错误
+thiserror = "1.0.64"
+# 异步锁
+once_cell = "1.20.2"
+garde = { version = "0.20.0", features = ["full"] }
+mime = "0.3.17"
+# 处理HTTP请求例如跨域处理
+tower-http = { version = "0.6.1", features = ["cors"] }

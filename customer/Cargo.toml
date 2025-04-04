@@ -1,0 +1,153 @@
+[package]
+name = "customer"
+version = "0.1.0"
+edition = "2021"
+[profile.dev]
+opt-level = 1
+[profile.dev.package."*"]
+opt-level = 3
+# 工作区成员
+[workspace]
+members = [
+    ".",
+    "interface",
+    "application",
+    "domain",
+    "infrastructure",
+    "shared",
+]
+
+# 工作区依赖仅指定版本，serde = { workspace = true }才是真正导入
+[workspace.dependencies]
+domain = { path = "domain" }
+application = { path = "application" }
+infrastructure = { path = "infrastructure" }
+interface = { path = "interface" }
+shared = { path = "shared" }
+
+axum = "0.8.3"
+# axum提取器
+axum-extra = { version = "0.10.1", features = ["typed-header"] }
+# ORM
+sea-orm = { version = "1.1.8", features = [
+    "runtime-tokio-native-tls",
+    "sqlx-postgres",
+    "macros",
+] }
+tokio = { version = "1", features = ["full"] }
+# 异步 WebSocket
+tokio-tungstenite = "0.26.2"
+# # 处理HTTP请求例如解析请求体
+# hyper = { version = "1.4.1", features = ["full"] }
+# 处理HTTP请求例如跨域处理
+tower-http = { version = "0.6.2", features = ["cors"] }
+# 序列化和反序列化数据
+serde = { version = "1.0.219", features = ["derive"] }
+# 序列化JSON
+serde_json = "1.0.140"
+# 序列化YAML
+serde_yaml = "0.9.34"
+# 错误处理
+anyhow = "1.0.97"
+# 配置
+config = "0.15.11"
+# 
+notify = "6.1"
+# 自定义错误
+thiserror = "2.0.12"
+# 读取env
+dotenvy = "0.15.7"
+# 分布式跟踪的 SDK，用于采集监控数据，这里用其日志功能
+# attributes自动为函数添加追踪
+# 在函数定义前添加 #[tracing::instrument]，当函数被调用时，tracing 库会自动记录函数的进入、退出情况以及执行时长等信息，并且可以携带函数的参数等作为额外的上下文信息
+tracing = { version = "0.1.41", features = ["attributes"] }
+# 将 Rust 的错误类型与 Tracing 的 span 相关联的库
+# 当出现错误时，通常希望能将错误的发生与当时的执行上下文（也就是 tracing 所记录的 span 相关信息）结合起来，以便更好地理解错误产生的背景和原因
+tracing-error = "0.2.1"
+# 配置和管理 tracing 所产生的日志和追踪数据的收集、格式化以及输出等操作
+tracing-subscriber = { version = "0.3", default-features = true, features = [
+    "std",
+    "env-filter",
+    "registry",
+    "local-time",
+    "fmt",
+] }
+# 处理日志数据的写入目标和写入方式
+tracing-appender = "0.2.3"
+# 用于将 Rust 标准库中的 log 宏记录的日志与 tracing 库的日志记录机制进行集成，使得使用 log 宏编写的旧有日志记录代码能够无缝地与基于 tracing 的新日志系统协同工作，方便在项目迁移或者同时使用两种日志记录方式的场景下进行统一管理和输出
+tracing-log = "0.2.0"
+# 用于将 tracing 库产生的日志按照 Bunyan 格式进行格式化的库
+tracing-bunyan-formatter = "0.3.10"
+# 链路追踪
+tracing-opentelemetry = "0.30.0"
+opentelemetry = "0.29.1"
+opentelemetry_sdk = { version = "0.29.0", features = ["rt-tokio"] }
+opentelemetry-otlp = { version = "0.29.0", features = [
+    "trace",
+    "metrics",
+    "grpc-tonic",
+] }
+# 日志
+log = "0.4.27"
+# 日志派生
+log-derive = "0.4.1"
+
+# redis 客户端
+redis = { version = "0.29.2", features = ["aio", "tokio-comp"] }
+# 使用tokio实现的连接池，支持postgres、redis、redis cluster、rsmq等
+bb8 = "0.8.6"
+bb8-redis = "0.21.0"
+# Kafka
+# rdkafka = { version = "0.36.2", features = ["cmake-build"] }
+# 异步 kafka 客户端
+# rdkafka-sys = "4.7.0"
+#Media Type
+mime = "0.3.17"
+# JWT
+jsonwebtoken = "9.3.1"
+# 时间处理
+chrono = "0.4.40"
+uuid = { version = "1.16.0", features = ["v4", "serde"] }
+# 密码哈希加盐
+password-hash = "0.5.0"
+# 密码哈希
+argon2 = "0.5.3"
+# 邮件
+lettre = { version = "0.11.15", features = ["tokio1-native-tls", "builder"] }
+# ssl 证书
+# openssl = { version = "0.10.68", features = ["vendored"] }
+# openapi
+utoipa = { version = "5.3.1", features = ["axum_extras", "debug", "uuid"] }
+# openapi 文档
+utoipa-swagger-ui = { version = "9.0.0", features = ["axum"] }
+utoipa-axum = { version = "0", features = ["debug"] }
+# 异步锁
+once_cell = "1.21.3"
+# 表单验证
+garde = { version = "0.22.0", features = ["full"] }
+# validator = { version = "0.18.1", features = ["derive"] }
+# 枚举处理
+strum = { version = "0.27.1", features = ["derive"] }
+# 异步请求
+reqwest = { version = "0.12.15", features = ["json", "multipart", "stream"] }
+# 
+base64 = "0.22.1"
+
+fake = { version = "3.1.0", features = ["derive", "uuid", "chrono"] }
+# 随机数生成
+rand = "0.9.0"
+
+# 测试
+test-context = "0.4.1"
+# ES
+elasticsearch = "8.15.0-alpha.1"
+# 捕获错误、监控错误、告警
+sentry = "0.37.0"
+# 启动和测试需要添加
+[dependencies]
+
+# 假数据，用于测试    
+interface = { workspace = true }
+infrastructure = { workspace = true }
+tokio = { workspace = true }
+tokio-tungstenite.workspace = true
