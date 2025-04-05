@@ -5,6 +5,7 @@ mod m20220101_000002_create_table;
 mod m20220101_000003_create_table;
 mod m20220101_000004_create_table;
 mod m20220101_000005_create_table;
+mod m20220101_000006_create_table;
 pub struct Migrator;
 
 #[async_trait::async_trait]
@@ -16,6 +17,7 @@ impl MigratorTrait for Migrator {
             Box::new(m20220101_000003_create_table::Migration),
             Box::new(m20220101_000004_create_table::Migration),
             Box::new(m20220101_000005_create_table::Migration),
+            Box::new(m20220101_000006_create_table::Migration),
         ]
     }
 }

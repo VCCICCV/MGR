@@ -19,9 +19,9 @@ impl MigrationTrait for Migration {
                         .primary_key()
                         .comment("事件id")
                 )
+                .col(ColumnDef::new(Events::Source).text().not_null().comment("事件源"))
                 .col(ColumnDef::new(Events::Payload).text().not_null().comment("载荷"))
                 .col(ColumnDef::new(Events::Status).text().not_null().comment("事件状态"))
-                .col(ColumnDef::new(Events::StepState).text().not_null().comment("步骤状态"))
                 .col(ColumnDef::new(Events::Type).text().not_null().comment("事件类型"))
                 .col(ColumnDef::new(Events::Version).integer().not_null().comment("事件版本"))
                .to_owned(),
@@ -42,12 +42,12 @@ enum Events {
     Table,
     // 事件id
     Id,
-    // 载荷
+    // 事件源
+    Source,
+    // 载荷、元数据
     Payload,
-    // 事件状态
+    // 事件状态（已处理、失败、重试中等）
     Status,
-    // 步骤状态
-    StepState,
     // 事件类型
     Type,
     // 事件版本

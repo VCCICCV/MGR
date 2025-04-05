@@ -7,14 +7,18 @@
 > 注意：不建议使用虚拟清单强制依赖关系，例如常量在基础设施、Domain都可能用到，建议直接用文件夹分包，见`Product`模块
 
 ## 快速开始
-
-运行迁移
-
+安装sea-orm-cli
 ```
 cargo add seaorm-cli
 ```
-
-
+运行迁移
+```
+sea-orm-cli migrate up
+```
+删除所有表重新迁移
+```
+sea-orm-cli migrate fresh
+```
 
 启动应用
 

@@ -42,3 +42,15 @@ saga有三种形式
 * 协同模式（Choreography）：参与者订阅彼此事件并做出响应，参与者根据事件做出相应的补偿操作
 * 状态机：
 * 编排模式（Orchestration）：使用saga协调者
+
+```
+   OrderService->>Kafka: 发布 OrderCreated (订单创建)
+    PaymentService->>Kafka: 订阅 OrderCreated
+    PaymentService->>Kafka: 发布 OrderPaid (支付成功)
+    InventoryService->>Kafka: 订阅 OrderPaid
+    InventoryService->>Kafka: 发布 InventoryLocked (库存锁定)
+    LogisticsService->>Kafka: 订阅 InventoryLocked
+    LogisticsService->>Kafka: 发布 OrderShipped (已发货)
+    OrderService->>Kafka: 订阅 OrderShipped
+    OrderService->>Kafka: 发布 OrderCompleted (订单完成)
+```
