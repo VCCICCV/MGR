@@ -87,7 +87,7 @@ redis = {version = "0.29.2", features = ["aio", "tokio-comp"]}
 bb8 = "0.9.0"
 bb8-redis = "0.21.0"
 # Kafka
-# rdkafka = { version = "0.36.2", features = ["cmake-build"] }
+rdkafka = { version = "0.37.0", features = ["cmake-build"] }
 # 异步 kafka 客户端
 # rdkafka-sys = "4.7.0"
 # ES
@@ -179,11 +179,11 @@ argon2 = "0.5.3"
 lettre = {version = "0.11.15", features = ["tokio1-native-tls", "builder"]}
 # ssl 证书
 # openssl = { version = "0.10.68", features = ["vendored"] }
-# openapi
-utoipa = {version = "5.3.1", features = ["axum_extras", "debug", "uuid"]}
-# openapi 文档
-utoipa-axum = {version = "0.2.0", features = ["debug"]}
-utoipa-swagger-ui = {version = "9.0.0", features = ["axum"]}
+# # openapi
+# utoipa = {version = "5.3.1", features = ["axum_extras", "debug", "uuid"]}
+# # openapi 文档
+# utoipa-axum = {version = "0.2.0", features = ["debug"]}
+# utoipa-swagger-ui = {version = "9.0.0", features = ["axum"]}
 # 异步锁
 once_cell = "1.21.3"
 # 枚举处理

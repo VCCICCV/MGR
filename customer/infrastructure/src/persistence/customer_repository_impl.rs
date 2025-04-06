@@ -1,5 +1,5 @@
 use std::sync::Arc;
-use axum::async_trait;
+
 use chrono::Utc;
 use domain::model::reponse::error::{ AppError, AppResult };
 use sea_orm::{ ActiveModelTrait, ColumnTrait, DatabaseTransaction, EntityTrait, QueryFilter, Set };
@@ -21,7 +21,7 @@ impl CustomerRepositoryImpl {
     }
 }
 
-#[async_trait]
+
 impl CustomerRepository for CustomerRepositoryImpl {
     async fn update_status(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult {
         info!("update user is_deleted: {:?}", customer);

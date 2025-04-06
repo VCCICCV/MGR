@@ -12,10 +12,11 @@ pub struct AppState {
 }
 impl AppState {
     pub async fn new(config: AppConfig) -> anyhow::Result<Self> {
+        let config = Arc::new(config);
         let redis = Arc::new(RedisClient::build_from_config(&config)?);
         let db = Arc::new(DatabaseClient::build_from_config(&config).await?);
         Ok(Self {
-            config: Arc::new(config),
+            config,
             db,
             redis,
         })

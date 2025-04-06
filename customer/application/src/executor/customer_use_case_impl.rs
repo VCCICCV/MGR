@@ -1,4 +1,4 @@
-use axum::async_trait;
+
 use domain::{
     model::{
         aggregate::customer::CustomerBuilder,
@@ -39,7 +39,7 @@ impl CustomerUseCaseImpl {
         }
     }
 }
-#[async_trait]
+
 impl CustomerUseCase for CustomerUseCaseImpl {
     async fn info_query_handler(
         &self,

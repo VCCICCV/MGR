@@ -22,19 +22,6 @@ services:
   #     interval: 30s
   #     timeout: 10s
   #     retries: 3
-  postgres:
-    image: postgres
-    container_name: postgres
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: "root123456"
-    volumes:
-      - /var/lib/postgresql/data:/var/lib/postgresql/data
-      - /var/log/postgresql:/var/lib/postgresql/log
-    ports:
-      - 5432:5432
-    networks:
-      - pub-network
 
   # pgadmin:
   #   image: dpage/pgadmin4
@@ -134,12 +121,31 @@ services:
   #     I18N_LOCALE: zh-CN
   #   networks:
   #     - pub-network
-
-  kafka:
-    image: apache/kafka:latest
-    container_name: kafka
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: "root123456"
+    volumes:
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
+      - /var/log/postgresql:/var/lib/postgresql/log
     ports:
-      - "9092:9092"
+      - 5432:5432
+    networks:
+      - pub-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  broker:
+    image: apache/kafka:latest
+    hostname: broker
+    container_name: broker
+    ports:
+      - "9092:9092" # 外部访问端口（宿主机9092 -> 容器9092）
+      - "29092:29092" # 内部通信端口（宿主机29092 -> 容器29092）
     networks:
       - pub-network
     restart: always
@@ -149,15 +155,19 @@ services:
       # 指定这个 Kafka 节点的角色为 broker（消息代理）和 controller（控制器）。Controller 负责管理集群中的分区分配等任务
       KAFKA_PROCESS_ROLES: broker,controller
       # 设置 Kafka 的监听器。这里配置了两种监听器，一种是普通的 PLAINTEXT 监听器在 9092 端口，用于接收客户端的连接；另一种是 CONTROLLER 监听器在 9093 端口，用于控制器的通信
-      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
-      # 设置对外公布的监听器地址，这里表示客户端可以通过 “[localhost:9092](https://localhost:9092/)” 连接到这个 Kafka 节点，如果不配置外部无法连接到Kafka
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://:9092
+      KAFKA_LISTENERS: "PLAINTEXT://:9092,INTERNAL://:29092,CONTROLLER://:9093"
+      # 设置对外公布的监听器地址，这里表示客户端可以通过 “[localhost:9092](https://localhost:9092/)” 连接到这个 Kafka 节点，如果不配置外部无法连接到Kafka，服务器请设置为外网ip
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://localhost:9092,INTERNAL://broker:29092"
+      # 设置内部监听器的名称为 “INTERNAL”
+      KAFKA_INTER_BROKER_LISTENER_NAME: "INTERNAL"
       # 指定控制器使用的监听器名称为 “CONTROLLER”
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
       # 定义监听器的安全协议映射。这里表示 CONTROLLER 监听器使用 PLAINTEXT 协议，普通的 PLAINTEXT 监听器也使用 PLAINTEXT 协议
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
-      # 设置控制器的法定人数投票者，这里表示只有一个节点（ID 为 1）在 “[broker:9093](https://broker:9093/)” 作为投票者，通过容器名解析ip
-      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,INTERNAL:PLAINTEXT"
+      # 设置控制器的法定人数投票者，这里表示只有一个节点（ID 为 1）在 “[localhost:9093](https://localhost:9093/)” 作为投票者
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@broker:9093"
+      # 允许自动创建Topic
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
       # 设置 Kafka 的Topic偏移量（用于记录消费者的消费位置）的复制因子为 1，即只有一个副本，最小1，最大不能超过节点数
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       # 设置 Kafka 的事务状态日志的复制因子为 1
@@ -168,35 +178,52 @@ services:
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       # 设置默认的主题分区数量为 3
       KAFKA_NUM_PARTITIONS: 3
+    volumes:
+      - /opt/kafka/data:/kafka/data
+    healthcheck:
+      test: ["CMD-SHELL", "kafka-broker-api-versions --bootstrap-server broker:29092 || exit 0"]  # 首次检查允许失败
+      start_period: 30s  # 给 Kafka 足够的启动时间
+      interval: 10s
+      timeout: 10s
+      retries: 6
   debezium:
     image: debezium/connect:2.7.3.Final
-    container_name:  debezium
-    restart: always
-    volumes:
-      - /opt/debezium/kafak/connect:/kafka/connect
+    container_name: debezium
+    hostname: debezium
+    restart: on-failure
+    # 如需要其他插件要提前复制到挂载目录并下载其他插件到挂载目录
+    # volumes:
+    #   - /opt/debezium/kafak/connect:/kafka/connect
     environment:
       # 指定 Kafka 连接器的配置
-      BOOTSTRAP_SERVERS: kafka:9092
+      BOOTSTRAP_SERVERS: "broker:29092"
+      REST_ADVERTISED_HOST_NAME: "0.0.0.0" # 允许外部访问
       # 指定消费者组id
       GROUP_ID: 1
       # 存储Debezium的配置信息到Kafka的Topic名，用于重启时加载配置
-      CONFIG_STORAGE_TOPIC: connect_configs
+      CONFIG_STORAGE_TOPIC: "connect_configs"
       # 存储消费者偏移量信息到Kafka的Topic名，用于记录消费者进度
-      OFFSET_STORAGE_TOPIC: connect_offsets
-      STATUS_STORAGE_TOPIC: connect_statuses
+      OFFSET_STORAGE_TOPIC: "connect_offsets"
+      STATUS_STORAGE_TOPIC: "connect_statuses"
       # 指定键值转换器，使用`Avro`来格式化、序列化键值数据
-      # KEY_CONVERTER: io.confluent.connect.avro.AvroConverter
-      # VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
-      # 指定`Avro`键值转换器的模式注册表地址，用于存储和管理`Avro`模式
-      # CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
-      # CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+      KEY_CONVERTER: "org.apache.kafka.connect.storage.StringConverter"
+      VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONFIG_STORAGE_REPLICATION_FACTOR: 1
+      OFFSET_STORAGE_REPLICATION_FACTOR: 1
+      STATUS_STORAGE_REPLICATION_FACTOR: 1
+      # PostgreSQL 连接器自动注册配置
+      CONNECT_CDC_CONNECTOR_POSTGRESQL_ENABLED: "true"
+      # 强制允许配置覆盖（避免权限问题）
+      CONNECTOR_CLIENT_CONFIG_OVERRIDE_POLICY: All
     depends_on:
-      - kafka
-      - postgres
+      broker:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
     ports:
       - 8083:8083
     networks:
-      - pub-network 
+      - pub-network
 networks:
   pub-network:
     name: pub-network

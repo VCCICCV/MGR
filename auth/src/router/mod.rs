@@ -1,10 +1,11 @@
-use axum::{http::{HeaderValue, Method}, Router};
-use server::setup_server_routers;
-use tower_http::cors::CorsLayer;
 
-use crate::server::state::AppState;
-pub mod server;
 pub mod auth_router;
+pub mod server_router;
+
+use axum::{http::{HeaderValue, Method}, Router};
+use server_router::setup_server_routers;
+use tower_http::cors::CorsLayer;
+use crate::server::state::AppState;
 /// 嵌套路由
 pub async fn setup_routers(state: AppState) -> Router {
     let router = Router::new()

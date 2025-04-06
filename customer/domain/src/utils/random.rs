@@ -1,7 +1,7 @@
 use rand::{ distributions::Alphanumeric, Rng };
 // 生成随机字符串
 pub fn generate_random_string(len: usize) -> String {
-    rand::thread_rng().sample_iter(&Alphanumeric).take(len).map(char::from).collect()
+    rand::rng().sample_iter(&Alphanumeric).take(len).map(char::from).collect()
 }
 // 生成随机字符串并加上前缀
 pub fn generate_random_string_with_prefix(prefix: &str) -> String {

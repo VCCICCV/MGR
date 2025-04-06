@@ -3,9 +3,44 @@ use axum::{
     http::{ header, HeaderValue, StatusCode },
     response::{ IntoResponse, Response },
 };
-use serde::{Deserialize, Serialize};
+use serde::{ Deserialize, Serialize };
 use uuid::Uuid;
 
+// #[derive(Debug, Serialize, Deserialize)]
+// // #[derive(Debug, Serialize, Deserialize)]
+// // #[derive(Debug, Serialize, Deserialize)]
+// // #[derive(Debug, Serialize, Deserialize)]
+// // #[derive(Debug, Serialize, Deserialize)]
+// pub struct ProfileResponse {
+//   pub username: String,
+//   pub email: String,
+//   pub is_active: bool,
+//   pub is_2fa: bool,
+//   pub create_at: DateTime<Utc>,
+// }
+#[derive(Debug, Serialize, Deserialize)]
+pub struct ForgetPasswordResponse {
+    pub expire_in: u64,
+    pub message: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct TokenResponse {
+    pub token_type: String,
+    pub access_token: String,
+    pub refresh_token: String,
+    pub expire_in: u64,
+}
+// impl TokenResponse {
+//   pub fn new(access_token: String, refresh_token: String, expire_in: u64) -> Self {
+//     Self {
+//       token_type: BEARER.to_string(),
+//       access_token,
+//       refresh_token,
+//       expire_in,
+//     }
+//   }
+// }
 #[derive(Debug, Serialize, Deserialize)]
 pub struct MessageResponse {
     pub message: String,
@@ -19,15 +54,19 @@ impl MessageResponse {
 }
 #[derive(Debug, Deserialize, Serialize)]
 pub struct RegisterResponse {
-    pub id: Uuid,
+    pub user_id: Uuid,
 }
-
+#[derive(Debug, Serialize, Deserialize)]
+pub struct ServerStatusResponse {
+    pub db: bool,
+    pub redis: bool,
+}
 /// 数据统一响应格式
 #[derive(Debug, Serialize, Default)]
 pub struct Res<T> {
     pub code: u16,
-    pub data: Option<T>,
     pub message: Option<String>,
+    pub data: Option<T>,
 }
 
 impl<T> IntoResponse for Res<T> where T: Serialize + Send + Sync + 'static {
@@ -58,8 +97,8 @@ impl<T: Serialize> Res<T> {
     pub fn with_success(data: T) -> Self {
         Self {
             code: StatusCode::OK.as_u16(),
-            data: Some(data),
             message: Some("Success".to_string()),
+            data: Some(data),
         }
     }
     // 失败消息
@@ -79,8 +118,8 @@ impl Res<EmptyData> {
     pub fn with_not_found() -> Self {
         Self {
             code: StatusCode::NOT_FOUND.as_u16(),
-            data: None,
             message: Some("Not Found".to_string()),
+            data: None,
         }
     }
 }

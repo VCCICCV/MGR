@@ -17,12 +17,12 @@ impl MigrationTrait for Migration {
                         .unique_key()
                         .auto_increment()
                         .primary_key()
-                        .comment("事件id")
+                        .comment("自增id")
                 )
                 .col(ColumnDef::new(Events::Source).text().not_null().comment("事件源"))
+                .col(ColumnDef::new(Events::EventId).text().not_null().comment("事件状态"))
                 .col(ColumnDef::new(Events::Payload).text().not_null().comment("载荷"))
-                .col(ColumnDef::new(Events::Status).text().not_null().comment("事件状态"))
-                .col(ColumnDef::new(Events::Type).text().not_null().comment("事件类型"))
+                .col(ColumnDef::new(Events::EventType).text().not_null().comment("事件类型"))
                 .col(ColumnDef::new(Events::Version).integer().not_null().comment("事件版本"))
                .to_owned(),
         ).await?;
@@ -31,7 +31,7 @@ impl MigrationTrait for Migration {
     }
 
     async fn down(&self, manager: &SchemaManager) -> Result<(), DbErr> {
-        // 删除订单表
+        // 删除事件
         manager.drop_table(Table::drop().table(Events::Table).to_owned()).await?;
         Ok(())
     }
@@ -40,16 +40,16 @@ impl MigrationTrait for Migration {
 #[derive(DeriveIden)]
 enum Events {
     Table,
-    // 事件id
+    // 自增id
     Id,
     // 事件源
     Source,
+    // 事件id
+    EventId,
     // 载荷、元数据
     Payload,
-    // 事件状态（已处理、失败、重试中等）
-    Status,
-    // 事件类型
-    Type,
+    // 事件类型（创建、更改）
+    EventType,
     // 事件版本
     Version,
 }

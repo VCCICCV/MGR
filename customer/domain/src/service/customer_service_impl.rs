@@ -1,5 +1,5 @@
 use std::sync::Arc;
-use axum::async_trait;
+
 use sea_orm::DatabaseTransaction;
 use tracing::info;
 use uuid::Uuid;
@@ -48,7 +48,6 @@ impl CustomerServiceImpl {
     }
 }
 // 这里是领域能力
-#[async_trait]
 impl CustomerService for CustomerServiceImpl {
     async fn refresh(&self, user_claims: &UserClaims) -> AppResult<TokenResponse> {
         // 检查session是否存在

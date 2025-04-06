@@ -1,31 +1,9 @@
 
-
 ## MGR（motor getting rusty，锈化动力）
 
 关于配置请查看`customer`模块，本项目集成了各个客户端配置，充分利用Rust类型系统 ，无论作为学习还是生产模板都是不错的选择
 
 > 注意：不建议使用虚拟清单强制依赖关系，例如常量在基础设施、Domain都可能用到，建议直接用文件夹分包，见`Product`模块
-
-## 快速开始
-安装sea-orm-cli
-```
-cargo add seaorm-cli
-```
-运行迁移
-```
-sea-orm-cli migrate up
-```
-删除所有表重新迁移
-```
-sea-orm-cli migrate fresh
-```
-
-启动应用
-
-```
-cargo run
-```
-
 
 ## 架构
 
@@ -45,7 +23,7 @@ cargo run
 
 ## 项目简介
 
-`MGR`是一个基于DDD清晰架构设计的web3D购车商城，采用Docker、Elasticsearch、Kubernetes等技术
+`MGR`是一个基于DDD清晰架构设计的web3D购车商城，采用Docker、Debezium、Postgres、kafka等技术，注重数据的最终一致性，通过发件箱模式实现事件驱动
 
 ## 架构
 
@@ -66,20 +44,39 @@ cargo run
   * event：事件定义，除了存储当前聚合的状态还可以根据过去发布的Event重建状态
 * Infrastructure：对应被动适配器
   * config：各种配置
-  * client：数据库、MQ客户端 
+  * client：数据库、MQ客户端
   * persistence：仓储实现
   * event_processing：由本应用生成的事件需要被分派
   * PO（Persistence Object）：持久化对象，有的叫DO（Data Object）数据对象，都是和表一 一对应的对象
 * shared：公共模块，有的项目叫common
+
 > 本项目仿造COLA架构实现：<https://github.com/alibaba/COLA>，client相关代码整合到`application`和`interface`
+>
+## 快速开始
 
-## 业务流程
+安装sea-orm-cli
 
-1. HTTP调用命令处理器或Application service
-2. 加载聚合根
-3. 执行业务逻辑
-4. 保存新的聚合根（使用repository将事务和聚合根都保存到数据库，）
-5. 
+```cmd
+cargo add seaorm-cli
+```
+
+运行迁移
+
+```cmd
+sea-orm-cli migrate up
+```
+
+删除所有表重新迁移
+
+```cmd
+sea-orm-cli migrate fresh
+```
+
+启动应用
+
+```cmd
+cargo run
+```
 
 ## 如何判断业务属于应用服务、聚合根还是无法归属于聚合根的领域服务？
 
@@ -161,7 +158,7 @@ cargo run
   * 退货原因设置
 * 营销
   * 优惠券列表
-  * 
+  *
 * 权限
   * 用户列表
   * 角色列表
@@ -178,4 +175,29 @@ cargo run
   * 电车是一个SPU
   * 油车是一个SPU
   * 机油是一个SPU
-  * 
+  *
+
+## CAP
+
+|特性|描述|典型系统|
+|-|-|-|
+|​C​​onsistency(一致性)|所有节点访问同一份最新数据|银行系统|
+|​A​​vailability(可用性)|每次请求都能获得响应（不保证最新数据）|CDN、AP型数据库|
+|​P​​artition tolerance(分区容错性)|系统在网络分区时仍能运行|分布式系统必备|
+
+### 三种可能组合
+
+1、CA系统：
+
+* ​单机数据库：MySQL、PostgreSQL（无网络分区时
+* 代价：无法应对网络故障，不适合分布式环境
+
+2、CP系统（本项目重点）
+
+* 网络分区时拒绝写入，保证数据一致性
+* 代价：可用性降低，适合分布式环境
+
+3、AP系统
+
+* 网络分区时返回旧数据，保证服务可用
+

@@ -1,4 +1,4 @@
-use axum::async_trait;
+
 use domain::{model::reponse::{ error::AppResult, response::{ SignInResponse, TokenResponse } }, utils::claim::UserClaims};
 use uuid::Uuid;
 use crate::dto::{
@@ -6,7 +6,6 @@ use crate::dto::{
     query::TokenInfoQuery,
 };
 // 这里也可以抽象为一个execute，但是需要每个命令都构建一个execute方法，这样冗余代码太多
-#[async_trait]
 pub trait CustomerUseCase: Sync + Send {
     async fn info_query_handler(
         &self,

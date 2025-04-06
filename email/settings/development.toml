@@ -5,7 +5,7 @@ profile = "development"
 log_level = "debug"
 [server]
 host = "127.0.0.1"
-port = 8082
+port = 8087
 [email]
 host = "smtp.qq.com"
 port = 587
@@ -14,19 +14,11 @@ password = "fqaoyqnaxjtsdcjb"
 from = "3108799306@qq.com"
 reply_to = "3108799306@qq.com"
 subject = "锈化动力商城验证码"
-[db]
-username = "postgres"
-password = "root123456"
-host = "127.0.0.1"
-port = 5_432
-database_name = "postgres"
 
 [redis]
 host = "127.0.0.1"
 port = 6_379
-[es]
-host = "127.0.0.1"
-port = 9_200
+
 [kafka]
 brokers = "127.0.0.1:9092"
 # 生产者配置
