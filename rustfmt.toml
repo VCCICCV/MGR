@@ -1,0 +1,51 @@
+# ==============================
+# 基本格式设置
+# ==============================
+max_width = 100                    # 代码行的最大宽度
+hard_tabs = false                  # 使用空格而不是制表符进行缩进
+tab_spaces = 4                     # 缩进使用 4 个空格
+newline_style = "Unix"             # 使用 Unix 风格的换行符（LF）
+use_small_heuristics = "Max"       # 使用更激进的代码布局启发式算法
+# ==============================
+# 函数和表达式格式
+# ==============================
+fn_call_width = 60                 # 函数调用参数的最大宽度
+attr_fn_like_width = 70            # 类函数属性的最大宽度
+struct_lit_width = 18              # 结构体字面量的最大宽度
+struct_variant_width = 35          # 结构体变体的最大宽度
+array_width = 60                   # 数组字面量的最大宽度
+chain_width = 60                   # 方法链的最大宽度
+single_line_if_else_max_width = 50 # 单行 if-else 表达式的最大宽度
+single_line_let_else_max_width = 50 # 单行 let-else 语句的最大宽度
+
+fn_params_layout = "Tall"          # 函数参数竖直排列
+match_arm_leading_pipes = "Never"  # match 分支前不使用前导管道符
+match_block_trailing_comma = true  # match 块中的模式允许尾随逗号
+# ==============================
+# 导入和模块
+# ==============================
+reorder_imports = true             # 按字母顺序重新排序导入语句
+reorder_modules = true             # 按字母顺序重新排序模块声明
+# ==============================
+# 其他格式选项
+# ==============================
+remove_nested_parens = true        # 移除嵌套的括号
+merge_derives = true               # 合并多个 derive 属性
+use_try_shorthand = true           # 使用问号操作符（?）代替 try!
+use_field_init_shorthand = true    # 使用字段初始化简写语法
+force_explicit_abi = true          # 强制显式指定外部函数的 ABI
+# ==============================
+# 数组和短表达式
+# ==============================
+short_array_element_width_threshold = 10  # 短数组元素的宽度阈值
+
+# ==============================
+# Rust 版本
+# ==============================
+edition = "2021"                   # 使用 Rust 2021 版本
+
+# ==============================
+# 调试和输出选项
+# ==============================
+disable_all_formatting = false     # 不禁用所有格式化
+print_misformatted_file_names = true  # 打印格式化不匹配的文件名
