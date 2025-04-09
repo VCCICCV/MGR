@@ -1,4 +1,4 @@
-## 事务发件箱模式
+## 事务发件箱模式（！！！已更新为使用kafka事务消息）
 
 <https://learn.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/subscribe-events#designing-atomicity-and-resiliency-when-publishing-to-the-event-bus>
 流程：

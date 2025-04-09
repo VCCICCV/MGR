@@ -11,6 +11,7 @@ path = "src/lib.rs"
 [dependencies]
 async-std = { version = "1", features = ["attributes", "tokio1"] }
 chrono = { version = "0.4", features = ["serde"] }
+sea-orm = { version = "1.1.8", features = ["sqlx-mysql", "chrono"] }
 # 读取env
 dotenvy = "0.15.7"
 [dependencies.sea-orm-migration]

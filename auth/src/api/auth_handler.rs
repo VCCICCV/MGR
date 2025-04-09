@@ -9,7 +9,7 @@ use crate::model::dto::request::{
     RegisterRequest,
     SetPasswordRequest,
 };
-use crate::model::dto::response::{ ForgetPasswordResponse, MessageResponse, RegisterResponse, Res };
+use crate::model::dto::response::{ ForgetPasswordResponse, LoginResponse, MessageResponse, RegisterResponse, Res };
 use crate::server::state::AppState;
 use crate::service;
 use anyhow::Result;
@@ -21,8 +21,7 @@ pub async fn register(
     match service::auth_service::register(state, req).await {
         Ok(user_id) => {
             info!("Successfully register user: {user_id}");
-            let resp = RegisterResponse { user_id: user_id };
-            Ok(Json(Res::with_success(resp)))
+            Ok(Json(Res::with_success(RegisterResponse { user_id: user_id })))
         }
         Err(e) => {
             warn!("Unsuccessfully register user: {e:?}");
@@ -31,24 +30,38 @@ pub async fn register(
     }
 }
 
-// pub async fn active(
-//     State(state): State<AppState>,
-//     Json(req): Json<ActiveRequest>
-// ) -> Result<Json<MessageResponse>> {
-//     info!("Active user with token: {req:?}.");
-//     todo!()
-//     // match service::user::active(&state, req).await {
-//     //     Ok(_) => {
-//     //         info!("User successfully activated.");
-//     //         Ok(Json(MessageResponse::new("User successfully activated.")))
-//     //     }
-//     //     Err(e) => {
-//     //         info!("The user activation operation was not successful: {e:?}");
-//     //         Err(e)
-//     //     }
-//     // }
-// }
-
+pub async fn active(
+    State(state): State<AppState>,
+    Json(req): Json<ActiveRequest>
+) -> Result<Json<Res<MessageResponse>>,Json<Res<String>>> {
+    info!("Active user with token: {req:?}.");
+    match service::auth_service::active(state, req).await {
+        Ok(_) => {
+            info!("User successfully activated.");
+            Ok(Json(Res::with_success(MessageResponse::new("User successfully activated"))))
+        }
+        Err(e) => {
+            info!("The user activation operation was not successful: {e:?}");
+            Err(Json(Res::with_err(&e.to_string())))
+        }
+    }
+}
+pub async fn login(
+    State(state): State<AppState>,
+    Json(req): Json<LoginRequest>
+) -> Result<Json<Res<LoginResponse>>,Json<Res<String>>> {
+    info!("Login user with request: {req:?}.");
+    match service::auth_service::login(state, req).await {
+        Ok(resp) => {
+            info!("Success login user_id: {resp:?}.");
+            Ok(Json(Res::with_success(resp)))
+        }
+        Err(e) => {
+            warn!("Unsuccessfully login user error: {e:?}.");
+            Err(Json(Res::with_err(&e.to_string())))
+        }
+    }
+}
 // pub async fn login(
 //     State(state): State<AppState>,
 //     Json(req): Json<LoginRequest>

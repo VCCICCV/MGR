@@ -1,6 +1,8 @@
-
 use sea_orm_migration::prelude::*;
+use crate::sea_orm::Statement;
+use chrono::Local;
 #[derive(DeriveMigrationName)]
+
 // 用户表
 pub struct Migration;
 #[async_trait::async_trait]
@@ -23,6 +25,7 @@ impl MigrationTrait for Migration {
                 .col(ColumnDef::new(User::Username).string().not_null().comment("用户名"))
                 .col(ColumnDef::new(User::Email).string().not_null().unique_key().comment("邮箱"))
                 .col(ColumnDef::new(User::Password).string().not_null().comment("密码"))
+                .col(ColumnDef::new(User::Domain).string().not_null().comment("头像地址"))
                 .col(ColumnDef::new(User::Avatar).string().comment("头像地址"))
                 .col(
                     ColumnDef::new(User::IsDeleted)
@@ -235,6 +238,38 @@ impl MigrationTrait for Migration {
                 )
                 .to_owned()
         ).await?;
+        // 插入默认角色
+        let db = manager.get_connection();
+        let now = Local::now().naive_local();
+
+        let roles = vec![
+            (1, "Admin", "系统管理员", now, Some(now)),
+            (2, "User", "普通用户", now, Some(now)),
+            (3, "System", "系统服务", now, Some(now))
+        ];
+
+        for (id, name, desc, create_time, update_time) in roles {
+            let sql = format!(
+                "INSERT INTO {} ({}, {}, {}, {}, {}) VALUES ($1, $2, $3, $4, $5)",
+                Role::Table.to_string(),
+                Role::RoleId.to_string(),
+                Role::RoleName.to_string(),
+                Role::RoleDescription.to_string(),
+                Role::CreateTime.to_string(),
+                Role::UpdateTime.to_string()
+            );
+
+            db.execute(
+                Statement::from_sql_and_values(manager.get_database_backend(), &sql, [
+                    id.into(),
+                    name.into(),
+                    desc.into(),
+                    create_time.into(),
+                    update_time.into(),
+                ])
+            ).await?;
+        }
+
         Ok(())
     }
 
@@ -248,6 +283,8 @@ impl MigrationTrait for Migration {
         // 删除权限表
         manager.drop_table(Table::drop().table(Permission::Table).to_owned()).await?;
         // 删除用户角色关联表
+        manager.drop_table(Table::drop().table(UserRole::Table).to_owned()).await?;
+        // 删除用户角色关联表
         manager.drop_table(Table::drop().table(RolePermission::Table).to_owned()).await?;
         Ok(())
     }
@@ -260,6 +297,7 @@ enum User {
     Username,
     Email,
     Password,
+    Domain,
     Avatar,
     IsDeleted,
     Is2fa,

@@ -8,6 +8,8 @@ use crate::client::ClientBuilder;
 
 // 环境变量前缀
 pub const ENV_PREFIX: &str = "APP";
+// kafka topic
+pub const AUTH_TOPIC: &str = "auth";
 // 配置
 pub static CONFIG: Lazy<crate::configure::AppConfig> = Lazy::new(||
     crate::configure::AppConfig::read(get_env_source(ENV_PREFIX)).unwrap()
@@ -23,9 +25,12 @@ pub static REDIS: Lazy<RedisClient> = Lazy::new(||
 
 // Authorization header
 pub const AUTHORIZATION: &str = "Authorization";
-
+// Bearer token
+pub const BEARER: &str = "Bearer";
 // 常量
 pub const NORMAL_USER: &str = "normal_user";
+// 注册过期事件
+pub const EXPIRE_REGISTER_CODE_SECS: Duration = Duration::from_secs(200);
 // 2FA验证码过期时间
 pub const EXPIRE_TWO_FACTOR_CODE_SECS: Duration = Duration::from_secs(200);
 // Bearer token过期时间

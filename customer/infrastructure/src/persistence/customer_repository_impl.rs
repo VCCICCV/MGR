@@ -9,7 +9,7 @@ use tracing::info;
 use uuid::Uuid;
 use crate::client::database::DatabaseClient;
 use crate::po::{ self, prelude::* };
-
+#[async_trait]
 pub struct CustomerRepositoryImpl {
     db: Arc<DatabaseClient>,
 }
@@ -21,7 +21,7 @@ impl CustomerRepositoryImpl {
     }
 }
 
-
+#[async_trait]
 impl CustomerRepository for CustomerRepositoryImpl {
     async fn update_status(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult {
         info!("update user is_deleted: {:?}", customer);

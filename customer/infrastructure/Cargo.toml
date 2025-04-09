@@ -49,3 +49,4 @@ tracing-subscriber = { workspace = true }
 tracing-log = { workspace = true }
 tracing-appender = { workspace = true }
 tracing-bunyan-formatter = { workspace = true }
+async_trait = { workspace = true }

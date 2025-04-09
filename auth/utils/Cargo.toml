@@ -1,8 +1,0 @@
-[package]
-name = "utils"
-authors.workspace = true
-edition.workspace = true
-publish.workspace = true
-version.workspace = true
-
-[dependencies]

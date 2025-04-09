@@ -9,6 +9,8 @@
 
 ![架构.drawio](README.assets/%E6%9E%B6%E6%9E%84.drawio.png)
 
+* AppState存储全局状态，Extension请求级注入
+
 ## 技术栈
 
 * Rust，采用DDD领域驱动设计，通过依赖倒置和依赖注入解耦
@@ -189,7 +191,7 @@ cargo run
 
 1、CA系统：
 
-* ​单机数据库：MySQL、PostgreSQL（无网络分区时
+* 单机数据库：MySQL、PostgreSQL（无网络分区时
 * 代价：无法应对网络故障，不适合分布式环境
 
 2、CP系统（本项目重点）

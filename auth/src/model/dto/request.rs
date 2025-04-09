@@ -9,8 +9,8 @@ pub struct RegisterRequest {
 }
 #[derive(Debug, Deserialize, Serialize)]
 pub struct ActiveRequest {
-    pub code: String,
     pub user_id: Uuid,
+    pub code: String,
 }
 #[derive(Debug, Deserialize, Serialize)]
 pub struct LoginRequest {
