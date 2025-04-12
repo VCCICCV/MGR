@@ -5,9 +5,14 @@
 
 ## 架构
 
-![架构.drawio](README.assets/%E6%9E%B6%E6%9E%84.drawio.png)
+![er.drawio](./README.assets/er.drawio.png)
 
 * AppState存储全局状态，Extension请求级注入
+* repository必须标记`Clone + Send + Sync + 'static`
+  * 想要在多线程间安全的被move所有权必须实现`Send`，使用Arc包装到AppState必须实现`Sync`共享状态并发，Axum使用要求注入的数据实现了`Clone`，`'static`表示这个仓储在整个生命周期都不被drop()
+* main函数中的代码越少，测试死区就越小
+* 一个领域应包含所有必须作为一个单一、原子操作的一部分一起改变的实体
+  * 数据库的原子操作要么全部成功要么全部失败，但是领域并不关心仓储实现细节，在领域服务层面的原子操作代表更改必须同时发生，也就是聚合根维护对象的一致状态
 
 ## 技术栈
 
@@ -19,7 +24,6 @@
 * Swagger-ui，整合OpenAPI
 * Tracing，日志追踪
 * JWT鉴权
-* TONIC，RPC通信
 
 ## 项目简介
 

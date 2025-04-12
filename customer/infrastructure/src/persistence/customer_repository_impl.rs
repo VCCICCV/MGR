@@ -1,15 +1,16 @@
 use std::sync::Arc;
 
+use async_trait::async_trait;
 use chrono::Utc;
 use domain::model::reponse::error::{ AppError, AppResult };
-use sea_orm::{ ActiveModelTrait, ColumnTrait, DatabaseTransaction, EntityTrait, QueryFilter, Set };
+use sea_orm::{ ActiveModelTrait, ColumnTrait, DatabaseTransaction, EntityTrait, QueryFilter, Set, TransactionTrait };
 use domain::model::aggregate::customer::{ Customer, CustomerBuilder };
 use domain::repositories::customer_repository::CustomerRepository;
 use tracing::info;
 use uuid::Uuid;
 use crate::client::database::DatabaseClient;
 use crate::po::{ self, prelude::* };
-#[async_trait]
+
 pub struct CustomerRepositoryImpl {
     db: Arc<DatabaseClient>,
 }
@@ -23,6 +24,9 @@ impl CustomerRepositoryImpl {
 
 #[async_trait]
 impl CustomerRepository for CustomerRepositoryImpl {
+    async fn begin_transaction(&self) -> AppResult<DatabaseTransaction> {
+        self.db.begin().await.map_err(Into::into)
+    }
     async fn update_status(&self, tx: &DatabaseTransaction, customer: Customer) -> AppResult {
         info!("update user is_deleted: {:?}", customer);
         (po::user::ActiveModel {

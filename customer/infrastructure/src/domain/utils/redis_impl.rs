@@ -1,6 +1,6 @@
 use crate::client::redis::RedisClientExt;
-use axum::async_trait;
 use std::time::Duration;
+use async_trait::async_trait;
 use domain::{ model::reponse::error::AppResult, utils::redis::RedisUtil };
 use std::sync::Arc;
 use crate::client::redis::RedisClient;

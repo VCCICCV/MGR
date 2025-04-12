@@ -39,4 +39,4 @@ reqwest = { workspace = true }
 
 # openssl = { workspace = true }
 once_cell = { workspace = true }
-async_trait = { workspace = true }
+async-trait = { workspace = true }
