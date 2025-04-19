@@ -1,0 +1,33 @@
+[package]
+authors.workspace = true
+edition.workspace = true
+name = "bin"
+publish.workspace = true
+version.workspace = true
+
+# 重构后分布式开发更便捷
+[[bin]]
+name = "admin"
+path = "src/admin.rs"
+[[bin]]
+name = "auth"
+path = "src/auth.rs"
+[[bin]]
+name = "order"
+path = "src/order.rs"
+
+[[bin]]
+name = "pay"
+path = "src/pay.rs"
+[[bin]]
+name = "product"
+path = "src/product.rs"
+[[bin]]
+name = "user"
+path = "src/user.rs"
+[dependencies]
+axum = {workspace = true}
+dotenvy = {workspace = true}
+initialize = {path = "../initialize"}
+tokio = {workspace = true}
+tracing = {workspace = true}

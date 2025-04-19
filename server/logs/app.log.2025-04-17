@@ -1,0 +1,1 @@
+{"v":0,"name":"app","msg":"The initialization of Tracing was successful","level":30,"hostname":"cci","pid":6948,"time":"2025-04-17T19:26:45.9726309Z","target":"admin","line":11,"file":"server\\bin\\src\\admin.rs"}

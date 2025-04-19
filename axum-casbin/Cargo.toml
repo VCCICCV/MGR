@@ -1,0 +1,41 @@
+[package]
+authors.workspace = true
+description = "Casbin axum access control middleware"
+edition.workspace = true
+name = "axum-casbin"
+publish.workspace = true
+version.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+async-std = {version = "1.13.0", default-features = false, optional = true}
+axum = "0.8.1"
+axum-test-helpers = "0.8"
+bytes = "1.8"
+casbin = {version = "2.10.1", default-features = false, features = ["incremental", "cached"]}
+futures = "0.3"
+http = "1.2.0"
+http-body = "1.0.1"
+http-body-util = "0.1.2"
+tokio = {version = "1.43.0", default-features = false, optional = true}
+tower = {version = "0.5", features = ["full"]}
+[features]
+default = ["runtime-tokio"]
+
+runtime-async-std = ["casbin/runtime-async-std", "async-std/std"]
+runtime-tokio = ["casbin/runtime-tokio", "tokio/sync"]
+
+[dev-dependencies]
+async-std = {version = "1.13.0", features = ["attributes"]}
+axum-test = "17.2.0"
+tokio = {version = "1.43.0", features = ["full"]}
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+
+[profile.dev]
+split-debuginfo = "unpacked"

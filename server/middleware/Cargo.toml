@@ -1,0 +1,13 @@
+[package]
+name = "middleware"
+authors.workspace = true
+edition.workspace = true
+publish.workspace = true
+version.workspace = true
+
+[dependencies]
+shared ={ path="../shared" }
+axum-casbin = { path = "../../axum-casbin" }
+
+axum = { workspace = true }
+headers = { workspace = true }

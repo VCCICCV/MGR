@@ -1,7 +1,7 @@
 [package]
+edition = "2024"
 name = "mgr"
 version = "0.1.0"
-edition = "2024"
 # 发布配置
 [profile.release]
 codegen-units = 1 # 使用单一代码生成单元，允许更多的跨模块优化
@@ -15,12 +15,39 @@ strip = true # 去除符号信息，进一步减小二进制大小
 # 开发配置
 [profile.dev]
 split-debuginfo = "unpacked"
-[dependencies]
+
+[workspace]
+# 工作区成员
+members = [
+  "migration",
+  "sea-orm-adapter",
+  "axum-casbin",
+  "server/bin",
+  "server/api",
+  "server/config",
+  "server/model",
+  "server/router",
+  "server/service",
+  "server/shared",
+  "server/initialize",
+  "server/middleware",
+]
+[workspace.package]
+authors = ["chaochen497@gmail.com"]
+edition = "2024"
+publish = false
+version = "0.1.0"
+[[bin]]
+name = "admin"
+path = "./src/bin/main.rs"
+# 工作区依赖
+[workspace.dependencies]
 # 异步运行时
 tokio = {version = "1", features = ["full"]}
 # 异步 WebSocket
 tokio-tungstenite = "0.26.2"
 # 异步 trait 支持
+async-std = {version = "1.13", default-features = false}
 async-trait = {version = "0.1", default-features = false}
 # =========================================
 # Web框架和中间件（底层 Web 框架）
@@ -30,7 +57,7 @@ axum = "0.8.3"
 # axum提取器
 axum-extra = {version = "0.10.1", features = ["typed-header"]}
 # 处理HTTP请求例如跨域处理
-tower-http = {version = "0.6.2", features = ["cors"]}
+tower-http = {version = "0.6.2", features = ["cors", "trace"]}
 # 处理HTTP请求例如解析请求体
 # hyper = { version = "1.4.1", features = ["full"] }
 # 数据校验,表单验证
@@ -39,6 +66,16 @@ validator = {version = "0.20.0", features = ["derive"]}
 mime = "0.3.17"
 # HTTP headers 处理库
 headers = "0.4"
+# =========================================
+# Casbin依赖
+# =========================================
+bytes = "1.8"
+casbin = {version = "2.10", default-features = false}
+futures = "0.3"
+http = "1.3.1"
+http-body = "1.0.1"
+http-body-util = "0.1.2"
+tower = {version = "0.5", features = ["full"]}
 # =========================================
 # JWT和身份认证
 # =========================================
@@ -55,12 +92,12 @@ sea-orm = {version = "1.1.8", features = [
   "macros",
 ]}
 # redis 客户端
-redis = {version = "0.29.2", features = ["aio", "tokio-comp"]}
+redis = {version = "0.29.2", features = ["aio", "tokio-comp", "cluster-async", "connection-manager"]}
 # 使用tokio实现的连接池，支持postgres、redis、redis cluster、rsmq等
 bb8 = "0.9.0"
 bb8-redis = "0.21.0"
 # Kafka
-rdkafka = { version = "0.37.0", features = ["cmake-build"] }
+rdkafka = {version = "0.37.0", features = ["cmake-build"]}
 # 异步 kafka 客户端
 # rdkafka-sys = "4.7.0"
 # ES
@@ -68,8 +105,9 @@ elasticsearch = "8.15.0-alpha.1"
 # =========================================
 # 测试相关依赖（用于测试）
 # =========================================
+#用#[automock]模拟测试
+mockall = "0.13.1"
 # axum 测试助手
-axum-test-helpers = "0.8"
 test-context = "0.4.1"
 # =========================================
 # 序列化和反序列化
@@ -143,7 +181,9 @@ sentry = "0.37.0"
 # 时间处理
 chrono = "0.4.40"
 # uuid
-uuid = {version = "1.16.0", features = ["v4", "serde"]}
+# uuid = {version = "1.16.0", features = ["v4", "serde"]}
+# uLid
+ulid = "1.2"
 # 密码哈希加盐
 password-hash = "0.5.0"
 # 密码哈希
@@ -158,6 +198,19 @@ strum = {version = "0.27.1", features = ["derive"]}
 reqwest = {version = "0.12.15", features = ["json", "multipart", "stream"]}
 # 编码
 base64 = "0.22.1"
+# 模拟数据
 fake = {version = "4.2.0", features = ["derive", "uuid", "chrono"]}
 # 随机数生成
 rand = "0.9.0"
+# 消息码
+ring = "0.17"
+# 并发缓存，比 dashmap 更高的吞吐量
+moka = {version = "0.12", features = ["sync"]}
+# MD5 哈希算法
+md-5 = "0.10"
+# 替代标准库的同步原语，锁性能高10倍+
+parking_lot = "0.12"
+# 十六进制编码/解码
+hex = "0.4"
+# 编码String
+urlencoding = "2.1.3"

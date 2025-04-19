@@ -14,22 +14,22 @@ password = "fqaoyqnaxjtsdcjb"
 from = "3108799306@qq.com"
 reply_to = "3108799306@qq.com"
 subject = "锈化动力商城验证码"
-[db]
-username = "postgres"
-password = "root123456"
-host = "127.0.0.1"
-port = 5_432
-database_name = "postgres"
+[database]
+url = "postgres://postgres:root123456@localhost:5432/mgr"
+max_connections = 10
+min_connections = 1
+connect_timeout = 30
+idle_timeout = 600
 
 [redis]
-host = "127.0.0.1"
-port = 6_379
+mode = "single"
+url = "redis://:@localhost:6379"
 [es]
 host = "127.0.0.1"
 port = 9_200
 [kafka]
 brokers = "127.0.0.1:9092"
-# 生产者配置
-producer = "test"
-# 消费者配置
-consumer = "test"
+[jwt]
+jwt_secret = "mgr"
+issuer = "http://145632.xyz"
+expire = 7200

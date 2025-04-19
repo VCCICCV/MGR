@@ -1,0 +1,34 @@
+[package]
+authors.workspace = true
+edition.workspace = true
+name = "initialize"
+publish.workspace = true
+version.workspace = true
+
+[dependencies]
+axum-casbin = {path = "../../axum-casbin"}
+config = {path = "../config"}
+shared = {path = "../shared"}
+middleware = {path = "../middleware"}
+sea-orm-adapter = {path="../../sea-orm-adapter"}
+service = {path="../service"}
+
+axum = {workspace = true}
+casbin = {workspace = true}
+log = {workspace = true}
+opentelemetry = {workspace = true}
+opentelemetry-otlp = {workspace = true}
+opentelemetry_sdk = {workspace = true}
+rdkafka = {workspace = true}
+redis = {workspace = true}
+sea-orm = {workspace = true}
+tower = {workspace = true}
+tower-http = {workspace = true}
+tracing = {workspace = true}
+tracing-appender = {workspace = true}
+tracing-bunyan-formatter = {workspace = true}
+tracing-log = {workspace = true}
+tracing-opentelemetry = {workspace = true}
+tracing-subscriber = {workspace = true}
+http= {workspace = true}
+chrono= {workspace = true}

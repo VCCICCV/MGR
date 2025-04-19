@@ -1,0 +1,6 @@
+p, admin, domain1, /pen/1, GET
+p, admin, domain1, /pen/2, GET
+p, admin, domain2, /book/1, GET
+p, admin, domain2, /book/2, GET
+g, alice, admin, domain1
+g, bob, admin, domain2

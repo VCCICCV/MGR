@@ -1,0 +1,29 @@
+[package]
+name = "config"
+authors.workspace = true
+edition.workspace = true
+publish.workspace = true
+version.workspace = true
+
+[dependencies]
+shared = {path = "../shared"}
+
+config = {workspace = true}
+log = {workspace = true}
+opentelemetry = {workspace = true}
+opentelemetry-otlp = {workspace = true}
+opentelemetry_sdk = {workspace = true}
+rdkafka = {workspace = true}
+redis = {workspace = true}
+sea-orm = {workspace = true}
+serde = {workspace = true}
+strum = {workspace = true}
+test-context = {workspace = true}
+tokio = {workspace = true}
+tracing = {workspace = true}
+tracing-bunyan-formatter = {workspace = true}
+tracing-subscriber = {workspace = true}
+tracing-appender = {workspace = true}
+tracing-log = {workspace = true}
+tracing-opentelemetry = {workspace = true}
+once_cell={workspace = true}

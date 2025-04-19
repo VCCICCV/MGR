@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="EMPTY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/axum-casbin/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/axum-casbin/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/axum-casbin/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/migration/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sea-orm-adapter/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sea-orm-adapter/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/server/api/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/server/bin/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/server/config/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/server/constant/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/server/initialize/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/server/model/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/server/router/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/server/service/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/server/shared/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/migration/target" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
