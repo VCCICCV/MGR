@@ -1,0 +1,11 @@
+mod sys_access_key_route;
+mod sys_authentication_route;
+mod sys_domain_route;
+mod sys_endpoint_route;
+mod sys_login_log_route;
+mod sys_menu_route;
+mod sys_operation_log_route;
+mod sys_organization_route;
+mod sys_role_route;
+mod sys_sandbox_route;
+mod sys_user_route;

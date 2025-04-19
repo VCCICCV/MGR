@@ -5,3 +5,5 @@ pub mod res;
 pub mod global;
 pub mod request_id;
 pub mod auth;
+
+pub use jsonwebtoken::Validation;

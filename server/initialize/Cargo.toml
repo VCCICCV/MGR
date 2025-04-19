@@ -8,13 +8,15 @@ version.workspace = true
 [dependencies]
 axum-casbin = {path = "../../axum-casbin"}
 config = {path = "../config"}
-shared = {path = "../shared"}
 middleware = {path = "../middleware"}
-sea-orm-adapter = {path="../../sea-orm-adapter"}
-service = {path="../service"}
+sea-orm-adapter = {path = "../../sea-orm-adapter"}
+service = {path = "../service"}
+shared = {path = "../shared"}
 
 axum = {workspace = true}
 casbin = {workspace = true}
+chrono = {workspace = true}
+http = {workspace = true}
 log = {workspace = true}
 opentelemetry = {workspace = true}
 opentelemetry-otlp = {workspace = true}
@@ -22,6 +24,7 @@ opentelemetry_sdk = {workspace = true}
 rdkafka = {workspace = true}
 redis = {workspace = true}
 sea-orm = {workspace = true}
+tokio = {workspace = true}
 tower = {workspace = true}
 tower-http = {workspace = true}
 tracing = {workspace = true}
@@ -30,5 +33,3 @@ tracing-bunyan-formatter = {workspace = true}
 tracing-log = {workspace = true}
 tracing-opentelemetry = {workspace = true}
 tracing-subscriber = {workspace = true}
-http= {workspace = true}
-chrono= {workspace = true}

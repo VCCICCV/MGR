@@ -1,3 +1,7 @@
+use async_trait::async_trait;
+use sea_orm::DatabaseTransaction;
+use shared::error::AppError;
+
 #[async_trait]
 pub trait TAccessKeyService {
     async fn find_paginated_access_keys(
@@ -78,7 +82,7 @@ impl TAccessKeyService for SysAccessKeyService {
 
         let total = query
             .clone()
-            .count(db.as_ref())
+            .count()
             .await
             .map_err(AppError::from)?;
 

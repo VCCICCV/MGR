@@ -1,0 +1,20 @@
+[package]
+name = "xdb"
+authors.workspace = true
+publish.workspace = true
+version.workspace = true
+edition.workspace = true
+description = "the rust binding for ip2region"
+
+[dependencies]
+once_cell = {workspace = true}
+tracing = {workspace = true}
+tracing-subscriber = {workspace = true}
+
+[dev-dependencies]
+criterion = "0.5.1"
+rand = "0.9.0"
+
+[[bench]]
+name = "search"
+harness = false

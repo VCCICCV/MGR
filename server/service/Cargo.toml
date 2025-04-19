@@ -1,8 +1,19 @@
 [package]
-name = "service"
 authors.workspace = true
 edition.workspace = true
+name = "service"
 publish.workspace = true
 version.workspace = true
 
 [dependencies]
+model = {path = "../model"}
+shared = {path="../shared"}
+
+async-trait = { workspace = true }
+tokio = { workspace = true}
+sea-orm = { workspace = true }
+thiserror = { workspace = true }
+ulid = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true}
+redis = { workspace = true }

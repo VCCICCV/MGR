@@ -1,3 +1,6 @@
+mod dto;
+mod errors;
+
 mod sys_access_key_service;
 mod sys_auth_service;
 mod sys_authorization_service;

@@ -120,16 +120,16 @@ impl<T: Serialize> Res<T> {
         }
     }
 }
-/// 由于没有序列化的数据，所以使用空结构体作为泛型参数
-#[derive(Debug, Serialize)]
-pub struct EmptyData;
-impl Res<EmptyData> {
-    // 404
-    pub fn with_not_found() -> Self {
-        Self {
-            code: StatusCode::NOT_FOUND.as_u16(),
-            message: Some("Not Found".to_string()),
-            data: None,
-        }
-    }
-}
+// /// 由于没有序列化的数据，所以使用空结构体作为泛型参数
+// #[derive(Debug, Serialize)]
+// pub struct EmptyData;
+// impl Res<EmptyData> {
+//     // 404
+//     pub fn with_not_found() -> Self {
+//         Self {
+//             code: StatusCode::NOT_FOUND.as_u16(),
+//             message: Some("Not Found".to_string()),
+//             data: None,
+//         }
+//     }
+// }

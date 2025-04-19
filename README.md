@@ -35,7 +35,7 @@ cargo run --bin product
 > 减少实体转换
 
 ```cmd
-sea-orm-cli generate entity -o src/model/entity --with-serde both
+sea-orm-cli generate entity -o server/model/src/entities --with-serde both
 ```
 
 ## 操作规约

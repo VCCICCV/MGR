@@ -1,8 +1,15 @@
 [package]
-name = "model"
 authors.workspace = true
 edition.workspace = true
+name = "model"
 publish.workspace = true
 version.workspace = true
 
 [dependencies]
+shared = {path = "../shared"}
+
+chrono = {workspace = true}
+derive-new = {workspace = true}
+sea-orm = {workspace = true}
+serde = {workspace = true}
+validator = {workspace = true}

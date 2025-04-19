@@ -1,8 +1,16 @@
 [package]
-name = "api"
 authors.workspace = true
 edition.workspace = true
+name = "api"
 publish.workspace = true
 version.workspace = true
 
 [dependencies]
+axum-casbin = {path = "../../axum-casbin"}
+service = {path = "../service"}
+shared = {path = "../shared"}
+xdb = {path = "../../xdb"}
+
+axum = {workspace = true}
+axum-extra = {workspace = true}
+headers = {workspace = true}

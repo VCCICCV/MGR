@@ -1,8 +1,12 @@
 [package]
-name = "router"
 authors.workspace = true
 edition.workspace = true
+name = "router"
 publish.workspace = true
 version.workspace = true
 
 [dependencies]
+api = {path = "../api"}
+shared = {path = "../shared"}
+
+axum = {workspace = true}
