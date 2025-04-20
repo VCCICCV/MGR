@@ -1,15 +1,9 @@
+use service::admin::{sys_access_key_service::api_key_validate_listener, sys_auth_service::{auth_login_listener, jwt_created_listener}, sys_operation_log_service::sys_operation_log_listener};
 use shared::{ constant::SystemEvent, global };
-use service::admin::{
-    api_key_validate_listener,
-    auth_login_listener,
-    jwt_created_listener,
-    sys_operation_log_listener,
-};
 
 pub async fn initialize_event_channel() {
-    // 注册全局事件监听
     global::register_event_listeners(
-        Box::new(|rx| Box::pin(global::jwt_created_listener(rx))),
+        Box::new(|rx| Box::pin(jwt_created_listener(rx))),
         &[
             (
                 SystemEvent::AuthLoggedInEvent.to_string(),

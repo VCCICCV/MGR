@@ -5,8 +5,6 @@ use jsonwebtoken::{decode, encode, Header, TokenData};
 
 use ulid::Ulid;
 
-use crate::{auth::Claims, global};
-
 #[derive(Debug)]
 pub enum JwtError {
     KeysNotInitialized,
@@ -28,6 +26,8 @@ impl fmt::Display for JwtError {
 
 impl Error for JwtError {}
 use serde::Deserialize;
+
+use crate::{global, web::auth::Claims};
 
 #[derive(Deserialize, Debug, Clone)]
 pub struct JwtConfig {

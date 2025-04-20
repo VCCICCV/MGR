@@ -1,13 +1,9 @@
 use async_trait::async_trait;
+use model::admin::request::sys_organization::OrganizationPageRequest;
 use sea_orm::{ColumnTrait, Condition, EntityTrait, PaginatorTrait, QueryFilter};
-use server_core::web::{error::AppError, page::PaginatedData};
-use server_model::admin::{
-    entities::{
-        prelude::SysOrganization,
-        sys_organization::{Column as SysOrganizationColumn, Model as SysOrganizationModel},
-    },
-    input::OrganizationPageRequest,
-};
+use shared::web::{error::AppError, page::PaginatedData};
+use model::entities::prelude::SysOrganization;
+use model::entities::sys_organization;
 
 use crate::helper::db_helper;
 
@@ -16,7 +12,7 @@ pub trait TOrganizationService {
     async fn find_paginated_organizations(
         &self,
         params: OrganizationPageRequest,
-    ) -> Result<PaginatedData<SysOrganizationModel>, AppError>;
+    ) -> Result<PaginatedData<sys_organization::Model>, AppError>;
 }
 
 pub struct SysOrganizationService;
@@ -26,15 +22,15 @@ impl TOrganizationService for SysOrganizationService {
     async fn find_paginated_organizations(
         &self,
         params: OrganizationPageRequest,
-    ) -> Result<PaginatedData<SysOrganizationModel>, AppError> {
+    ) -> Result<PaginatedData<sys_organization::Model>, AppError> {
         let db = db_helper::get_db_connection().await?;
         let mut query = SysOrganization::find();
 
         if let Some(ref keywords) = params.keywords {
             let condition = Condition::any()
-                .add(SysOrganizationColumn::Code.contains(keywords))
-                .add(SysOrganizationColumn::Name.contains(keywords))
-                .add(SysOrganizationColumn::Description.contains(keywords));
+                .add(sys_organization::Column::Code.contains(keywords))
+                .add(sys_organization::Column::Name.contains(keywords))
+                .add(sys_organization::Column::Description.contains(keywords));
             query = query.filter(condition);
         }
 

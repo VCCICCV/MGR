@@ -1,5 +1,5 @@
 use serde::{Deserialize, Serialize};
-use shared::res::PageRequest;
+use shared::web::page::PageRequest;
 use validator::Validate;
 
 #[derive(Debug, Serialize, Deserialize)]

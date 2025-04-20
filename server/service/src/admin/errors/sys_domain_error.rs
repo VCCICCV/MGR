@@ -1,4 +1,4 @@
-use server_core::web::error::{ApiError, AppError};
+use shared::web::error::{ApiError, AppError};
 use thiserror::Error;
 
 #[derive(Error, Debug)]
@@ -12,7 +12,6 @@ pub enum DomainError {
     #[error("Cannot modify or delete built-in domain")]
     BuiltInDomain,
 }
-
 impl ApiError for DomainError {
     fn code(&self) -> u16 {
         match self {

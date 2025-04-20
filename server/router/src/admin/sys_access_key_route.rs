@@ -1,8 +1,10 @@
+use api::admin::sys_access_key_api::SysAccessKeyApi;
 use axum::{
     http::Method,
     routing::{delete, get, post},
     Router,
 };
+use shared::global::{add_route, RouteInfo};
 
 
 pub struct SysAccessKeyRouter;

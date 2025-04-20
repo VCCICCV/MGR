@@ -2,32 +2,25 @@ use std::collections::BTreeMap;
 
 use async_trait::async_trait;
 use chrono::Local;
+use model::admin::request::sys_endpoint::EndpointPageRequest;
+use model::admin::response::sys_endpoint::EndpointTree;
 use sea_orm::{
     ColumnTrait, Condition, DatabaseConnection, DeleteResult, EntityTrait, IntoActiveModel,
     PaginatorTrait, QueryFilter, Set,
 };
-use server_core::web::{error::AppError, page::PaginatedData};
-use server_model::admin::{
-    entities::{
-        prelude::SysEndpoint,
-        sys_endpoint::{
-            ActiveModel as SysEndpointActiveModel, Column as SysEndpointColumn,
-            Model as SysEndpointModel,
-        },
-    },
-    input::EndpointPageRequest,
-    output::EndpointTree,
-};
-
+use shared::web::error::AppError;
+use shared::web::page::PaginatedData;
+use model::entities::prelude::SysEndpoint;
+use model::entities::sys_endpoint;
 use crate::helper::db_helper;
 
 #[async_trait]
 pub trait TEndpointService {
-    async fn sync_endpoints(&self, endpoints: Vec<SysEndpointModel>) -> Result<(), AppError>;
+    async fn sync_endpoints(&self, endpoints: Vec<sys_endpoint::Model>) -> Result<(), AppError>;
     async fn find_paginated_endpoints(
         &self,
         params: EndpointPageRequest,
-    ) -> Result<PaginatedData<SysEndpointModel>, AppError>;
+    ) -> Result<PaginatedData<sys_endpoint::Model>, AppError>;
 
     async fn tree_endpoint(&self) -> Result<Vec<EndpointTree>, AppError>;
 }
@@ -38,13 +31,13 @@ impl SysEndpointService {
     async fn batch_update_endpoints(
         &self,
         db: &DatabaseConnection,
-        endpoints: Vec<SysEndpointModel>,
+        endpoints: Vec<sys_endpoint::Model>,
     ) -> Result<(), AppError> {
         let now = Local::now().naive_local();
-        let active_models: Vec<SysEndpointActiveModel> = endpoints
+        let active_models: Vec<sys_endpoint::ActiveModel> = endpoints
             .into_iter()
             .map(|endpoint| {
-                let mut active_model: SysEndpointActiveModel = endpoint.into_active_model();
+                let mut active_model: sys_endpoint::ActiveModel = endpoint.into_active_model();
                 active_model.updated_at = Set(Some(now));
                 active_model
             })
@@ -52,15 +45,15 @@ impl SysEndpointService {
 
         SysEndpoint::insert_many(active_models)
             .on_conflict(
-                sea_orm::sea_query::OnConflict::column(SysEndpointColumn::Id)
+                sea_orm::sea_query::OnConflict::column(sys_endpoint::Column::Id)
                     .update_columns([
-                        SysEndpointColumn::Path,
-                        SysEndpointColumn::Method,
-                        SysEndpointColumn::Action,
-                        SysEndpointColumn::Resource,
-                        SysEndpointColumn::Controller,
-                        SysEndpointColumn::Summary,
-                        SysEndpointColumn::UpdatedAt,
+                        sys_endpoint::Column::Path,
+                        sys_endpoint::Column::Method,
+                        sys_endpoint::Column::Action,
+                        sys_endpoint::Column::Resource,
+                        sys_endpoint::Column::Controller,
+                        sys_endpoint::Column::Summary,
+                        sys_endpoint::Column::UpdatedAt,
                     ])
                     .to_owned(),
             )
@@ -77,13 +70,13 @@ impl SysEndpointService {
         endpoints_to_remove: Vec<String>,
     ) -> Result<DeleteResult, AppError> {
         SysEndpoint::delete_many()
-            .filter(SysEndpointColumn::Id.is_in(endpoints_to_remove))
+            .filter(sys_endpoint::Column::Id.is_in(endpoints_to_remove))
             .exec(db)
             .await
             .map_err(AppError::from)
     }
 
-    fn create_endpoint_tree(&self, endpoints: &[SysEndpointModel]) -> Vec<EndpointTree> {
+    fn create_endpoint_tree(&self, endpoints: &[sys_endpoint::Model]) -> Vec<EndpointTree> {
         let mut controller_map: BTreeMap<String, EndpointTree> = BTreeMap::new();
 
         for endpoint in endpoints {
@@ -123,7 +116,7 @@ impl SysEndpointService {
 
 #[async_trait]
 impl TEndpointService for SysEndpointService {
-    async fn sync_endpoints(&self, new_endpoints: Vec<SysEndpointModel>) -> Result<(), AppError> {
+    async fn sync_endpoints(&self, new_endpoints: Vec<sys_endpoint::Model>) -> Result<(), AppError> {
         let db = db_helper::get_db_connection().await?;
 
         // 获取数据库中现有的所有端点
@@ -162,15 +155,15 @@ impl TEndpointService for SysEndpointService {
     async fn find_paginated_endpoints(
         &self,
         params: EndpointPageRequest,
-    ) -> Result<PaginatedData<SysEndpointModel>, AppError> {
+    ) -> Result<PaginatedData<sys_endpoint::Model>, AppError> {
         let db = db_helper::get_db_connection().await?;
         let mut query = SysEndpoint::find();
 
         if let Some(ref keywords) = params.keywords {
             let condition = Condition::any()
-                .add(SysEndpointColumn::Path.contains(keywords))
-                .add(SysEndpointColumn::Method.contains(keywords))
-                .add(SysEndpointColumn::Controller.contains(keywords));
+                .add(sys_endpoint::Column::Path.contains(keywords))
+                .add(sys_endpoint::Column::Method.contains(keywords))
+                .add(sys_endpoint::Column::Controller.contains(keywords));
             query = query.filter(condition);
         }
 

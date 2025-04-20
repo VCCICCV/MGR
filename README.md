@@ -1,5 +1,13 @@
 # MGR
 
+## 感谢
+
+没有他们的指导就没有这个项目
+
+* 感谢微信公众号“育儿之家YEZJ”作者对项目的指导
+* 感谢“eventually.rs“作者Danilo Cianfrone对项目的指导
+* 感谢“cassie_axum”作者对项目的指导
+
 ## 快速开始
 
 安装sea-orm-cli
@@ -8,7 +16,7 @@
 cargo add seaorm-cli
 ```
 
-运行迁移
+运行迁移（迁移出现问题请删除target目录）
 
 ```cmd
 sea-orm-cli migrate up
@@ -66,6 +74,11 @@ sea-orm-cli generate entity -o server/model/src/entities --with-serde both
 * 高内聚：新增功能无需修改全局错误
 * 清晰语义
 
+为什么不使用AppState？
+
+* 每一层都需要传递，容易造成循环依赖，不希望像go一样到处传ctx
+* 减少对框架的依赖
+
 ## 服务划分
 
 * 用户服务
@@ -77,3 +90,4 @@ sea-orm-cli generate entity -o server/model/src/entities --with-serde both
 * OMS（Order Management System，订单管理系统）​​：
 * SYS（System Management，系统管理平台）​​：
 * UMS（User Management System，用户管理系统）​​：认证、用户画像等 -->
+## 性能优化

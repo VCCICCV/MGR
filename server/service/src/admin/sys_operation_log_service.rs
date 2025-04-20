@@ -1,23 +1,23 @@
 use std::any::Any;
 
 use async_trait::async_trait;
+use model::admin::request::sys_operation_log::OperationLogPageRequest;
 use sea_orm::{
-    ActiveModelTrait, ColumnTrait, Condition, EntityTrait, PaginatorTrait, QueryFilter, QueryOrder,
+    ActiveModelTrait,
+    ColumnTrait,
+    Condition,
+    EntityTrait,
+    PaginatorTrait,
+    QueryFilter,
+    QueryOrder,
     Set,
 };
-use server_core::web::{error::AppError, page::PaginatedData};
-use server_global::{global::OperationLogContext, project_error};
-use server_model::admin::{
-    entities::{
-        prelude::SysOperationLog,
-        sys_operation_log::{
-            ActiveModel as SysOperationLogActiveModel, Column as SysOperationLogColumn,
-            Model as SysOperationLogModel,
-        },
-    },
-    input::OperationLogPageRequest,
-};
-use tracing::instrument;
+use model::entities::prelude::SysOperationLog;
+use model::entities::sys_operation_log;
+use shared::global::OperationLogContext;
+use shared::web::error::AppError;
+use shared::web::page::PaginatedData;
+use tracing::{ error, instrument };
 use ulid::Ulid;
 
 use crate::helper::db_helper;
@@ -26,8 +26,8 @@ use crate::helper::db_helper;
 pub trait TOperationLogService {
     async fn find_paginated_operation_logs(
         &self,
-        params: OperationLogPageRequest,
-    ) -> Result<PaginatedData<SysOperationLogModel>, AppError>;
+        params: OperationLogPageRequest
+    ) -> Result<PaginatedData<sys_operation_log::Model>, AppError>;
 
     async fn handle_operation_log_event(event: &OperationLogContext) -> Result<(), AppError>;
 }
@@ -38,32 +38,27 @@ pub struct SysOperationLogService;
 impl TOperationLogService for SysOperationLogService {
     async fn find_paginated_operation_logs(
         &self,
-        params: OperationLogPageRequest,
-    ) -> Result<PaginatedData<SysOperationLogModel>, AppError> {
+        params: OperationLogPageRequest
+    ) -> Result<PaginatedData<sys_operation_log::Model>, AppError> {
         let db = db_helper::get_db_connection().await?;
         let mut query = SysOperationLog::find();
 
         if let Some(ref keywords) = params.keywords {
             let condition = Condition::any()
-                .add(SysOperationLogColumn::Domain.contains(keywords))
-                .add(SysOperationLogColumn::Username.contains(keywords))
-                .add(SysOperationLogColumn::Ip.contains(keywords))
-                .add(SysOperationLogColumn::UserAgent.contains(keywords));
+                .add(sys_operation_log::Column::Domain.contains(keywords))
+                .add(sys_operation_log::Column::Username.contains(keywords))
+                .add(sys_operation_log::Column::Ip.contains(keywords))
+                .add(sys_operation_log::Column::UserAgent.contains(keywords));
             query = query.filter(condition);
         }
 
-        query = query.order_by_desc(SysOperationLogColumn::CreatedAt);
+        query = query.order_by_desc(sys_operation_log::Column::CreatedAt);
 
-        let total = query
-            .clone()
-            .count(db.as_ref())
-            .await
-            .map_err(AppError::from)?;
+        let total = query.clone().count(db.as_ref()).await.map_err(AppError::from)?;
 
         let paginator = query.paginate(db.as_ref(), params.page_details.size);
         let records = paginator
-            .fetch_page(params.page_details.current - 1)
-            .await
+            .fetch_page(params.page_details.current - 1).await
             .map_err(AppError::from)?;
 
         Ok(PaginatedData {
@@ -77,7 +72,7 @@ impl TOperationLogService for SysOperationLogService {
     async fn handle_operation_log_event(event: &OperationLogContext) -> Result<(), AppError> {
         let db = db_helper::get_db_connection().await?;
 
-        SysOperationLogActiveModel {
+        (sys_operation_log::ActiveModel {
             id: Set(Ulid::new().to_string()),
             user_id: Set(event.user_id.clone().unwrap_or_default()),
             username: Set(event.username.clone().unwrap_or_default()),
@@ -96,10 +91,9 @@ impl TOperationLogService for SysOperationLogService {
             end_time: Set(event.end_time),
             duration: Set(event.duration),
             created_at: Set(event.created_at),
-        }
-        .insert(db.as_ref())
-        .await
-        .map_err(AppError::from)?;
+        })
+            .insert(db.as_ref()).await
+            .map_err(AppError::from)?;
 
         Ok(())
     }
@@ -107,17 +101,18 @@ impl TOperationLogService for SysOperationLogService {
 
 #[instrument(skip(rx))]
 pub async fn sys_operation_log_listener(
-    mut rx: tokio::sync::mpsc::UnboundedReceiver<Box<dyn Any + Send>>,
+    mut rx: tokio::sync::mpsc::UnboundedReceiver<Box<dyn Any + Send>>
 ) {
     while let Some(event) = rx.recv().await {
         if let Some(operation_log_context) = event.downcast_ref::<OperationLogContext>() {
-            if let Err(e) =
-                SysOperationLogService::handle_operation_log_event(operation_log_context).await
+            if
+                let Err(e) =
+                    SysOperationLogService::handle_operation_log_event(operation_log_context).await
             {
-                project_error!("Failed to handle operation log event: {:?}", e);
+                error!("Failed to handle operation log event: {:?}", e);
             }
         } else {
-            project_error!("Received unknown event type in operation log listener");
+            error!("Received unknown event type in operation log listener");
         }
     }
 }

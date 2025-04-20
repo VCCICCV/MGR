@@ -1,10 +1,10 @@
+use api::admin::sys_authentication_api::SysAuthenticationApi;
 use axum::{
     http::Method,
     routing::{get, post},
     Router,
 };
-use server_api::admin::SysAuthenticationApi;
-use server_global::global::{add_route, RouteInfo};
+use shared::global::{add_route, RouteInfo};
 
 pub struct SysAuthenticationRouter;
 

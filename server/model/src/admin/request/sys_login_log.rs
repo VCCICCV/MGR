@@ -1,6 +1,5 @@
 use serde::{Deserialize, Serialize};
-use shared::res::PageRequest;
-
+use shared::web::page::PageRequest;
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LoginLogPageRequest {
     #[serde(flatten)]

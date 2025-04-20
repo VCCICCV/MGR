@@ -1,3 +1,4 @@
+use api::admin::sys_user_api::SysUserApi;
 use axum::{
     http::Method,
     routing::{delete, get, post, put},

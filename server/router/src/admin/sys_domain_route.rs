@@ -1,10 +1,11 @@
+use api::admin::sys_domain_api::SysDomainApi;
 use axum::{
     http::Method,
     routing::{delete, get, post, put},
     Router,
 };
-use server_api::admin::SysDomainApi;
-use server_global::global::{add_route, RouteInfo};
+use shared::global::{add_route, RouteInfo};
+
 
 pub struct SysDomainRouter;
 

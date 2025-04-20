@@ -1,38 +1,24 @@
 use std::sync::Arc;
 
-use axum::{ body::Body, response::IntoResponse, Extension, Router };
+use axum::{ body::Body, http::StatusCode, response::IntoResponse, Extension, Router };
 use axum_casbin::CasbinAxumLayer;
-use config::AppConfig;
-use http::{ Request, StatusCode };
-use middleware::jwt::jwt_auth_middleware;
-use shared::{
-    constant::Audience,
-    global::{ clear_routes, get_collected_routes, get_config },
-    request_id::{ RequestId, RequestIdLayer },
-    utils::{
-        self,
-        add_key,
-        api_key_middleware,
-        protect_route,
-        ApiKeySource,
-        ApiKeyValidation,
-        ComplexApiKeyConfig,
-        SimpleApiKeyConfig,
-        ValidatorType,
-    },
-};
-use tower_http::trace::TraceLayer;
-use tracing::{ error, info, info_span };
 use chrono::Local;
-use crate::init_casbin::initialize_casbin;
+use http::Request;
 
-// 服务实例
+use middleware::jwt::jwt_auth_middleware;
+use shared::{constant::Audience, global::{clear_routes, get_collected_routes, get_config}, utils::{api_key_middleware, protect_route, ApiKeyValidation, ComplexApiKeyConfig}, web::request_id::{RequestId, RequestIdLayer}};
+use tower_http::trace::TraceLayer;
+use tracing::{error, info, info_span};
+
+use crate::casbin_initialization::initialize_casbin;
+
+
 #[derive(Clone)]
 pub enum Services<T: Send + Sync + 'static> {
     None(std::marker::PhantomData<T>),
     Single(Arc<T>),
 }
-// 动态添加中间件
+
 async fn apply_layers<T: Send + Sync + 'static>(
     router: Router,
     services: Services<T>,
@@ -42,12 +28,12 @@ async fn apply_layers<T: Send + Sync + 'static>(
     casbin: Option<CasbinAxumLayer>,
     audience: Audience
 ) -> Router {
+    //  添加服务扩展层
     let mut router = match services {
         Services::None(_) => router,
         Services::Single(service) => router.layer(Extension(service)),
     };
-
-    // 添加追中间件
+    // 添加请求追踪层
     router = router
         .layer(
             TraceLayer::new_for_http().make_span_with(|request: &Request<Body>| {
@@ -57,7 +43,7 @@ async fn apply_layers<T: Send + Sync + 'static>(
                     .map(ToString::to_string)
                     .unwrap_or_else(|| "unknown".into());
                 info_span!(
-                    "[mgr] >>>>>> request",
+                    "[soybean-admin-rust] >>>>>> request",
                     id = %request_id,
                     method = %request.method(),
                     uri = %request.uri(),
@@ -66,14 +52,12 @@ async fn apply_layers<T: Send + Sync + 'static>(
         )
         .layer(RequestIdLayer);
 
-    // 需要验证则添加casbin
     if need_casbin {
         if let Some(casbin) = casbin {
             router = router.layer(Extension(casbin.clone())).layer(casbin);
         }
     }
 
-    // 验证请求
     if let Some(validation) = api_validation {
         router = router.layer(
             axum::middleware::from_fn(move |req, next| {
@@ -82,7 +66,6 @@ async fn apply_layers<T: Send + Sync + 'static>(
         );
     }
 
-    // 需要鉴权添加jwt中间件
     if need_auth {
         router = router.layer(
             axum::middleware::from_fn(move |req, next| {
@@ -93,37 +76,50 @@ async fn apply_layers<T: Send + Sync + 'static>(
 
     router
 }
-// 初始化adming router
+
 pub async fn initialize_admin_router() -> Router {
-    // 清除路由
+    // 清空旧路由
     clear_routes().await;
     info!("Initializing admin router");
 
-    // 加载配置
-    let app_config = get_config::<AppConfig>().await.unwrap();
-    // 初始化casbin
+    let app_config = get_config::<Config>().await.unwrap();
     let casbin_layer = initialize_casbin(
-        "../../static/casbin/rbac_with_domains_model.conf",
+        "server/resources/rbac_model.conf",
         app_config.database.url.as_str()
-    ).await.expect("Initializing casbin error");
+    ).await.unwrap();
 
     // 初始化验证器
-    utils::init_validators(None).await;
+    // 根据是否配置了 Redis 来选择 nonce 存储实现
+    let nonce_store_factory = if
+        let Some(_) = crate::redis_initialization::get_primary_redis().await
+    {
+        // 如果 Redis 可用，使用 Redis 作为 nonce 存储
+        info!("Using Redis for nonce storage");
+        server_core::sign::create_redis_nonce_store_factory("api_key")
+    } else {
+        // 否则使用内存存储
+        info!("Using memory for nonce storage");
+        server_core::sign::create_memory_nonce_store_factory()
+    };
 
-    // 简单验证
+    server_core::sign::init_validators_with_nonce_store(None, nonce_store_factory.clone()).await;
+
     let simple_validation = {
-        let validator = utils::get_simple_validator().await;
-        utils::add_key(ValidatorType::Simple, "test-api-key", None).await;
+        let validator = server_core::sign::get_simple_validator().await;
+        server_core::sign::add_key(ValidatorType::Simple, "test-api-key", None).await;
         ApiKeyValidation::Simple(validator, SimpleApiKeyConfig {
             source: ApiKeySource::Header,
             key_name: "x-api-key".to_string(),
         })
     };
 
-    // 复杂验证
     let complex_validation = {
         let validator = utils::get_complex_validator().await;
-        utils::add_key(ValidatorType::Complex, "test-access-key", Some("test-secret-key")).await;
+        server_core::sign::add_key(
+            ValidatorType::Complex,
+            "test-access-key",
+            Some("test-secret-key")
+        ).await;
         ApiKeyValidation::Complex(validator, ComplexApiKeyConfig {
             key_name: "AccessKeyId".to_string(),
             timestamp_name: "t".to_string(),
@@ -138,11 +134,11 @@ pub async fn initialize_admin_router() -> Router {
 
     let audience = Audience::ManagementPlatform;
     let casbin = Some(casbin_layer);
-    // 路由
+    // 合并子路由
     let mut app = Router::new();
 
-    // 合并路由声明宏
     macro_rules! merge_router {
+        // 无服务路由
         ($router:expr, None, $need_casbin:expr, $need_auth:expr, $api_validation:expr) => {
             app = app.merge(
                 apply_layers(
@@ -157,6 +153,7 @@ pub async fn initialize_admin_router() -> Router {
                 .await,
             );
         };
+        // 带服务路由
         ($router:expr, $service:expr, $need_casbin:expr, $need_auth:expr, $api_validation:expr) => {
             app = app.merge(
                 apply_layers(
@@ -173,7 +170,6 @@ pub async fn initialize_admin_router() -> Router {
         };
     }
 
-    // 鉴权服务
     merge_router!(
         SysAuthenticationRouter::init_authentication_router().await,
         SysAuthService,
@@ -182,12 +178,10 @@ pub async fn initialize_admin_router() -> Router {
         None
     );
 
-    // 鉴权路由
     let auth_router = SysAuthenticationRouter::init_authorization_router().await
         .layer(Extension(Arc::new(SysAuthService) as Arc<SysAuthService>))
         .layer(Extension(Arc::new(SysAuthorizationService) as Arc<SysAuthorizationService>));
 
-    // 路由配置
     let auth_router = apply_layers(
         auth_router,
         Services::None(std::marker::PhantomData::<()>),
@@ -198,7 +192,6 @@ pub async fn initialize_admin_router() -> Router {
         audience
     ).await;
 
-    // 合并鉴权
     app = app.merge(auth_router);
 
     merge_router!(
@@ -211,7 +204,6 @@ pub async fn initialize_admin_router() -> Router {
 
     merge_router!(SysMenuRouter::init_menu_router().await, SysMenuService, false, false, None);
 
-    // 菜单保护路由
     merge_router!(
         SysMenuRouter::init_protected_menu_router().await,
         SysMenuService,
@@ -220,13 +212,9 @@ pub async fn initialize_admin_router() -> Router {
         None
     );
 
-    // 用户路由
     merge_router!(SysUserRouter::init_user_router().await, SysUserService, true, true, None);
-    // 领域路由
     merge_router!(SysDomainRouter::init_domain_router().await, SysDomainService, true, true, None);
-    // 角色路由
     merge_router!(SysRoleRouter::init_role_router().await, SysRoleService, true, true, None);
-    // 端点路由
     merge_router!(
         SysEndpointRouter::init_endpoint_router().await,
         SysEndpointService,
@@ -234,7 +222,6 @@ pub async fn initialize_admin_router() -> Router {
         true,
         None
     );
-    // Accesskey路由
     merge_router!(
         SysAccessKeyRouter::init_access_key_router().await,
         SysAccessKeyService,
@@ -242,7 +229,6 @@ pub async fn initialize_admin_router() -> Router {
         true,
         None
     );
-    // 登录日志路由
     merge_router!(
         SysLoginLogRouter::init_login_log_router().await,
         SysLoginLogService,
@@ -250,7 +236,6 @@ pub async fn initialize_admin_router() -> Router {
         true,
         None
     );
-    // 操作日志路由
     merge_router!(
         SysOperationLogRouter::init_operation_log_router().await,
         SysOperationLogService,
@@ -259,7 +244,6 @@ pub async fn initialize_admin_router() -> Router {
         None
     );
 
-    // 组织路由
     merge_router!(
         SysOrganizationRouter::init_organization_router().await,
         SysOrganizationService,
@@ -284,16 +268,14 @@ pub async fn initialize_admin_router() -> Router {
         Some(complex_validation)
     );
 
-    // 404处理
     app = app.fallback(handler_404);
 
-    // 收集路由信息
     process_collected_routes().await;
     info!("Admin router initialization completed");
 
     app
 }
-// 404处理
+
 async fn handler_404() -> impl IntoResponse {
     (StatusCode::NOT_FOUND, "nothing to see here")
 }
@@ -304,6 +286,7 @@ async fn process_collected_routes() {
         .into_iter()
         .map(|route| {
             let resource = route.path.split('/').nth(1).unwrap_or("").to_string();
+            // 构建端点
             SysEndpoint {
                 id: generate_id(&route.path, &route.method.to_string()),
                 path: route.path.clone(),
@@ -318,6 +301,7 @@ async fn process_collected_routes() {
         })
         .collect();
 
+    // 端点服务
     let endpoint_service = SysEndpointService;
     match endpoint_service.sync_endpoints(endpoints).await {
         Ok(_) => { info!("Endpoints synced successfully") }
@@ -325,7 +309,6 @@ async fn process_collected_routes() {
     }
 }
 
-// 生成id
 fn generate_id(path: &str, method: &str) -> String {
     use std::{ collections::hash_map::DefaultHasher, hash::{ Hash, Hasher } };
 

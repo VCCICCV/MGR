@@ -1,14 +1,11 @@
-
-pub mod init_database;
-pub mod init_redis;
-pub mod init_kafka;
-pub mod init_tracing;
-pub mod init_router;
-pub mod init_config;
-pub mod init_casbin;
-pub mod init_event_channel;
-pub mod init_jwt;
-// // 传输配置文件到客户端
-// pub trait ClientBuilder: Sized {
-//     fn build_from_config(config: &AppConfig) -> Result<Self,AppError>;
-// }
+pub mod access_key_initialization;
+pub mod casbin_initialization;
+pub mod config_initialization;
+pub mod db_initialization;
+pub mod event_channel_initialization;
+pub mod ip2region_initialization;
+pub mod jwt_initialization;
+pub mod log_tracing_init;
+pub mod redis_initialization;
+pub mod router_initialization;
+pub mod server_initialization;

@@ -1,6 +1,6 @@
+use api::admin::sys_login_log_api::SysLoginLogApi;
 use axum::{http::Method, routing::get, Router};
-use server_api::admin::SysLoginLogApi;
-use server_global::global::{add_route, RouteInfo};
+use shared::global::{add_route, RouteInfo};
 
 pub struct SysLoginLogRouter;
 

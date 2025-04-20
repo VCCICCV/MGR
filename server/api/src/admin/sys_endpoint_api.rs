@@ -1,22 +1,18 @@
 use std::{collections::BTreeMap, sync::Arc};
-
-use axum::{
-    extract::{Path, Query},
-    Extension,
-};
+use model::{admin::{request::sys_endpoint::EndpointPageRequest, response::sys_endpoint::EndpointTree}, entities::sys_endpoint};
+use service::admin::sys_endpoint_service::{SysEndpointService, TEndpointService};
+use shared::web::{auth::User, error::AppError, page::PaginatedData, res::Res};
+use axum::{ extract::{ Path, Query }, Extension };
 use axum_casbin::{casbin::MgmtApi, CasbinAxumLayer};
-use server_core::web::{auth::User, error::AppError, page::PaginatedData, res::Res};
-use server_service::admin::{
-    EndpointPageRequest, EndpointTree, SysEndpointModel, SysEndpointService, TEndpointService,
-};
+
 
 pub struct SysEndpointApi;
 
 impl SysEndpointApi {
-    pub async fn get_paginated_endpoints(
+      pub async fn get_paginated_endpoints(
         Query(params): Query<EndpointPageRequest>,
         Extension(service): Extension<Arc<SysEndpointService>>,
-    ) -> Result<Res<PaginatedData<SysEndpointModel>>, AppError> {
+    ) -> Result<Res<PaginatedData<sys_endpoint::Model>>, AppError> {
         service
             .find_paginated_endpoints(params)
             .await

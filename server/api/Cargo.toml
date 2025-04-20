@@ -7,6 +7,7 @@ version.workspace = true
 
 [dependencies]
 axum-casbin = {path = "../../axum-casbin"}
+model = {path="../model"}
 service = {path = "../service"}
 shared = {path = "../shared"}
 xdb = {path = "../../xdb"}

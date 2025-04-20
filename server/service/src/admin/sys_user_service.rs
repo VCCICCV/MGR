@@ -1,32 +1,20 @@
 use async_trait::async_trait;
 use chrono::Local;
 use sea_orm::{
-    ActiveModelTrait, ColumnTrait, Condition, EntityTrait, IntoActiveModel, PaginatorTrait,
-    QueryFilter, Set,
+    ActiveModelTrait, ActiveValue::Set, ColumnTrait, Condition, EntityTrait, IntoActiveModel, PaginatorTrait, QueryFilter
 };
-use server_core::web::{error::AppError, page::PaginatedData};
-use server_model::admin::{
-    entities::{
-        prelude::SysUser,
-        sys_user::{
-            ActiveModel as SysUserActiveModel, Column as SysUserColumn, Model as SysUserModel,
-        },
-    },
-    input::{CreateUserInput, UpdateUserInput, UserPageRequest},
-    output::UserWithoutPassword,
-};
-use server_utils::SecureUtil;
+use shared::{utils::secure_util::SecureUtil, web::{ error::AppError, page::PaginatedData }};
+use model::{admin::{request::sys_user::{CreateUserInput, UpdateUserInput, UserPageRequest}, response::sys_user::UserWithoutPassword}, entities::sys_user};
 use ulid::Ulid;
-
-use super::sys_user_error::UserError;
 use crate::helper::db_helper;
-
+use super::errors::sys_user_error::UserError;
+use model::entities::prelude::SysUser;
 #[async_trait]
 pub trait TUserService {
     async fn find_all(&self) -> Result<Vec<UserWithoutPassword>, AppError>;
     async fn find_paginated_users(
         &self,
-        params: UserPageRequest,
+        params: UserPageRequest
     ) -> Result<PaginatedData<UserWithoutPassword>, AppError>;
 
     async fn create_user(&self, input: CreateUserInput) -> Result<UserWithoutPassword, AppError>;
@@ -41,10 +29,10 @@ pub struct SysUserService;
 impl SysUserService {
     async fn check_username_unique(&self, username: &str) -> Result<(), AppError> {
         let db = db_helper::get_db_connection().await?;
-        let existing_user = SysUser::find()
-            .filter(SysUserColumn::Username.eq(username))
-            .one(db.as_ref())
-            .await
+        let existing_user = SysUser
+            ::find()
+            .filter(sys_user::Column::Username.eq(username))
+            .one(db.as_ref()).await
             .map_err(AppError::from)?;
 
         if existing_user.is_some() {
@@ -53,11 +41,10 @@ impl SysUserService {
         Ok(())
     }
 
-    async fn get_user_by_id(&self, id: String) -> Result<SysUserModel, AppError> {
+    async fn get_user_by_id(&self, id: String) -> Result<sys_user::Model, AppError> {
         let db = db_helper::get_db_connection().await?;
         SysUser::find_by_id(id)
-            .one(db.as_ref())
-            .await
+            .one(db.as_ref()).await
             .map_err(AppError::from)?
             .ok_or_else(|| UserError::UserNotFound.into())
     }
@@ -68,34 +55,28 @@ impl TUserService for SysUserService {
     async fn find_all(&self) -> Result<Vec<UserWithoutPassword>, AppError> {
         let db = db_helper::get_db_connection().await?;
         SysUser::find()
-            .all(db.as_ref())
-            .await
+            .all(db.as_ref()).await
             .map(|users| users.into_iter().map(UserWithoutPassword::from).collect())
             .map_err(AppError::from)
     }
 
     async fn find_paginated_users(
         &self,
-        params: UserPageRequest,
+        params: UserPageRequest
     ) -> Result<PaginatedData<UserWithoutPassword>, AppError> {
         let db = db_helper::get_db_connection().await?;
         let mut query = SysUser::find();
 
         if let Some(ref keywords) = params.keywords {
-            let condition = Condition::any().add(SysUserColumn::Username.contains(keywords));
+            let condition = Condition::any().add(sys_user::Column::Username.contains(keywords));
             query = query.filter(condition);
         }
 
-        let total = query
-            .clone()
-            .count(db.as_ref())
-            .await
-            .map_err(AppError::from)?;
+        let total = query.clone().count(db.as_ref()).await.map_err(AppError::from)?;
 
         let paginator = query.paginate(db.as_ref(), params.page_details.size);
         let records = paginator
-            .fetch_page(params.page_details.current - 1)
-            .await
+            .fetch_page(params.page_details.current - 1).await
             .map_err(AppError::from)?
             .into_iter()
             .map(UserWithoutPassword::from)
@@ -113,7 +94,7 @@ impl TUserService for SysUserService {
         self.check_username_unique(&input.username).await?;
 
         let db = db_helper::get_db_connection().await?;
-        let user = SysUserActiveModel {
+        let user = sys_user::ActiveModel {
             id: Set(Ulid::new().to_string()),
             domain: Set(input.domain),
             username: Set(input.username),
@@ -136,8 +117,7 @@ impl TUserService for SysUserService {
     async fn get_user(&self, id: &str) -> Result<UserWithoutPassword, AppError> {
         let db = db_helper::get_db_connection().await?;
         SysUser::find_by_id(id)
-            .one(db.as_ref())
-            .await
+            .one(db.as_ref()).await
             .map_err(AppError::from)?
             .map(UserWithoutPassword::from)
             .ok_or_else(|| UserError::UserNotFound.into())
@@ -152,7 +132,7 @@ impl TUserService for SysUserService {
 
         user.domain = Set(input.user.domain);
         user.username = Set(input.user.username);
-        user.password = Set(input.user.password); // TODO: Note: In a real application, you should hash the password
+        user.password = Set(input.user.password); // TODO: hash密码
         user.nick_name = Set(input.user.nick_name);
         user.avatar = Set(input.user.avatar);
         user.email = Set(input.user.email);
@@ -167,10 +147,7 @@ impl TUserService for SysUserService {
     async fn delete_user(&self, id: &str) -> Result<(), AppError> {
         let db = db_helper::get_db_connection().await?;
 
-        let result = SysUser::delete_by_id(id)
-            .exec(db.as_ref())
-            .await
-            .map_err(AppError::from)?;
+        let result = SysUser::delete_by_id(id).exec(db.as_ref()).await.map_err(AppError::from)?;
 
         if result.rows_affected == 0 {
             return Err(UserError::UserNotFound.into());

@@ -1,45 +1,13 @@
-// use std::time::Duration;
-// use config::AppConfig;
-// use opentelemetry::global;
-// use sea_orm::{ ConnectOptions, Database, DatabaseConnection };
-// use shared::error::AppError;
-// use tracing::info;
-
-// // 类型别名
-// pub type DatabaseClient = DatabaseConnection;
-
-// pub trait DatabaseClientExt: Sized + Send + Sync + 'static {
-//     fn build_from_config(
-//         config: &AppConfig
-//     ) -> impl std::future::Future<Output = Result<Self, AppError>>;
-// }
-
-// impl DatabaseClientExt for DatabaseClient {
-//     async fn build_from_config() -> Result<Self, AppError> {
-//         let mut opt = ConnectOptions::new(shared::global::GLOBAL_CONFIG.);
-
-//         opt.max_connections(100)
-//             .min_connections(5)
-//             .connect_timeout(Duration::from_secs(8))
-//             .acquire_timeout(Duration::from_secs(8))
-//             .idle_timeout(Duration::from_secs(8))
-//             .max_lifetime(Duration::from_secs(8))
-//             .sqlx_logging(false)
-//             .sqlx_logging_level(log::LevelFilter::Info);
-//         let db = Database::connect(opt).await?;
-//         info!("Database connected");
-//         Ok(db)
-//     }
-// }
-
+#![allow(dead_code)]
 use std::{process, sync::Arc, time::Duration};
 
 use config::{database::{DatabaseConfig, DatabasesInstancesConfig}, OptionalConfigs};
 use sea_orm::{ConnectOptions, Database, DatabaseConnection};
 use shared::global::{get_config, GLOBAL_DB_POOL, GLOBAL_PRIMARY_DB};
+
 use tracing::{error, info};
 
-// 连接
+
 pub async fn init_primary_connection() {
     let db_config = get_config::<DatabaseConfig>().await.unwrap();
     let opt = build_connect_options(&db_config);

@@ -11,11 +11,16 @@ async-trait = {workspace = true}
 axum = {workspace = true}
 axum-extra = {workspace = true}
 base64 = {workspace = true}
+bytes = {workspace = true}
 chrono = {workspace = true}
 config = {workspace = true}
 fake = {workspace = true}
+form_urlencoded = {workspace = true}
+futures = {workspace = true}
 hex = {workspace = true}
+http = {workspace = true}
 jsonwebtoken = {workspace = true}
+lazy_static = {workspace = true}
 lettre = {workspace = true}
 md-5 = {workspace = true}
 mime = {workspace = true}
@@ -35,7 +40,7 @@ tokio = {workspace = true}
 tokio-tungstenite = {workspace = true}
 tower = {workspace = true}
 tracing = {workspace = true}
-urlencoding = {workspace = true}
 ulid = {workspace = true}
+urlencoding = {workspace = true}
 validator = {workspace = true}
-http= {workspace = true}
+rayon = {workspace = true}

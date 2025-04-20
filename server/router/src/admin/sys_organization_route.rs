@@ -1,6 +1,7 @@
+use api::admin::sys_organization_api::SysOrganizationApi;
 use axum::{http::Method, routing::get, Router};
-use server_api::admin::SysOrganizationApi;
-use server_global::global::{add_route, RouteInfo};
+use shared::global::{add_route, RouteInfo};
+
 
 pub struct SysOrganizationRouter;
 

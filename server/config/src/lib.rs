@@ -1,22 +1,22 @@
 pub mod database;
-pub mod env;
 pub mod redis;
 pub mod server;
 pub mod kafka;
 pub mod profile;
 pub mod jwt;
-use std::str::FromStr;
+pub mod config;
+use config::Config;
+use shared::global;
+use thiserror::Error;
+use tokio::fs;
+use tracing::{ error, info };
+use std::path::Path;
 use database::{ DatabaseConfig, DatabasesInstancesConfig };
 use jwt::JwtConfig;
-use kafka::KafkaConfig;
+
 use redis::{ RedisConfig, RedisInstancesConfig };
 use server::ServerConfig;
-use config::{ ConfigError, Environment };
-use serde::Deserialize;
-use ::tracing::info;
-use profile::Profile;
 
-use shared::utils::dir::get_project_root;
 /// 可选配置集合的包装类
 #[allow(dead_code)]
 #[derive(Debug, Clone)]
@@ -29,74 +29,57 @@ impl<T> From<Option<Vec<T>>> for OptionalConfigs<T> {
         Self { configs }
     }
 }
-#[derive(Debug, Deserialize, Clone)]
-pub struct AppConfig {
-    // http服务器配置
-    pub server: ServerConfig,
-    // 主数据库配置
-    pub database: DatabaseConfig,
-    // 可选数据库连接池配置
-    pub database_instances: Option<Vec<DatabasesInstancesConfig>>,
-    // 主redis配置
-    pub redis: Option<RedisConfig>,
-    // redis连接池
-    pub redis_instances: Option<Vec<RedisInstancesConfig>>,
-    // kafka配置
-    pub kafka: KafkaConfig,
-    // jwt
-    pub jwt: JwtConfig,
+#[derive(Debug, Error)]
+pub enum ConfigError {
+    #[error("Failed to read config file: {0}")] ReadError(#[from] std::io::Error),
+    #[error("Failed to parse YAML config: {0}")] YamlError(#[from] serde_yaml::Error),
+    #[error("Failed to parse TOML config: {0}")] TomlError(#[from] toml::de::Error),
+    #[error("Failed to parse JSON config: {0}")] JsonError(#[from] serde_json::Error),
+    #[error("Unsupported config file format: {0}")] UnsupportedFormat(String),
 }
 
-impl AppConfig {
-    pub fn read(env_src: Environment) -> Result<Self, config::ConfigError> {
-        // 获取配置文件目录
-        let config_dir = get_settings_dir()?;
-        info!("config_dir: {:#?}", config_dir);
-        // 获取配置文件环境
-        let run_mode = std::env
-            ::var("RUN_MODE")
-            .map(|env| Profile::from_str(&env).map_err(|e| ConfigError::Message(e.to_string())))
-            .unwrap_or_else(|_e| Ok(Profile::Dev))?;
-        // 当前配置文件名
-        let profile_filename = format!("{run_mode}.toml");
-        info!("Successfully read config profile: {run_mode}.");
-        // 获取配置
-        config::Config
-            ::builder()
-            // 添加默认配置
-            .add_source(config::File::from(config_dir.join("default.toml")))
-            // 添加自定义前缀配置
-            .add_source(config::File::from(config_dir.join(profile_filename)))
-            // 添加环境变量
-            .add_source(env_src)
-            .build()?
-            .try_deserialize()
-    }
-}
-// 获取配置文件目录，分布式请修改这部分
-pub fn get_settings_dir() -> Result<std::path::PathBuf, ConfigError> {
-    Ok(
-        get_project_root()
-            .map_err(|e| ConfigError::Message(e.to_string()))?
-            .join("settings")
-    )
-}
-#[cfg(test)]
-mod tests {
-    use crate::env::get_env_source;
+async fn parse_config(file_path: &str, content: String) -> Result<Config, ConfigError> {
+    let extension = Path::new(file_path)
+        .extension()
+        .and_then(|ext| ext.to_str())
+        .unwrap_or("")
+        .to_lowercase();
 
-    pub use super::*;
-    #[test]
-    pub fn test_profile_to_string() {
-        // 设置dev模式
-        let profile: Profile = Profile::try_from("development").unwrap();
-        println!("profile: {:#?}", profile);
-        assert_eq!(profile, Profile::Dev)
+    match extension.as_str() {
+        "yaml" | "yml" => Ok(serde_yaml::from_str(&content)?),
+        "toml" => Ok(toml::from_str(&content)?),
+        "json" => Ok(serde_json::from_str(&content)?),
+        _ => Err(ConfigError::UnsupportedFormat(extension)),
     }
-    #[test]
-    pub fn test_read_app_config_prefix() {
-        // 读取配置
-        let config = AppConfig::read(get_env_source("APP")).unwrap();
-        println!("config: {:#?}", config);
+}
+
+pub async fn init_from_file(file_path: &str) -> Result<(), ConfigError> {
+    let config_data = fs::read_to_string(file_path).await.map_err(|e| {
+        error!("Failed to read config file: {}", e);
+        ConfigError::ReadError(e)
+    })?;
+
+    let config = parse_config(file_path, config_data).await.map_err(|e| {
+        error!("Failed to parse config file: {}", e);
+        e
+    })?;
+
+    global::init_config::<Config>(config.clone()).await;
+    global::init_config::<DatabaseConfig>(config.database).await;
+
+    global::init_config::<OptionalConfigs<DatabasesInstancesConfig>>(
+        config.database_instances.into()
+    ).await;
+
+    global::init_config::<ServerConfig>(config.server).await;
+    global::init_config::<JwtConfig>(config.jwt).await;
+
+    if let Some(redis_config) = config.redis {
+        global::init_config::<RedisConfig>(redis_config).await;
     }
+    global::init_config::<OptionalConfigs<RedisInstancesConfig>>(
+        config.redis_instances.into()
+    ).await;
+    info!("Configuration initialized successfully");
+    Ok(())
 }

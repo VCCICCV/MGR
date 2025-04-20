@@ -1,22 +1,29 @@
 use axum::{
-    body::Body, extract::Request,  middleware::Next, response::IntoResponse,
+    body::Body,
+    extract::Request,
+    http::StatusCode,
+    middleware::Next,
+    response::IntoResponse,
 };
 use axum_casbin::CasbinVals;
-use headers::{authorization::Bearer, Authorization, HeaderMapExt};
-use shared::{auth::User, res::Res, utils::jwt::JwtUtils};
+use headers::{ authorization::Bearer, Authorization, HeaderMapExt };
+use shared::{ utils::jwt::JwtUtils, web::{ auth::User, res::Res } };
+
 pub async fn jwt_auth_middleware(
     mut req: Request<Body>,
     next: Next,
-    audience: &str,
+    audience: &str
 ) -> impl IntoResponse {
     let token = match req.headers().typed_get::<Authorization<Bearer>>() {
         Some(auth) => auth.token().to_string(),
         None => {
-            return Res::<String>::with_err(
-                "No token provided or invalid token type",
-            )
-            .into_response();
-        },
+            return Res::<String>
+                ::new_error(
+                    StatusCode::UNAUTHORIZED.as_u16(),
+                    "No token provided or invalid token type"
+                )
+                .into_response();
+        }
     };
 
     match JwtUtils::validate_token(&token, audience).await {
@@ -31,10 +38,11 @@ pub async fn jwt_auth_middleware(
             req.extensions_mut().insert(user);
             req.extensions_mut().insert(vals);
             next.run(req).await.into_response()
-        },
+        }
         Err(err) => {
-            Res::<String>::with_err(err.to_string().as_str())
+            Res::<String>
+                ::new_error(StatusCode::UNAUTHORIZED.as_u16(), err.to_string().as_str())
                 .into_response()
-        },
+        }
     }
 }

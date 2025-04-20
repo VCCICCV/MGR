@@ -16,12 +16,11 @@ use chrono::Local;
 use futures::{future::BoxFuture, StreamExt};
 use http::{Extensions, HeaderMap, Uri};
 use serde_json::Value;
-use server_constant::definition::consts::SystemEvent;
-use server_global::global::{self, OperationLogContext};
-use tower_layer::Layer;
-use tower_service::Service;
+use tower::{Layer, Service};
 
-use super::{auth::User, RequestId};
+use crate::{constant::SystemEvent, global::{self, OperationLogContext}, utils};
+
+use super::{auth::User, request_id::RequestId};
 
 const USER_AGENT_HEADER: &str = "user-agent";
 const UNKNOWN_REQUEST_ID: &str = "unknown";
@@ -219,7 +218,7 @@ fn get_client_ip(extensions: &Extensions, headers: &HeaderMap) -> String {
         };
     }
 
-    super::util::ClientIp::get_real_ip(headers)
+    utils::ip::ClientIp::get_real_ip(headers)
 }
 
 /// 从扩展中获取用户信息元组

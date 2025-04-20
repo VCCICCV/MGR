@@ -1,5 +1,5 @@
+use api::admin::sys_sandbox_api::SysSandboxApi;
 use axum::{routing::get, Router};
-use server_api::admin::SysSandboxApi;
 
 pub struct SysSandboxRouter;
 

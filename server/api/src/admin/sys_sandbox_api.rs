@@ -1,5 +1,5 @@
-use server_core::web::{error::AppError, res::Res};
 
+use shared::web::{error::AppError, res::Res};
 pub struct SysSandboxApi;
 
 impl SysSandboxApi {

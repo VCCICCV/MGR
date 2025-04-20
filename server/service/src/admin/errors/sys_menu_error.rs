@@ -1,4 +1,4 @@
-use server_core::web::error::{ApiError, AppError};
+use shared::web::error::{ApiError, AppError};
 use thiserror::Error;
 
 #[derive(Debug, Error)]
@@ -9,7 +9,6 @@ pub enum MenuError {
     #[error("Duplicate route name")]
     DuplicateRouteName,
 }
-
 impl ApiError for MenuError {
     fn code(&self) -> u16 {
         match self {

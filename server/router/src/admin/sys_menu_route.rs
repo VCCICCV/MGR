@@ -1,11 +1,11 @@
+use api::admin::sys_menu_api::SysMenuApi;
 use axum::{
     http::Method,
     routing::{delete, get, post, put},
     Router,
 };
-use server_api::admin::SysMenuApi;
-use server_core::web::operation_log::OperationLogLayer;
-use server_global::global::{add_route, RouteInfo};
+use shared::{global::{add_route, RouteInfo}, web::operation_log::OperationLogLayer};
+
 
 pub struct SysMenuRouter;
 

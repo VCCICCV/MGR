@@ -1,18 +1,23 @@
 use async_trait::async_trait;
-use axum::extract::{ FromRequest, Request };
-use serde::{ Deserialize, Serialize };
+use axum::{
+    extract::{FromRequest, Request},
+    http::StatusCode,
+};
+use serde::{Deserialize, Serialize};
 
-use crate::res::Res;
+use crate::web::res::Res;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Claims {
     sub: String,
+
     exp: Option<usize>,
     iss: Option<String>,
     aud: String,
     iat: Option<usize>,
     nbf: Option<usize>,
     jti: Option<String>,
+
     username: String,
     role: Vec<String>,
     domain: String,
@@ -26,7 +31,7 @@ impl Claims {
         username: String,
         role: Vec<String>,
         domain: String,
-        org: Option<String>
+        org: Option<String>,
     ) -> Self {
         Self {
             sub,
@@ -104,18 +109,21 @@ impl From<Claims> for User {
 }
 
 #[async_trait]
-impl<S> FromRequest<S> for User where S: Send + Sync + 'static {
+impl<S> FromRequest<S> for User
+where
+    S: Send + Sync + 'static,
+{
     type Rejection = Res<String>;
 
     fn from_request(
         req: Request,
-        _state: &S
+        _state: &S,
     ) -> impl std::future::Future<Output = Result<Self, Self::Rejection>> + Send {
         async move {
             req.extensions()
                 .get::<User>()
                 .cloned()
-                .ok_or_else(|| Res::with_err("Unauthorized"))
+                .ok_or_else(|| Res::new_error(StatusCode::UNAUTHORIZED.as_u16(), "Unauthorized"))
         }
     }
 }

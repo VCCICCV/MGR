@@ -9,9 +9,12 @@ version.workspace = true
 axum-casbin = {path = "../../axum-casbin"}
 config = {path = "../config"}
 middleware = {path = "../middleware"}
+model = {path = "../model"}
+router = {path = "../router"}
 sea-orm-adapter = {path = "../../sea-orm-adapter"}
 service = {path = "../service"}
 shared = {path = "../shared"}
+xdb = {path = "../../xdb"}
 
 axum = {workspace = true}
 casbin = {workspace = true}

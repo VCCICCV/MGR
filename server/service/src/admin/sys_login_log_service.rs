@@ -1,14 +1,9 @@
 use async_trait::async_trait;
+use model::admin::request::sys_login_log::LoginLogPageRequest;
 use sea_orm::{ColumnTrait, Condition, EntityTrait, PaginatorTrait, QueryFilter, QueryOrder};
-use server_core::web::{error::AppError, page::PaginatedData};
-use server_model::admin::{
-    entities::{
-        prelude::SysLoginLog,
-        sys_login_log::{Column as SysLoginLogColumn, Model as SysLoginLogModel},
-    },
-    input::LoginLogPageRequest,
-};
-
+use shared::web::{error::AppError, page::PaginatedData};
+use model::entities::prelude::SysLoginLog;
+use model::entities::sys_login_log;
 use crate::helper::db_helper;
 
 #[async_trait]
@@ -16,7 +11,7 @@ pub trait TLoginLogService {
     async fn find_paginated_login_logs(
         &self,
         params: LoginLogPageRequest,
-    ) -> Result<PaginatedData<SysLoginLogModel>, AppError>;
+    ) -> Result<PaginatedData<sys_login_log::Model>, AppError>;
 }
 
 pub struct SysLoginLogService;
@@ -26,21 +21,21 @@ impl TLoginLogService for SysLoginLogService {
     async fn find_paginated_login_logs(
         &self,
         params: LoginLogPageRequest,
-    ) -> Result<PaginatedData<SysLoginLogModel>, AppError> {
+    ) -> Result<PaginatedData<sys_login_log::Model>, AppError> {
         let db = db_helper::get_db_connection().await?;
         let mut query = SysLoginLog::find();
 
         if let Some(ref keywords) = params.keywords {
             let condition = Condition::any()
-                .add(SysLoginLogColumn::Domain.contains(keywords))
-                .add(SysLoginLogColumn::Username.contains(keywords))
-                .add(SysLoginLogColumn::Ip.contains(keywords))
-                .add(SysLoginLogColumn::Address.contains(keywords))
-                .add(SysLoginLogColumn::UserAgent.contains(keywords));
+                .add(sys_login_log::Column::Domain.contains(keywords))
+                .add(sys_login_log::Column::Username.contains(keywords))
+                .add(sys_login_log::Column::Ip.contains(keywords))
+                .add(sys_login_log::Column::Address.contains(keywords))
+                .add(sys_login_log::Column::UserAgent.contains(keywords));
             query = query.filter(condition);
         }
 
-        query = query.order_by_desc(SysLoginLogColumn::CreatedAt);
+        query = query.order_by_desc(sys_login_log::Column::CreatedAt);
 
         let total = query
             .clone()

@@ -11,7 +11,7 @@ use serde_json::Value as JsonValue;
 use thiserror::Error;
 use validator::{ Validate, ValidationErrors };
 
-use crate::res::Res;
+use super::res::Res;
 
 #[derive(Debug, Error)]
 pub enum ValidationError {
@@ -76,7 +76,7 @@ impl<S, T> FromRequest<S>
 
 impl IntoResponse for ValidationError {
     fn into_response(self) -> Response {
-        let (_status, error_message) = match self {
+        let (status, error_message) = match self {
             ValidationError::JsonError(msg) => (StatusCode::BAD_REQUEST, msg),
             ValidationError::FormError => {
                 (StatusCode::BAD_REQUEST, "Invalid form data".to_string())
@@ -113,6 +113,6 @@ impl IntoResponse for ValidationError {
             }
         };
 
-        Res::<String>::with_err(&error_message).into_response()
+        Res::<String>::new_error(status.as_u16(), &error_message).into_response()
     }
 }

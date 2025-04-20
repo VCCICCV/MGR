@@ -6,6 +6,7 @@ use sea_orm::Database;
 use sea_orm_adapter::SeaOrmAdapter;
 use tracing::info;
 
+
 pub async fn initialize_casbin(
     model_path: &str,
     db_url: &str,

@@ -3,8 +3,7 @@ use axum::{
     routing::{delete, get, post, put},
     Router,
 };
-use server_api::admin::SysRoleApi;
-use server_global::global::{add_route, RouteInfo};
+
 
 pub struct SysRoleRouter;
 

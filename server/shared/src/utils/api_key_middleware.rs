@@ -5,10 +5,11 @@ use axum::{
     middleware::Next,
     response::IntoResponse,
 };
+use http::StatusCode;
 use once_cell::sync::Lazy;
 use std::{ collections::HashSet, sync::RwLock };
 
-use crate::{ constant::SystemEvent, global, res::Res };
+use crate::{ constant::SystemEvent, global, web::res::Res };
 
 use super::{ ApiKeyEvent, ComplexApiKeyValidator, SimpleApiKeyValidator };
 
@@ -115,8 +116,11 @@ pub async fn api_key_middleware(
 
     match validate_request(&validator, &req) {
         Ok(true) => next.run(req).await.into_response(),
-        Ok(false) => Res::<()>::with_err("Invalid API key or signature").into_response(),
-        Err(e) => Res::<()>::with_err(e).into_response(),
+        Ok(false) =>
+            Res::<()>
+                ::new_error(StatusCode::UNAUTHORIZED.as_u16(), "Invalid API key or signature")
+                .into_response(),
+        Err(e) => Res::<()>::new_error(StatusCode::BAD_REQUEST.as_u16(), e).into_response(),
     }
 }
 

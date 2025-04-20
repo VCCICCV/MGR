@@ -1,33 +1,43 @@
-use tracing::info;
+use std::net::SocketAddr;
 
+use tokio::net::TcpListener;
 #[tokio::main(flavor = "multi_thread", worker_threads = 10)]
 async fn main() {
-    // 加载环境变量
-    dotenvy::dotenv().ok();
-    
-    // 初始化日志
-    let file_appender_guard = initialize::init_tracing::init();
-    info!("The initialization of Tracing was successful");
-    // 加载配置文件
-    initialize::init_config::init_config().await;
-    // 路由
-    
-    // let conf = initialize::init_state::init_config().await;
-    // let conf = AppConfig::read(get_env_source(ENV_PREFIX))?;
-    // info!("The initialization of Settings was successful");
-    // let state = AppState::new(conf.clone()).await?;
-    // info!("The initialization of AppState was successful");
-    // // 路由以及后备处理
-    // let app = setup_routers(state).fallback(handler_404);
-    // // 端口绑定
-    // let listener = tokio::net::TcpListener::bind(conf.server.get_socket_addr()?).await?;
-    // // 调用 `tracing` 包的 `info!`，放在启动服务之前，因为会被move
-    // info!("🚀 listening on {}", &listener.local_addr()?);
-    // // 启动服务
-    // axum::serve(listener, app.into_make_service())
-    //     .with_graceful_shutdown(shutdown_signal().await).await
-    //     .unwrap();
-    // // 在程序结束前释放资源，保证文件写入后释放
-    // drop(file_appender_guard);
-    // Ok(())
+    let config_path = if cfg!(debug_assertions) {
+        "server/resources/application-test.yaml"
+    } else {
+        "server/resources/application.yaml"
+    };
+
+    server_initialize::initialize_log_tracing().await;
+    server_initialize::initialize_config(config_path).await;
+    let _ = server_initialize::init_xdb().await;
+    server_initialize::init_primary_connection().await;
+    server_initialize::init_db_pools().await;
+    server_initialize::initialize_keys_and_validation().await;
+    server_initialize::initialize_event_channel().await;
+
+    server_initialize::init_primary_redis().await;
+    server_initialize::init_redis_pools().await;
+    server_initialize::init_primary_mongo().await;
+    server_initialize::init_mongo_pools().await;
+
+    // build our application with a route
+    let app = server_initialize::initialize_admin_router().await;
+
+    //需要初始化验证器init_validators之后才能初始化访问密钥
+    server_initialize::initialize_access_key().await;
+
+    let addr = match server_initialize::get_server_address().await {
+        Ok(addr) => addr,
+        Err(e) => {
+            eprintln!("Failed to get server address: {}", e);
+            return;
+        }
+    };
+
+    // run it
+    let listener = TcpListener::bind(&addr).await.unwrap();
+    // tracing::debug!("listening on {}", listener.local_addr().unwrap());
+    axum::serve(listener, app.into_make_service_with_connect_info::<SocketAddr>()).await.unwrap();
 }

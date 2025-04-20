@@ -1,6 +1,6 @@
 use serde::{ Deserialize, Serialize };
 
-use shared::res::PageRequest;
+use shared::web::page::PageRequest;
 use validator::Validate;
 
 use crate::entities::sea_orm_active_enums::Status;

@@ -2,65 +2,66 @@ use std::any::Any;
 
 use async_trait::async_trait;
 use sea_orm::{
-    ColumnTrait, DatabaseConnection, EntityTrait, JoinType, QueryFilter, QueryOrder, QuerySelect,
+    ColumnTrait,
+    DatabaseConnection,
+    EntityTrait,
+    JoinType,
+    QueryFilter,
+    QueryOrder,
+    QuerySelect,
     RelationTrait,
 };
-use server_constant::definition::{consts::SystemEvent, Audience};
-use server_core::web::{
-    auth::Claims,
-    error::AppError,
-    jwt::{JwtError, JwtUtils},
+
+use shared::{
+    constant::{ Audience, SystemEvent },
+    global,
+    utils::{ jwt::{ JwtError, JwtUtils }, secure_util::SecureUtil, tree_util::TreeBuilder },
+    web::{ auth::Claims, error::AppError },
 };
-use server_global::global;
-use server_model::admin::{
-    entities::{
-        prelude::{SysRole, SysUser},
-        sea_orm_active_enums::Status,
-        sys_domain::Column as SysDomainColumn,
-        sys_menu::{Column as SysMenuColumn, Entity as SysMenuEntity, Model as SysMenuModel},
-        sys_role::{Column as SysRoleColumn, Entity as SysRoleEntity, Relation as SysRoleRelation},
-        sys_role_menu::{Column as SysRoleMenuColumn, Entity as SysRoleMenuEntity},
-        sys_user::{Column as SysUserColumn, Relation as SysUserRelation},
-        sys_user_role::Relation as SysUserRoleRelation,
-    },
-    input::LoginInput,
-    output::{AuthOutput, MenuRoute, RouteMeta, UserRoute, UserWithDomainAndOrgOutput},
-};
-use server_utils::{SecureUtil, TreeBuilder};
 use thiserror::Error;
 use tokio::sync::mpsc;
-use tracing::{error, instrument};
+use tracing::{ error, info, instrument };
 use ulid::Ulid;
+use model::admin::{
+        request::sys_authentication::LoginInput,
+        response::{
+            sys_authentication::{ AuthOutput, UserRoute },
+            sys_menu::{ MenuRoute, RouteMeta },
+            sys_user::UserWithDomainAndOrgOutput,
+        },
+    };
+use model::entities::sea_orm_active_enums::Status;
+use model::entities::{prelude::{ SysRole, SysUser,SysRoleMenu,SysMenu }, sys_user, sys_domain, sys_user_role, sys_role_menu,sys_menu,sys_role };
+use crate::helper::db_helper;
 
 use super::{
-    dto::sys_auth_dto::LoginContext, event_handlers::auth_event_handler::AuthEventHandler,
-};
-use crate::{
-    admin::{event_handlers::auth_event_handler::AuthEvent, sys_user_error::UserError},
-    helper::db_helper,
-    project_error, project_info,
+    dto::sys_auth_dto::LoginContext,
+    errors::sys_user_error::UserError,
+    event_handler::auth_event_handler::{ AuthEvent, AuthEventHandler },
 };
 
 macro_rules! select_user_with_domain_and_org_info {
-    ($query:expr) => {{
+    ($query:expr) => {
+        {
         $query
             .select_only()
-            .column_as(SysUserColumn::Id, "id")
-            .column_as(SysUserColumn::Domain, "domain")
-            .column_as(SysUserColumn::Username, "username")
-            .column_as(SysUserColumn::Password, "password")
-            .column_as(SysUserColumn::NickName, "nick_name")
-            .column_as(SysUserColumn::Avatar, "avatar")
-            .column_as(SysDomainColumn::Code, "domain_code")
-            .column_as(SysDomainColumn::Name, "domain_name")
-    }};
+            .column_as(sys_user::Column::Id, "id")
+            .column_as(sys_user::Column::Domain, "domain")
+            .column_as(sys_user::Column::Username, "username")
+            .column_as(sys_user::Column::Password, "password")
+            .column_as(sys_user::Column::NickName, "nick_name")
+            .column_as(sys_user::Column::Avatar, "avatar")
+            .column_as(sys_domain::Column::Code, "domain_code")
+            .column_as(sys_domain::Column::Name, "domain_name")
+        }
+    };
 }
 #[derive(Error, Debug)]
 pub enum EventError {
-    #[error("Failed to send event: {0}")]
-    SendError(#[from] tokio::sync::mpsc::error::SendError<Box<dyn std::any::Any + Send>>),
-    #[error("Failed to handle login event: {0}")]
-    LoginHandlerError(String),
+    #[error("Failed to send event: {0}")] SendError(
+        #[from] tokio::sync::mpsc::error::SendError<Box<dyn std::any::Any + Send>>,
+    ),
+    #[error("Failed to handle login event: {0}")] LoginHandlerError(String),
 }
 
 #[async_trait]
@@ -68,13 +69,13 @@ pub trait TAuthService: Send + Sync {
     async fn pwd_login(
         &self,
         input: LoginInput,
-        context: LoginContext,
+        context: LoginContext
     ) -> Result<AuthOutput, AppError>;
 
     async fn get_user_routes(
         &self,
         role_codes: &[String],
-        domain: &str,
+        domain: &str
     ) -> Result<UserRoute, AppError>;
 }
 
@@ -105,12 +106,14 @@ impl TAuthService for SysAuthService {
     async fn pwd_login(
         &self,
         input: LoginInput,
-        context: LoginContext,
+        context: LoginContext
     ) -> Result<AuthOutput, AppError> {
         // 验证用户并获取角色
-        let (user, role_codes) = self
-            .verify_user(&input.identifier, &input.password, &context.domain)
-            .await?;
+        let (user, role_codes) = self.verify_user(
+            &input.identifier,
+            &input.password,
+            &context.domain
+        ).await?;
 
         // 生成认证输出
         let auth_output = generate_auth_output(
@@ -119,9 +122,8 @@ impl TAuthService for SysAuthService {
             role_codes,
             user.domain_code.clone(),
             None,
-            context.audience,
-        )
-        .await?;
+            context.audience
+        ).await?;
 
         // 发送认证事件
         self.send_login_event(&user, &auth_output, &context).await;
@@ -133,7 +135,7 @@ impl TAuthService for SysAuthService {
     async fn get_user_routes(
         &self,
         role_codes: &[String],
-        domain: &str,
+        domain: &str
     ) -> Result<UserRoute, AppError> {
         if role_codes.is_empty() {
             return Ok(UserRoute {
@@ -144,27 +146,24 @@ impl TAuthService for SysAuthService {
 
         let db = db_helper::get_db_connection().await?;
 
-        let menu_ids = SysRoleMenuEntity::find()
+        let menu_ids = SysRoleMenu
+            ::find()
             .select_only()
-            .column(SysRoleMenuColumn::MenuId)
-            .join_rev(
-                JoinType::InnerJoin,
-                SysRoleEntity::has_many(SysRoleMenuEntity).into(),
-            )
-            .filter(SysRoleColumn::Code.is_in(role_codes.to_vec()))
-            .filter(SysRoleMenuColumn::Domain.eq(domain))
+            .column(sys_role_menu::Column::MenuId)
+            .join_rev(JoinType::InnerJoin, SysRole::has_many(SysRoleMenu).into())
+            .filter(sys_role::Column::Code.is_in(role_codes.to_vec()))
+            .filter(sys_role_menu::Column::Domain.eq(domain))
             .distinct()
             .into_tuple::<i32>()
-            .all(db.as_ref())
-            .await?;
+            .all(db.as_ref()).await?;
 
-        let menus = SysMenuEntity::find()
-            .filter(SysMenuColumn::Id.is_in(menu_ids))
-            .filter(SysMenuColumn::Status.eq(Status::ENABLED))
-            .order_by_asc(SysMenuColumn::Sequence)
-            .into_model::<SysMenuModel>()
-            .all(db.as_ref())
-            .await?;
+        let menus = SysMenu
+            ::find()
+            .filter(sys_menu::Column::Id.is_in(menu_ids))
+            .filter(sys_menu::Column::Status.eq(Status::ENABLED))
+            .order_by_asc(sys_menu::Column::Sequence)
+            .into_model::<sys_menu::Model>()
+            .all(db.as_ref()).await?;
 
         let menu_routes: Vec<MenuRoute> = menus
             .into_iter()
@@ -208,7 +207,7 @@ impl TAuthService for SysAuthService {
             |route| route.meta.order,
             |route, children| {
                 route.children = Some(children);
-            },
+            }
         );
 
         // let home = Self::find_first_valid_route(&routes).unwrap_or_else(|| "/home".to_string());
@@ -224,23 +223,24 @@ impl SysAuthService {
         &self,
         identifier: &str,
         password: &str,
-        domain: &str,
+        domain: &str
     ) -> Result<(UserWithDomainAndOrgOutput, Vec<String>), AppError> {
         let db = db_helper::get_db_connection().await?;
 
         let user = select_user_with_domain_and_org_info!(SysUser::find())
-            .filter(SysUserColumn::Username.eq(identifier))
-            .filter(SysDomainColumn::Code.eq(domain))
-            .join(JoinType::InnerJoin, SysUserRelation::SysDomain.def())
+            .filter(sys_user::Column::Username.eq(identifier))
+            .filter(sys_domain::Column::Code.eq(domain))
+            .join(JoinType::InnerJoin, sys_user::Relation::SysDomain.def())
             .into_model::<UserWithDomainAndOrgOutput>()
-            .one(db.as_ref())
-            .await
+            .one(db.as_ref()).await
             .map_err(AppError::from)?
             .ok_or_else(|| AppError::from(UserError::UserNotFound))?;
 
         // 验证密码
-        if !SecureUtil::verify_password(password.as_bytes(), &user.password)
-            .map_err(|_| AppError::from(UserError::AuthenticationFailed))?
+        if
+            !SecureUtil::verify_password(password.as_bytes(), &user.password).map_err(|_|
+                AppError::from(UserError::AuthenticationFailed)
+            )?
         {
             return Err(AppError::from(UserError::WrongPassword));
         }
@@ -255,15 +255,20 @@ impl SysAuthService {
     async fn get_user_roles(
         &self,
         user_id: &str,
-        db: &DatabaseConnection,
+        db: &DatabaseConnection
     ) -> Result<Vec<String>, AppError> {
-        SysRole::find()
-            .join(JoinType::InnerJoin, SysRoleRelation::SysUserRole.def())
-            .join(JoinType::InnerJoin, SysUserRoleRelation::SysUser.def())
-            .filter(SysUserColumn::Id.eq(user_id))
-            .all(db)
-            .await
-            .map(|roles| roles.iter().map(|role| role.code.clone()).collect())
+        SysRole
+            ::find()
+            .join(JoinType::InnerJoin, sys_role::Relation::SysUserRole.def())
+            .join(JoinType::InnerJoin, sys_user_role::Relation::SysUser.def())
+            .filter(sys_user::Column::Id.eq(user_id))
+            .all(db).await
+            .map(|roles|
+                roles
+                    .iter()
+                    .map(|role| role.code.clone())
+                    .collect()
+            )
             .map_err(AppError::from)
     }
 
@@ -271,7 +276,7 @@ impl SysAuthService {
         &self,
         user: &UserWithDomainAndOrgOutput,
         auth_output: &AuthOutput,
-        context: &LoginContext,
+        context: &LoginContext
     ) {
         let auth_event = AuthEvent {
             user_id: user.id.clone(),
@@ -287,16 +292,13 @@ impl SysAuthService {
             login_type: context.login_type.clone(),
         };
 
-        global::send_dyn_event(
-            SystemEvent::AuthLoggedInEvent.as_ref(),
-            Box::new(auth_event),
-        );
+        global::send_dyn_event(SystemEvent::AuthLoggedInEvent.as_ref(), Box::new(auth_event));
     }
 
     async fn check_login_security(
         &self,
         _username: &str,
-        _client_ip: &str,
+        _client_ip: &str
     ) -> Result<(), AppError> {
         // TODO: 实现登录安全检查
         // 1. 检查登录失败次数
@@ -310,10 +312,9 @@ impl SysAuthService {
     async fn pwd_login_with_security(
         &self,
         input: LoginInput,
-        context: LoginContext,
+        context: LoginContext
     ) -> Result<AuthOutput, AppError> {
-        self.check_login_security(&input.identifier, &context.client_ip)
-            .await?;
+        self.check_login_security(&input.identifier, &context.client_ip).await?;
 
         self.pwd_login(input, context).await
     }
@@ -322,11 +323,9 @@ impl SysAuthService {
 #[instrument(skip(sender, auth_event))]
 async fn send_auth_event(
     sender: mpsc::UnboundedSender<Box<dyn std::any::Any + Send>>,
-    auth_event: AuthEvent,
+    auth_event: AuthEvent
 ) -> Result<(), EventError> {
-    sender
-        .send(Box::new(auth_event))
-        .map_err(EventError::from)?;
+    sender.send(Box::new(auth_event)).map_err(EventError::from)?;
     Ok(())
 }
 
@@ -336,7 +335,7 @@ pub async fn generate_auth_output(
     role_codes: Vec<String>,
     domain_code: String,
     organization_name: Option<String>,
-    audience: Audience,
+    audience: Audience
 ) -> Result<AuthOutput, JwtError> {
     let claims = Claims::new(
         user_id,
@@ -344,7 +343,7 @@ pub async fn generate_auth_output(
         username,
         role_codes,
         domain_code,
-        organization_name,
+        organization_name
     );
 
     let token = JwtUtils::generate_token(&claims).await?;
@@ -357,12 +356,12 @@ pub async fn generate_auth_output(
 
 #[instrument(skip(rx))]
 pub async fn auth_login_listener(
-    mut rx: tokio::sync::mpsc::UnboundedReceiver<Box<dyn Any + Send>>,
+    mut rx: tokio::sync::mpsc::UnboundedReceiver<Box<dyn Any + Send>>
 ) {
     while let Some(event) = rx.recv().await {
         if let Some(auth_event) = event.downcast_ref::<AuthEvent>() {
             if let Err(e) = handle_auth_event(auth_event).await {
-                project_error!("Failed to handle AuthEvent: {:?}", e);
+                error!("Failed to handle AuthEvent: {:?}", e);
             }
         }
     }
@@ -382,15 +381,13 @@ async fn handle_auth_event(auth_event: &AuthEvent) -> Result<(), EventError> {
         user_agent: auth_event.user_agent.clone(),
         request_id: auth_event.request_id.clone(),
         login_type: auth_event.login_type.clone(),
-    })
-    .await
-    .map_err(|e| EventError::LoginHandlerError(format!("{:?}", e)))
+    }).await.map_err(|e| EventError::LoginHandlerError(format!("{:?}", e)))
 }
 
 #[instrument(skip(rx))]
 pub async fn jwt_created_listener(mut rx: tokio::sync::mpsc::UnboundedReceiver<String>) {
     while let Some(jwt) = rx.recv().await {
-        project_info!("JWT created: {}", jwt);
-        // TODO: Consider storing the token into the database
+        info!("JWT created: {}", jwt);
+        // TODO: 将token存储到数据库
     }
 }

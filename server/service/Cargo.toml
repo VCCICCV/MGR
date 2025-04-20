@@ -7,13 +7,14 @@ version.workspace = true
 
 [dependencies]
 model = {path = "../model"}
-shared = {path="../shared"}
+shared = {path = "../shared"}
+axum-casbin = { path = "../../axum-casbin" }
 
-async-trait = { workspace = true }
-tokio = { workspace = true}
-sea-orm = { workspace = true }
-thiserror = { workspace = true }
-ulid = { workspace = true }
-chrono = { workspace = true }
-tracing = { workspace = true}
-redis = { workspace = true }
+async-trait = {workspace = true}
+chrono = {workspace = true}
+redis = {workspace = true}
+sea-orm = {workspace = true}
+thiserror = {workspace = true}
+tokio = {workspace = true}
+tracing = {workspace = true}
+ulid = {workspace = true}

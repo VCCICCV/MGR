@@ -1,6 +1,6 @@
+use api::admin::sys_endpoint_api::SysEndpointApi;
 use axum::{http::Method, routing::get, Router};
-use server_api::admin::SysEndpointApi;
-use server_global::global::{add_route, RouteInfo};
+use shared::global::RouteInfo;
 
 pub struct SysEndpointRouter;
 

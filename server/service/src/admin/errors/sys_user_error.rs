@@ -1,4 +1,4 @@
-use server_core::web::error::{ApiError, AppError};
+use shared::web::error::{ApiError, AppError};
 use thiserror::Error;
 
 #[derive(Error, Debug)]
@@ -14,7 +14,6 @@ pub enum UserError {
     #[error("Invalid user status")]
     InvalidUserStatus,
 }
-
 impl ApiError for UserError {
     fn code(&self) -> u16 {
         match self {
