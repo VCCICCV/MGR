@@ -1,3 +1,4 @@
+use tracing::{error, info};
 use tracing_log::LogTracer;
 use tracing_subscriber::{layer::SubscriberExt, EnvFilter, Registry};
 

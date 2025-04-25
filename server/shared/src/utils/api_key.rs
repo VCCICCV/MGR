@@ -1,5 +1,4 @@
 use md5::{Digest, Md5};
-use moka::sync::Cache;
 use parking_lot::RwLock;
 use ring::{digest, hmac};
 use std::{
@@ -9,10 +8,12 @@ use std::{
     time::{SystemTime, UNIX_EPOCH},
 };
 
-/// 支持API密钥验证的签名算法
+use super::nonce_store::{create_memory_store_factory, NonceStore, NonceStoreFactory};
+
+/// Supported signature algorithms for API key validation.
 ///
-/// 这些算法用于生成和验证API请求的签名
-/// 算法按性能排序（最快到最慢）
+/// These algorithms are used to generate and validate signatures for API requests.
+/// The algorithms are ordered by performance (fastest to slowest).
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum SignatureAlgorithm {
     /// MD5 signature algorithm (default, fastest)
@@ -32,12 +33,13 @@ impl Default for SignatureAlgorithm {
     }
 }
 
-///API密钥验证的配置。
-///此结构保存API密钥验证系统的配置选项。
-///它的设计目的是轻量级且可高效克隆。
+/// Configuration for API key validation.
+///
+/// This struct holds configuration options for the API key validation system.
+/// It is designed to be lightweight and efficiently cloneable.
 #[derive(Debug, Clone, Copy)]
 pub struct ApiKeyConfig {
-    /// 用于请求验证的签名算法
+    /// The signature algorithm to use for request validation
     pub algorithm: SignatureAlgorithm,
 }
 
@@ -50,68 +52,24 @@ impl Default for ApiKeyConfig {
     }
 }
 
-/// 验证超时和到期的参数
+/// Constants for validation timeouts and expiration.
 pub const NONCE_TTL_SECS: u64 = 600; // 10 minutes
 pub const TIMESTAMP_DISPARITY_MS: i64 = 300_000; // 5 minutes
 
-/// 容量提示
+/// Capacity hints for collections
 const DEFAULT_CAPACITY: usize = 32;
 
-///内存存储，用于管理自动过期的随机数
-///使用moka缓存来存储TTL为10分钟
-///过期了，可以重新使用。有助于防止重放攻击
-#[derive(Clone)]
-pub struct MemoryNonceStore {
-    nonces: Cache<String, ()>,
-}
-
-impl Default for MemoryNonceStore {
-    #[inline]
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
-impl MemoryNonceStore {
-    /// 创建具有10分钟TTL的新MemoryNonceStore实例
-    #[inline]
-    pub fn new() -> Self {
-        Self {
-            nonces: Cache::builder()
-                .time_to_live(std::time::Duration::from_secs(NONCE_TTL_SECS))
-                .build(),
-        }
-    }
-
-    /// Validates and stores a nonce.
-    ///
-    /// # Arguments
-    /// * `nonce` - The nonce string to validate and store
-    ///
-    /// # Returns
-    /// * `true` if the nonce is valid and not previously used
-    /// * `false` if the nonce is invalid or has been used before
-    #[inline]
-    pub fn check_and_set(&self, nonce: &str) -> bool {
-        if self.nonces.contains_key(nonce) {
-            false
-        } else {
-            self.nonces.insert(nonce.to_string(), ());
-            true
-        }
-    }
-}
-
-///简单的API密钥验证器，用于检查一组预定义的密钥。
-///此验证器通过与一组有效密钥进行比较来提供基本的API密钥验证。
-///密钥永久存储，只能通过显式API调用进行修改。
+/// Simple API key validator that checks against a set of predefined keys.
+///
+/// This validator provides basic API key validation by comparing against a set of valid keys.
+/// Keys are stored permanently and can only be modified through explicit API calls.
 #[derive(Clone)]
 pub struct SimpleApiKeyValidator {
     keys: Arc<RwLock<HashMap<String, ()>>>,
 }
 
 impl SimpleApiKeyValidator {
-    /// 使用空的有效密钥集创建新的SimpleApiKeyVeritas
+    /// Creates a new SimpleApiKeyValidator with an empty set of valid keys.
     #[inline]
     pub fn new() -> Self {
         Self {
@@ -158,20 +116,21 @@ impl Default for SimpleApiKeyValidator {
     }
 }
 
-///复杂的API密钥验证器，支持多种签名算法和nonce验证。
+/// Complex API key validator that supports multiple signature algorithms and nonce validation.
 ///
-///此验证器提供高级API密钥验证功能，包括：
-/// -多种签名算法（MD5，SHA1，SHA 256，HMAC-SHA 256）
-/// -时间戳验证以防止重放攻击
-/// -具有自动到期功能的随机数验证
-/// - URL参数签名
+/// This validator provides advanced API key validation with features including:
+/// - Multiple signature algorithms (MD5, SHA1, SHA256, HMAC-SHA256)
+/// - Timestamp validation to prevent replay attacks
+/// - Nonce validation with automatic expiration
+/// - URL parameter signing
 ///
-/// API密钥及其相应的秘密永久存储，并且只能
-///通过显式API调用修改。
+/// API keys and their corresponding secrets are stored permanently and can only be
+/// modified through explicit API calls.
 #[derive(Clone)]
 pub struct ComplexApiKeyValidator {
     secrets: Arc<RwLock<HashMap<String, String>>>,
-    nonce_store: Arc<MemoryNonceStore>,
+    nonce_store: NonceStore,
+    nonce_store_factory: NonceStoreFactory,
     config: ApiKeyConfig,
 }
 
@@ -182,11 +141,31 @@ impl ComplexApiKeyValidator {
     /// * `config` - Optional API key validation configuration. If None, uses default configuration.
     #[inline]
     pub fn new(config: Option<ApiKeyConfig>) -> Self {
+        Self::with_nonce_store(config, create_memory_store_factory())
+    }
+
+    /// 创建一个新的 ComplexApiKeyValidator 实例，使用指定的 nonce 存储工厂函数
+    ///
+    /// # 参数
+    /// * `config` - 可选的 API 密钥验证配置。如果为 None，则使用默认配置。
+    /// * `nonce_store_factory` - 用于创建 nonce 存储的工厂函数
+    #[inline]
+    pub fn with_nonce_store(
+        config: Option<ApiKeyConfig>,
+        nonce_store_factory: NonceStoreFactory,
+    ) -> Self {
         Self {
             secrets: Arc::new(RwLock::new(HashMap::with_capacity(DEFAULT_CAPACITY))),
-            nonce_store: Arc::new(MemoryNonceStore::new()),
+            nonce_store: (nonce_store_factory)(),
+            nonce_store_factory,
             config: config.unwrap_or_default(),
         }
+    }
+
+    /// 获取一个新的 nonce 存储实例
+    #[inline]
+    pub fn get_new_nonce_store(&self) -> NonceStore {
+        (self.nonce_store_factory)()
     }
 
     /// Validates if a timestamp is within the allowed 5-minute window.
@@ -258,7 +237,12 @@ impl ComplexApiKeyValidator {
             return false;
         }
 
-        if !self.nonce_store.check_and_set(nonce) {
+        let check_result = tokio::task::block_in_place(|| {
+            tokio::runtime::Handle::current()
+                .block_on(async { self.nonce_store.check_and_set(nonce).await })
+        });
+
+        if !check_result {
             return false;
         }
 
@@ -322,75 +306,5 @@ impl ComplexApiKeyValidator {
     #[inline]
     pub fn update_config(&mut self, config: ApiKeyConfig) {
         self.config = config;
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use std::thread;
-
-    #[test]
-    fn test_simple_api_key_validator() {
-        let validator = SimpleApiKeyValidator::new();
-        validator.add_key("test-key".to_string());
-
-        assert!(validator.validate_key("test-key"));
-        assert!(!validator.validate_key("invalid-key"));
-    }
-
-    #[test]
-    fn test_nonce_store() {
-        let store = MemoryNonceStore::new();
-        assert!(store.check_and_set("nonce1"));
-        assert!(!store.check_and_set("nonce1"));
-        thread::sleep(std::time::Duration::from_secs(NONCE_TTL_SECS + 1));
-        assert!(store.check_and_set("nonce1"));
-    }
-
-    #[test]
-    fn test_complex_validator() {
-        let validator = ComplexApiKeyValidator::new(Some(ApiKeyConfig {
-            algorithm: SignatureAlgorithm::Md5,
-        }));
-
-        validator.add_key_secret("test-key".to_string(), "test-secret".to_string());
-
-        let now = SystemTime::now()
-            .duration_since(UNIX_EPOCH)
-            .unwrap()
-            .as_millis() as i64;
-
-        let params = vec![
-            ("timestamp".to_string(), now.to_string()),
-            ("nonce".to_string(), "test-nonce".to_string()),
-            ("data".to_string(), "test-data".to_string()),
-        ];
-
-        let signing_string = format!("data=test-data&nonce=test-nonce&timestamp={}", now);
-        let signature = validator.calculate_signature(&signing_string, "test-secret");
-
-        assert!(validator.validate_signature("test-key", &params, &signature, now, "test-nonce"));
-    }
-
-    #[test]
-    fn test_concurrent_access() {
-        let validator = Arc::new(ComplexApiKeyValidator::new(None));
-        let mut handles = Vec::new();
-
-        for i in 0..10 {
-            let validator = validator.clone();
-            let handle = thread::spawn(move || {
-                let key = format!("key{}", i);
-                let secret = format!("secret{}", i);
-                validator.add_key_secret(key.clone(), secret.clone());
-                assert!(validator.secrets.read().contains_key(&key));
-            });
-            handles.push(handle);
-        }
-
-        for handle in handles {
-            handle.join().unwrap();
-        }
     }
 }

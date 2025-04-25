@@ -1,8 +1,10 @@
+use api::admin::sys_role_api::SysRoleApi;
 use axum::{
     http::Method,
     routing::{delete, get, post, put},
     Router,
 };
+use shared::global::{add_route, RouteInfo};
 
 
 pub struct SysRoleRouter;

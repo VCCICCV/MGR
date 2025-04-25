@@ -1,11 +1,8 @@
-use axum::response::{IntoResponse, Response};
+use axum::response::{ IntoResponse, Response };
 use redis::RedisError;
 use sea_orm::DbErr;
 
-use crate::utils::jwt::JwtError;
-
 use super::res::Res;
-
 
 pub trait ApiError {
     fn code(&self) -> u16;
@@ -70,14 +67,7 @@ impl From<DbErr> for AppError {
     }
 }
 
-impl From<JwtError> for AppError {
-    fn from(err: JwtError) -> Self {
-        AppError {
-            code: 400,
-            message: err.to_string(),
-        }
-    }
-}
+
 
 impl From<RedisError> for AppError {
     fn from(err: RedisError) -> Self {

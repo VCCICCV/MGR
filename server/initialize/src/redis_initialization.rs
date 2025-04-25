@@ -1,5 +1,8 @@
 #![allow(dead_code)]
+use config::{redis::{RedisConfig, RedisInstancesConfig, RedisMode}, OptionalConfigs};
 use redis::{cluster::ClusterClient, Client};
+use shared::global::{get_config, RedisConnection, GLOBAL_PRIMARY_REDIS, GLOBAL_REDIS_POOL};
+use tracing::{error, info};
 
 use std::{process, sync::Arc};
 
@@ -10,7 +13,7 @@ pub async fn init_primary_redis() {
         match create_redis_connection(&config).await {
             Ok(connection) => {
                 *GLOBAL_PRIMARY_REDIS.write().await = Some(connection);
-                project_info!(
+                info!(
                     "Primary Redis connection initialized ({})",
                     if config.mode == RedisMode::Cluster {
                         "Cluster mode"
@@ -20,7 +23,7 @@ pub async fn init_primary_redis() {
                 );
             },
             Err(e) => {
-                project_error!("Failed to initialize primary Redis: {}", e);
+                error!("Failed to initialize primary Redis: {}", e);
                 process::exit(1);
             },
         }
@@ -112,12 +115,12 @@ async fn init_redis_connection(name: &str, config: &RedisConfig) -> Result<(), S
                 .write()
                 .await
                 .insert(name.to_string(), connection);
-            project_info!("Redis '{}' initialized", name);
+            info!("Redis '{}' initialized", name);
             Ok(())
         },
         Err(e) => {
             let error_msg = format!("Failed to initialize Redis '{}': {}", name, e);
-            project_error!("{}", error_msg);
+            error!("{}", error_msg);
             Err(error_msg)
         },
     }
@@ -151,6 +154,6 @@ pub async fn remove_redis_pool(name: &str) -> Result<(), String> {
     redis_pool
         .remove(name)
         .ok_or_else(|| format!("Redis connection '{}' not found", name))?;
-    project_info!("Redis connection '{}' removed", name);
+    info!("Redis connection '{}' removed", name);
     Ok(())
 }

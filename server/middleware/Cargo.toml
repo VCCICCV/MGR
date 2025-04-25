@@ -1,13 +1,18 @@
 [package]
-name = "middleware"
 authors.workspace = true
 edition.workspace = true
+name = "middleware"
 publish.workspace = true
 version.workspace = true
 
 [dependencies]
-shared ={ path="../shared" }
-axum-casbin = { path = "../../axum-casbin" }
+axum-casbin = {path = "../../axum-casbin"}
+config = {path = "../config"}
+shared = {path = "../shared"}
 
-axum = { workspace = true }
-headers = { workspace = true }
+axum = {workspace = true}
+chrono = {workspace = true}
+headers = {workspace = true}
+jsonwebtoken = {workspace = true}
+ulid = {workspace = true}
+serde = {workspace = true}

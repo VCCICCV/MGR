@@ -7,13 +7,16 @@ use axum::{
 };
 use axum_casbin::CasbinVals;
 use headers::{ authorization::Bearer, Authorization, HeaderMapExt };
-use shared::{ utils::jwt::JwtUtils, web::{ auth::User, res::Res } };
+use shared::web::{ auth::User, res::Res };
+
+use crate::jwt_util::JwtUtils;
 
 pub async fn jwt_auth_middleware(
     mut req: Request<Body>,
     next: Next,
     audience: &str
 ) -> impl IntoResponse {
+    // 从Authorization中提取token
     let token = match req.headers().typed_get::<Authorization<Bearer>>() {
         Some(auth) => auth.token().to_string(),
         None => {
@@ -29,10 +32,10 @@ pub async fn jwt_auth_middleware(
     match JwtUtils::validate_token(&token, audience).await {
         Ok(data) => {
             let claims = data.claims;
-            let user = User::from(claims);
+            let user = User::from(claims); // 从 Claims 构建用户对象
             let vals = CasbinVals {
                 subject: user.subject(),
-                domain: Option::from(user.domain()),
+                domain: Option::from(user.domain()), // 多租户隔离域
             };
             // 将用户信息和认证信息存入请求的扩展中
             req.extensions_mut().insert(user);

@@ -25,7 +25,7 @@ pub enum ValidationError {
     #[error("Data is missing")]
     DataMissing,
 }
-
+// 封装已验证过的数据
 #[derive(Debug, Clone)]
 pub struct ValidatedForm<T>(pub T);
 
@@ -45,11 +45,12 @@ impl<S, T> FromRequest<S>
         state: &S
     ) -> impl std::future::Future<Output = Result<Self, Self::Rejection>> + Send {
         async move {
+            // 1. 检测Content-Type
             let content_type = req
                 .headers()
                 .get(CONTENT_TYPE)
                 .and_then(|value| value.to_str().ok());
-
+            // 2. 根据类型解析数据
             let data = match content_type.as_deref() {
                 Some(ct) if ct.contains(mime::APPLICATION_JSON.as_ref()) => {
                     let Json(data) = Json::<T>
@@ -67,7 +68,7 @@ impl<S, T> FromRequest<S>
                     return Err(ValidationError::DataMissing);
                 }
             };
-
+            // 3. 执行字段验证
             data.validate().map_err(ValidationError::from)?;
             Ok(ValidatedForm(data))
         }
@@ -76,12 +77,14 @@ impl<S, T> FromRequest<S>
 
 impl IntoResponse for ValidationError {
     fn into_response(self) -> Response {
+        // 1. 确定状态码和消息
         let (status, error_message) = match self {
             ValidationError::JsonError(msg) => (StatusCode::BAD_REQUEST, msg),
             ValidationError::FormError => {
                 (StatusCode::BAD_REQUEST, "Invalid form data".to_string())
             }
             ValidationError::Validation(errors) => {
+                // 生成字段级错误详情
                 let error_messages: serde_json::Map<String, JsonValue> = errors
                     .field_errors()
                     .into_iter()
@@ -112,7 +115,7 @@ impl IntoResponse for ValidationError {
                 (StatusCode::BAD_REQUEST, "Data is missing".to_string())
             }
         };
-
+        // 2. 构造标准响应格式
         Res::<String>::new_error(status.as_u16(), &error_message).into_response()
     }
 }

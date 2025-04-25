@@ -1,6 +1,7 @@
 use std::any::Any;
 
 use async_trait::async_trait;
+use middleware::jwt_util::{JwtError, JwtUtils};
 use sea_orm::{
     ColumnTrait,
     DatabaseConnection,
@@ -15,7 +16,7 @@ use sea_orm::{
 use shared::{
     constant::{ Audience, SystemEvent },
     global,
-    utils::{ jwt::{ JwtError, JwtUtils }, secure_util::SecureUtil, tree_util::TreeBuilder },
+    utils::{secure_util::SecureUtil, tree_util::TreeBuilder },
     web::{ auth::Claims, error::AppError },
 };
 use thiserror::Error;

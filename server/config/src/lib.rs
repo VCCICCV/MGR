@@ -45,6 +45,7 @@ async fn parse_config(file_path: &str, content: String) -> Result<Config, Config
         .unwrap_or("")
         .to_lowercase();
 
+    // 匹配多种配置文件
     match extension.as_str() {
         "yaml" | "yml" => Ok(serde_yaml::from_str(&content)?),
         "toml" => Ok(toml::from_str(&content)?),
@@ -52,7 +53,7 @@ async fn parse_config(file_path: &str, content: String) -> Result<Config, Config
         _ => Err(ConfigError::UnsupportedFormat(extension)),
     }
 }
-
+// 初始化配置
 pub async fn init_from_file(file_path: &str) -> Result<(), ConfigError> {
     let config_data = fs::read_to_string(file_path).await.map_err(|e| {
         error!("Failed to read config file: {}", e);
@@ -64,16 +65,21 @@ pub async fn init_from_file(file_path: &str) -> Result<(), ConfigError> {
         e
     })?;
 
+    // 全局配置
     global::init_config::<Config>(config.clone()).await;
+    // 数据库配置
     global::init_config::<DatabaseConfig>(config.database).await;
 
     global::init_config::<OptionalConfigs<DatabasesInstancesConfig>>(
         config.database_instances.into()
     ).await;
 
+    // 服务配置
     global::init_config::<ServerConfig>(config.server).await;
+    // jwt配置
     global::init_config::<JwtConfig>(config.jwt).await;
 
+    // redis配置
     if let Some(redis_config) = config.redis {
         global::init_config::<RedisConfig>(redis_config).await;
     }

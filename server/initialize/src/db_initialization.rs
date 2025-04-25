@@ -63,7 +63,7 @@ async fn init_db_connection(name: &str, db_config: &DatabaseConfig) -> Result<()
         },
     }
 }
-
+// 配置
 fn build_connect_options(db_config: &DatabaseConfig) -> ConnectOptions {
     let mut opt = ConnectOptions::new(db_config.url.clone());
     opt.max_connections(db_config.max_connections)
@@ -73,22 +73,22 @@ fn build_connect_options(db_config: &DatabaseConfig) -> ConnectOptions {
         .sqlx_logging(false);
     opt
 }
-
+// 获取主链接
 pub async fn get_primary_db_connection() -> Option<Arc<DatabaseConnection>> {
     GLOBAL_PRIMARY_DB.read().await.clone()
 }
-
+// 获取指定链接
 pub async fn get_db_pool_connection(name: &str) -> Option<Arc<DatabaseConnection>> {
     GLOBAL_DB_POOL.read().await.get(name).cloned()
 }
-
+// 添加或更新链接
 pub async fn add_or_update_db_pool_connection(
     name: &str,
     db_config: &DatabaseConfig,
 ) -> Result<(), String> {
     init_db_connection(name, db_config).await
 }
-
+// 移除链接
 pub async fn remove_db_pool_connection(name: &str) -> Result<(), String> {
     let mut db_pool = GLOBAL_DB_POOL.write().await;
     db_pool

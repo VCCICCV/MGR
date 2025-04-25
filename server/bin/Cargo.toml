@@ -26,8 +26,9 @@ path = "src/product.rs"
 name = "user"
 path = "src/user.rs"
 [dependencies]
+initialize = {path = "../initialize"}
+
 axum = {workspace = true}
 dotenvy = {workspace = true}
-initialize = {path = "../initialize"}
 tokio = {workspace = true}
 tracing = {workspace = true}

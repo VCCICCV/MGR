@@ -9,6 +9,7 @@ version.workspace = true
 model = {path = "../model"}
 shared = {path = "../shared"}
 axum-casbin = { path = "../../axum-casbin" }
+middleware = {path="../middleware"}
 
 async-trait = {workspace = true}
 chrono = {workspace = true}

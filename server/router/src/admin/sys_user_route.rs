@@ -1,10 +1,6 @@
 use api::admin::sys_user_api::SysUserApi;
-use axum::{
-    http::Method,
-    routing::{delete, get, post, put},
-    Router,
-};
-use shared::global::{add_route, RouteInfo};
+use axum::{ http::Method, routing::{ delete, get, post, put }, Router };
+use shared::global::{ add_route, RouteInfo };
 pub struct SysUserRouter;
 
 impl SysUserRouter {
@@ -17,7 +13,7 @@ impl SysUserRouter {
                 &format!("{}/users", base_path),
                 Method::GET,
                 service_name,
-                "获取所有用户",
+                "获取所有用户"
             ),
             RouteInfo::new(base_path, Method::GET, service_name, "获取用户列表"),
             RouteInfo::new(base_path, Method::POST, service_name, "创建用户"),
@@ -25,27 +21,22 @@ impl SysUserRouter {
                 &format!("{}/:id", base_path),
                 Method::GET,
                 service_name,
-                "获取用户详情",
+                "获取用户详情"
             ),
             RouteInfo::new(base_path, Method::PUT, service_name, "更新用户"),
-            RouteInfo::new(
-                &format!("{}/:id", base_path),
-                Method::DELETE,
-                service_name,
-                "删除用户",
-            ),
+            RouteInfo::new(&format!("{}/:id", base_path), Method::DELETE, service_name, "删除用户"),
             RouteInfo::new(
                 &format!("{}/add_policies", base_path),
                 Method::GET,
                 service_name,
-                "添加用户策略",
+                "添加用户策略"
             ),
             RouteInfo::new(
                 &format!("{}/remove_policies", base_path),
                 Method::GET,
                 service_name,
-                "删除用户策略",
-            ),
+                "删除用户策略"
+            )
         ];
 
         for route in routes {
@@ -61,7 +52,6 @@ impl SysUserRouter {
             .route("/{id}", delete(SysUserApi::delete_user))
             .route("/add_policies", get(SysUserApi::add_policies))
             .route("/remove_policies", get(SysUserApi::remove_policies));
-
         Router::new().nest(base_path, router)
     }
 }
