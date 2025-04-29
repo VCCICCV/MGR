@@ -1,5 +1,5 @@
 
-# MGR（motor getting rusty，锈化动力）
+# MGR（motor getting rusty，锈化动力，最新代码见dev分支）
 
 关于DDD请查看`customer`模块，本项目集成了各个客户端配置，充分利用Rust类型系统 ，无论作为学习还是生产模板都是不错的选择，重构代码见其他分支
 
@@ -179,7 +179,6 @@ cargo run
   * 电车是一个SPU
   * 油车是一个SPU
   * 机油是一个SPU
-  *
 
 ## CAP
 
