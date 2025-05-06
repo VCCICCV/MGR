@@ -1,0 +1,33 @@
+[server]
+host = "127.0.0.1"
+port = 8081
+
+[database]
+connect_timeout = 30
+idle_timeout = 600
+max_connections = 10
+min_connections = 1
+url = "postgres://postgres:root123456@localhost:5432/postgres"
+[redis]
+mode = "single"
+url = "redis://:@localhost:6379"
+
+[jwt]
+jwt_secret = "mgr"
+issuer = "http://145632.xyz"
+# 开发阶段设置30天有效
+expire = 2_592_000
+
+[kafka]
+brokers = "127.0.0.1:9092"
+[es]
+host = "127.0.0.1"
+port = 9_200
+[email]
+from = "3108799306@qq.com"
+host = "smtp.qq.com"
+password = "fqaoyqnaxjtsdcjb"
+port = 587
+reply_to = "3108799306@qq.com"
+subject = "锈化动力商城验证码"
+username = "3108799306@qq.com"

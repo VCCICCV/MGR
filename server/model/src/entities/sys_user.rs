@@ -29,14 +29,22 @@ pub struct Model {
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
 pub enum Relation {
-        #[sea_orm(
+    #[sea_orm(
         belongs_to = "super::sys_domain::Entity",
         from = "Column::Domain",
-        to = "super::sys_domain::Column::Code"
+        to = "super::sys_domain::Column::Code",
+        on_update = "NoAction",
+        on_delete = "NoAction"
     )]
     SysDomain,
     #[sea_orm(has_many = "super::sys_user_role::Entity")]
     SysUserRole,
+}
+
+impl Related<super::sys_domain::Entity> for Entity {
+    fn to() -> RelationDef {
+        Relation::SysDomain.def()
+    }
 }
 
 impl Related<super::sys_user_role::Entity> for Entity {

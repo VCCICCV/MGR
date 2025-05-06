@@ -1,6 +1,5 @@
 use std::{ error::Error, fmt::Display, fs::File, io::Read, path::Path };
 use once_cell::sync::OnceCell;
-use tracing::error;
 use crate::ToUIntIP;
 const HEADER_INFO_LENGTH: usize = 256;
 const VECTOR_INDEX_COLS: usize = 256;

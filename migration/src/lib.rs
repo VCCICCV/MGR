@@ -11,10 +11,10 @@ use data::{
 };
 use schemas::{
     m20240815_000001_create_enum_status,
-    m20240815_000002_create_sys_user,
-    m20241023_000003_create_sys_role,
+    m20240815_000003_create_sys_user,
+    m20241023_000005_create_sys_role,
     m20241023_000004_create_sys_access_key,
-    m20241023_000006_create_sys_domain,
+    m20241023_000002_create_sys_domain,
     m20241023_000007_create_sys_endpoint,
     m20241023_000008_create_sys_login_log,
     m20241023_000009_create_sys_menu,
@@ -38,10 +38,10 @@ impl MigratorTrait for Migrator {
         vec![
             // 架构迁移
             Box::new(m20240815_000001_create_enum_status::Migration),
-            Box::new(m20240815_000002_create_sys_user::Migration),
-            Box::new(m20241023_000003_create_sys_role::Migration),
+            Box::new(m20241023_000002_create_sys_domain::Migration),
+            Box::new(m20240815_000003_create_sys_user::Migration),
             Box::new(m20241023_000004_create_sys_access_key::Migration),
-            Box::new(m20241023_000006_create_sys_domain::Migration),
+            Box::new(m20241023_000005_create_sys_role::Migration),
             Box::new(m20241023_000007_create_sys_endpoint::Migration),
             Box::new(m20241023_000008_create_sys_login_log::Migration),
             Box::new(m20241023_000009_create_sys_menu::Migration),

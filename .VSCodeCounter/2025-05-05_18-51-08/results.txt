@@ -1,0 +1,367 @@
+Date : 2025-05-05 18:51:08
+Directory : d:\mgr
+Total : 246 files,  21602 codes, 1265 comments, 2951 blanks, all 25818 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Rust       |        203 |     11,347 |        999 |      1,781 |     14,127 |
+| TOML       |         22 |      9,857 |        146 |      1,064 |     11,067 |
+| Markdown   |          8 |        182 |          4 |         82 |        268 |
+| YAML       |          1 |        111 |        116 |          3 |        230 |
+| Properties |          5 |         42 |          0 |         18 |         60 |
+| XML        |          3 |         42 |          0 |          0 |         42 |
+| CSV        |          3 |         18 |          0 |          3 |         21 |
+| Ignore     |          1 |          3 |          0 |          0 |          3 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                         |        246 |     21,602 |      1,265 |      2,951 |     25,818 |
+| . (Files)                                                                 |          7 |      6,318 |        247 |        657 |      7,222 |
+| .idea                                                                     |          3 |         42 |          0 |          0 |         42 |
+| axum-casbin                                                               |          8 |        456 |         96 |         96 |        648 |
+| axum-casbin (Files)                                                       |          1 |         33 |          1 |          8 |         42 |
+| axum-casbin\examples                                                      |          2 |         16 |          0 |          5 |         21 |
+| axum-casbin\src                                                           |          2 |        234 |         13 |         26 |        273 |
+| axum-casbin\tests                                                         |          3 |        173 |         82 |         57 |        312 |
+| codegen                                                                   |          8 |        783 |          8 |        122 |        913 |
+| codegen (Files)                                                           |          3 |        370 |          2 |         53 |        425 |
+| codegen\server                                                            |          4 |        239 |          0 |         43 |        282 |
+| codegen\server\api                                                        |          1 |         45 |          0 |          7 |         52 |
+| codegen\server\api\src                                                    |          1 |         45 |          0 |          7 |         52 |
+| codegen\server\api\src\admin                                              |          1 |         45 |          0 |          7 |         52 |
+| codegen\server\model                                                      |          1 |         36 |          0 |          5 |         41 |
+| codegen\server\model\src                                                  |          1 |         36 |          0 |          5 |         41 |
+| codegen\server\model\src\admin                                            |          1 |         36 |          0 |          5 |         41 |
+| codegen\server\model\src\admin\input                                      |          1 |         36 |          0 |          5 |         41 |
+| codegen\server\service                                                    |          2 |        158 |          0 |         31 |        189 |
+| codegen\server\service\src                                                |          2 |        158 |          0 |         31 |        189 |
+| codegen\server\service\src\admin                                          |          2 |        158 |          0 |         31 |        189 |
+| codegen\server\service\src\admin (Files)                                  |          1 |        130 |          0 |         26 |        156 |
+| codegen\server\service\src\admin\errors                                   |          1 |         28 |          0 |          5 |         33 |
+| codegen\src                                                               |          1 |        174 |          6 |         26 |        206 |
+| migration                                                                 |         32 |      5,128 |        278 |        568 |      5,974 |
+| migration (Files)                                                         |          3 |      3,019 |          6 |        355 |      3,380 |
+| migration\src                                                             |         29 |      2,109 |        272 |        213 |      2,594 |
+| migration\src (Files)                                                     |          2 |         69 |          5 |          4 |         78 |
+| migration\src\data                                                        |          8 |        238 |         11 |         62 |        311 |
+| migration\src\schemas                                                     |         19 |      1,802 |        256 |        147 |      2,205 |
+| sea-orm-adapter                                                           |         11 |        846 |         25 |        145 |      1,016 |
+| sea-orm-adapter (Files)                                                   |          4 |        100 |          8 |         35 |        143 |
+| sea-orm-adapter\examples                                                  |          2 |         16 |          0 |          5 |         21 |
+| sea-orm-adapter\src                                                       |          5 |        730 |         17 |        105 |        852 |
+| server                                                                    |        172 |      7,736 |        601 |      1,315 |      9,652 |
+| server\api                                                                |         14 |        463 |          6 |         84 |        553 |
+| server\api (Files)                                                        |          1 |         15 |          0 |          3 |         18 |
+| server\api\src                                                            |         13 |        448 |          6 |         81 |        535 |
+| server\api\src (Files)                                                    |          1 |          1 |          0 |          0 |          1 |
+| server\api\src\admin                                                      |         12 |        447 |          6 |         81 |        534 |
+| server\bin                                                                |          8 |         81 |         14 |         16 |        111 |
+| server\bin (Files)                                                        |          1 |         30 |          1 |          4 |         35 |
+| server\bin\src                                                            |          7 |         51 |         13 |         12 |         76 |
+| server\config                                                             |         10 |        213 |         37 |         37 |        287 |
+| server\config (Files)                                                     |          2 |         32 |          0 |          2 |         34 |
+| server\config\src                                                         |          8 |        181 |         37 |         35 |        253 |
+| server\initialize                                                         |         13 |        714 |         46 |        107 |        867 |
+| server\initialize (Files)                                                 |          1 |         37 |          0 |          2 |         39 |
+| server\initialize\src                                                     |         12 |        677 |         46 |        105 |        828 |
+| server\middleware                                                         |          4 |        133 |          8 |         22 |        163 |
+| server\middleware (Files)                                                 |          1 |         16 |          0 |          2 |         18 |
+| server\middleware\src                                                     |          3 |        117 |          8 |         20 |        145 |
+| server\model                                                              |         50 |      1,230 |         30 |        225 |      1,485 |
+| server\model (Files)                                                      |          2 |         27 |          0 |          6 |         33 |
+| server\model\src                                                          |         48 |      1,203 |         30 |        219 |      1,452 |
+| server\model\src (Files)                                                  |          1 |          2 |          0 |          1 |          3 |
+| server\model\src\admin                                                    |         19 |        446 |          2 |         76 |        524 |
+| server\model\src\admin (Files)                                            |          1 |          2 |          0 |          0 |          2 |
+| server\model\src\admin\request                                            |         12 |        271 |          0 |         54 |        325 |
+| server\model\src\admin\response                                           |          6 |        173 |          2 |         22 |        197 |
+| server\model\src\entities                                                 |         28 |        755 |         28 |        142 |        925 |
+| server\router                                                             |         14 |        409 |          4 |         84 |        497 |
+| server\router (Files)                                                     |          1 |         10 |          0 |          3 |         13 |
+| server\router\src                                                         |         13 |        399 |          4 |         81 |        484 |
+| server\router\src (Files)                                                 |          1 |          1 |          0 |          0 |          1 |
+| server\router\src\admin                                                   |         12 |        398 |          4 |         81 |        483 |
+| server\service                                                            |         30 |      2,269 |         41 |        370 |      2,680 |
+| server\service (Files)                                                    |          1 |         19 |          0 |          3 |         22 |
+| server\service\src                                                        |         29 |      2,250 |         41 |        367 |      2,658 |
+| server\service\src (Files)                                                |          1 |          2 |          0 |          0 |          2 |
+| server\service\src\admin                                                  |         25 |      2,144 |         35 |        360 |      2,539 |
+| server\service\src\admin (Files)                                          |         12 |      1,839 |         33 |        313 |      2,185 |
+| server\service\src\admin\dto                                              |          2 |         13 |          0 |          3 |         16 |
+| server\service\src\admin\errors                                           |          6 |        157 |          0 |         23 |        180 |
+| server\service\src\admin\event                                            |          3 |         86 |          0 |         12 |         98 |
+| server\service\src\admin\event_handler                                    |          2 |         49 |          2 |          9 |         60 |
+| server\service\src\helper                                                 |          3 |        104 |          6 |          7 |        117 |
+| server\settings                                                           |          2 |         58 |          1 |          8 |         67 |
+| server\shared                                                             |         24 |      2,140 |        414 |        352 |      2,906 |
+| server\shared (Files)                                                     |          2 |         54 |          0 |          5 |         59 |
+| server\shared\src                                                         |         22 |      2,086 |        414 |        347 |      2,847 |
+| server\shared\src (Files)                                                 |          3 |        246 |         65 |         38 |        349 |
+| server\shared\src\utils                                                   |         11 |      1,008 |        289 |        170 |      1,467 |
+| server\shared\src\web                                                     |          8 |        832 |         60 |        139 |      1,031 |
+| server\static                                                             |          3 |         26 |          0 |         10 |         36 |
+| server\static (Files)                                                     |          1 |         10 |          0 |          5 |         15 |
+| server\static\casbin                                                      |          2 |         16 |          0 |          5 |         21 |
+| xdb                                                                       |          5 |        293 |         10 |         48 |        351 |
+| xdb (Files)                                                               |          1 |         17 |          0 |          4 |         21 |
+| xdb\benches                                                               |          1 |         46 |          0 |          6 |         52 |
+| xdb\src                                                                   |          3 |        230 |         10 |         38 |        278 |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                  | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\mgr\.dockerignore                                                      | Ignore     |          3 |          0 |          0 |          3 |
+| d:\mgr\.env                                                               | Properties |          2 |          0 |          1 |          3 |
+| d:\mgr\.idea\mgr.iml                                                      | XML        |         27 |          0 |          0 |         27 |
+| d:\mgr\.idea\modules.xml                                                  | XML        |          8 |          0 |          0 |          8 |
+| d:\mgr\.idea\vcs.xml                                                      | XML        |          7 |          0 |          0 |          7 |
+| d:\mgr\Cargo.lock                                                         | TOML       |      5,993 |          2 |        617 |      6,612 |
+| d:\mgr\Cargo.toml                                                         | TOML       |        121 |        104 |          4 |        229 |
+| d:\mgr\README.md                                                          | Markdown   |         61 |          4 |         29 |         94 |
+| d:\mgr\axum-casbin\Cargo.toml                                             | TOML       |         33 |          1 |          8 |         42 |
+| d:\mgr\axum-casbin\examples\rbac_with_domains_model.conf                  | Properties |         10 |          0 |          4 |         14 |
+| d:\mgr\axum-casbin\examples\rbac_with_domains_policy.csv                  | CSV        |          6 |          0 |          1 |          7 |
+| d:\mgr\axum-casbin\src\lib.rs                                             | Rust       |          3 |          0 |          2 |          5 |
+| d:\mgr\axum-casbin\src\middleware.rs                                      | Rust       |        231 |         13 |         24 |        268 |
+| d:\mgr\axum-casbin\tests\test_middleware.rs                               | Rust       |         57 |         30 |         20 |        107 |
+| d:\mgr\axum-casbin\tests\test_middleware_domain.rs                        | Rust       |         57 |         21 |         17 |         95 |
+| d:\mgr\axum-casbin\tests\test_set_enforcer.rs                             | Rust       |         59 |         31 |         20 |        110 |
+| d:\mgr\codegen\Cargo.lock                                                 | TOML       |        353 |          2 |         50 |        405 |
+| d:\mgr\codegen\Cargo.toml                                                 | TOML       |         10 |          0 |          3 |         13 |
+| d:\mgr\codegen\README.md                                                  | Markdown   |          7 |          0 |          0 |          7 |
+| d:\mgr\codegen\server\api\src\admin\sys_role_api.rs                       | Rust       |         45 |          0 |          7 |         52 |
+| d:\mgr\codegen\server\model\src\admin\input\sys_role.rs                   | Rust       |         36 |          0 |          5 |         41 |
+| d:\mgr\codegen\server\service\src\admin\errors\sys_role_error.rs          | Rust       |         28 |          0 |          5 |         33 |
+| d:\mgr\codegen\server\service\src\admin\sys_role_service.rs               | Rust       |        130 |          0 |         26 |        156 |
+| d:\mgr\codegen\src\lib.rs                                                 | Rust       |        174 |          6 |         26 |        206 |
+| d:\mgr\docker-compose.yml                                                 | YAML       |        111 |        116 |          3 |        230 |
+| d:\mgr\migration\Cargo.lock                                               | TOML       |      2,959 |          2 |        332 |      3,293 |
+| d:\mgr\migration\Cargo.toml                                               | TOML       |         20 |          4 |          3 |         27 |
+| d:\mgr\migration\README.md                                                | Markdown   |         40 |          0 |         20 |         60 |
+| d:\mgr\migration\src\data\m20241023_000001_insert_sys_domain.rs           | Rust       |         21 |          8 |         10 |         39 |
+| d:\mgr\migration\src\data\m20241024_000002_insert_sys_user.rs             | Rust       |         24 |          0 |          7 |         31 |
+| d:\mgr\migration\src\data\m20241024_000003_insert_sys_role.rs             | Rust       |         24 |          0 |          7 |         31 |
+| d:\mgr\migration\src\data\m20241024_000004_insert_sys_menu.rs             | Rust       |         36 |          0 |          7 |         43 |
+| d:\mgr\migration\src\data\m20241024_000005_insert_sys_user_role.rs        | Rust       |         25 |          0 |          7 |         32 |
+| d:\mgr\migration\src\data\m20241024_000006_insert_sys_role_menu.rs        | Rust       |         35 |          0 |          7 |         42 |
+| d:\mgr\migration\src\data\m20241024_000007_insert_casbin_rule.rs          | Rust       |         66 |          3 |         17 |         86 |
+| d:\mgr\migration\src\data\mod.rs                                          | Rust       |          7 |          0 |          0 |          7 |
+| d:\mgr\migration\src\lib.rs                                               | Rust       |         63 |          4 |          2 |         69 |
+| d:\mgr\migration\src\main.rs                                              | Rust       |          6 |          1 |          2 |          9 |
+| d:\mgr\migration\src\schemas\m20240815_000001_create_enum_status.rs       | Rust       |         70 |          4 |         11 |         85 |
+| d:\mgr\migration\src\schemas\m20240815_000002_create_sys_user.rs          | Rust       |         84 |          3 |          9 |         96 |
+| d:\mgr\migration\src\schemas\m20241023_000003_create_sys_role.rs          | Rust       |         66 |          0 |          8 |         74 |
+| d:\mgr\migration\src\schemas\m20241023_000004_create_sys_access_key.rs    | Rust       |         67 |          0 |          8 |         75 |
+| d:\mgr\migration\src\schemas\m20241023_000006_create_sys_domain.rs        | Rust       |         64 |          0 |          8 |         72 |
+| d:\mgr\migration\src\schemas\m20241023_000007_create_sys_endpoint.rs      | Rust       |         53 |          0 |          5 |         58 |
+| d:\mgr\migration\src\schemas\m20241023_000008_create_sys_login_log.rs     | Rust       |         65 |          0 |          5 |         70 |
+| d:\mgr\migration\src\schemas\m20241023_000009_create_sys_menu.rs          | Rust       |         97 |          0 |          8 |        105 |
+| d:\mgr\migration\src\schemas\m20241023_000010_create_sys_operation_log.rs | Rust       |        103 |          0 |          5 |        108 |
+| d:\mgr\migration\src\schemas\m20241023_000011_create_sys_organization.rs  | Rust       |         74 |          0 |          8 |         82 |
+| d:\mgr\migration\src\schemas\m20241023_000012_create_sys_role_menu.rs     | Rust       |         58 |          3 |          8 |         69 |
+| d:\mgr\migration\src\schemas\m20241023_000013_create_sys_tokens.rs        | Rust       |         67 |          0 |          5 |         72 |
+| d:\mgr\migration\src\schemas\m20241023_000014_create_sys_user_role.rs     | Rust       |         41 |          2 |          7 |         50 |
+| d:\mgr\migration\src\schemas\m20241023_000015_create_event_streams.rs     | Rust       |          0 |        207 |         27 |        234 |
+| d:\mgr\migration\src\schemas\m20241023_000016_create_order.rs             | Rust       |        201 |          7 |          3 |        211 |
+| d:\mgr\migration\src\schemas\m20241023_000017_create_receive_address.rs   | Rust       |        100 |          3 |          5 |        108 |
+| d:\mgr\migration\src\schemas\m20241023_000018_create_cart_item.rs         | Rust       |         93 |          3 |          3 |         99 |
+| d:\mgr\migration\src\schemas\m20241023_000019_create_product.rs           | Rust       |        481 |         24 |         13 |        518 |
+| d:\mgr\migration\src\schemas\mod.rs                                       | Rust       |         18 |          0 |          1 |         19 |
+| d:\mgr\rustfmt.toml                                                       | TOML       |         27 |         21 |          3 |         51 |
+| d:\mgr\sea-orm-adapter\.rustfmt.toml                                      | TOML       |         11 |          2 |          1 |         14 |
+| d:\mgr\sea-orm-adapter\CHANGELOG.md                                       | Markdown   |         25 |          0 |         17 |         42 |
+| d:\mgr\sea-orm-adapter\Cargo.toml                                         | TOML       |         40 |          6 |          7 |         53 |
+| d:\mgr\sea-orm-adapter\README.md                                          | Markdown   |         24 |          0 |         10 |         34 |
+| d:\mgr\sea-orm-adapter\examples\rbac_with_domains_model.conf              | Properties |         10 |          0 |          4 |         14 |
+| d:\mgr\sea-orm-adapter\examples\rbac_with_domains_policy.csv              | CSV        |          6 |          0 |          1 |          7 |
+| d:\mgr\sea-orm-adapter\src\action.rs                                      | Rust       |        220 |          0 |         24 |        244 |
+| d:\mgr\sea-orm-adapter\src\adapter.rs                                     | Rust       |        427 |         14 |         67 |        508 |
+| d:\mgr\sea-orm-adapter\src\entity.rs                                      | Rust       |         17 |          1 |          5 |         23 |
+| d:\mgr\sea-orm-adapter\src\lib.rs                                         | Rust       |          7 |          0 |          3 |         10 |
+| d:\mgr\sea-orm-adapter\src\migration.rs                                   | Rust       |         59 |          2 |          6 |         67 |
+| d:\mgr\server\api\Cargo.toml                                              | TOML       |         15 |          0 |          3 |         18 |
+| d:\mgr\server\api\src\admin\mod.rs                                        | Rust       |         11 |          0 |          0 |         11 |
+| d:\mgr\server\api\src\admin\sys_access_key_api.rs                         | Rust       |         26 |          0 |          5 |         31 |
+| d:\mgr\server\api\src\admin\sys_authentication_api.rs                     | Rust       |         89 |          6 |         15 |        110 |
+| d:\mgr\server\api\src\admin\sys_domain_api.rs                             | Rust       |         38 |          0 |          7 |         45 |
+| d:\mgr\server\api\src\admin\sys_endpoint_api.rs                           | Rust       |         45 |          0 |          9 |         54 |
+| d:\mgr\server\api\src\admin\sys_login_log_api.rs                          | Rust       |         17 |          0 |          4 |         21 |
+| d:\mgr\server\api\src\admin\sys_menu_api.rs                               | Rust       |         61 |          0 |         10 |         71 |
+| d:\mgr\server\api\src\admin\sys_operation_log_api.rs                      | Rust       |         17 |          0 |          3 |         20 |
+| d:\mgr\server\api\src\admin\sys_organization_api.rs                       | Rust       |         17 |          0 |          3 |         20 |
+| d:\mgr\server\api\src\admin\sys_role_api.rs                               | Rust       |         41 |          0 |          9 |         50 |
+| d:\mgr\server\api\src\admin\sys_sandbox_api.rs                            | Rust       |         10 |          0 |          4 |         14 |
+| d:\mgr\server\api\src\admin\sys_user_api.rs                               | Rust       |         75 |          0 |         12 |         87 |
+| d:\mgr\server\api\src\lib.rs                                              | Rust       |          1 |          0 |          0 |          1 |
+| d:\mgr\server\bin\Cargo.toml                                              | TOML       |         30 |          1 |          4 |         35 |
+| d:\mgr\server\bin\src\admin.rs                                            | Rust       |         36 |         13 |          6 |         55 |
+| d:\mgr\server\bin\src\auth.rs                                             | Rust       |          3 |          0 |          1 |          4 |
+| d:\mgr\server\bin\src\cart.rs                                             | Rust       |          0 |          0 |          1 |          1 |
+| d:\mgr\server\bin\src\order.rs                                            | Rust       |          3 |          0 |          1 |          4 |
+| d:\mgr\server\bin\src\pay.rs                                              | Rust       |          3 |          0 |          1 |          4 |
+| d:\mgr\server\bin\src\product.rs                                          | Rust       |          3 |          0 |          1 |          4 |
+| d:\mgr\server\bin\src\user.rs                                             | Rust       |          3 |          0 |          1 |          4 |
+| d:\mgr\server\config\Cargo.toml                                           | TOML       |         30 |          0 |          2 |         32 |
+| d:\mgr\server\config\README.md                                            | Markdown   |          2 |          0 |          0 |          2 |
+| d:\mgr\server\config\src\config.rs                                        | Rust       |         11 |          6 |          7 |         24 |
+| d:\mgr\server\config\src\database.rs                                      | Rust       |         14 |          0 |          3 |         17 |
+| d:\mgr\server\config\src\jwt.rs                                           | Rust       |          7 |          3 |          2 |         12 |
+| d:\mgr\server\config\src\kafka.rs                                         | Rust       |         10 |          0 |          1 |         11 |
+| d:\mgr\server\config\src\lib.rs                                           | Rust       |         73 |          8 |         11 |         92 |
+| d:\mgr\server\config\src\profile.rs                                       | Rust       |         24 |          0 |          2 |         26 |
+| d:\mgr\server\config\src\redis.rs                                         | Rust       |         36 |         20 |          7 |         63 |
+| d:\mgr\server\config\src\server.rs                                        | Rust       |          6 |          0 |          2 |          8 |
+| d:\mgr\server\initialize\Cargo.toml                                       | TOML       |         37 |          0 |          2 |         39 |
+| d:\mgr\server\initialize\src\access_key_initialization.rs                 | Rust       |          7 |          0 |          5 |         12 |
+| d:\mgr\server\initialize\src\admin_router_initialization.rs               | Rust       |        305 |         38 |         34 |        377 |
+| d:\mgr\server\initialize\src\casbin_initialization.rs                     | Rust       |         18 |          0 |          5 |         23 |
+| d:\mgr\server\initialize\src\config_initialization.rs                     | Rust       |          9 |          0 |          2 |         11 |
+| d:\mgr\server\initialize\src\db_initialization.rs                         | Rust       |         86 |          6 |          7 |         99 |
+| d:\mgr\server\initialize\src\event_channel_initialization.rs              | Rust       |         21 |          0 |          2 |         23 |
+| d:\mgr\server\initialize\src\ip2region_initialization.rs                  | Rust       |         10 |          0 |          2 |         12 |
+| d:\mgr\server\initialize\src\jwt_initialization.rs                        | Rust       |         28 |          0 |          8 |         36 |
+| d:\mgr\server\initialize\src\lib.rs                                       | Rust       |         22 |          0 |          2 |         24 |
+| d:\mgr\server\initialize\src\log_tracing_init.rs                          | Rust       |         30 |          0 |          7 |         37 |
+| d:\mgr\server\initialize\src\redis_initialization.rs                      | Rust       |        131 |          2 |         26 |        159 |
+| d:\mgr\server\initialize\src\server_initialization.rs                     | Rust       |         10 |          0 |          5 |         15 |
+| d:\mgr\server\middleware\Cargo.toml                                       | TOML       |         16 |          0 |          2 |         18 |
+| d:\mgr\server\middleware\src\jwt_middleware.rs                            | Rust       |         46 |          2 |          4 |         52 |
+| d:\mgr\server\middleware\src\jwt_util.rs                                  | Rust       |         69 |          6 |         15 |         90 |
+| d:\mgr\server\middleware\src\lib.rs                                       | Rust       |          2 |          0 |          1 |          3 |
+| d:\mgr\server\model\Cargo.toml                                            | TOML       |         13 |          0 |          3 |         16 |
+| d:\mgr\server\model\README.md                                             | Markdown   |         14 |          0 |          3 |         17 |
+| d:\mgr\server\model\src\admin\mod.rs                                      | Rust       |          2 |          0 |          0 |          2 |
+| d:\mgr\server\model\src\admin\request\mod.rs                              | Rust       |         11 |          0 |          1 |         12 |
+| d:\mgr\server\model\src\admin\request\sys_access_key.rs                   | Rust       |         18 |          0 |          5 |         23 |
+| d:\mgr\server\model\src\admin\request\sys_authentication.rs               | Rust       |          9 |          0 |          2 |         11 |
+| d:\mgr\server\model\src\admin\request\sys_authorization.rs                | Rust       |         30 |          0 |          9 |         39 |
+| d:\mgr\server\model\src\admin\request\sys_domain.rs                       | Rust       |         33 |          0 |          5 |         38 |
+| d:\mgr\server\model\src\admin\request\sys_endpoint.rs                     | Rust       |          8 |          0 |          3 |         11 |
+| d:\mgr\server\model\src\admin\request\sys_login_log.rs                    | Rust       |          8 |          0 |          1 |          9 |
+| d:\mgr\server\model\src\admin\request\sys_menu.rs                         | Rust       |         64 |          0 |          7 |         71 |
+| d:\mgr\server\model\src\admin\request\sys_operation_log.rs                | Rust       |          8 |          0 |          2 |         10 |
+| d:\mgr\server\model\src\admin\request\sys_organization.rs                 | Rust       |          8 |          0 |          3 |         11 |
+| d:\mgr\server\model\src\admin\request\sys_role.rs                         | Rust       |         36 |          0 |          9 |         45 |
+| d:\mgr\server\model\src\admin\request\sys_user.rs                         | Rust       |         38 |          0 |          7 |         45 |
+| d:\mgr\server\model\src\admin\response\mod.rs                             | Rust       |          5 |          0 |          1 |          6 |
+| d:\mgr\server\model\src\admin\response\sys_authentication.rs              | Rust       |         20 |          2 |          5 |         27 |
+| d:\mgr\server\model\src\admin\response\sys_domain.rs                      | Rust       |          8 |          0 |          2 |         10 |
+| d:\mgr\server\model\src\admin\response\sys_endpoint.rs                    | Rust       |         12 |          0 |          2 |         14 |
+| d:\mgr\server\model\src\admin\response\sys_menu.rs                        | Rust       |         79 |          0 |          7 |         86 |
+| d:\mgr\server\model\src\admin\response\sys_user.rs                        | Rust       |         49 |          0 |          5 |         54 |
+| d:\mgr\server\model\src\entities\cart_item.rs                             | Rust       |         24 |          1 |          5 |         30 |
+| d:\mgr\server\model\src\entities\casbin_rule.rs                           | Rust       |         18 |          1 |          5 |         24 |
+| d:\mgr\server\model\src\entities\mod.rs                                   | Rust       |         27 |          1 |          3 |         31 |
+| d:\mgr\server\model\src\entities\order.rs                                 | Rust       |         38 |          1 |          5 |         44 |
+| d:\mgr\server\model\src\entities\order_item.rs                            | Rust       |         25 |          1 |          5 |         31 |
+| d:\mgr\server\model\src\entities\prelude.rs                               | Rust       |         25 |          1 |          2 |         28 |
+| d:\mgr\server\model\src\entities\product_attribute.rs                     | Rust       |         20 |          1 |          5 |         26 |
+| d:\mgr\server\model\src\entities\product_attribute_category.rs            | Rust       |         15 |          1 |          5 |         21 |
+| d:\mgr\server\model\src\entities\product_attribute_value.rs               | Rust       |         17 |          1 |          5 |         23 |
+| d:\mgr\server\model\src\entities\product_brand.rs                         | Rust       |         18 |          1 |          5 |         24 |
+| d:\mgr\server\model\src\entities\product_category.rs                      | Rust       |         21 |          1 |          5 |         27 |
+| d:\mgr\server\model\src\entities\product_comment.rs                       | Rust       |         26 |          1 |          5 |         32 |
+| d:\mgr\server\model\src\entities\product_sku.rs                           | Rust       |         22 |          1 |          5 |         28 |
+| d:\mgr\server\model\src\entities\product_spu.rs                           | Rust       |         33 |          1 |          5 |         39 |
+| d:\mgr\server\model\src\entities\receive_address.rs                       | Rust       |         22 |          1 |          5 |         28 |
+| d:\mgr\server\model\src\entities\sea_orm_active_enums.rs                  | Rust       |         20 |          1 |          2 |         23 |
+| d:\mgr\server\model\src\entities\sys_access_key.rs                        | Rust       |         21 |          1 |          5 |         27 |
+| d:\mgr\server\model\src\entities\sys_domain.rs                            | Rust       |         21 |          1 |          5 |         27 |
+| d:\mgr\server\model\src\entities\sys_endpoint.rs                          | Rust       |         19 |          1 |          5 |         25 |
+| d:\mgr\server\model\src\entities\sys_login_log.rs                         | Rust       |         23 |          1 |          5 |         29 |
+| d:\mgr\server\model\src\entities\sys_menu.rs                              | Rust       |         44 |          1 |          6 |         51 |
+| d:\mgr\server\model\src\entities\sys_operation_log.rs                     | Rust       |         31 |          1 |          5 |         37 |
+| d:\mgr\server\model\src\entities\sys_organization.rs                      | Rust       |         22 |          1 |          5 |         28 |
+| d:\mgr\server\model\src\entities\sys_role.rs                              | Rust       |         45 |          1 |          8 |         54 |
+| d:\mgr\server\model\src\entities\sys_role_menu.rs                         | Rust       |         42 |          1 |          7 |         50 |
+| d:\mgr\server\model\src\entities\sys_tokens.rs                            | Rust       |         26 |          1 |          5 |         32 |
+| d:\mgr\server\model\src\entities\sys_user.rs                              | Rust       |         50 |          1 |          7 |         58 |
+| d:\mgr\server\model\src\entities\sys_user_role.rs                         | Rust       |         40 |          1 |          7 |         48 |
+| d:\mgr\server\model\src\lib.rs                                            | Rust       |          2 |          0 |          1 |          3 |
+| d:\mgr\server\router\Cargo.toml                                           | TOML       |         10 |          0 |          3 |         13 |
+| d:\mgr\server\router\src\admin\mod.rs                                     | Rust       |         11 |          0 |          1 |         12 |
+| d:\mgr\server\router\src\admin\sys_access_key_route.rs                    | Rust       |         32 |          0 |          8 |         40 |
+| d:\mgr\server\router\src\admin\sys_authentication_route.rs                | Rust       |         42 |          4 |          9 |         55 |
+| d:\mgr\server\router\src\admin\sys_domain_route.rs                        | Rust       |         41 |          0 |          8 |         49 |
+| d:\mgr\server\router\src\admin\sys_endpoint_route.rs                      | Rust       |         36 |          0 |          7 |         43 |
+| d:\mgr\server\router\src\admin\sys_login_log_route.rs                     | Rust       |         21 |          0 |          7 |         28 |
+| d:\mgr\server\router\src\admin\sys_menu_route.rs                          | Rust       |         62 |          0 |          9 |         71 |
+| d:\mgr\server\router\src\admin\sys_operation_log_route.rs                 | Rust       |         22 |          0 |          6 |         28 |
+| d:\mgr\server\router\src\admin\sys_organization_route.rs                  | Rust       |         21 |          0 |          8 |         29 |
+| d:\mgr\server\router\src\admin\sys_role_route.rs                          | Rust       |         41 |          0 |          8 |         49 |
+| d:\mgr\server\router\src\admin\sys_sandbox_route.rs                       | Rust       |         16 |          0 |          5 |         21 |
+| d:\mgr\server\router\src\admin\sys_user_route.rs                          | Rust       |         53 |          0 |          5 |         58 |
+| d:\mgr\server\router\src\lib.rs                                           | Rust       |          1 |          0 |          0 |          1 |
+| d:\mgr\server\service\Cargo.toml                                          | TOML       |         19 |          0 |          3 |         22 |
+| d:\mgr\server\service\src\admin\dto\mod.rs                                | Rust       |          1 |          0 |          1 |          2 |
+| d:\mgr\server\service\src\admin\dto\sys_auth_dto.rs                       | Rust       |         12 |          0 |          2 |         14 |
+| d:\mgr\server\service\src\admin\errors\mod.rs                             | Rust       |          5 |          0 |          1 |          6 |
+| d:\mgr\server\service\src\admin\errors\sys_access_key_error.rs            | Rust       |         25 |          0 |          4 |         29 |
+| d:\mgr\server\service\src\admin\errors\sys_domain_error.rs                | Rust       |         34 |          0 |          4 |         38 |
+| d:\mgr\server\service\src\admin\errors\sys_menu_error.rs                  | Rust       |         28 |          0 |          5 |         33 |
+| d:\mgr\server\service\src\admin\errors\sys_role_error.rs                  | Rust       |         28 |          0 |          5 |         33 |
+| d:\mgr\server\service\src\admin\errors\sys_user_error.rs                  | Rust       |         37 |          0 |          4 |         41 |
+| d:\mgr\server\service\src\admin\event\access_token_event.rs               | Rust       |         45 |          0 |          6 |         51 |
+| d:\mgr\server\service\src\admin\event\login_log_event.rs                  | Rust       |         39 |          0 |          5 |         44 |
+| d:\mgr\server\service\src\admin\event\mod.rs                              | Rust       |          2 |          0 |          1 |          3 |
+| d:\mgr\server\service\src\admin\event_handler\auth_event_handler.rs       | Rust       |         48 |          2 |          9 |         59 |
+| d:\mgr\server\service\src\admin\event_handler\mod.rs                      | Rust       |          1 |          0 |          0 |          1 |
+| d:\mgr\server\service\src\admin\mod.rs                                    | Rust       |         15 |          0 |          1 |         16 |
+| d:\mgr\server\service\src\admin\sys_access_key_service.rs                 | Rust       |        168 |          4 |         32 |        204 |
+| d:\mgr\server\service\src\admin\sys_auth_service.rs                       | Rust       |        345 |         20 |         39 |        404 |
+| d:\mgr\server\service\src\admin\sys_authorization_service.rs              | Rust       |        292 |          4 |         61 |        357 |
+| d:\mgr\server\service\src\admin\sys_domain_service.rs                     | Rust       |        133 |          0 |         29 |        162 |
+| d:\mgr\server\service\src\admin\sys_endpoint_service.rs                   | Rust       |        168 |          5 |         27 |        200 |
+| d:\mgr\server\service\src\admin\sys_login_log_service.rs                  | Rust       |         51 |          0 |          9 |         60 |
+| d:\mgr\server\service\src\admin\sys_menu_service.rs                       | Rust       |        257 |          0 |         41 |        298 |
+| d:\mgr\server\service\src\admin\sys_operation_log_service.rs              | Rust       |        103 |          0 |         16 |        119 |
+| d:\mgr\server\service\src\admin\sys_organization_service.rs               | Rust       |         48 |          0 |          9 |         57 |
+| d:\mgr\server\service\src\admin\sys_role_service.rs                       | Rust       |        124 |          0 |         25 |        149 |
+| d:\mgr\server\service\src\admin\sys_user_service.rs                       | Rust       |        135 |          0 |         24 |        159 |
+| d:\mgr\server\service\src\helper\db_helper.rs                             | Rust       |         18 |          1 |          3 |         22 |
+| d:\mgr\server\service\src\helper\mod.rs                                   | Rust       |          2 |          0 |          1 |          3 |
+| d:\mgr\server\service\src\helper\redis_helper.rs                          | Rust       |         84 |          5 |          3 |         92 |
+| d:\mgr\server\service\src\lib.rs                                          | Rust       |          2 |          0 |          0 |          2 |
+| d:\mgr\server\settings\development.toml                                   | TOML       |         29 |          1 |          4 |         34 |
+| d:\mgr\server\settings\production.toml                                    | TOML       |         29 |          0 |          4 |         33 |
+| d:\mgr\server\shared\Cargo.toml                                           | TOML       |         45 |          0 |          2 |         47 |
+| d:\mgr\server\shared\README.md                                            | Markdown   |          9 |          0 |          3 |         12 |
+| d:\mgr\server\shared\src\constant.rs                                      | Rust       |         55 |         29 |          9 |         93 |
+| d:\mgr\server\shared\src\global.rs                                        | Rust       |        186 |         36 |         29 |        251 |
+| d:\mgr\server\shared\src\lib.rs                                           | Rust       |          5 |          0 |          0 |          5 |
+| d:\mgr\server\shared\src\utils\api_key.rs                                 | Rust       |        187 |         93 |         30 |        310 |
+| d:\mgr\server\shared\src\utils\api_key_middleware.rs                      | Rust       |        194 |         34 |         34 |        262 |
+| d:\mgr\server\shared\src\utils\dir.rs                                     | Rust       |         29 |          0 |          6 |         35 |
+| d:\mgr\server\shared\src\utils\hash.rs                                    | Rust       |         38 |          0 |          7 |         45 |
+| d:\mgr\server\shared\src\utils\ip.rs                                      | Rust       |         95 |         51 |         14 |        160 |
+| d:\mgr\server\shared\src\utils\memory_nonce_store.rs                      | Rust       |         34 |         17 |          7 |         58 |
+| d:\mgr\server\shared\src\utils\mod.rs                                     | Rust       |         81 |          6 |         12 |         99 |
+| d:\mgr\server\shared\src\utils\nonce_store.rs                             | Rust       |         35 |         16 |          9 |         60 |
+| d:\mgr\server\shared\src\utils\redis_nonce_store.rs                       | Rust       |         75 |          7 |         12 |         94 |
+| d:\mgr\server\shared\src\utils\secure_util.rs                             | Rust       |         50 |          0 |         13 |         63 |
+| d:\mgr\server\shared\src\utils\tree_util.rs                               | Rust       |        190 |         65 |         26 |        281 |
+| d:\mgr\server\shared\src\web\auth.rs                                      | Rust       |        111 |          0 |         19 |        130 |
+| d:\mgr\server\shared\src\web\error.rs                                     | Rust       |         81 |          0 |         15 |         96 |
+| d:\mgr\server\shared\src\web\mod.rs                                       | Rust       |          7 |          0 |          0 |          7 |
+| d:\mgr\server\shared\src\web\operation_log.rs                             | Rust       |        366 |         53 |         66 |        485 |
+| d:\mgr\server\shared\src\web\page.rs                                      | Rust       |         42 |          0 |          7 |         49 |
+| d:\mgr\server\shared\src\web\request_id.rs                                | Rust       |         53 |          0 |         12 |         65 |
+| d:\mgr\server\shared\src\web\res.rs                                       | Rust       |         66 |          0 |         11 |         77 |
+| d:\mgr\server\shared\src\web\validator.rs                                 | Rust       |        106 |          7 |          9 |        122 |
+| d:\mgr\server\static\casbin\rbac_with_domains_model.conf                  | Properties |         10 |          0 |          4 |         14 |
+| d:\mgr\server\static\casbin\rbac_with_domains_policy.csv                  | CSV        |          6 |          0 |          1 |          7 |
+| d:\mgr\server\static\rbac_model.conf                                      | Properties |         10 |          0 |          5 |         15 |
+| d:\mgr\xdb\Cargo.toml                                                     | TOML       |         17 |          0 |          4 |         21 |
+| d:\mgr\xdb\benches\search.rs                                              | Rust       |         46 |          0 |          6 |         52 |
+| d:\mgr\xdb\src\ip_value.rs                                                | Rust       |         53 |          0 |         10 |         63 |
+| d:\mgr\xdb\src\lib.rs                                                     | Rust       |          4 |          0 |          1 |          5 |
+| d:\mgr\xdb\src\searcher.rs                                                | Rust       |        173 |         10 |         27 |        210 |
+| Total                                                                     |            |     21,602 |      1,265 |      2,951 |     25,818 |
++---------------------------------------------------------------------------+------------+------------+------------+------------+------------+

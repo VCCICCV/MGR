@@ -37,6 +37,7 @@ cargo run --bin user
 cargo run --bin auth
 cargo run --bin admin
 cargo run --bin product
+cargo run --bin order
 ```
 
 生成实体
@@ -90,4 +91,12 @@ sea-orm-cli generate entity -o server/model/src/entities --with-serde both
 * OMS（Order Management System，订单管理系统）​​：
 * SYS（System Management，系统管理平台）​​：
 * UMS（User Management System，用户管理系统）​​：认证、用户画像等 -->
-## 性能优化
+## 解决方案
+
+打开一片红则
+
+```cmd
+cargo clean
+
+cargo build
+```

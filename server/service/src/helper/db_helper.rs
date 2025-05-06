@@ -1,6 +1,6 @@
 use std::sync::Arc;
-use sea_orm::{ConnAcquireErr, DatabaseConnection, DbErr};
-use shared::{global::{GLOBAL_DB_POOL, GLOBAL_PRIMARY_DB}, web::error::AppError};
+use sea_orm::{ ConnAcquireErr, DatabaseConnection, DbErr };
+use shared::{ global::{ GLOBAL_DB_POOL, GLOBAL_PRIMARY_DB }, web::error::AppError };
 
 pub async fn get_db_connection() -> Result<Arc<DatabaseConnection>, AppError> {
     let db = GLOBAL_PRIMARY_DB.read().await;

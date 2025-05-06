@@ -77,7 +77,6 @@ impl SysAuthenticationApi {
         Extension(service): Extension<Arc<SysAuthService>>
     ) -> Result<Res<UserRoute>, AppError> {
         let routes = service.get_user_routes(&user.subject(), &user.domain()).await?;
-
         Ok(Res::new_data(routes))
     }
 

@@ -86,6 +86,7 @@ pub async fn init_from_file(file_path: &str) -> Result<(), ConfigError> {
     global::init_config::<OptionalConfigs<RedisInstancesConfig>>(
         config.redis_instances.into()
     ).await;
+    // kafka配置
     info!("Configuration initialized successfully");
     Ok(())
 }

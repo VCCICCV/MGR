@@ -11,10 +11,10 @@ async fn main() {
     }
     let config_path = if cfg!(debug_assertions) {
         // 开发模式使用测试配置
-        "../settings/development.toml"
+        "../settings/development_admin.toml"
     } else {
         // 发布模式使用生产配置
-        "../settings/production.toml"
+        "../settings/production_admin.toml"
     };
     // 初始化tracing
     initialize::initialize_log_tracing().await;

@@ -66,7 +66,14 @@ impl MigrationTrait for Migration {
                 .unique()
                 .to_owned()
         ).await?;
-
+        // 外键
+        manager.create_foreign_key(
+            ForeignKey::create()
+                .name("fk_sys_user_domain")
+                .from(SysUser::Table, SysUser::Domain)
+                .to(Alias::new("sys_domain"), Alias::new("code"))
+                .to_owned()
+        ).await?;
         Ok(())
     }
 

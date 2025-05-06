@@ -25,6 +25,9 @@ path = "src/product.rs"
 [[bin]]
 name = "user"
 path = "src/user.rs"
+[[bin]]
+name = "cart"
+path = "src/cart.rs"
 [dependencies]
 initialize = {path = "../initialize"}
 

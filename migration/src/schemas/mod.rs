@@ -1,8 +1,8 @@
 pub mod m20240815_000001_create_enum_status;
-pub mod m20240815_000002_create_sys_user;
-pub mod m20241023_000003_create_sys_role;
+pub mod m20240815_000003_create_sys_user;
+pub mod m20241023_000005_create_sys_role;
 pub mod m20241023_000004_create_sys_access_key;
-pub mod m20241023_000006_create_sys_domain;
+pub mod m20241023_000002_create_sys_domain;
 pub mod m20241023_000007_create_sys_endpoint;
 pub mod m20241023_000008_create_sys_login_log;
 pub mod m20241023_000009_create_sys_menu;

@@ -87,7 +87,7 @@ jsonwebtoken = "9.3.1"
 # 数据库 ORM 和适配器（底层数据库操作）
 # =========================================
 # ORM
-sea-orm = {version = "1.1.8", features = [
+sea-orm = {version = "1.1.10", features = [
   "runtime-tokio-native-tls",
   "sqlx-postgres",
   "macros",

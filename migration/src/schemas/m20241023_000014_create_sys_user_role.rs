@@ -33,6 +33,7 @@ impl MigrationTrait for Migration {
                 .to(Alias::new("sys_role"), Alias::new("id"))
                 .to_owned()
         ).await?;
+
         Ok(())
     }
 

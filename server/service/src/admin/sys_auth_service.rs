@@ -1,7 +1,7 @@
 use std::any::Any;
 
 use async_trait::async_trait;
-use middleware::jwt_util::{JwtError, JwtUtils};
+use middleware::jwt_util::{ JwtError, JwtUtils };
 use sea_orm::{
     ColumnTrait,
     DatabaseConnection,
@@ -12,11 +12,10 @@ use sea_orm::{
     QuerySelect,
     RelationTrait,
 };
-
 use shared::{
     constant::{ Audience, SystemEvent },
     global,
-    utils::{secure_util::SecureUtil, tree_util::TreeBuilder },
+    utils::{ secure_util::SecureUtil, tree_util::TreeBuilder },
     web::{ auth::Claims, error::AppError },
 };
 use thiserror::Error;
@@ -24,15 +23,23 @@ use tokio::sync::mpsc;
 use tracing::{ error, info, instrument };
 use ulid::Ulid;
 use model::admin::{
-        request::sys_authentication::LoginInput,
-        response::{
-            sys_authentication::{ AuthOutput, UserRoute },
-            sys_menu::{ MenuRoute, RouteMeta },
-            sys_user::UserWithDomainAndOrgOutput,
-        },
-    };
+    request::sys_authentication::LoginInput,
+    response::{
+        sys_authentication::{ AuthOutput, UserRoute },
+        sys_menu::{ MenuRoute, RouteMeta },
+        sys_user::UserWithDomainAndOrgOutput,
+    },
+};
 use model::entities::sea_orm_active_enums::Status;
-use model::entities::{prelude::{ SysRole, SysUser,SysRoleMenu,SysMenu }, sys_user, sys_domain, sys_user_role, sys_role_menu,sys_menu,sys_role };
+use model::entities::{
+    prelude::{ SysRole, SysUser, SysRoleMenu, SysMenu },
+    sys_user,
+    sys_domain,
+    sys_user_role,
+    sys_role_menu,
+    sys_menu,
+    sys_role,
+};
 use crate::helper::db_helper;
 
 use super::{
@@ -138,17 +145,18 @@ impl TAuthService for SysAuthService {
         role_codes: &[String],
         domain: &str
     ) -> Result<UserRoute, AppError> {
+        // 无角色
         if role_codes.is_empty() {
             return Ok(UserRoute {
                 routes: vec![],
-                home: "/home".to_string(),
+                home: "/".to_string(),
             });
         }
 
         let db = db_helper::get_db_connection().await?;
 
-        let menu_ids = SysRoleMenu
-            ::find()
+        // 菜单id
+        let menu_ids = SysRoleMenu::find()
             .select_only()
             .column(sys_role_menu::Column::MenuId)
             .join_rev(JoinType::InnerJoin, SysRole::has_many(SysRoleMenu).into())
@@ -158,14 +166,15 @@ impl TAuthService for SysAuthService {
             .into_tuple::<i32>()
             .all(db.as_ref()).await?;
 
-        let menus = SysMenu
-            ::find()
+        // 确保菜单enable
+        let menus = SysMenu::find()
             .filter(sys_menu::Column::Id.is_in(menu_ids))
-            .filter(sys_menu::Column::Status.eq(Status::ENABLED))
+            .filter(sys_menu::Column::Status.eq(Status::Enabled))
             .order_by_asc(sys_menu::Column::Sequence)
             .into_model::<sys_menu::Model>()
             .all(db.as_ref()).await?;
 
+        // 转换为路由
         let menu_routes: Vec<MenuRoute> = menus
             .into_iter()
             .map(|menu| MenuRoute {
@@ -192,6 +201,7 @@ impl TAuthService for SysAuthService {
 
         let menu_routes_ref = menu_routes.clone();
 
+        // 构建路由树
         let routes = TreeBuilder::build(
             menu_routes,
             |route| route.name.clone(),
@@ -258,8 +268,7 @@ impl SysAuthService {
         user_id: &str,
         db: &DatabaseConnection
     ) -> Result<Vec<String>, AppError> {
-        SysRole
-            ::find()
+        SysRole::find()
             .join(JoinType::InnerJoin, sys_role::Relation::SysUserRole.def())
             .join(JoinType::InnerJoin, sys_user_role::Relation::SysUser.def())
             .filter(sys_user::Column::Id.eq(user_id))

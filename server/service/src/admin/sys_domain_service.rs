@@ -110,7 +110,7 @@ impl TDomainService for SysDomainService {
             code: Set(input.code),
             name: Set(input.name),
             description: Set(input.description),
-            status: Set(Status::ENABLED),
+            status: Set(Status::Enabled),
             created_at: Set(Local::now().naive_local()),
             created_by: Set("TODO".to_string()),
             ..Default::default()

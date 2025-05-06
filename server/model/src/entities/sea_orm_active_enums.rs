@@ -14,10 +14,10 @@ pub enum MenuType {
 #[derive(Debug, Clone, PartialEq, Eq, EnumIter, DeriveActiveEnum, Serialize, Deserialize)]
 #[sea_orm(rs_type = "String", db_type = "Enum", enum_name = "Status")]
 pub enum Status {
-    #[sea_orm(string_value = "BANNED")]
-    BANNED,
-    #[sea_orm(string_value = "DISABLED")]
-    DISABLED,
     #[sea_orm(string_value = "ENABLED")]
-    ENABLED,
+    Enabled,
+    #[sea_orm(string_value = "DISABLED")]
+    Disabled,
+    #[sea_orm(string_value = "BANNED")]
+    Banned,
 }
