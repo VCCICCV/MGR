@@ -26,7 +26,7 @@ pub struct CasbinVals {
 
 #[derive(Clone)]
 pub struct CasbinAxumLayer {
-    enforcer: Arc<RwLock<CachedEnforcer>>,// 线程安全的Casbin执行器
+    enforcer: Arc<RwLock<CachedEnforcer>>, // 线程安全的Casbin执行器
 }
 
 impl CasbinAxumLayer {
@@ -38,10 +38,11 @@ impl CasbinAxumLayer {
         })
     }
 
+    // 获取执行器
     pub fn get_enforcer(&mut self) -> Arc<RwLock<CachedEnforcer>> {
         self.enforcer.clone()
     }
-
+    // 设置执行器
     pub fn set_enforcer(e: Arc<RwLock<CachedEnforcer>>) -> CasbinAxumLayer {
         CasbinAxumLayer { enforcer: e }
     }
@@ -107,9 +108,9 @@ impl<S, ReqBody, ResBody> Service<Request<ReqBody>>
 
         Box::pin(async move {
             // 1. 提取请求信息
-            let path = req.uri().path().to_string();// 请求路径
-            let action = req.method().as_str().to_string();// HTTP方法
-            let option_vals = req// 认证信息
+            let path = req.uri().path().to_string(); // 请求路径
+            let action = req.method().as_str().to_string(); // HTTP方法
+            let option_vals = req // 认证信息
                 .extensions()
                 .get::<CasbinVals>()
                 .map(|x| x.to_owned());
@@ -134,10 +135,11 @@ impl<S, ReqBody, ResBody> Service<Request<ReqBody>>
                 }
             };
 
+            //  主体
             let subject = vals.subject.clone();
 
             if !vals.subject.is_empty() {
-                // 带域检查
+                // 存在domain时进行带域检查
                 if let Some(domain) = vals.domain {
                     let mut lock = cloned_enforcer.write().await;
                     let mut authorized = false;
@@ -172,29 +174,16 @@ impl<S, ReqBody, ResBody> Service<Request<ReqBody>>
                         Ok(
                             Response::builder()
                                 .status(StatusCode::BAD_GATEWAY)
-                                .body(
-                                    body::Body::new(
-                                        Full::from(
-                                            "We encountered an unexpected error while processing your request. Our team has been notified, and we are investigating the issue."
-                                        )
-                                    )
-                                )
+                                .body(body::Body::new(Full::from("带域检查错误")))
                                 .unwrap()
                         )
                     } else if authorized {
                         Ok(inner.call(req).await?.map(body::Body::new))
                     } else {
-                        // Ok(inner.call(req).await?.map(body::Body::new))
                         Ok(
                             Response::builder()
                                 .status(StatusCode::FORBIDDEN)
-                                .body(
-                                    body::Body::new(
-                                        Full::from(
-                                            "You do not have the necessary permissions to access this resource. Please contact support if you believe this is an error."
-                                        )
-                                    )
-                                )
+                                .body(body::Body::new(Full::from("带域无权限")))
                                 .unwrap()
                         )
                     }
@@ -226,13 +215,7 @@ impl<S, ReqBody, ResBody> Service<Request<ReqBody>>
                         Ok(
                             Response::builder()
                                 .status(StatusCode::BAD_GATEWAY)
-                                .body(
-                                    body::Body::new(
-                                        Full::from(
-                                            "We encountered an unexpected error while processing your request. Our team has been notified, and we are investigating the issue."
-                                        )
-                                    )
-                                )
+                                .body(body::Body::new(Full::from("检查错误")))
                                 .unwrap()
                         )
                     } else if authorized {
@@ -241,13 +224,7 @@ impl<S, ReqBody, ResBody> Service<Request<ReqBody>>
                         Ok(
                             Response::builder()
                                 .status(StatusCode::FORBIDDEN)
-                                .body(
-                                    body::Body::new(
-                                        Full::from(
-                                            "You do not have the necessary permissions to access this resource. Please contact support if you believe this is an error."
-                                        )
-                                    )
-                                )
+                                .body(body::Body::new(Full::from("无权限")))
                                 .unwrap()
                         )
                     }

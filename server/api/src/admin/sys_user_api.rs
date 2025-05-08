@@ -60,6 +60,7 @@ impl SysUserApi {
         Extension(service): Extension<Arc<SysUserService>>,
         ValidatedForm(input): ValidatedForm<CreateUserInput>
     ) -> Result<Res<UserWithoutPassword>, AppError> {
+        
         service.create_user(input).await.map(Res::new_data)
     }
 

@@ -12,7 +12,7 @@ pub struct UserPageRequest {
     pub keywords: Option<String>,
 }
 
-#[derive(Deserialize, Validate)]
+#[derive(Debug,Deserialize, Validate)]
 #[serde(rename_all = "camelCase")]
 pub struct UserInput {
     pub domain: String,

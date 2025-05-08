@@ -28,9 +28,10 @@ impl MigrationTrait for Migration {
                 .col(
                     ColumnDef::new(ProductAttribute::OptionStatus)
                         .tiny_integer()
-                        .comment("可选状态 0：手动录入 1：代入可选集合")
+                        .default(1)
+                        .comment("默认选项")
                 )
-                .col(ColumnDef::new(ProductAttribute::OptionList).string().comment("可选值集合"))
+                .col(ColumnDef::new(ProductAttribute::OptionList).json_binary().comment("可选值集合"))
                 .col(ColumnDef::new(ProductAttribute::Sort).integer().comment("排序"))
                 .col(
                     ColumnDef::new(ProductAttribute::Type)
@@ -100,7 +101,7 @@ impl MigrationTrait for Migration {
                 .col(
                     ColumnDef::new(ProductAttributeValue::AttributeValue)
                         .string()
-                        .comment("商品属性值")
+                        .comment("商品属性值，这里是价格")
                 )
                 .col(
                     ColumnDef::new(ProductAttributeValue::CreateTime)
@@ -235,7 +236,7 @@ impl MigrationTrait for Migration {
                 )
                 .col(
                     ColumnDef::new(ProductComment::Resource)
-                        .string()
+                        .json_binary()
                         .comment("评论图片/视频，JSON 格式")
                 )
                 .col(ColumnDef::new(ProductComment::CreateTime).timestamp().comment("创建时间"))
@@ -262,13 +263,13 @@ impl MigrationTrait for Migration {
                 .col(ColumnDef::new(ProductSku::CategoryId).big_integer().comment("商品类型 ID"))
                 .col(
                     ColumnDef::new(ProductSku::BrandId)
-                        .string_len(36)
+                        .big_integer()
                         .not_null()
                         .comment("商品品牌 ID")
                 )
                 .col(
                     ColumnDef::new(ProductSku::ProductId)
-                        .string_len(36)
+                        .big_integer()
                         .not_null()
                         .comment("商品 ID")
                 )
@@ -276,7 +277,7 @@ impl MigrationTrait for Migration {
                 .col(ColumnDef::new(ProductSku::Stock).integer().default(0).comment("库存"))
                 .col(ColumnDef::new(ProductSku::LockStock).integer().default(0).comment("锁定库存"))
                 .col(ColumnDef::new(ProductSku::Pic).string().comment("图片"))
-                .col(ColumnDef::new(ProductSku::Attribute).string().comment("属性，JSON 格式"))
+                .col(ColumnDef::new(ProductSku::Attribute).json_binary().comment("属性，JSON 格式"))
                 .col(ColumnDef::new(ProductSku::CreateTime).timestamp().comment("创建时间"))
                 .col(ColumnDef::new(ProductSku::UpdateTime).timestamp().comment("修改时间"))
                 .col(
@@ -389,7 +390,9 @@ enum ProductAttribute {
     Id,
     ProductAttributeCategoryId,
     Name,
+    // 默认选项
     OptionStatus,
+
     OptionList,
     Sort,
     Type,

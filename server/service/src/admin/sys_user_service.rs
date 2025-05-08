@@ -5,6 +5,7 @@ use sea_orm::{
 };
 use shared::{utils::secure_util::SecureUtil, web::{ error::AppError, page::PaginatedData }};
 use model::{admin::{request::sys_user::{CreateUserInput, UpdateUserInput, UserPageRequest}, response::sys_user::UserWithoutPassword}, entities::sys_user};
+
 use ulid::Ulid;
 use crate::helper::db_helper;
 use super::errors::sys_user_error::UserError;
@@ -91,6 +92,7 @@ impl TUserService for SysUserService {
     }
 
     async fn create_user(&self, input: CreateUserInput) -> Result<UserWithoutPassword, AppError> {
+        println!("create user");
         self.check_username_unique(&input.username).await?;
 
         let db = db_helper::get_db_connection().await?;
@@ -110,6 +112,7 @@ impl TUserService for SysUserService {
             ..Default::default()
         };
 
+        
         let user_model = user.insert(db.as_ref()).await.map_err(AppError::from)?;
         Ok(UserWithoutPassword::from(user_model))
     }

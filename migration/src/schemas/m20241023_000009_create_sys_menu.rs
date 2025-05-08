@@ -25,7 +25,7 @@ impl MigrationTrait for Migration {
                     )
                     .col(
                         ColumnDef::new(SysMenu::MenuType)
-                            .enumeration(Alias::new("\"MenuType\""), MenuType::iter())
+                            .enumeration(Alias::new("menu_type"), MenuType::iter())
                             .not_null(),
                     )
                     .col(ColumnDef::new(SysMenu::MenuName).string().not_null())
@@ -42,7 +42,7 @@ impl MigrationTrait for Migration {
                     .col(ColumnDef::new(SysMenu::PathParam).string().null())
                     .col(
                         ColumnDef::new(SysMenu::Status)
-                            .enumeration(Alias::new("\"Status\""), Status::iter())
+                            .enumeration(Alias::new("status"), Status::iter())
                             .not_null(),
                     )
                     .col(ColumnDef::new(SysMenu::ActiveMenu).string().null())

@@ -181,49 +181,53 @@ services:
     volumes:
       - /opt/kafka/data:/kafka/data
     healthcheck:
-      test: ["CMD-SHELL", "kafka-broker-api-versions --bootstrap-server broker:29092 || exit 0"]  # 首次检查允许失败
-      start_period: 30s  # 给 Kafka 足够的启动时间
+      test: [
+          "CMD-SHELL",
+          "kafka-broker-api-versions --bootstrap-server broker:29092 || exit 0",
+        ] # 首次检查允许失败
+      start_period: 30s # 给 Kafka 足够的启动时间
       interval: 10s
       timeout: 10s
       retries: 6
-  debezium:
-    image: debezium/connect:2.7.3.Final
-    container_name: debezium
-    hostname: debezium
-    restart: on-failure
-    # 如需要其他插件要提前复制到挂载目录并下载其他插件到挂载目录
-    # volumes:
-    #   - /opt/debezium/kafak/connect:/kafka/connect
-    environment:
-      # 指定 Kafka 连接器的配置
-      BOOTSTRAP_SERVERS: "broker:29092"
-      REST_ADVERTISED_HOST_NAME: "0.0.0.0" # 允许外部访问
-      # 指定消费者组id
-      GROUP_ID: 1
-      # 存储Debezium的配置信息到Kafka的Topic名，用于重启时加载配置
-      CONFIG_STORAGE_TOPIC: "connect_configs"
-      # 存储消费者偏移量信息到Kafka的Topic名，用于记录消费者进度
-      OFFSET_STORAGE_TOPIC: "connect_offsets"
-      STATUS_STORAGE_TOPIC: "connect_statuses"
-      # 指定键值转换器，使用`Avro`来格式化、序列化键值数据
-      KEY_CONVERTER: "org.apache.kafka.connect.storage.StringConverter"
-      VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
-      CONFIG_STORAGE_REPLICATION_FACTOR: 1
-      OFFSET_STORAGE_REPLICATION_FACTOR: 1
-      STATUS_STORAGE_REPLICATION_FACTOR: 1
-      # PostgreSQL 连接器自动注册配置
-      CONNECT_CDC_CONNECTOR_POSTGRESQL_ENABLED: "true"
-      # 强制允许配置覆盖（避免权限问题）
-      CONNECTOR_CLIENT_CONFIG_OVERRIDE_POLICY: All
-    depends_on:
-      broker:
-        condition: service_healthy
-      postgres:
-        condition: service_healthy
-    ports:
-      - 8083:8083
-    networks:
-      - pub-network
+      # 此项已不需要，改为kafka事务消息
+  # debezium:
+  #   image: debezium/connect:2.7.3.Final
+  #   container_name: debezium
+  #   hostname: debezium
+  #   restart: on-failure
+  #   # 如需要其他插件要提前复制到挂载目录并下载其他插件到挂载目录
+  #   # volumes:
+  #   #   - /opt/debezium/kafak/connect:/kafka/connect
+  #   environment:
+  #     # 指定 Kafka 连接器的配置
+  #     BOOTSTRAP_SERVERS: "broker:29092"
+  #     REST_ADVERTISED_HOST_NAME: "0.0.0.0" # 允许外部访问
+  #     # 指定消费者组id
+  #     GROUP_ID: 1
+  #     # 存储Debezium的配置信息到Kafka的Topic名，用于重启时加载配置
+  #     CONFIG_STORAGE_TOPIC: "connect_configs"
+  #     # 存储消费者偏移量信息到Kafka的Topic名，用于记录消费者进度
+  #     OFFSET_STORAGE_TOPIC: "connect_offsets"
+  #     STATUS_STORAGE_TOPIC: "connect_statuses"
+  #     # 指定键值转换器，使用`Avro`来格式化、序列化键值数据
+  #     KEY_CONVERTER: "org.apache.kafka.connect.storage.StringConverter"
+  #     VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+  #     CONFIG_STORAGE_REPLICATION_FACTOR: 1
+  #     OFFSET_STORAGE_REPLICATION_FACTOR: 1
+  #     STATUS_STORAGE_REPLICATION_FACTOR: 1
+  #     # PostgreSQL 连接器自动注册配置
+  #     CONNECT_CDC_CONNECTOR_POSTGRESQL_ENABLED: "true"
+  #     # 强制允许配置覆盖（避免权限问题）
+  #     CONNECTOR_CLIENT_CONFIG_OVERRIDE_POLICY: All
+  #   depends_on:
+  #     broker:
+  #       condition: service_healthy
+  #     postgres:
+  #       condition: service_healthy
+  #   ports:
+  #     - 8083:8083
+  #   networks:
+  #     - pub-network
 networks:
   pub-network:
     name: pub-network

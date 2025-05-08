@@ -4,7 +4,7 @@ use sea_orm::entity::prelude::*;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, PartialEq, Eq, EnumIter, DeriveActiveEnum, Serialize, Deserialize)]
-#[sea_orm(rs_type = "String", db_type = "Enum", enum_name = "MenuType")]
+#[sea_orm(rs_type = "String", db_type = "Enum", enum_name = "menu_type")]
 pub enum MenuType {
     #[sea_orm(string_value = "directory")]
     Directory,
@@ -12,7 +12,7 @@ pub enum MenuType {
     Menu,
 }
 #[derive(Debug, Clone, PartialEq, Eq, EnumIter, DeriveActiveEnum, Serialize, Deserialize)]
-#[sea_orm(rs_type = "String", db_type = "Enum", enum_name = "Status")]
+#[sea_orm(rs_type = "String", db_type = "Enum", enum_name = "status")]
 pub enum Status {
     #[sea_orm(string_value = "ENABLED")]
     Enabled,

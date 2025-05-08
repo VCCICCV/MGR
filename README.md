@@ -25,6 +25,16 @@ sea-orm-cli migrate up
 删除所有表
 
 ```cmd
+# 不建议，状态不会删除
+sea-orm-cli migrate down -n 30
+# 删除定义的状态
+DROP TYPE IF EXISTS menu_type;
+DROP TYPE IF EXISTS status;
+```
+
+每次删除一个表
+
+```cmd
 sea-orm-cli migrate down
 ```
 
@@ -45,6 +55,32 @@ cargo run --bin order
 
 ```cmd
 sea-orm-cli generate entity -o server/model/src/entities --with-serde both
+```
+
+快速开发
+
+```cmd
+cargo install cargo-watch
+
+cargo watch -c -x 'run --bin admin'
+```
+
+## 架构
+
+```bash
+.
+├── api                 # api handler层
+├── bin                 # 二进制crate
+├── codegen             # 代码生成器
+├── config              # 配置文件解析
+├── initialize          # 初始化层
+├── middleware          # 中间件层
+├── model               # 模型/实体层
+├── router              # 路由层
+├── service             # 业务层
+├── settings            # 配置文件
+├── shared              # 公共代码
+└── static              # 静态资源
 ```
 
 ## 操作规约
@@ -100,3 +136,13 @@ cargo clean
 
 cargo build
 ```
+
+## B2C&C2C（本项目采用B2C）
+
+B2C（Business to Consumer）：企业直接面向消费者销售商品或服务
+
+* 有自己的仓储管理
+
+C2C（Consumer to Consumer）：消费者之间直接交易，平台仅提供撮合服务
+
+* 没有精细化的仓储管理

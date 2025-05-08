@@ -43,7 +43,6 @@ impl SysAuthenticationRouter {
             add_route(route).await;
         }
 
-        // 
         let authorization_router = Router::new()
             .route("/getUserRoutes", get(SysAuthenticationApi::get_user_routes))
             .route("/assign-permission", post(SysAuthenticationApi::assign_permission))

@@ -19,7 +19,7 @@ impl MigrationTrait for Migration {
                 .col(ColumnDef::new(SysDomain::Description).string().null())
                 .col(
                     ColumnDef::new(SysDomain::Status)
-                        .enumeration(Alias::new("\"Status\""), Status::iter())
+                        .enumeration(Alias::new("status"), Status::iter())
                         .not_null()
                 )
                 .col(

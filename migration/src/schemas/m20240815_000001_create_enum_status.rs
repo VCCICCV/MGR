@@ -18,7 +18,7 @@ impl MigrationTrait for Migration {
                 // Create Status enum
                 manager.create_type(
                     Type::create()
-                        .as_enum(Alias::new("Status"))
+                        .as_enum(Alias::new("status"))
                         .values([Status::ENABLED, Status::DISABLED, Status::BANNED])
                         .to_owned()
                 ).await?;
@@ -26,7 +26,7 @@ impl MigrationTrait for Migration {
                 // Create MenuType enum
                 manager.create_type(
                     Type::create()
-                        .as_enum(Alias::new("MenuType"))
+                        .as_enum(Alias::new("menu_type"))
                         .values([MenuType::DIRECTORY, MenuType::MENU])
                         .to_owned()
                 ).await?;
@@ -38,15 +38,14 @@ impl MigrationTrait for Migration {
 
     async fn down(&self, manager: &SchemaManager) -> Result<(), DbErr> {
         let db = manager.get_connection();
-
         match db.get_database_backend() {
-            DbBackend::MySql | DbBackend::Sqlite => {}
             DbBackend::Postgres => {
                 // Drop Status enum
-                manager.drop_type(Type::drop().name(Alias::new("Status")).to_owned()).await?;
+                manager.drop_type(Type::drop().name(Alias::new("status")).to_owned()).await?;
                 // Drop MenuType enum
-                manager.drop_type(Type::drop().name(Alias::new("MenuType")).to_owned()).await?;
+                manager.drop_type(Type::drop().name(Alias::new("menu_type")).to_owned()).await?;
             }
+            DbBackend::MySql | DbBackend::Sqlite => {}
         }
         Ok(())
     }

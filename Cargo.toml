@@ -15,7 +15,7 @@ strip = true # 去除符号信息，进一步减小二进制大小
 # 开发配置
 [profile.dev]
 split-debuginfo = "unpacked"
-
+opt-level = 0
 [workspace]
 # 工作区成员
 members = [
@@ -31,6 +31,7 @@ members = [
   "server/shared",
   "server/initialize",
   "server/middleware",
+  "server/codegen",
   "xdb",
 ]
 [workspace.package]
@@ -96,7 +97,7 @@ sea-orm = {version = "1.1.10", features = [
 redis = {version = "0.29.2", features = ["aio", "tokio-comp", "cluster-async", "connection-manager"]}
 # 使用tokio实现的连接池，支持postgres、redis、redis cluster、rsmq等
 bb8 = "0.9.0"
-bb8-redis = "0.21.0"
+bb8-redis = "0.13.0"
 # Kafka
 rdkafka = {version = "0.37.0", features = ["cmake-build"]}
 # 异步 kafka 客户端

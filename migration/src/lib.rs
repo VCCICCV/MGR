@@ -3,11 +3,12 @@ mod data;
 use data::{
     m20241023_000001_insert_sys_domain,
     m20241024_000002_insert_sys_user,
-    m20241024_000005_insert_sys_user_role,
-    m20241024_000006_insert_sys_role_menu,
     m20241024_000003_insert_sys_role,
     m20241024_000004_insert_sys_menu,
+    m20241024_000005_insert_sys_user_role,
+    m20241024_000006_insert_sys_role_menu,
     m20241024_000007_insert_casbin_rule,
+    m20241024_000008_insert_product,
 };
 use schemas::{
     m20240815_000001_create_enum_status,
@@ -62,7 +63,8 @@ impl MigratorTrait for Migrator {
             Box::new(m20241024_000004_insert_sys_menu::Migration),
             Box::new(m20241024_000005_insert_sys_user_role::Migration),
             Box::new(m20241024_000006_insert_sys_role_menu::Migration),
-            Box::new(m20241024_000007_insert_casbin_rule::Migration)
+            Box::new(m20241024_000007_insert_casbin_rule::Migration),
+            Box::new(m20241024_000008_insert_product::Migration)
         ]
     }
 }

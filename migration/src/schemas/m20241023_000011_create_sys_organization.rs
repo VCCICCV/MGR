@@ -33,7 +33,7 @@ impl MigrationTrait for Migration {
                     .col(ColumnDef::new(SysOrganization::Pid).string().not_null())
                     .col(
                         ColumnDef::new(SysOrganization::Status)
-                            .enumeration(Alias::new("\"Status\""), Status::iter())
+                            .enumeration(Alias::new("status"), Status::iter())
                             .not_null(),
                     )
                     .col(

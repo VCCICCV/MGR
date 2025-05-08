@@ -37,7 +37,7 @@ impl MigrationTrait for Migration {
                     )
                     .col(
                         ColumnDef::new(SysAccessKey::Status)
-                            .enumeration(Alias::new("\"Status\""), Status::iter())
+                            .enumeration(Alias::new("status"), Status::iter())
                             .not_null(),
                     )
                     .col(ColumnDef::new(SysAccessKey::Description).string().null())
